@@ -9,8 +9,12 @@ const { Meta } = Card;
   const [styleFilter ,setStyleFilter]=useState("")
   const [materialFilter ,setMaterialFilter]=useState("")
   const [colorFilter ,setColorFilter]=useState("")
-  console.log(styleFilter)
-    const {data ,isSuccess}=useGetAllProductsQuery({})
+ //query parameters of search and filter
+ const paramsObj: any = {};
+ if (styleFilter) paramsObj["categoryName"] = styleFilter;
+ if (materialFilter) paramsObj["materialFilter"] = materialFilter;
+ const query = "?" + new URLSearchParams(paramsObj).toString();
+    const {data ,isSuccess}=useGetAllProductsQuery({query})
     let productsData:any
     if(isSuccess){
         productsData=data

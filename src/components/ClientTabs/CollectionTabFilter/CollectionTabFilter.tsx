@@ -29,16 +29,14 @@ if(isSuccess){
 const onChange = (e: any) => {
   console.log(`checked = ${e.target.value}`);
 };
-function handleCheckboxChange(value: string) {
-  console.log(value);
-}
+
 return(
   <>
   <Row> 
     <Col xs={24}>
       <p>STYLE</p>
     {categoryData?.map((categoryData:any)=>{return <>
-      <Checkbox   onChange={() => handleCheckboxChange(categoryData.name)}>{categoryData?.name}</Checkbox>
+      <Checkbox   onChange={() => setStyleFilter(categoryData.name)}>{categoryData?.name}</Checkbox>
     </>
 })} 
     </Col>
