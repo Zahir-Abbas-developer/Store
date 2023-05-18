@@ -13,6 +13,8 @@ import { v4 as uuidv4 } from "uuid";
 import { useGetAllCardsDataQuery } from "../../store/Slices/AdminDashboard";
 import "../../sass/common.scss";
 import BreadCrumb from "../../layout/BreadCrumb/BreadCrumb";
+import OurCollectionTab from "../ClientTabs/OurCollectionTab/OurCollection";
+
 
 const DashboardAdmin = () => {
   const { data, isLoading } = useGetAllCardsDataQuery({})
@@ -69,6 +71,11 @@ const DashboardAdmin = () => {
       <BreadCrumb breadCrumbItems={breadCrumbItems} />
     
     <Layout className="bgLight-color dashboard">
+      <Row gutter={[29, 29]} style={{ paddingBottom: "30px" }}>
+        <Col xs={24} sm={24} md={24} lg={24}>
+        <OurCollectionTab />
+        </Col>
+      </Row>
       <Row gutter={[29, 29]} style={{ paddingBottom: "30px" }}>
         {shiftInvoiceTimeSheet.map((item: string) => {
           return (

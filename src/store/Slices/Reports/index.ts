@@ -187,7 +187,7 @@ export const extendedApi: any = emptySplitApi.injectEndpoints({
         url: `/reports/staff-data${query}`,
         method: "GET",
       }),
-      invalidatesTags: ["staffData"],
+      providesTags: ["staffData"],
     }),
     getReportsStaffAttendance: builder.query({
       query: ({query,pagination}:any) => {
@@ -197,7 +197,7 @@ export const extendedApi: any = emptySplitApi.injectEndpoints({
           method: "GET",
         };
       },
-      invalidatesTags: ["attendanceReport"],
+      providesTags: ["attendanceReport"],
     }),
     getReportsPaymentData: builder.query({
       query: ({query,pagination}:any) => ({
