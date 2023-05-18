@@ -1,0 +1,129 @@
+.main-rating-wrapper {
+  .ant-card.progressCard {
+    padding-block: 30px;
+    box-shadow: 0px 6.0059px 15.0147px rgba(0, 0, 0, 0.02);
+    border-radius: 15.0147px !important;
+    .ant-card-body {
+      padding-inline: 31px;
+    }
+    h3 {
+      margin-block: 30px;
+    }
+    .rating-types {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .type {
+        flex-basis: 32%;
+        display: flex;
+        align-items: self-end;
+        gap: 10px;
+
+        .icon-hold {
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    .ant-progress {
+      background-color: #e9eff6;
+      box-shadow: inset 0px 0px 14.017px rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      padding: 7px;
+      border-top: 3px solid transparent;
+      border-radius: 50%;
+      background-image: linear-gradient(to top, white 40%, white 100%),
+        linear-gradient(to top,#d320c1 10%, #1461ff 20%, #c624c6 30%);
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      .ant-progress-inner {
+        background-color: white;
+      }
+      .ant-rate {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .ratingsReviews {
+    .ant-card {
+      padding-block: 0px !important;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.02);
+      border-radius: 10px;
+      padding-block: 10px !important;
+      cursor: pointer;
+
+      .ant-card-body {
+        padding-block: 10px;
+      }
+      .ant-progress {
+        @media only screen and (min-width:1200px) and (max-width: 1400px) {
+          padding-left: 0px !important;
+        }
+        @media only screen and (max-width: 320px) {
+          padding-left: 0px !important;
+        }
+      }
+      &.active {
+        background-color: #65cdf0;
+        h3,
+        .ant-progress span,
+        .ant-progress-circle-trail {
+          color: white !important;
+          stroke: white !important;
+        }
+      }
+    }
+
+    .reviewsTabs {
+      margin-top: 30px;
+
+      .ratingTitle {
+        border-right: 1px solid #f6f6fc;
+      }
+      .ant-progress {
+        padding-left: 20px;
+        .ant-progress-text {
+          color: #4d4a81;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+
+  .ratingdDetails {
+    .ant-card {
+      border-radius: 15px;
+      .card-header {
+        display: flex;
+        gap: 10px;
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+      .ant-card-body {
+        padding-bottom:0px !important;
+      }
+      .card-body {
+        .published {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+  .ant-rate {
+    margin-right: 10px;
+
+    .ant-rate-star {
+      margin: 0;
+    }
+  }
+}

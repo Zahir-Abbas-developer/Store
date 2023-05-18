@@ -1,0 +1,142 @@
+.care-signin {
+  background: #f6f6f6;
+  height: 100%;
+  .pink-color {
+    color: #ee2e7e;
+  }
+  .fw-600 {
+    font-weight: 600;
+  }
+  //   LEFT *************************************************************************************
+
+  .left-outer-div {
+    background-image: url(./../../assets/Login/pink-shadow-sign-in.png);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    .inner-left-div {
+      padding: 250px 100px 0px 15%;
+    }
+    .heading-1 {
+      font-size: 62px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .heading-3 {
+      font-size: 40px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .p-tag-description-1 {
+      font-size: 22px;
+      margin-top: 45px;
+      margin-bottom: 0;
+    }
+    .p-tag-description-2 {
+      font-size: 22px;
+      margin: 5px 0px;
+    }
+    .demo-wrap {
+      position: relative;
+      margin-top: 100px;
+    }
+
+    .demo-wrap:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      opacity: 0.4;
+      background-image: url("./../../assets/Login/signin-animation.gif");
+      background-repeat: no-repeat;
+      background-position: 100% 0;
+      background-size: contain;
+      height: 100%;
+      width: 270px;
+      border: 1px solid transparent;
+      border-radius: 110px;
+    }
+
+    .demo-content {
+      position: relative;
+      display: flex;
+      justify-content: end;
+      margin-right: -20px;
+    }
+  }
+  //   *************************************************************************************
+  //   RIGHT *************************************************************************************
+
+  .right-outer-div {
+    background: linear-gradient(
+      158.72deg,
+      rgba(255, 255, 255, 0.4) 3.01%,
+      rgba(255, 255, 255, 0) 103.3%
+    );
+    max-width: 740px;
+    margin-top: 100px;
+    margin-right: 15%;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 100px;
+    @media screen and (max-width: 1200px) {
+      margin-right: 5%;
+      margin-left: 5%;
+      padding: 100px 20px;
+    }
+    .img-div {
+      @media screen and (max-width: 1200px) {
+        text-align: center;
+      }
+    }
+    .Sign-in-heading {
+      font-weight: 500;
+      font-size: 26px;
+    }
+    .input-style {
+      height: 62px;
+      font-size: 18px;
+      padding: 20px;
+      background: rgba(238, 46, 126, 0.05);
+      input{
+        background: transparent;
+      }
+    }
+    .btn-signin {
+      height: 61px;
+      background-color: #ee2e7e;
+      font-size: 17px;
+      background-image: url(../../assets/Login/sign-in-btn-bg.png);
+      background-repeat: no-repeat;
+      background-position: 40% 50%;
+    }
+    .forgot-password-style {
+      color: rgba(78, 75, 102, 0.75);
+    }
+    .fs-15-n-gray {
+      font-size: 15px;
+      color: #909090;
+    }
+  }
+}
+// :where(.css-dev-only-do-not-override-1sg6b5s).ant-input {
+//     box-sizing: border-box;
+//     margin: 0;
+//     padding: 4px 11px;
+//     color: rgba(38, 70, 83, 0.88);
+//     font-size: 14px;
+//     line-height: 1.5714285714285714;
+//     list-style: none;
+//     font-family: Poppins,sans-serif;
+//     position: relative;
+//     display: inline-block;
+//     width: 100%;
+//     min-width: 0;
+//     background-color: #ffffff;
+//     background-image: none;
+//     border-width: 1px;
+//     border-style: solid;
+//     border-color: #d9d9d9;
+//     border-radius: 6px;
+//     transition: all 0.2s;
+// }

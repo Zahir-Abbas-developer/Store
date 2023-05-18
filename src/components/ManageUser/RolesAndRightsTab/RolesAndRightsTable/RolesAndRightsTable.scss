@@ -1,0 +1,82 @@
+@import '../../../../sass/variables.scss';
+
+.manager-users-wrapper {
+    .manager-confirmed-shift-filters {
+        padding:12px 24px;
+        width: auto;
+
+        h2 {
+            color: #4E4B66;
+        }
+        @media only screen and (max-width:1200px) and (min-width:280px) {
+        .manage-users-search{
+            margin-top: 15px !important;
+        }}
+        .manager-confirmed-select {
+            padding-top: 9px;
+            .manage-user-select{
+                .ant-select-selector{
+                    border-radius: 4px !important;
+                }
+            }
+            .ant-select-selection-item {
+                font-weight: $fw-400;
+                font-size: $fs-14;
+                color: #6E7191;
+            }
+        }
+    }
+
+    .manager-confirmed-shift-table {
+        padding-top: 50px
+    }
+
+    .ant-dropdown-menu-item {
+        .ant-dropdown-menu-item.ant-dropdown-menu-item-only-child {
+            &:hover {
+                background-color: #F7F7FC;
+            }
+        }
+    }
+
+    .ant-table {
+        background: #FFFFFF !important;
+        border: 1px solid #D9DBE9 !important;
+        border-radius: 10px !important;
+
+        .ant-table-content {
+            .ant-table-thead {
+                tr {
+                    .ant-table-cell {
+                        padding: 40px 16px !important;
+                        background: none !important;
+                        font-weight: $fw-600 !important;
+                        font-size: $fs-14 !important;
+                        line-height: 17px !important;
+                        color: #4E4B66 !important;
+                        text-align: center !important;
+                        border-bottom: 1px solid #D9DBE9 !important;
+
+                        &::before {
+                            background-color: #4E4B66 !important;
+                        }
+                    }
+                }
+            }
+
+            .ant-table-tbody {
+                tr {
+                    .ant-table-cell {
+                        padding: 20px 16px !important;
+                        border-bottom: 1px solid #D9DBE9 !important;
+                        text-align: center !important;
+                        // font-weight: $fw-400 !important;
+                        // font-size: $fs-14 !important;
+                        // line-height: 17px;
+                        // color: #4E4B66;
+                    }
+                }
+            }
+        }
+    }
+}

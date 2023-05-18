@@ -1,0 +1,87 @@
+@import "../../../../sass/variables.scss";
+.course-section-middle {
+  padding: 10px;
+
+  .wrapper-collapse {
+    overflow: scroll;
+    .course-content-head {
+      background-color: #eff0f6;
+      height: 58px;
+      border-radius: 5px;
+      padding: 0px 20px;
+      .rotate-90 {
+        transform: rotate(180deg);
+      }
+    }
+    .ant-collapse-header {
+      padding: 0px !important;
+      border-radius: 0px !important;
+    }
+    .ant-collapse {
+      background-color: #fff;
+      border-radius: 0px !important;
+      border: none !important;
+    }
+    .ant-collapse-content-box {
+      padding: 0 !important;
+    }
+    .ant-collapse-item {
+      border-bottom: 1px solid #d9d9d9;
+      margin-bottom: 8px;
+    }
+
+    .pannel-content-expandable {
+    }
+  }
+  .wrapper-feature-review {
+    .flex-wrapper {
+    }
+    .feature-review-rating {
+    }
+  }
+
+  .feedback-and-ratings-wrapper {
+    flex-wrap: wrap;
+    .wrapper-styles {
+      width: 240px;
+      margin-bottom: 0 !important;
+      .ant-progress-line {
+        margin-bottom: 0px !important;
+      }
+    }
+    .progress-and-ratings {
+      .bar-progress-and-ratings {
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .back-button {
+    background-color: #4d122c;
+    width: 68px;
+    height: 35px;
+    border: none;
+    border-radius: 3px;
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 500px) {
+    .course-content-head {
+      width: 500px !important;
+    }
+    .ant-collapse-content-box {
+      width: 500px;
+    }
+    .ant-collapse-item {
+      width: 500px;
+    }
+    
+  }
+  @media (max-width: 300px){
+    .progress-and-ratings{
+      width: 200px;
+    }
+  }
+}

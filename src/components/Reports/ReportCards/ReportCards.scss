@@ -1,0 +1,29 @@
+.report-single-card-wrapper {
+
+    padding: 14px 15px;
+    width: 100%;
+
+    .transition-dev {
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+        // background: #5DA7FD;
+        box-shadow: 3px 2px 4px rgba(146, 196, 255, 0.46);
+        transition: all ease 0.5s;
+    }
+
+    &:hover {
+        .transition-dev {
+            /* IE 9 */
+            -ms-transform: scale(1.21);
+            /* Safari 3-8 */
+            -webkit-transform: scale(1.21);
+            transform: scale(1.21);
+        }
+    }
+
+
+    // @media screen and (min-width:1200px) {
+    //     max-width: 345px;
+    // }
+}

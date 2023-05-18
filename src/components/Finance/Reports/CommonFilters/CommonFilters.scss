@@ -1,0 +1,167 @@
+@import "../../../../sass/variables";
+
+.finance-common-filters-wrapper {
+  .app-select-wrap-class {
+    .ant-select-selector {
+      border-radius: 0px;
+      border-top: 1px solid #D9DBE9;
+      border-bottom: 1px solid #D9DBE9;
+      border-left: none;
+      border-right: none;
+
+      &:hover {
+        border-color: #D9DBE9 !important;
+        box-shadow: none !important;
+      }
+
+      .ant-select-selection-placeholder,
+      .ant-select-selection-item {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+    }
+  }
+
+
+  .ant-select-focused.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
+    border-color: #D9DBE9 !important;
+    box-shadow: none !important;
+    outline: 0;
+  }
+
+  .date-picker {
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid #D9DBE9;
+    border-bottom: 1px solid #D9DBE9;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+
+    &:hover {
+      border-color: #D9DBE9;
+    }
+
+    &.ant-picker-focused {
+      box-shadow: none;
+    }
+
+    .ant-picker-input {
+      input {
+        color: $title-color;
+
+        &::placeholder {
+          color: #888888 !important;
+        }
+      }
+    }
+
+  }
+
+  & :not(:first-child) {
+    .filter-column {
+      position: relative;
+
+      &::after {
+        content: "";
+        height: 60%;
+        width: 1px;
+        // border-radius: 10px;
+        display: block;
+        position: absolute;
+        bottom: 20%;
+        top: 20%;
+        left: 0;
+        background: #4E4B66;
+      }
+
+      @media screen and (max-width:767px) {
+        border-left: 1px solid #D9DBE9;
+        border-right: 1px solid #D9DBE9;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  & :last-child {
+    .filter-column {
+      border-right: 1px solid #D9DBE9 !important;
+    }
+  }
+
+  & :first-child {
+    .filter-column {
+      border-left: 1px solid #D9DBE9;
+
+      @media screen and (max-width:767px) {
+        border-right: 1px solid #D9DBE9;
+      }
+    }
+  }
+
+
+  @media (min-width: 768px) and (max-width:991px) {
+    & :nth-child(odd) {
+      .filter-column {
+        border-left: 1px solid #D9DBE9;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    & :nth-child(even) {
+      .filter-column {
+        border-left: none !important;
+        border-right: 1px solid #D9DBE9 !important;
+      }
+    }
+
+    & :nth-last-child(-n+1) {
+      .filter-column {
+        border-right: 1px solid #D9DBE9 !important;
+      }
+    }
+  }
+
+  @media (min-width: 992px) and (max-width:1199px) {
+    & :nth-child(3) {
+      .filter-column {
+        border-right: 1px solid #D9DBE9;
+      }
+    }
+
+    & :nth-child(4) {
+      .filter-column {
+        border-left: 1px solid #D9DBE9;
+        border-right: 1px solid #D9DBE9;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1199px) {
+    & :nth-last-child(-n+1) {
+      .filter-column {
+        border-right: 1px solid #D9DBE9 !important;
+      }
+    }
+
+    // & :nth-child(3):not(:last-child)+#not-a-border-col {
+    & :nth-child(3):not(:last-child) {
+      .filter-column {
+        &.not-a-border-col {
+          border-right: 1px solid #D9DBE9 !important;
+        }
+      }
+    }
+  }
+}

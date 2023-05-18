@@ -1,0 +1,117 @@
+.week-start-day {
+    background: white;
+    height: 82vh;
+    border-radius: 8px;
+    padding: 20px;
+    @media screen and (max-width:1024px) {
+        height: fit-content;
+        margin: 20px 0;
+    }
+    .heading {
+        h1 {
+            color: #333333;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+    }
+
+    .savebtn {
+        margin-top: 10px;
+
+    }
+
+    .common-setting-table {
+        .ant-table {
+            border: 1px solid #D9DBE9;
+            padding: 0;
+            border-radius: 10px !important;
+
+            .ant-table-thead {
+                tr {
+                    height: 65px;
+
+                    .ant-table-cell {
+                        background: none !important;
+                        font-weight: 600 !important;
+                        font-size: 14px !important;
+                        line-height: 17px !important;
+                        color: #4E4B66 !important;
+
+                        // border-bottom: 1px solid #D9DBE9 !important;
+                        &::before {
+                            background-color: #4E4B66 !important;
+                        }
+                    }
+                }
+            }
+
+            .ant-table-tbody {
+                tr {
+                    height: 71px;
+                    border-bottom: 1px solid #D9DBE9;
+
+                    .ant-table-cell {
+                        padding: 10px 16px !important;
+                    }
+
+                    &:last-child {
+                        border-bottom: none !important;
+
+                        td {
+                            border-bottom: none !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        // To show table 1,2,3 pagination
+        .ant-pagination {
+
+            .ant-pagination-next,
+            .ant-pagination-prev,
+            .ant-pagination-item {
+                display: none !important;
+            }
+
+            .ant-pagination-options {
+                margin: 0px !important;
+            }
+        }
+    }
+
+}
+.week-start-day-checkbox {
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    .radio {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        border: 1px solid #65CDF0;
+        margin-right: 5px;
+        vertical-align: middle;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked+.radio {
+        background-color: #65CDF0;
+        ;
+        border-color: #65CDF0;
+        ;
+    }
+
+    input[type="checkbox"]:checked+.radio::after {
+        content: "";
+        display: block;
+        width: 9px;
+        height: 9px;
+        margin: 4px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+}

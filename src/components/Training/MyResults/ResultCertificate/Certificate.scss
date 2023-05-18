@@ -1,0 +1,174 @@
+.certificate-wrapper {
+  padding: 25px;
+  background: #ffffff;
+  box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+  border-radius: 8px;
+  @media screen and (max-width: 768px) {
+    padding: 15px;
+  }
+
+  //Profile Card
+  .profile-card {
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #eff0f7;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    .profile-info {
+      display: flex;
+      gap: 15px;
+      @media screen and (max-width: 600px) {
+        flex-wrap: wrap;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      .details {
+        .user-name {
+          color: #14142b;
+        }
+        .user-grade {
+          margin: 0;
+          margin-top: 7px;
+          color: #14142b;
+          span {
+            color: #4e4b66;
+          }
+        }
+        .date {
+          color: #4e4b66;
+        }
+        .certificate-desc {
+          padding-right: 30px;
+          color: #4e4b66;
+          span {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  //Rating Card
+  .rating-card {
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #eff0f7;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    .top-bar {
+      .title {
+        color: #14142b;
+      }
+      img {
+        width: 21px;
+        height: 21px;
+        cursor: pointer;
+      }
+    }
+    .rating {
+      margin-top: 5px;
+      .desc {
+        color: #6e7191;
+        padding-right: 7rem;
+        @media screen and (max-width: 768px) {
+          padding-right: 3rem;
+        }
+        @media screen and (max-width: 768px) {
+          padding-right: 0rem;
+        }
+      }
+    }
+    .ant-form-item-label {
+      padding: 0;
+    }
+    .ant-input:hover {
+      border-color: #65cdf0;
+    }
+    .save-btn {
+      background: #65cdf0;
+      color: #fff;
+      width: 111px;
+      height: 46px;
+      border: none;
+      box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+      border-radius: 2px;
+    }
+  }
+
+  //Certificate Card
+  .certificate-card {
+    position: relative;
+    background: #ffffff;
+    padding: 0 30px;
+    border: 1px solid #eff0f7;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    .content {
+      padding: 25px 0;
+      .date {
+        padding: 12px 0;
+      }
+      .name {
+        font-size: 30px;
+        margin: 0;
+        @media screen and (max-width: 600px) {
+          font-size: 25px;
+        }
+      }
+      .info {
+        color: #4e4b66;
+        margin-top: -10px;
+      }
+      .certificate-name {
+        margin: 0;
+        margin-top: 30px;
+        font-size: 45px;
+        color: #14142b;
+        @media screen and (max-width: 600px) {
+          font-size: 30px;
+        }
+        @media screen and (max-width: 400px) {
+          font-size: 20px;
+        }
+      }
+      .course-from {
+        color: #4e4b66;
+        margin: 0;
+        margin-top: -10px;
+      }
+      .signature {
+        margin-top: 40px;
+        .owner {
+          margin: 0;
+          margin-top: 20px;
+        }
+      }
+    }
+    .download-icon {
+      cursor: pointer;
+      position: absolute;
+      bottom: 5%;
+      right: 3%;
+      @media screen and (max-width: 325px) {
+        bottom: 2%;
+      }
+    }
+    .certificate-logo {
+      width: 224px;
+      height: 423px;
+      @media screen and (max-width: 768px) {
+        width: 154px;
+        height: 280px;
+      }
+      @media screen and (max-width: 600px) {
+        width: 100px;
+        height: 185px;
+      }
+      @media screen and (max-width: 400px) {
+        display: none;
+      }
+    }
+  }
+}

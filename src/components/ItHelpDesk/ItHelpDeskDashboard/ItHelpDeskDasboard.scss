@@ -1,0 +1,102 @@
+// common scss start here
+.cursor {
+  cursor: pointer;
+}
+.bg-white {
+  background-color: #ffffff;
+}
+.padding-30 {
+  padding: 30px;
+}
+// common scss end here
+
+// tickets summary scss start here
+.wrap-tickets-summary {
+  gap: 20px;
+  margin-bottom: 100px;
+
+  .ticket-images {
+    height: 64px;
+    width: 64px;
+    border-radius: 12.4229px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+// tickets summary scss end here
+
+// dashboard table  scss start here
+.wrap-dashboard-table {
+  margin-bottom: 20px;
+  border: 1px solid #d9dbe9;
+  border-radius: 10px;
+  .ant-table-thead .ant-table-cell {
+    background-color: transparent;
+  }
+  .ant-table-wrapper .ant-table-tbody >tr >td{
+    border-bottom: 1px solid #D9DBE9;
+  }
+  :where(.css-dev-only-do-not-override-seocib).ant-table-wrapper .ant-table-thead >tr>th, .ant-table-wrapper .ant-table-thead >tr>td{
+    border-bottom: 1px solid #D9DBE9;
+  }
+  
+  .ant-table {
+    // border: 1px solid #d9dbe9;
+    padding: 0.75rem;
+    border-radius: 10px !important;
+
+    .ant-table-thead {
+      tr {
+        height: 65px;
+        border: 1px solid #d9dbe9;
+
+        .ant-table-cell {
+          background: none !important;
+          font-weight: 600 !important;
+          font-size: 14px !important;
+          line-height: 17px !important;
+          color: #4e4b66 !important;
+
+          // border-bottom: 1px solid #D9DBE9 !important;
+          &::before {
+            background-color: #4e4b66 !important;
+          }
+        }
+      }
+    }
+
+    .ant-table-tbody {
+      tr {
+        height: 71px;
+        border-bottom: 1px solid #d9dbe9;
+
+        .ant-table-cell {
+          padding: 10px 16px !important;
+        }
+
+        &:last-child {
+          border-bottom: none !important;
+
+          td {
+            border-bottom: none !important;
+          }
+        }
+      }
+    }
+  }
+}
+// dashboard table scss end here
+
+// media query start here  
+@media only screen and (max-width: 1600px) {
+  .wrap-tickets-summary {
+    gap: 20px;
+    margin-bottom: 60px;  
+  }
+}
+@media only screen and (max-width: 1182px) {
+  .wrap-dashboard-table {
+    margin-top: 20px; 
+  }
+}

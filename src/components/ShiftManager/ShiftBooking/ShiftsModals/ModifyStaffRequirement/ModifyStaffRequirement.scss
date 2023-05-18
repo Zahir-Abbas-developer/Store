@@ -1,0 +1,65 @@
+@import '../../../../../sass/variables.scss';
+
+.modify-staff-requirement-modal {
+    .ant-modal-content {
+        padding: 20px 24px 25px 24px;
+    }
+    .modify-staff-content {
+        padding-top: 34px;
+
+        .modify-staff-counter {
+            padding-top: 60px;
+            max-width: 300px;
+            margin: 0 auto;
+
+            h2 {
+                font-size: 60px;
+                user-select: none;
+                font-weight: 700;
+            }
+
+            .modify-count {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                img {
+                    user-select: none;
+                }
+            }
+
+            .modify-increment-count,
+            .modify-decrement-count {
+                background: #65CDF0;
+            }
+            .modify-decrement-count-hover {
+                &:hover {
+                    background: #65CDF0;
+                }
+            }
+        }
+
+        .modify-staff-btn {
+            gap: 10px;
+            padding-top: 100px;
+
+            button {
+                border-radius: 2px;
+                border: none;
+                padding: 12px 0;
+                box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+            }
+
+            .reset-btn {
+                background: #EFF0F7;
+                color: #C2C2C2;
+                gap: 5px;
+            }
+
+            .save-btn {
+                background-color: #65CDF0;
+                color: #fff;
+            }
+        }
+    }
+    
+}

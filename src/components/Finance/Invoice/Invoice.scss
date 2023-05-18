@@ -1,0 +1,30 @@
+.invoice-main-wrapper {
+  background-color: white;
+  min-height: 80vh;
+  max-height: auto;
+  border-radius: 8px;
+  padding-bottom: 10px;
+  .invoice-wrapper-header {
+    padding: 4rem 27px;
+  }
+  .folder-view{
+    padding-inline: 27px;
+  }
+  @media only screen and (max-width: 768px) {
+    .folder-view{
+      padding-inline: .5rem;
+    }
+    .invoice-wrapper-header {
+      padding: 2rem .5rem;
+      display: block;
+      text-align: center;
+      .invoice-grid-button {
+        display: flex;
+        justify-content: end;
+      }
+      .invoice-care-heading {
+        padding-block: 1rem;
+      }
+    }
+  }
+}

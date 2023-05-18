@@ -1,0 +1,19 @@
+.switch-wrapper {
+    .ant-switch {
+        background-color: #A9DBEC !important;
+    }
+    .ant-switch.ant-switch-checked {
+        background-color: #65CDF0 !important;
+        &:hover {
+            background: #65CDF0 !important;
+        }
+    }
+    .ant-switch-handle {
+        &::before {
+            background: #F7F7FC !important;
+        }
+    }
+    .ant-form-item {
+        margin: 0 !important;
+    }
+}

@@ -1,0 +1,119 @@
+.candidate-modal{
+  .ant-modal-content{
+    .ant-modal-footer{
+      display: none !important;
+    }
+  }
+}
+.whistle-blowing-report-modal-wrapper {
+  padding: 20px;
+  
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    height: 0px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ffffff00;
+    border-radius: 10px;
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: #dadada;
+      // background-color: $primary-color;
+      border-radius: 10px;
+    }
+  }
+ .ant-modal-root .ant-modal-centered .ant-modal {
+  height: 480px !important;
+  overflow: scroll;
+ }
+
+  .ant-picker-input>input::placeholder {
+    color: #888888 !important;
+    }
+    textarea::placeholder {
+      color: #888888 !important;
+    }
+  .ant-form-item .ant-form-item-label > label {
+    flex-direction: row-reverse;
+    font-weight: 600;
+    font-size: 14px;
+  }.ant-picker .ant-picker-clear {
+    display: none !important;
+    color: #fff;
+  }
+  .ant-picker .ant-picker-clear:hover{
+    color: #fff;
+    display: none !important;
+  }
+  .ant-select-selector {
+    width: 100%;
+    height: 46px !important;
+    padding: 0 11px;
+    display: flex;
+    align-items: center;
+  }
+  .form-select {
+    height: 46px;
+  }
+  .form--label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .m--0 {
+    margin: 0;
+  }
+  .d--flex {
+    display: flex;
+  }
+  .wrp-checkbox-grp {
+    height: 110px;
+  }
+
+  .upload-content-wrapper {
+    position: relative;
+    height: 189px;
+    // overflow: hidden;
+    .upload-image {
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      margin-top: 0;
+      height: 189px;
+    }
+    .ant-upload-drag {
+      position: relative;
+      width: 100%;
+      height: 189px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0) !important;
+      border: 2px dashed #e079af !important;
+      border-radius: 0px;
+      cursor: pointer;
+      transition: border-color 0.3s;
+      z-index: 2;
+    }
+  }
+}
+.date-picker-wrapper{
+  .ant-form-item{
+    margin-bottom: 0px
+  }
+}
+.time-picker{
+   label{
+    color: #6e7191
+  }
+  .ant-picker{
+      width: 100%;
+  height: 46px;
+  border: 1.5px solid #a0a3bd;
+  border-radius: 3px;
+  }
+  .ant-picker .ant-picker-input{
+    &:hover .ant-picker-clear{
+      display: none;
+    }
+  }
+}

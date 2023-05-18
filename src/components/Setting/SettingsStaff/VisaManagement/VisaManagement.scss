@@ -1,0 +1,136 @@
+.visa-management{
+    .heading{
+        p{
+            color: #6E7191;
+            margin: 20px 0;
+            margin-right: 15px;
+        }
+    }
+    .add-visa-type-btn {
+        color: #6E7191;
+        box-shadow: 0px 0px 3px rgba(101, 205, 240, 0.15);
+        border: solid 3px transparent;
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #69BBD7, #65CDF0);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        box-shadow: 2px 1000px 1px #fff inset;
+        height: 50px;
+        width: 196px;
+        padding: 13px 20px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+&:hover{
+    border: solid 3px transparent;
+    color: #6E7191;
+}
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+        }
+
+        svg {
+            color: #65CDF0;
+            box-shadow: 0px 0px 3px 0px #61C8EB;
+            border-radius: 50%;
+            font-size: 20px;
+        }
+
+    }
+
+    .common-setting-table {
+        .ant-table {
+            border: 1px solid #D9DBE9;
+            padding: 0;
+            border-radius: 10px !important;
+            .ant-table-thead {
+                tr {
+                    height: 65px;
+    
+                    .ant-table-cell {
+                        background: none !important;
+                        font-weight: 600 !important;
+                        font-size: 14px !important;
+                        line-height: 17px !important;
+                        color: #4E4B66 !important;
+    
+                        // border-bottom: 1px solid #D9DBE9 !important;
+                        &::before {
+                            background-color: #4E4B66 !important;
+                        }
+                    }
+                }
+            }
+    
+            .ant-table-tbody {
+                tr {
+                    height: 71px;
+                    border-bottom: 1px solid #D9DBE9;
+    
+                    .ant-table-cell {
+                        padding: 10px 16px !important;
+                    }
+    
+                    &:last-child {
+                        border-bottom: none !important;
+    
+                        td {
+                            border-bottom: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    
+        // To show table 1,2,3 pagination
+        .ant-pagination {
+    
+            .ant-pagination-next,
+            .ant-pagination-prev,
+            .ant-pagination-item {
+                display: none !important;
+            }
+    
+            .ant-pagination-options {
+                margin: 0px !important;
+            }
+        }
+    }
+  
+}
+
+.add-visa-type{
+
+    label{
+        color: #6E7191;
+    }
+input{
+    width: 400px;
+    height: 45px;
+    border: 1px solid #A0A3BD;
+    @media only screen and (max-width: 500px) {
+        width: 100%;
+      }
+}
+    .btn-save{
+        width: 128px;
+        height: 46px;
+        margin-left: 10px;
+        padding: 0;
+        &:hover{
+            color: white;
+        }
+        @media only screen and (max-width: 500px) {
+            width: 88px;
+          }
+    } 
+    .btn-cancel{
+        width: 128px;
+        height: 46px;
+        padding: 0;
+        &:hover{
+            color: white;
+        }
+        @media only screen and (max-width: 500px) {
+            width: 88px;
+          }
+    }
+}

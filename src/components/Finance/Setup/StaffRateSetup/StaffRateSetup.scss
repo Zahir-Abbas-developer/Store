@@ -1,0 +1,26 @@
+.staff-rate-main {
+  ::-webkit-scrollbar {
+    height: 5px;
+  }
+  margin: 20px 30px;
+  .accordian-header-title {
+    padding-left: 1rem;
+  }
+  .staff-rate-collapse-panel {
+    .ant-collapse-item {
+      border-radius: 2px;
+    }
+  }
+  .staff-rate-search {
+    width: 350px;
+  }
+  @media only screen and (max-width: 768px) {
+    margin: 5px 0px;
+    .accordian-header-title {
+      padding-left: 5px;
+    }
+    .staff-rate-search {
+      width: 100%;
+    }
+  }
+}

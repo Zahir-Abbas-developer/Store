@@ -1,0 +1,51 @@
+// .main-calandar-header {
+//   margin: 30px 0px;
+//   .search-wrapper{
+//     display: flex;
+//     justify-content: end;
+//     .input-search-wrapper {
+//       width: 350px;
+//       @media only screen and (max-width:768px) {
+//         width: 100%;
+//       }
+//     }
+//   }
+//   .calander-header {
+//     margin-top: 1.5rem;
+//     overflow-x: scroll;
+//     ::-webkit-scrollbar {
+//       display: none !important;
+//     }
+//     .status-wrapper {
+//       min-width: 1200px;
+//       justify-content: end;
+//       gap: 15px;
+//       margin-left: 100px;
+//       .status-title {
+//         padding-left: 10px;
+//       }
+//       @media only screen and (max-width:972px) {
+//         margin-left: 0px;;
+//       }
+//     }
+
+//     .box-wrapper {
+//       .box {
+//         height: 15px;
+//         width: 15px;
+//       }
+
+//     }
+
+//     @media screen and (max-width: 768px) {
+//       .status-wrapper {
+//         margin-left: 30px;
+//       }
+//     }
+//   }
+// }
+
+.main-body {
+  background-color: #fff;
+  border-radius: 10px;
+}

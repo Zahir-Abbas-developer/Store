@@ -1,0 +1,86 @@
+.wrap-main-system-performance{
+    .wrap-system-performance-top-card{
+        height: 100px;
+        .ant-card-body {
+            padding:5px 24px !important;
+          }
+    }
+    .wrap-system-performance-select-field{
+      gap: 30px;
+    }
+    .completed-shift-select-input {
+        background: #ffffff;
+        //  border: 1px solid #D9DBE9;
+        width: 250px !important;
+        height: 40px !important;
+      }
+      .ant-select-selector {
+        height: 40px !important;
+        background-color: #ffffff !important;
+        border: 1px solid #D9DBE9;
+        &::placeholder {
+          color: #a0acbb;
+        }
+    
+        &:hover {
+          border-color: #65cdf0 !important;
+        }
+      }
+      .wrap-system-performance-left-side-card{
+        margin-top: 20px;
+        height: 704px;
+        .ant-card-body {
+            padding:20px !important;
+          }
+      }.system-performance-inner-card-one{
+        height: 36px;       
+        background: #F5F5F5;
+        box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.2);
+       
+      }
+      .system-performance-inner-card-two{
+        margin-top: 14px;
+        height: 36px;       
+        // background:  #FFF6E1;
+        background: #F5F5F5;
+        box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.2);
+      }.system-performance-inner-card-title{
+        margin-left: 30px;
+      }
+}
+@media only screen and (max-width: 520px) {
+  .wrap-main-system-performance .wrap-system-performance-select-field{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding:14px 0px;
+    .system-performance-top-card-title{
+      margin-left: 5px;
+    }
+    
+  }
+  .wrap-main-system-performance .wrap-system-performance-top-card{
+   height: fit-content;
+   margin-top: 24px;
+  
+  }
+  
+}
+@media only screen and (max-width: 347px) {
+  .wrap-main-system-performance  .ant-select-selector {
+    width: 180px !important;
+  }.wrap-main-system-performance .completed-shift-select-input{
+    width: 180px !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .wrap-main-system-performance  .wrap-system-performance-left-side-card {
+    height: fit-content;
+  }
+  
+  
+}

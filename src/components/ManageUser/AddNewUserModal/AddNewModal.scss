@@ -1,0 +1,58 @@
+.add-new-user-wrapper {
+    .candidate-button {
+      padding: 12px 24px;
+      color: white;
+      background: #65cdf0;
+      box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+      border-radius: 2px;
+      border: none;
+    }
+   
+  }
+  .add-new-user-modal {
+
+
+    .manage-user-select {
+      .add-user-modal-label .ant-form-item-required{
+        flex-direction: row-reverse !important;
+      }
+      .ant-select-selector {
+        border-radius: 4px !important;
+        width: 100%;
+        height: 45px;
+        align-items: center;
+        border: 1.5px solid #a0a3bd;
+      }
+      .ant-select-selection-placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        color: #888888; /* set the color you want */
+      }
+      .ant-select-arrow {
+        margin-top: -1px;
+      }
+    }
+  
+    .add-user-input {
+      .ant-form-item .ant-form-item-label>label {
+        flex-direction: row-reverse;
+        font-weight: 600;
+        font-size: 14px;
+        color: #6e7191;
+      }
+  
+      .icon {
+        margin-left: 10px;
+        margin-right: 6px;
+      }
+    }
+  
+    .modal-button {
+      padding: 8px 20px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 2px;
+    }
+  }

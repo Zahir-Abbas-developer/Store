@@ -1,0 +1,57 @@
+.setting-attendance-monitoring {
+    background-color: white;
+    padding: 20px;
+height: 70vh;
+@media screen and (max-width:1024px) {
+    height: fit-content;
+    margin: 20px 0;
+}
+@media only screen and (max-width: 500px) {
+    padding: 10px;
+}
+    .heading {
+        h1 {
+            color: #14142B;
+
+            span {
+                background-color: #65CDF0;
+                border-radius: 50%;
+                margin-left: 10px;
+
+                svg {
+                    color: #65CDF0;
+                    font-size: 18px;
+
+                    path:last-child {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .counting-meters {
+        p {
+            color: #4E4B66;
+            margin-right: 30px;
+            @media only screen and (max-width: 300px) {
+                margin-right: 5px;
+            }
+        }
+
+        .mx-30 {
+            margin: 20px 0;
+        }
+    }
+.btn-secondary{
+    height: 46px;
+    width: 111px;
+    margin-top: 25px;
+    border-radius: 2px;
+    &:hover{
+        color: white;
+    }
+}
+}

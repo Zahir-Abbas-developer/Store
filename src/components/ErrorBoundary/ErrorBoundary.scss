@@ -1,0 +1,35 @@
+.error-boundary {
+    .error-boundry-wrapper {
+        height: 100vh;
+        p {
+            padding-top: 15px;
+        }
+
+        a {
+            padding: 11px 22px;
+            outline: none;
+            border: none;
+            border-radius: 4px;
+            margin-top: 22px;
+            text-decoration: none;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .error-boundary {
+        padding: 0 12px;
+        .error-boundry-wrapper {
+            h2{ 
+                font-size: 22px;
+            }
+            p {
+                font-size: 14px;
+            }
+            a {
+                padding: 8px 18px;
+                font-size: 16px;
+            }
+        }
+    }
+}

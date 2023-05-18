@@ -1,0 +1,45 @@
+
+  
+  .graph-container {
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .transition-from-right {
+    animation: spin 3s ease-in;
+  }
+
+  @keyframes spin {
+    0% {
+      opacity: 0.2;
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0.2;
+      transform: rotate(360deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+
+  }

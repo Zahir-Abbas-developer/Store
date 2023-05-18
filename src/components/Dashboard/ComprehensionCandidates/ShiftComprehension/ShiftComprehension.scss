@@ -1,0 +1,23 @@
+
+    .admin-dashboard{
+        .comprehension{
+            padding-bottom: 10px !important;
+        }
+        .shift-comprehension-card{
+            display: flex;
+            justify-content: space-between;
+        }
+        .shift-comprehension{
+     .ant-card-body{
+        padding: 12px !important;
+    }
+}
+@media only screen and (max-width:786px) and (min-width:280px) {
+    .shift-comprehension-card{
+        display: block !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+}
+

@@ -1,0 +1,61 @@
+@import "../../../sass/variables";
+
+.page-wrapper {
+  .page-found-wrapper {
+    height: 100vh;
+
+    &.construction {
+      height: 70vh;
+    }
+
+    .page-found-heading {
+      h2 {
+        font-size: 150px;
+
+        &.under {
+          font-size: $fs-55;
+        }
+      }
+    }
+
+    p {
+      padding-top: 15px;
+    }
+
+    a {
+      padding: 11px 22px;
+      outline: none;
+      border: none;
+      border-radius: $border-radius-4;
+      margin-top: 25px;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-wrapper {
+    padding: 0 12px;
+
+    .page-found-wrapper {
+      .page-found-heading {
+        h2 {
+          font-size: $fs-100;
+
+          &.under {
+            font-size: $fs-30;
+          }
+        }
+      }
+
+      p {
+        font-size: $fs-14;
+      }
+
+      a {
+        padding: 8px 18px;
+        font-size: $fs-16;
+      }
+    }
+  }
+}

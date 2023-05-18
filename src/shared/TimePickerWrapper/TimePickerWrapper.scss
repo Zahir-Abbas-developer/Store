@@ -1,0 +1,51 @@
+.time-picker-wrapper {
+  .ant-picker {
+    width: 100%;
+    border-radius: 3px !important;
+    height: 45px !important;
+    border: 1.5px solid #a0a3bd;
+    
+
+    .ant-picker-input {
+      color: #6e7191;
+      &::placeholder {
+        font-size: 14px;
+        color: #6e7191;
+      }
+    }
+  }
+  .ant-picker-clear {
+    display: none;
+  }
+
+}
+
+.time-picker-content{
+  .ant-picker-content {
+    .ant-picker-time-panel-cell.ant-picker-time-panel-cell-selected {
+      .ant-picker-time-panel-cell-inner {
+        background-color: #65CDF0 !important;
+        color: #fff;
+      }
+    }
+  }
+  
+  .ant-picker-ranges {
+    .ant-picker-now {
+      .ant-picker-now-btn {
+        color: #65CDF0 !important;
+        font-size: 14px !important;
+      }
+    }
+    .ant-picker-ok {
+      button {
+        background: #65CDF0 !important;
+        font-size: 14px !important;
+        padding: 14px 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

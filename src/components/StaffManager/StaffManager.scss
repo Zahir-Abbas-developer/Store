@@ -1,0 +1,123 @@
+.staff-info-wrapper {
+  width: 100%;
+  height: 525px;
+  background: #ffffff;
+  border-radius: 0px 10px 10px 10px;
+  padding: 10px;
+  margin-bottom: 40px;
+
+  @media only screen and (max-width: 1599px) {
+    .staff-info {
+      display: flex;
+      justify-content: center;
+    }
+
+    .progress-bar {
+      justify-content: start;
+    }
+
+    .staff-actions {
+      justify-content: end !important;
+      padding-right: 25px !important;
+    }
+  }
+
+  @media only screen and (max-width: 305px) {
+    .contact-content {
+      padding-left: 0px !important;
+      font-size: 12px !important;
+    }
+  }
+
+  @media only screen and (max-width: 338px) {
+    .status-title {
+      font-size: 14px !important;
+    }
+
+    .status-data {
+      font-size: 11px !important;
+    }
+  }
+}
+
+.staff-mananger-wrapper {
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.scroll-div {
+  max-height: 500px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.border-right {
+  border-right: 1px solid #d9dbe9;
+  padding-inline: 5px;
+
+  @media only screen and (max-width: 991px) {
+    border-right: none;
+    padding-right: 0px !important;
+  }
+}
+
+.satff-manager-widgets-wrapper {
+  .ant-card-body {
+    padding: 8px !important;
+  }
+
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(101, 205, 240, 0.2);
+  border-radius: 8px;
+
+  .staff-widgets-amount {
+    // padding: 3px 10px 5px 10px;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    color: #fcfcfc;
+  }
+}
+
+.staff-main-search-filter {
+  border: 1px solid #d9dbe9;
+  box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+  border-radius: 8px;
+  padding: 20px 20px;
+  margin-block: 20px;
+
+
+  @media (max-width: 1210px) {
+    height: fit-content !important;
+    padding: 40px;
+  }
+}
+
+.total-staff-count-main {
+  .counter-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 102px;
+    height: 46px;
+    background: #d9dbe9;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    border-radius: 8px;
+  }
+
+  .staff-count {
+    color: #4e4b66;
+  }
+}
+
+.staff-pagination{
+display: flex;
+justify-content: end !important;
+padding-block: 10px;
+}

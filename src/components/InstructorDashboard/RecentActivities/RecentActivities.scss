@@ -1,0 +1,86 @@
+.recent-activity-card {
+  min-height: 344px;
+  padding: 5px 15px;
+
+  .title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .recent-activities {
+    overflow-y: scroll;
+    height: 250px;
+
+    .bg-blue {
+      background: #e0f5fc;
+    }
+
+    .bg-yellow {
+      background: #fdf1d3;
+    }
+
+    .news {
+      padding: 10px 8px;
+      display: flex;
+      margin-top: 10px;
+      box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+      border-radius: 8px;
+      justify-content: space-between;
+
+
+      .date {
+        color: #6e7191;
+        font-size: 14px;
+      }
+    }
+
+    .activity-details {
+      display: flex;
+      align-items: center;
+      max-width: 85%;
+
+
+
+
+      .blue {
+        color: #2885a5;
+      }
+
+      .yellow {
+        color: #dca41b;
+      }
+
+      img {
+        width: 47px;
+        height: 48px;
+      }
+
+      .title {
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      p {
+        margin: 0;
+        color: #6e7191;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .link-btn {
+    color: #65cdf0;
+    width: fit-content;
+    padding: 0px !important;
+
+    :hover {
+      color: #65cdf0;
+    }
+
+    img {
+      margin-left: 5px;
+    }
+  }
+}

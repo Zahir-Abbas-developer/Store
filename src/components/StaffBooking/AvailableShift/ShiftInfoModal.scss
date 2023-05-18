@@ -1,0 +1,44 @@
+.staff-more-information-modal {
+  .more-info-modal-wrapper {
+    padding: 20px 0px 30px 30px;
+
+    .more-info-heading {
+      gap: 13px;
+
+      span {
+        color: #14142B;
+      }
+    }
+
+    .more-information-data {
+      padding-top: 28px;
+    }
+  }
+
+  .more-information-content {
+    // gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .more-info-modal-btn {
+    gap: 10px;
+     padding:0px 30px;
+    .more-info-btn-1 {
+      padding: 10px 20px;
+      background: #f7b923;
+      border-radius: 4px;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .more-info-btn-2 {
+      padding: 10px 20px;
+      background: #65cdf0;
+      border-radius: 4px;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

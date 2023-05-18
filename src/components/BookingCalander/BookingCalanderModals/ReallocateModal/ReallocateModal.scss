@@ -1,0 +1,28 @@
+.Reallocate {
+  .ant-input:hover { border: 1px solid #65cdf0 !important;}
+  .btn-wrapper {
+    flex-wrap: wrap;
+    gap: 10px;
+    .cancel-btn {
+      background-color: #ff4d4f;
+      color: #fff;
+    }
+    .allocate-btn {
+      background-color: #65cdf0;
+      color: #fff;
+    }
+    .allocate-success-btn {
+      background-color: #52c41a;
+      color: #fff;
+    }
+    @media only screen and (max-width: 768px) {
+      .allocate-btn,
+      .allocate-success-btn,
+      .cancel-btn {
+        width: 100% !important;
+        padding: 2px 5px;
+        font-size: 12px;
+      }
+    }
+  }
+}

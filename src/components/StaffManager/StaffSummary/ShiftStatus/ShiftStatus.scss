@@ -1,0 +1,51 @@
+.shift-status-card-wrapper {
+  padding: 5px 30px 21px 30px;
+  background: #ffffff;
+  box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+  border-radius: 8px;
+  height: 100%;
+  min-height: 366px;
+  margin-top: 25px;
+
+  .shift-status-widgets {
+    height: 100%;
+    min-height: 75px;
+    padding: 18px 12px;
+    background: #ffffff;
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.09);
+    border-radius: 7px;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    &:hover {
+      border: 0.5px solid #f7b923;
+
+      .shift-data {
+        h5 {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .shift-notify {
+    padding: 10px;
+    background: #f7b923;
+    border-radius: 4px;
+    color: #fcfcfc;
+    height: 100%;
+  }
+}
+
+.staff-search-filter {
+  border: 1px solid #d9dbe9;
+  box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+  border-radius: 8px;
+  padding: 20px 20px;
+  margin-block: 20px;
+
+  @media (max-width: 1535px) {
+    height: fit-content !important;
+    padding: 40px;
+  }
+}

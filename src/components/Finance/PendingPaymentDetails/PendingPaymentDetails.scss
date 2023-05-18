@@ -1,0 +1,34 @@
+.pending-payment-details-wrapper {
+    .download-btn {
+        path {
+            fill: #fff;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        .flex-column-media-query {
+            flex-direction: column;
+            width: 100%;
+        }
+        button,
+        .input-search-wrapper {
+            width: 100%;
+        }
+    }
+    .blue-hover-effect {
+        padding: 7.5px 35px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    .blue-hover-effect:hover {
+        background-color: #65cdf0 !important;
+    }
+}
+
+.custom-datepicker {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    z-index: -1;
+}

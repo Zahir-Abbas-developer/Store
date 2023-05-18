@@ -1,0 +1,25 @@
+
+.wrap-assign {
+  .ant-modal .ant-modal-content {
+    height: 100%;
+    min-height: max-content;
+  }
+  .wrap-assign-to .ant-modal-title {
+    // .ant-modal-title{
+    margin-bottom: 54px;
+    // }
+  }
+  .assign-list-hover{
+    padding: 8px;
+    border: 1.5px solid transparent;
+    transition: 0.5 ease;
+    &:hover{
+            background-color: #fafafa;
+            border: 1.5px solid #D9DBE9;
+            border-bottom: none;
+          
+    }
+  }
+}
+
+

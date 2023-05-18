@@ -1,0 +1,19 @@
+.backup-container {
+  .ant-table {
+    border: 1px solid #d9dbe9;
+    border-radius: 10px;
+    th,
+    td {
+      color: #4e4b66 !important;
+      background-color: transparent !important;
+      &::before {
+        background-color: #4e4b66 !important;
+      }
+    }
+    button {
+      border: none;
+      padding: 3px 7px;
+      border-radius: 2px;
+    }
+  }
+}

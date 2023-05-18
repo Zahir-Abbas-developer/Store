@@ -1,0 +1,33 @@
+.input-export-icons {
+    padding-block: 12px;
+    padding-inline: 15px;
+  .search-input {
+    background: white-color;
+    font-size: 14px;
+    line-height: 22px;
+    height: 40px;
+    border-radius: 0px;
+    max-width: 345px;
+    .ant-input {
+      &::placeholder {
+        color: #6e7191;
+      }
+    }
+    @media screen and (max-width: 1100px) {
+      width: 100% !important;
+    }
+  }
+  .files-icons {
+    .files-export-icons {
+      width: 35px;
+      height: 35px;
+      filter: invert(1) grayscale(1) brightness(0.6);
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        filter: none !important;
+        transform: scale(1.3);
+      }
+    }
+  }
+}

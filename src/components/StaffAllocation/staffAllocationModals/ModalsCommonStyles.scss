@@ -1,0 +1,161 @@
+@import "../../../sass/variables";
+.allocate-carer-modal {
+  .ant-modal {
+    width: 1180px !important;
+  }
+  .ant-modal-content {
+    background-color: #f7f7fc;
+    padding: 0 !important;
+  }
+  .ant-modal-title {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .group-checkbox-flex {
+    display:  inline-flex !important;
+    flex-direction: column !important;
+  }
+  .overlay-wrapper-modal-content {
+    padding: 10px 20px 20px 20px;
+    .carer-modal-select-wrapper {
+      height: fit-content;
+      background: #ffffff;
+      border: 1px solid #d9dbe9;
+      border-radius: 10px;
+      padding: 10px;
+
+      .select-dropdown-btn {
+        border: 1px solid #d9dbe9;
+        border-radius: 4px;
+        color: #a0acbb;
+        width: 261px;
+        height: 45px;
+        padding: 0px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:hover {
+          border: 1px solid #383838;
+          color: #383838;
+        }
+        .ant-space {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+      .text-ellipsis {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 200px;
+        color: #000 !important;
+      }
+
+      .bottom-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 42px;
+        flex-wrap: wrap;
+
+        .inner-bottom-btn {
+          height: 38px;
+          display: flex;
+          align-items: center !important;
+          justify-content: center !important;
+          color: #fff;
+          border-radius: 2px !important;
+          outline: none;
+          @media screen and (max-width: 400px) {
+            width: 100% !important;
+          }
+        }
+
+        .cancel-btn {
+          background-color: #f7b923;
+          width: 91px;
+          padding: 8px 20px;
+        }
+
+        .allocate-btn {
+          width: 99px;
+          background-color: #65cdf0;
+          padding: 8px 20px;
+        }
+      }
+    }
+    .modal-search {
+      display: flex;
+      justify-content: end;
+      margin: 30px 0px;
+      .search-input {
+        background: $white-color;
+        // border: 1px solid #D9DBE9;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        height: 40px;
+        border-radius: 0px;
+        max-width: 345px;
+        // min-width: 345px;
+        width: 345px;
+
+        .ant-input {
+          &::placeholder {
+            color: #6e7191;
+          }
+        }
+
+        @media screen and (max-width: 1100px) {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+.view-carer-home-modal {
+  .ant-modal {
+    width: 1180px !important;
+  }
+  .ant-modal-content {
+    background-color: #f7f7fc;
+  }
+  .ant-modal-title {
+    background-color: #f7f7fc;
+  }
+  .view-carer-home-details {
+    .carer-profile-thumb {
+    }
+  }
+  .modal-search {
+    display: flex;
+    justify-content: end;
+    // margin: 30px 0px;
+    margin-bottom: 20px;
+    .search-input {
+      background: $white-color;
+      // border: 1px solid #D9DBE9;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      height: 40px;
+      border-radius: 0px;
+      max-width: 345px;
+      // min-width: 345px;
+      width: 345px;
+
+      .ant-input {
+        &::placeholder {
+          color: #6e7191;
+        }
+      }
+
+      @media screen and (max-width: 1100px) {
+        width: 100% !important;
+      }
+    }
+  }
+}

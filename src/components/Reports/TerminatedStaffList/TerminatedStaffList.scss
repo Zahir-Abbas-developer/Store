@@ -1,0 +1,25 @@
+.terminated-staff-reactivate-modal {
+
+    .ant-modal {
+        min-width: 530px;
+
+        .ant-modal-content {
+            padding: 0;
+            text-align: center;
+            overflow: hidden;
+
+            .ant-modal-footer {
+                margin: 0px;
+            }
+        }
+
+
+        @media screen and (max-width:600px) {
+            min-width: 90% !important;
+           .ant-modal-content{
+            padding: 0 0.5rem;
+           }
+        }
+
+    }
+}

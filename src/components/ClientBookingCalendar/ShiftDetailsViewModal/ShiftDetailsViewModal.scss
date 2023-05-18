@@ -1,0 +1,53 @@
+@import "../../../sass/variables.scss";
+
+.shift-details-view-wrapper {
+
+  .shift-details-view-modal {
+    .profile-information {
+      h2 {
+        padding-top: 10px;
+      }
+    }
+
+    padding-top: 20px;
+
+    .shift-info {
+      gap: 15px;
+      flex: 100%;
+
+      .shift-icon-wrap {
+        flex: 50%;
+        gap: 15px;
+        padding-bottom: 15px;
+
+        .shift-item-img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50px;
+        }
+      }
+
+      .shifts-title {
+        flex: 40%;
+
+        p {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .shift-detail-profile-photo {
+    width: 100%;
+    max-width: 210px;
+    height: 100%;
+    max-height: 210px;
+    border-radius: 50%;
+  }
+
+  .ant-modal-title {
+    font-weight: $fw-500;
+    font-size: $fs-20;
+    color: #14142b;
+  }
+}

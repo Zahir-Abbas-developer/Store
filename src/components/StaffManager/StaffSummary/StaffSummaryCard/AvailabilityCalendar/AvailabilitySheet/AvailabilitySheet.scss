@@ -1,0 +1,88 @@
+.weather-update-wrapper {
+  .selectAvailability {
+    width: 50px !important;
+  }
+  .long-day {
+    width: 100%;
+    max-width: 33px;
+    max-height: 33px;
+    height: 33px;
+    background-color: #d9d9d9;
+    background-image: url("../../../../../../assets/images/staffManager/sunBlack.png");
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-repeat: no-repeat;
+  }
+  .long-day-active {
+    background-image: url("../../../../../../assets/images/staffManager/sunshine.png");
+  }
+
+  .am-update {
+    width: 100%;
+    max-width: 33px;
+    max-height: 33px;
+    height: 33px;
+    background-color: #d9d9d9;
+    color: #eff0f7;
+  }
+
+  .pm-update {
+    width: 100%;
+    max-width: 33px;
+    max-height: 33px;
+    height: 33px;
+    background-color: #d9d9d9;
+    color: #eff0f7;
+  }
+
+  .moon-update {
+    width: 100%;
+    max-width: 33px;
+    max-height: 33px;
+    height: 33px;
+    background-color: #d9d9d9;
+    background-image: url("../../../../../../assets/images/staffManager/moon.png");
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .active-moon {
+    background-image: url("../../../../../../assets/images/staffManager/moonColor.png");
+  }
+  
+}
+
+.availability-table {
+  .ant-table {
+    background: #ffffff !important;
+    border: 1px solid #d9dbe9 !important;
+    border-radius: 10px !important;
+
+    .ant-table-thead {
+      tr {
+        .ant-table-cell {
+          background: none !important;
+          font-weight: 600 !important;
+          font-size: 14px !important;
+          line-height: 17px !important;
+          color: #4e4b66 !important;
+          padding: 20px 16px !important;
+          border-bottom: 1px solid #d9dbe9 !important;
+
+          &::before {
+            background-color: #4e4b66 !important;
+          }
+        }
+      }
+    }
+
+    .ant-table-tbody {
+      tr {
+        .ant-table-cell {
+          padding: 22px 16px !important;
+          border-bottom: 1px solid #d9dbe9 !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.metrics-info-card-wrapper {
+  padding: 18px 19px 30px 19px;
+  background: #ffffff;
+  box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+  border-radius: 8px;
+  height: 100%;
+  min-height: 366px;
+  margin-top: 25px;
+
+  .metrics-info-widgets {
+    padding: 18px 12px;
+    height: 100%;
+    min-height: 75px;
+    background: #ffffff;
+    gap: 5px;
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.09);
+    border-radius: 7px;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    &:hover {
+      border: 0.5px solid #65cdf0;
+
+      .metrics-data {
+        h5 {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .metrics-notify {
+    height: 100%;
+    padding: 10px;
+    background: #65cdf0;
+    border-radius: 4px;
+    color: #fcfcfc;
+  }
+}

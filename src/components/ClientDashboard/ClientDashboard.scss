@@ -1,0 +1,255 @@
+@import "../../sass/variables.scss";
+
+.client-dashboard-wrapper {
+  .carers-main-trainne-enrolled-chart {
+    box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 360px;
+
+    h2 {
+      padding-bottom: 10px;
+    }
+
+    .chat-wrapper {
+      height: 270px;
+      margin-top: 20px;
+    }
+  }
+
+  .client-shift-cards-wrap {
+    .client-shift-card {
+      min-height: 370px;
+      padding: 18px 0;
+      box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+      border-radius: 8px;
+    }
+
+    .title {
+      width: 206px;
+      padding: 10px 15px;
+      border-radius: 0px 30px 30px 0px;
+    }
+
+    .card-content {
+      padding: 0 10px;
+
+      .card-heading {
+        margin-top: 25px;
+        color: #4e4b66;
+      }
+
+      .card-details {
+        position: relative;
+        .carousel-left-icon,
+        .carousel-right-icon {
+          position: absolute;
+          top: 100px;
+          z-index: 10;
+        }
+        .carousel-left-icon {
+          left: 10px;
+        }
+        .carousel-right-icon {
+          right: 10px;
+        }
+        .item {
+          width: 68%;
+          margin: auto;
+
+          @media screen and (max-width: 1500px) {
+            width: 90%;
+          }
+
+          img {
+            width: 24px;
+            height: 24px;
+          }
+
+          p {
+            margin: 10px 0;
+            text-align: left;
+            margin-left: 8px;
+            color: #4e4b66;
+            font-size: 14px;
+
+            span {
+              font-weight: 600;
+            }
+          }
+        }
+
+        .btn {
+          border: none;
+          cursor: pointer;
+          margin-top: 30px;
+          padding: 8px 20px;
+          background: #65cdf0;
+          box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+          border-radius: 2px;
+        }
+
+        .check-status {
+          width: 68%;
+          margin: auto;
+          margin-top: 25px;
+
+          @media screen and (max-width: 1500px) {
+            width: 90%;
+          }
+
+          p {
+            color: #4e4b66;
+            margin: 0;
+            text-align: left;
+          }
+
+          .check-in {
+            color: #65cdf0;
+          }
+
+          .check-out {
+            color: #ff4d4f;
+          }
+        }
+      }
+    }
+  }
+
+  .client-recent-reviews-wrappper {
+    box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+    border-radius: 8px;
+    padding: 20px 20px;
+    min-height: 370px;
+
+    .recent-reviews-content {
+      padding-top: 15px;
+
+      .recent-reviews-items {
+        gap: 15px;
+        padding: 10px;
+        background-color: #f7f7fc;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        // padding-bottom: 12px;
+        img{
+          border-radius: 4px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  // calendar
+  .client-dashboard-calendar {
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+
+    .client-calendar {
+      padding-top: 10px;
+
+      .fc-timeline-slot.fc-timeline-slot-lane {
+        height: 50px !important;
+      }
+
+      .fc-timeline-slot.fc-timeline-slot-label {
+        .fc-timeline-slot-frame {
+          height: 50px !important;
+        }
+      }
+
+      .fc-datagrid-cell-frame,
+      .fc-timeline-lane-frame {
+        height: 50px !important;
+      }
+
+      .fc-datagrid-cell.fc-resource {
+        height: 50px !important;
+      }
+
+      .fc-datagrid-cell-cushion.fc-scrollgrid-sync-inner {
+        display: flex;
+        height: 100%;
+        padding: 0 !important;
+      }
+
+      .fc-view-harness.fc-view-harness-active {
+        background: #fff !important;
+        box-shadow: 0px 0px 6px rgba(16, 24, 40, 0.1);
+        border-radius: 8px;
+        height: 100vh !important;
+      }
+
+      .fc-scrollgrid.fc-scrollgrid-liquid {
+        border-radius: 8px;
+      }
+
+      .fc .fc-resource-timeline-divider {
+        width: 1px !important;
+      }
+
+      .fc-h-event {
+        background: none !important;
+        border: none !important;
+      }
+
+      .fc-timeline-slot-frame {
+        // width: 200px;
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      .fc-resource-timeline-divider.fc-cell-shaded {
+        cursor: none !important;
+      }
+
+      .fc .fc-daygrid-day.fc-day-today {
+        background: none;
+      }
+
+      .fc-datagrid-cell-main {
+        display: flex;
+        height: 100%;
+        padding-left: 15px;
+        align-items: center;
+        color: #4e4b66;
+        font-weight: $fw-600;
+        font-size: $fs-14;
+      }
+
+      .resource-user {
+        padding-left: 25px;
+
+        h2 {
+          line-height: 11px;
+          text-align: left;
+        }
+      }
+
+      .client-booking-event-wrap {
+        background-color: #3dc563;
+        padding: 8px 11px;
+        border-radius: 6px;
+        gap: 8px;
+        border-left: 4px solid #48b767;
+
+        span {
+          width: 1px;
+          height: 10px;
+        }
+
+        .event-icon {
+          gap: 5px;
+        }
+      }
+    }
+  }
+
+  .client-graph-rating-wrapper {
+    padding: 20px 20px;
+    border-radius: 8px;
+    min-height: 370px;
+  }
+}

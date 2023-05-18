@@ -1,0 +1,93 @@
+.payment-history-wrapper {
+  .collapse-closed {
+    background-color: white;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.15));
+    border-radius: 10px !important;
+    padding: 18px 16px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .transition-ease {
+    transition: all 0.3s ease;
+  }
+
+  .rotate {
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+  }
+
+  @media screen and (max-width: 992px) {
+    .input-search-wrapper {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (max-width: 493px) {
+    button {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .pink-hover-effect:hover {
+    background: #ee2e7e !important;
+  }
+
+  .ant-select-selector {
+    width: auto;
+    height: 40px !important;
+    border-radius: 2px !important;
+    background-color: rgb(101, 205, 240) !important;
+    border: none !important;
+    color: white !important;
+    padding: 0 35px !important;
+    font-size: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .ant-select-single.ant-select-open .ant-select-selection-item {
+    color: white;
+    font-size: 16px;
+  }
+
+  .ant-select-selection-placeholder {
+    color: white !important;
+  }
+}
+
+.custom-download-dropdown {
+  .ant-dropdown-menu {
+    padding: 0 !important;
+    width: 250px;
+  }
+
+  .ant-dropdown-menu .ant-dropdown-menu-item {
+    padding: 18px 20px !important;
+    border-radius: 0;
+    cursor: auto;
+  }
+
+  .ant-dropdown-menu .ant-dropdown-menu-item:hover {
+    background-color: transparent !important;
+  }
+
+  .ant-dropdown-menu .ant-dropdown-menu-item span span:hover {
+    font-weight: 600 !important;
+    cursor: pointer;
+  }
+
+  .ant-dropdown-menu .ant-dropdown-menu-item:not(:last-child) {
+    border-bottom: 1px solid #d9dbe9;
+  }
+}
+
+.payment-history-datepicker {
+  position: absolute;
+  left: 200px;
+  top: 15px;
+  z-index: -1;
+}

@@ -1,0 +1,97 @@
+.manager-shift-wrapper {
+  border: 1px solid #D9DBE9;
+  box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+  border-radius: 8px;
+  padding: 30px 20px;
+  margin-bottom: 50px;
+
+  .manager-shift-heading {
+    p {
+      padding-top: 7px;
+      color: #3E4954;
+    }
+  }
+  .manager-shift-card-select {
+    margin-top: 25px;
+    max-width: 400px;
+  }
+
+  .select-wrapper {
+    width: 100%;
+  }
+
+  .manager-card-wrap {
+    padding-top: 25px;
+
+    .manager-shift-card-content {
+      border: 1px solid #EAECEE;
+      box-shadow: 0px 10px 23px rgba(129, 118, 118, 0.09);
+      border-radius: 12px;
+      padding: 15px 20px;
+      height: 100%;
+      min-height: 290px;
+      background-image: url('../../assets/images/manageShift/circle-image.png');
+      background-repeat: no-repeat;
+      background-position: bottom right;
+
+  
+
+      h2 {
+        color: #242D35;
+        padding-top: 0px;
+      }
+
+      .manage-shift-details {
+        padding-top: 20px;
+
+        .manage-shift-details-inner {
+          .manage-info-img {
+            width: 41px;
+            height: 41px;
+            background: rgba(238, 46, 126, 0.25);
+            border-radius: 6.79063px;
+          }
+        }
+        .manage-shift-info {
+          span {
+            color: #4E4B66;
+          }
+  
+          h2 {
+            color: #6E7191;
+            font-size: 29px;
+            line-height: 30px !important;
+          }
+        }
+
+        @media screen and (max-width:991px) {
+          .divider {
+            display: none;
+          }
+        }
+      }
+
+      .manage-shift-btn {
+        padding-top: 35px;
+        gap: 3px;
+        color: #1890FF;
+      }
+    }
+  }
+  .search-input {   
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    height: 40px;
+    border-radius: 0px;
+    max-width: 345px;
+    width: 345px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15);
+
+    .ant-input {
+      &::placeholder {
+        color: #6e7191;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.sliderbar-wrapper {
+    .ant-slider-handle {
+        width: 0 !important;
+        &::before {
+            background: none;
+        }
+        &::after {
+            background: none;
+            box-shadow: none !important;
+        }
+    }
+}

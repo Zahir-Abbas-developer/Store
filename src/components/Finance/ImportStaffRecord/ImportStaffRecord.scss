@@ -1,0 +1,16 @@
+.import-staff-record-modal {
+  .ant-modal-content {
+    border-radius: 6px;
+    padding: 30px;
+  }
+  .ant-modal-title {
+    font-size: 20px;
+    color: #14142b;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  .ant-modal-close {
+    top: 30px;
+    inset-inline-end: 25px;
+  }
+}

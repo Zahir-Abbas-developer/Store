@@ -1,0 +1,127 @@
+@import "../../sass/variables";
+
+.instructor-dashboard-wrapper-main {
+  padding-bottom: 40px;
+  .bg--overlay {
+    background: #ffffff;
+    box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+    border-radius: 8px;
+  }
+  .dashboard--cards-common-height-365px {
+    height: 365px;
+  }
+  .dashboard--cards-common-height-335px {
+    height: 335px;
+  }
+  .hoverable-cards {
+    height: 103px;
+    width: 100%;
+    padding: 20px;
+    gap: 13px;
+    transition: all 0.5s ease;
+
+    .icon-wrapper {
+      position: relative;
+      width: 47px;
+      height: 48px;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 47px;
+        height: 48px;
+      }
+      .on-display {
+        transition: 0.3s;
+      }
+      .on-hover {
+        opacity: 0;
+        transition: 0.3s;
+      }
+    }
+    &:hover {
+      background-position: left bottom;
+      color: #ffffff !important;
+      font-size: 19px;
+      .label-cards{
+        color: #fff !important;
+      }
+      .on-hover {
+        opacity: 1;
+      }
+      .on-display {
+        opacity: 0;
+      }
+    }
+  }
+  .manage-courses-card {
+    background: linear-gradient(to left, #ffffff 50%, #65cdf0 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+  .trainee-information-card {
+    background: linear-gradient(to left, #ffffff 50%, #f7b923 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+  .card-webminar {
+    height: 100%;
+  }
+  .style-split-card {
+    transition: none;
+    .inner-main-split-cards {
+      height: 100%;
+      display: none;
+      .box-rounded {
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+        background-color: #ee2e7e;
+      }
+      .split-cards {
+        height: 46px;
+        color: #4e4b66;
+        &:hover {
+          background-color: #ee2e7e;
+          .split-card-label{
+            color: #fff !important;
+          }
+
+          .box-rounded {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      padding: 0px;
+      background-color: transparent !important;
+      .card-webminar {
+        display: none;
+      }
+      .inner-main-split-cards {
+        display: flex;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .res-height-calender {
+      height: 365px !important;
+    }
+  }
+  @media (max-width: 769px) {
+    .res-height-calender {
+      height: 355px !important;
+    }
+    .res-recent-activities {
+      height: auto !important;
+    }
+  }
+  @media (max-width: 400px) {
+    .res-height-calender {
+      height: 355px !important;
+    }
+  }
+}

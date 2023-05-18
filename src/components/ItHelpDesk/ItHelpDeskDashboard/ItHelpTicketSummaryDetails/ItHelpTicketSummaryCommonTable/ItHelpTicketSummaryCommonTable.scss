@@ -1,0 +1,106 @@
+.wrap-comment {
+    padding: 1px;
+    background-color: #65CDF0;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+        font-size: 25px;
+        color: white;
+    }
+}
+
+.table-download-icon{
+     svg{
+        color: red;
+        font-size: 22px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+}
+
+
+.wrap--select {
+    .wrap-select-ticket-status {
+         .ant-select-selector {
+            border-radius: 20px !important;
+            border: 1px solid #65CDF0;
+        }
+    }
+}
+
+.wrap-super-admin-table{
+     .ant-table-tbody >tr.ant-table-row-selected >td{
+        background: none;
+    }
+}
+
+
+.wrap-common-table {
+    // margin-bottom: 20px;
+    // border: 1px solid #d9dbe9;
+    // padding: 20px;
+    border-radius: 10px;
+
+    .ant-table-wrapper .ant-table-tbody >tr >td{
+      border-bottom: 1px solid #D9DBE9;
+    }
+    :where(.css-dev-only-do-not-override-seocib).ant-table-wrapper .ant-table-thead >tr>th, .ant-table-wrapper .ant-table-thead >tr>td{
+      border-bottom: 1px solid #D9DBE9;
+    }
+
+    .ant-checkbox .ant-checkbox-inner{
+      border: 1px solid #65CDF0;;
+    }
+    .ant-table-thead .ant-table-cell {
+      background-color: transparent;
+    }
+    
+    .ant-table {
+    //   border: 1px solid #d9dbe9;
+      padding: 0.75rem;
+      border-radius: 10px !important;
+  
+      .ant-table-thead {
+        tr {
+          height: 66px;
+          border: 1px solid #d9dbe9;
+  
+          .ant-table-cell {
+            background: none !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+            line-height: 17px !important;
+            color: #4e4b66 !important;
+  
+            // border-bottom: 1px solid #D9DBE9 !important;
+            &::before {
+              background-color: #4e4b66 !important;
+            }
+          }
+        }
+      }
+  
+      .ant-table-tbody {
+        tr {
+          height: 66px;
+          border-bottom: 1px solid #d9dbe9;
+  
+          .ant-table-cell {
+            padding: 10px 16px !important;
+          }
+  
+          &:last-child {
+            border-bottom: none !important;
+  
+            td {
+              border-bottom: none !important;
+            }
+          }
+        }
+      }
+    }
+  }

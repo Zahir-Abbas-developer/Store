@@ -1,0 +1,20 @@
+.progress-bar{
+    .ant-progress-bg{
+        height: 14px !important;
+    }
+}
+@media only screen and (max-width:2500px) and (min-width:1800px) {
+.average-rating-review{
+    margin-top: -40px !important;
+}
+}
+@media only screen and (max-width:700px) and (min-width:180px) {
+
+    .reviews-ratings{
+            display: block !important ;
+        img{
+            display: block;
+            margin: auto;
+        }
+    }
+}

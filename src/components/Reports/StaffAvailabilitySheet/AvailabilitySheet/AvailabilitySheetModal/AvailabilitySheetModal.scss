@@ -1,0 +1,90 @@
+.availability-modal-wrapper {
+  .availability-modal-content {
+    .availability-date {
+      padding-top: 30px;
+    }
+
+    .availability-modal-btn {
+      padding-top: 30px;
+      gap: 10px;
+
+      .cancel-btn {
+        padding: 10px 25px;
+        border: none !important;
+        border-radius: 2px;
+        background: #4e132c;
+        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+        border-radius: 2px;
+      }
+
+      .save-btn {
+        padding: 10px 25px;
+        border: none !important;
+        border-radius: 2px;
+        background: #65cdf0;
+        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+        border-radius: 2px;
+      }
+    }
+
+    .select-availability-modal {
+      .weather-update-wrapper {
+        .long-day {
+          width: 100%;
+          max-width: 60px;
+          min-height: 60px;
+          border-radius: 6px;
+          background-color: #d9d9d9;
+          background-image: url("../../../../../assets/images/staffManager/sunBlack.png");
+          background-repeat: no-repeat;
+          background-size: 60px 60px;
+        }
+
+        .long-day-active {
+          background-image: url("../../../../../assets/images/staffManager/longday-active.png");
+        }
+
+        .am-update {
+          width: 100%;
+          max-width: 60px;
+          min-height: 60px;
+          border-radius: 6px;
+          background-color: #d9d9d9;
+          color: #eff0f7;
+        }
+
+        .Morning-active {
+          background-color: #e6b15d;
+        }
+
+        .pm-update {
+          width: 100%;
+          max-width: 60px;
+          min-height: 60px;
+          border-radius: 6px;
+          background-color: #d9d9d9;
+          color: #eff0f7;
+        }
+
+        .Afternoon-active {
+          background-color: #F89A0C;
+        }
+
+        .moon-update {
+          width: 100%;
+          min-width: 60px;
+          min-height: 60px;
+          border-radius: 6px;
+          background-color: #d9d9d9;
+          background-image: url("../../../../../assets/images/staffManager/moon.png");
+          background-repeat: no-repeat;
+          background-size: 60px 60px;
+        }
+
+        .active-moon {
+          background-image: url("../../../../../assets/images/staffManager/moonColor.png");
+        }
+      }
+    }
+  }
+}

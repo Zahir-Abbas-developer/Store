@@ -1,0 +1,31 @@
+.invoice-table-main {
+  ::-webkit-scrollbar {
+    height: 5px;
+  }
+  .ant-table-thead {
+    tr {
+      .ant-table-cell {
+        padding: 16px 30px !important;
+      }
+      th {
+        background: transparent;
+        border-color: #d9dbe9;
+        &::before {
+            height: 31px !important;
+          background-color: #4E4B66 !important;
+        }
+      }
+    }
+  }
+  .ant-table-tbody {
+    tr {
+      .ant-table-cell {
+        border-color: #d9dbe9;
+        padding: 16px 30px !important;
+      }
+    }
+  }
+  .ant-table-tbody > tr.ant-table-row:hover > td {
+    background: none !important;
+  }
+}

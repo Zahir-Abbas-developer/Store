@@ -1,0 +1,220 @@
+@import "../../sass//common.scss";
+
+.carer-my-calendar-wrapper {
+  // margin-top: 2rem;
+  margin-bottom: 40px;
+  ::-webkit-scrollbar {
+    width: 0px !important;
+  }
+
+  .input-search-wrapper {
+    width: 350px;
+  }
+  @media screen and (max-width: 900px) {
+    .input-search-wrapper {
+      width: 100%;
+    }
+  }
+
+  .fc-datagrid-cell-frame {
+    display: flex;
+    justify-content: center;
+  }
+  .fc-timeline-slot.fc-timeline-slot-lane {
+    height: 90px !important;
+  }
+  .fc-timeline-slot.fc-timeline-slot-label {
+    .fc-timeline-slot-frame {
+      height: 90px !important;
+    }
+  }
+  .fc-datagrid-cell-frame,
+  .fc-timeline-lane-frame {
+    height: 90px !important;
+  }
+  .fc-datagrid-cell.fc-resource {
+    height: 90px !important;
+  }
+
+  .fc-view-harness.fc-view-harness-active {
+    background: var(----white-dark-bg);
+    box-shadow: 0px 0px 6px rgba(16, 24, 40, 0.1);
+    border-radius: 8px;
+    height: 100vh !important;
+  }
+  .fc-scrollgrid.fc-scrollgrid-liquid {
+    border-radius: 8px;
+  }
+  .fc .fc-resource-timeline-divider {
+    width: 1px !important;
+  }
+  .fc-h-event {
+    background: none !important;
+    border: none !important;
+  }
+  .slot-event-wrapper {
+    p {
+      text-align: left;
+    }
+  }
+
+  .fc-timeline-slot-frame {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .fc-resource-timeline-divider.fc-cell-shaded {
+    cursor: none !important;
+  }
+  .fc .fc-toolbar {
+    display: flex !important;
+    justify-content: flex-start !important;
+    gap: 20px;
+    margin-top: -61px;
+  }
+  .fc .fc-daygrid-day.fc-day-today {
+    background: none;
+  }
+  .fc-datagrid-cell-main {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .fc-datagrid-cell-cushion.fc-scrollgrid-sync-inner {
+    display: flex;
+    align-items: center !important;
+    height: 100%;
+  }
+
+  .resource-user {
+    padding-left: 25px;
+    h2 {
+      line-height: 11px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 500;
+      padding-left: 3rem;
+    }
+    p {
+      color: var(--dark-grey-color);
+    }
+  }
+  .working-grid {
+    padding-top: 8px;
+  }
+
+  .carer-event-wrapper {
+    background-color: #3dc563;
+    border-radius: 6px;
+
+    .event-icon {
+      padding: 5px 11px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 6px 6px 0 0;
+    }
+
+    .event-content {
+      padding: 10px;
+    }
+  }
+}
+
+.main-calander-header {
+  .search-wrapper {
+    display: flex;
+    justify-content: end;
+    .input-search {
+      width: 350px;
+      border-radius: 0px;
+      height: 40px;
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+  .calander-header-attendance {
+    margin-top: 1.5rem;
+    overflow-x: scroll;
+    .status-wrapper {
+      min-width: 300px;
+      gap: 10px;
+      .status-title {
+        padding-left: 10px;
+      }
+    }
+    .box-wrapper {
+      .box {
+        height: 15px;
+        width: 15px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .status-wrapper {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .apply-work-wrapper {
+    .slot-event-wrapper {
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+
+    .absent-grid-content {
+      h2 {
+        font-size: 12px;
+      }
+
+      p {
+        font-size: 10px;
+      }
+    }
+  }
+}
+.carer-my-calendar-event-details {
+  .ant-modal-title {
+    font-size: 24px;
+    color: #000;
+    font-weight: 500 !important;
+  }
+  .calendar-event-details-wrapper {
+    padding: 20px 30px 0 30px;
+  }
+  @media screen and (max-width: 300px) {
+    .calendar-event-details-wrapper {
+      padding: 10px;
+    }
+  }
+}
+
+//filter
+.carer-calendar-filter-wrap {
+  .ant-form-item-row {
+    display: flex;
+    flex-direction: column;
+    .ant-form-item-label {
+      text-align: left;
+    }
+  }
+  .carer-calendar-filter {
+    max-width: 300px;
+    @media screen and (max-width: 900px) {
+      max-width: inherit;
+    }
+  } 
+  .search {
+    margin-top: 32px;
+    @media screen and (max-width: 900px) {
+      margin-top: 0;
+    }
+  }
+}

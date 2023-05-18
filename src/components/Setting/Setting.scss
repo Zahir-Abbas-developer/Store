@@ -1,0 +1,107 @@
+// @import '../../sass//variables';
+
+.setting-main {
+  .setting-card {
+    height: 100px;
+    padding-left: 18px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+    color: #6E7191;
+    transition: all .5s ease;
+
+    &:hover {
+      background-position: left bottom;
+      color: #ffffff;
+      font-size: 19px;
+    }
+  }
+
+  .Key-info-card {
+    background: linear-gradient(to left, #DCF6FF 50%, #65CDF0 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .job-role-card {
+    background: linear-gradient(to left, #FFE2EE 50%, #EE2E7E 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .shift-time-card {
+    background: linear-gradient(to left, #FDF4DD 50%, #F7B923 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .staff-settings-card {
+    background: linear-gradient(to left, #F0FFF3 50%, #52C41A 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .bank-holidays-card {
+    background: linear-gradient(to left, #FFE2EE 50%, #EE2E7E 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .dbs-configuration-card {
+    background: linear-gradient(to left, #FDF4DD 50%, #F7B923 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .email-notification-card {
+    background: linear-gradient(to left, #F0FFF3 50%, #52C41A 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .satff-terms-conditions-card {
+    background: linear-gradient(to left, #DCF6FF 50%, #65CDF0 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .agency-terms-conditions-card {
+    background: linear-gradient(to left, #FDF4DD 50%, #F7B923 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .set-mail-Phone-card {
+    background: linear-gradient(to left, #F0FFF3 50%, #52C41A 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .week-start-day-card {
+    background: linear-gradient(to left, #DCF6FF 50%, #65CDF0 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .festival-day-greeting-card {
+    background: linear-gradient(to left, #FFE2EE 50%, #EE2E7E 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .break-time-settings-card {
+    background: linear-gradient(to left, #DCF6FF 50%, #65CDF0 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+  .change-password-settings-card {
+    background: linear-gradient(to left, rgba(255, 185, 192, 0.25) 50%, #FB3449 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+}
+
+

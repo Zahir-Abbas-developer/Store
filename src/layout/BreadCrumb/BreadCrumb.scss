@@ -1,0 +1,27 @@
+.breadcrumb-wrapper{
+  padding-bottom: 15px;
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 10px;
+  }
+  .seprator{
+    margin: 0 6px;
+    margin-top: 6px;
+  }
+  .ant-breadcrumb ol{
+    align-items: center;
+  }
+  .ant-breadcrumb ol li:nth-child(2) img {
+    content:url("../../assets/icons/Dashboard/divider.png")
+  }
+  .ant-breadcrumb{
+    color: #14142B;
+  }
+  .ant-breadcrumb a{
+    color: #6E7191;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .ant-breadcrumb a:hover{
+    background: transparent;
+  }
+}

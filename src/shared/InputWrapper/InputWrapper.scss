@@ -1,0 +1,36 @@
+@import "../../sass/variables.scss";
+
+.input-wrapper {
+  .ant-form-item {
+    .ant-form-item-control-input {
+      .ant-input {
+        color: $title-color;
+        // border: 1.5px solid #A0A3BD;
+        border-radius: 3px;
+        height: 45px;
+
+        // cursor: pointer;
+        // &:hover {
+        //   border: 1.5px solid #65cdf0 !important;
+        // }
+
+        &::placeholder {
+          color: #888888 !important;
+        }
+      }
+    }
+
+    .ant-form-item-label>label {
+      flex-direction: row-reverse;
+      font-weight: 600;
+      font-size: 14px;
+      color: #6e7191;
+    }
+
+    .ant-input[disabled] {
+      border: 1.5px solid #a0a3bd !important;
+      background-color: transparent !important;
+      color: #888888 !important;
+    }
+  }
+}
