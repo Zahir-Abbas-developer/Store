@@ -39,7 +39,7 @@ const Login = () => {
 
   const onFinish = async (values: any) => {
     const payload = {
-      email: values.username,
+      emailOrUsername: values.username,
       password: values.password,
     };
 
@@ -157,7 +157,7 @@ const Login = () => {
             </div>
             <div>
               <h2 className="Sign-in-heading">Sign In</h2>
-              <Form name="email" onFinish={onFinish}>
+              <Form name="emailOrUsername" onFinish={onFinish}>
                 <Form.Item
                   name="username"
                   rules={[

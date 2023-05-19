@@ -25,14 +25,14 @@ const cognitoID = "9539c3dc-29eb-49bb-8e10-2c3180018f10";
 // fetchBaseQuery logic is unchanged, moved out of createApi for readability
 const baseQuery = fetchBaseQuery({
   baseUrl: baseUrlStore,
-  prepareHeaders: async (headers) => {
-    // const userData: any = localStorage.getItem("careUserData")
-    // const token: any = JSON.parse(userData);
-    // console.log("userData", userData);
-    // headers.set("Authorization", `Bearer ${token.token}`);
-    headers.set("Content-Type", "application/json");
-    return headers;
-  },
+  // prepareHeaders: async (headers) => {
+  //   // const userData: any = localStorage.getItem("careUserData")
+  //   // const token: any = JSON.parse(userData);
+  //   // console.log("userData", userData);
+  //   // headers.set("Authorization", `Bearer ${token.token}`);
+  //   headers.set("Content-Type", "application/json");
+  //   return headers;
+  // },
 });
 
 export const baseQueryWithReauth: BaseQueryFn<
@@ -42,30 +42,30 @@ export const baseQueryWithReauth: BaseQueryFn<
 > = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions);
 
-  if (result.error) {
-    /* try to get a new token if the main query fails: renewAccessToken replaces
-    the access token in the SecureStore and returns a response code */
-    const response = await fetch(`${baaseUrl}auth/refresh-token`, {
-      method: "POST",
-      body: JSON.stringify({
-        username: cognitoID,
-        refreshToken: oldRefreshToken,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+  // if (result.error) {
+  //   /* try to get a new token if the main query fails: renewAccessToken replaces
+  //   the access token in the SecureStore and returns a response code */
+  //   const response = await fetch(`${baaseUrl}auth/refresh-token`, {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       username: cognitoID,
+  //       refreshToken: oldRefreshToken,
+  //     }),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   });
 
-    const newAccessTokenResponse = await response.json();
+  //   const newAccessTokenResponse = await response.json();
 
-    if (newAccessTokenResponse?.statusCode === 200) {
-      token.token = newAccessTokenResponse?.data?.accessToken;
-      refreshToken = newAccessTokenResponse?.data?.accessToken;
+  //   if (newAccessTokenResponse?.statusCode === 200) {
+  //     token.token = newAccessTokenResponse?.data?.accessToken;
+  //     refreshToken = newAccessTokenResponse?.data?.accessToken;
 
-      // then, retry the initial query on the fly
-      result = await baseQuery(args, api, extraOptions);
-    }
-  }
+  //     // then, retry the initial query on the fly
+  //     result = await baseQuery(args, api, extraOptions);
+  //   }
+  // }
   return result;
 };
 
