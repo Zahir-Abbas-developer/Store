@@ -494,9 +494,9 @@ export const routes: any = [
       {
         path: "dashboard",
         element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
+          
             <DashboardPage />
-          </RequireAuth>
+         
         ),
       },
       {

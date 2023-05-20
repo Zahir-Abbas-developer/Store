@@ -14,6 +14,7 @@ import { useGetAllCardsDataQuery } from "../../store/Slices/AdminDashboard";
 import "../../sass/common.scss";
 import BreadCrumb from "../../layout/BreadCrumb/BreadCrumb";
 import OurCollectionTab from "../ClientTabs/OurCollectionTab/OurCollection";
+import FooterPage from "../../pages/Footer";
 
 
 const DashboardAdmin = () => {
@@ -76,41 +77,12 @@ const DashboardAdmin = () => {
         <OurCollectionTab />
         </Col>
       </Row>
-      <Row gutter={[29, 29]} style={{ paddingBottom: "30px" }}>
-        {shiftInvoiceTimeSheet.map((item: string) => {
-          return (
-            <Col xs={24} sm={24} md={24} lg={24} xl={item === "TimeSheet" ? 24 : 12} xxl={8} key={uuidv4()}>
-              {renderSelectedShiftInvoiceTimeSheetCard(item)}
-            </Col>
-          );
-        })}
-      </Row>
-      <Row gutter={[29, 29]} style={{ paddingBottom: "30px" }}>
-        {comprehensionCandidates.map((item: string) => {
-          return (
-            <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={12} key={uuidv4()}>
-              {renderSelectedComprehensionCandidates(item)}
-            </Col>
-          );
-        })}
-      </Row>
-      <Row gutter={[29, 29]} style={{ paddingBottom: "30px" }}>
-        {recruitmentStaffClientCard.map((item: string) => {
-          return (
-            <Col xs={24} sm={24} md={24} lg={24} xl={item === "Client" ? 24 : 12} xxl={8} key={uuidv4()}>
-              {renderRecruitmentStaffClientCard(item)}
-            </Col>
-          );
-        })}
-      </Row>
-      <Row gutter={[29, 29]} style={{ paddingBottom: "30px" }}>
-        {birthDayStaffStatus.map((item: string) => {
-          return (
-            <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={12} key={uuidv4()}>
-              {renderBirthDayStaffStatus(item)}
-            </Col>
-          );
-        })}
+ 
+      <Row>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} >
+      
+        <FooterPage/>
+        </Col>
       </Row>
     </Layout>
     </>

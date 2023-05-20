@@ -49,7 +49,7 @@ const Login = () => {
     console.log(data, "data+++++");
 
     const role = data?.data?.user?.roleData?.name;
-
+    navigate("/dashboard");
     // console.log("test data", data?.data?.session)
 
     if (data?.data?.session) {
@@ -62,16 +62,10 @@ const Login = () => {
           username: data?.data?.email,
           token: data?.data?.accessToken,
           refreshToken: data?.data?.refreshToken,
-          cognitoId: data?.data?.user?.cognitoId,
-          id: data?.data?.user?._id,
-          roleId: data?.data?.user?.roleId,
-          role,
-          permissions: data?.data?.user?.roleData?.permissions,
-          name: data?.data?.user?.firstName ? `${data?.data?.user?.firstName} ${data?.data?.user?.lastName}` : data?.data?.user?.clientName,
         };
         const stringifyData = JSON.stringify(userData);
         localStorage.setItem("careUserData", stringifyData);
-        navigate(renderDashboard(role));
+        
       } else {
         setErrorMessage(error?.data?.message);
       }
