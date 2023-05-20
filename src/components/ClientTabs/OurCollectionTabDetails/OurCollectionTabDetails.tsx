@@ -27,11 +27,11 @@ const { Meta } = Card;
     const navigate = useNavigate();
     return (
         <>
-         <p className="header-image">
-
-            <h1 className="image-heading-title">BROWSE COLLECTION</h1>
+         <div className="header-image">
+         <div>  <h1 className="image-heading-title">BROWSE COLLECTION</h1>
             <p className="image-heading-subheading">Shop from our range of finest leather shoes crafted to perfection</p>
-         </p>
+            <p className="image-heading-subheading">We design footwear to last you a lifetime.The finest designs — a pinnacle of elegance.</p></div>
+         </div>
         <Row>
             <Col>
            
