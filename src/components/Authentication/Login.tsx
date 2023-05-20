@@ -39,8 +39,8 @@ const Login = () => {
 
   const onFinish = async (values: any) => {
     const payload = {
-      emailOrUsername: values.username,
-      password: values.password,
+      emailOrUsername:"johndoe@example.com", // values.username,
+      password: "mypassword",//values.password,
     };
 
     const { error, data }: any = await signInPostRequest({
