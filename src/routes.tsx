@@ -57,6 +57,9 @@ const ClientRegistration = Loadable(
 const ManageGroups = Loadable(
   lazy(() => import("./pages/ClientManager/ManageGroups"))
 );
+const ProductDetailsPage = Loadable(
+  lazy(() => import("./pages/ProductDetails"))
+);
 
 //Onboarding
 const CarerPage = Loadable(lazy(() => import("./pages/Onboarding/Carer")));
@@ -82,6 +85,7 @@ const TraingingInstructorEditProfilePage = Loadable(
 const InstructorProfilePage = Loadable(
   lazy(() => import("./pages/InstructorProfile"))
 );
+
 const CarerProfilePage = Loadable(lazy(() => import("./pages/CarerProfile")));
 const CarerCoordinatorProfilePage = Loadable(
   lazy(() => import("./pages/CareCoordinatorProfile"))
@@ -494,6 +498,10 @@ export const routes: any = [
             <DashboardPage />
           </RequireAuth>
         ),
+      },
+      {
+        path:"productDetails",
+        element:<ProductDetailsPage/>
       },
       {
         path: "coordinator-dashboard",

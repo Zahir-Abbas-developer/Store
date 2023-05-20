@@ -28,11 +28,13 @@ import { ReactComponent as Webinar } from "../../assets/icons/sidebar/webinar.sv
 import { ROLES } from "../../constants/Roles";
 
 export const getSidebarMenues = (role: any, permissions: any) => {
+ 
 
   function formatString(str: string) {
     str = str.replace(/_/g, ' ');
     return str.replace(/\b\w/g, (c) => c.toUpperCase());
   }
+ 
 
   const SidebarMenues = [
 
@@ -498,6 +500,7 @@ export const getSidebarMenues = (role: any, permissions: any) => {
     },
   ];
   const updateArray = SidebarMenues?.filter((ele) => ele?.role?.includes(role));
+
   const permissionsValues = updateArray
     ?.filter((obj: any) => permissions?.some((ele: any) => formatString(ele?.name) === obj.label));
   const finalArray = role === 'system_admin' ? updateArray : permissionsValues
