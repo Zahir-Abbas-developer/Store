@@ -33,28 +33,28 @@ const onChange = (e: any) => {
 
 return(
   <>
-  <Row> 
+  <Row > 
     
-    <Col xs={24}>
-      <p>STYLE</p>
+    <Col xs={24} style={{marginTop:"40px"}}>
+      <p style={{color:"#ffffff",padding:"0px 20px"}}>STYLE</p>
     {categoryData?.map((categoryData:any)=>{return <>
-      <Checkbox   onChange={() => setStyleFilter(categoryData.name)}>{categoryData?.name}</Checkbox>
+      <Checkbox   onChange={() => setStyleFilter(categoryData.name)} style={{padding:"0px 20px"}}>< span style={{color:"#ffffff"}} >{categoryData?.name}</span></Checkbox>
     </>
 })} 
     </Col>
   
 </Row>
 <Row>
-<Col xs={24}>
-<p>MATERIAL</p>
- {materialFilterData?.map((materialFilterData:any)=>{return <Checkbox onChange={()=>(setMaterialFilter(materialFilterData?.name))}>{materialFilterData?.name}</Checkbox>
+<Col xs={24} style={{marginTop:"40px"}}>
+<p style={{color:"#ffffff",padding:"0px 20px"}}>MATERIAL</p>
+ {materialFilterData?.map((materialFilterData:any)=>{return <Checkbox onChange={()=>(setMaterialFilter(materialFilterData?.name))} style={{padding:"0px 20px"}}> <span style={{color:"#ffffff"}}>{materialFilterData?.name}</span>  </Checkbox>
 })}  
     </Col>
 </Row>
 <Row>
-<Col xs={24}>
-  <p>color</p>
-{colorFilterData?.map((colorFilterData:any)=>{return <Checkbox onChange={()=>{setColorFilter(colorFilterData?.name)}}>{colorFilterData?.name}</Checkbox>
+<Col xs={24} style={{marginTop:"40px"}}>
+  <p style={{color:"#ffffff" ,padding:"0px 20px"}}>color</p>
+{colorFilterData?.map((colorFilterData:any)=>{return <Checkbox onChange={()=>{setColorFilter(colorFilterData?.name)}} style={{padding:"0px 20px"}}><span style={{color:"#ffffff"}}>{colorFilterData?.name}</span></Checkbox>
 })} 
  </Col>
 </Row>
