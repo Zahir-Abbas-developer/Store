@@ -43,7 +43,7 @@ const { Meta } = Card;
 </div>
 
         <Row style={{margin:"20px 0px"}}>
-            <Col offset={18} lg={6}>
+            <Col xs={24} md={12}>
             <Select
           defaultValue="SORT..."
             className="select-onboarding"
@@ -71,7 +71,7 @@ const { Meta } = Card;
   </Col>
 
   <Col xs={24} md={24} lg={18}>
-    <Row gutter={[80, 80]}>
+    <Row >
       {isSuccess &&
         productsData?.map((productData: any) => (
           <Col xs={24} md={12} lg={8} key={productData.id}>
