@@ -1,5 +1,5 @@
-.header-image-our-collection {
-  background-image: url(https://us.larchglobal.com/wp-content/uploads/2022/11/Our-collection-header.webp);
+.header-image {
+  background-image: url("../../../assets/images/Header/h-custom-order-1.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,14 +13,22 @@
 .image-content {
   text-align: center;
 }
-
-.image-heading-title {
+.image-heading-title{
   color: #FFFFFF;
   margin-top: 0px;
   font-size: 2rem;
   line-height: 1.25em;
   font-family: "Lexend Giga", Sans-serif;
   font-weight: 900;
+  text-transform: uppercase;
+}
+.image-heading-title-custom {
+  color: #FFFFFF;
+  margin-top: 0px;
+  font-size: 2rem;
+  line-height: 1.25em;
+  font-family: "Lexend Giga", Sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
 }
 

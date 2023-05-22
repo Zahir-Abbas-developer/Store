@@ -5,18 +5,22 @@ import "./index.css";
 import "./sass/common.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ConfigProvider } from "antd";
+import { ConfigProvider,  } from "antd";
 import { theme } from "./theme/theme";
 import './sass/common.scss';
-import store from "./store";
+
 import { Provider } from "react-redux";
+import store from "./store";
+import exportedObject from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ConfigProvider theme={theme}>
-        <Provider store={store}>
+        <Provider store={exportedObject?.store}>
           <App />
         </Provider>
       </ConfigProvider>

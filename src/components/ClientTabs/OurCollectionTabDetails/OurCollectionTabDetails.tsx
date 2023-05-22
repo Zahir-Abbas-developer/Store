@@ -34,7 +34,7 @@ const { Meta } = Card;
     const navigate = useNavigate();
     return (
         <>
-       <div className="header-image">
+       <div className="header-image-our-collection">
   <div className="image-content">
     <h1 className="image-heading-title">BROWSE COLLECTION</h1>
     <p className="image-heading-subheading">Shop from our range of finest leather shoes crafted to perfection</p>

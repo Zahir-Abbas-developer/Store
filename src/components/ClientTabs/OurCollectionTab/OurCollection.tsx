@@ -2,6 +2,7 @@ import React from 'react';
 import { Tabs } from 'antd';
 import type { App, TabsProps } from 'antd';
 import OurCollectionTabDetails from '../OurCollectionTabDetails/OurCollectionTabDetails';
+import OurCustomOrderDetails from '../CustomOrderTabDetails/CustomOrderTabDetails';
 
 const onChange = (key: string) => {
   console.log(key);
@@ -16,7 +17,7 @@ const items: TabsProps['items'] = [
   {
     key: '2',
     label: `CUSTOM ORDER`,
-    children: `Content of Tab Pane 2`,
+    children: <OurCustomOrderDetails/>,
   },
   {
     key: '3',

@@ -1,4 +1,4 @@
-import { Button, Col, Row, Select } from "antd"
+import { Button, Col, Drawer, Row, Select, Space } from "antd"
 import { useLocation } from "react-router-dom"
 import './ProductDetails.scss'
 import artisan from '../../../assets/icons/ProductDetails/artisan.svg'
@@ -7,19 +7,39 @@ import leather from '../../../assets/icons/ProductDetails/leather-svg-black.svg'
 import sole from '../../../assets/icons/ProductDetails/sole-black-svg.svg'
 import sizing from '../../../assets/icons/ProductDetails/sizing-icon-black.svg'
 import { useState } from "react"
-
+import type { DrawerProps } from 'antd/es/drawer';
+import type { RadioChangeEvent } from 'antd/es/radio';
 import { Collapse } from 'antd';
+import { useDispatch } from 'react-redux';
+import exportedObject from "../../../store"
+
+ // Import the addToCart action creator
 
 
 const { Panel } = Collapse;
  const ProductDetails=()=>{
+  const { cartReducer, addToCart, removeFromCart, store } = exportedObject;
+  const dispatch = useDispatch();
   const [sizes ,setSizes]=useState("")
     const state=useLocation()
     const categoryDetails=state?.state?.productDetails
     const handleSelectSizes=(applicationStageValue:any)=>{
       setSizes(applicationStageValue)
     }
-    
+    const [open, setOpen] = useState(false);
+    const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
+  
+    const showDrawer = () => {
+      setOpen(true);
+    };
+  
+    const onChange = (e: RadioChangeEvent) => {
+      setPlacement(e.target.value);
+    };
+  
+    const onClose = () => {
+      setOpen(false);
+    };
     const customize = `
     A dog is a type of domesticated animal.
     Known for its loyalty and faithfulness,
@@ -104,8 +124,57 @@ const { Panel } = Collapse;
 </Col>
 <Col xs={24} lg={24} style={{marginTop:"10px"}}>
 
-<Button  type="primary" className="cancel-btn  fs-14 fw-600" htmlType="submit" style={{width:"100%"}} >ADD TO CART</Button>
+<Button  onClick={() => {
+    const item = { sizes };
+    dispatch(addToCart(item));
+ 
+    showDrawer(); 
+ 
+  }} type="primary" className="cancel-btn  fs-14 fw-600" htmlType="submit" style={{width:"100%"}} >ADD TO CART</Button>
+<Drawer
+         title=""
+         placement={placement}
+        className="drawer-details"
+         autoFocus={true}
+         onClose={onClose}
+         open={open}
+         
+        extra={
+          <Space>
+            <Button onClick={onClose}>Cancel</Button>
 
+          </Space>
+        }
+      >
+        <Row style={{padding:"20px"}}>
+          <Col xs={24} md={12}>
+        <img src= {categoryDetails?.thumbnail} width={80} height={80} style={{borderRadius:"50%"}}/>
+
+          </Col>
+          <Col xs={24} md={12}>
+          <p style={{color:"#ffffff"}}>{categoryDetails?.name}</p>
+        <p style={{color:"#ffffff"}}> 1 × $ {categoryDetails?.price}</p>
+          </Col>
+          <Col xs={24} md={24} style={{textAlign:"center",marginTop: "20px"}}>
+            <span style={{color:"#ffffff",}}>---------------------------</span>
+          </Col>
+          <Col xs={24} md={24} style={{marginTop: "20px"}}>
+
+          <p style={{color:"#ffffff" ,textAlign:"center",border:"1px dotted",padding:"10px"}}>Subtotal $ {categoryDetails?.price}</p>
+          </Col>
+          <Col  xs={24} md={24}>
+          <Button 
+  className="view-cart"
+  style={{ width: "100%", marginTop: "20px" }}
+>
+  VIEW CART
+</Button>
+          <Button style={{width:"100%",marginTop:"20px"}} >CHECKOUT</Button>
+          </Col>
+        </Row>
+       
+
+      </Drawer>
 </Col>
   </Row>
 
