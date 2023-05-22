@@ -3,46 +3,34 @@ import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { emptySplitApi } from "./Services";
 import React from 'react';
 import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { Provider, TypedUseSelectorHook,  useDispatch, useSelector } from 'react-redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { PersistGate } from 'redux-persist/integration/react';
 import { combineReducers } from '@reduxjs/toolkit';
 import productReducer from './Slices/AddToCardSlice';
-// Step 2: Define your reducers and actions
-const cartReducer:any = (state = [], action:any) => {
-  switch (action.type) {
-    case 'ADD_TO_CART':
-      return [...state, action.payload];
-    case 'REMOVE_FROM_CART':
-      return state.filter((item:any) => item.id !== action.payload);
-    // Add more cases for updating quantities, etc.
-    default:
-      return state;
-  }
-};
+import productSlice from "./Slices/AddToCardSlice";
 
 
 
-const removeFromCart = (itemId:any) => ({
-  type: 'REMOVE_FROM_CART',
-  payload: itemId,
-});
 
-// Step 3: Configure Redux Persist
-const persistConfig:any = {
-  key: 'root',
+
+
+const persistConfig = {
+  key: "role",
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, cartReducer);
+const reducer = combineReducers({
+  products: productSlice.reducer,
+});
+
+const persistedReducer = persistReducer(persistConfig, reducer);
 
 // Step 1: Set up your Redux store
 const store = configureStore({
   reducer: {
     [emptySplitApi.reducerPath]: emptySplitApi.reducer,
-    cart: persistedReducer,
-    products: productReducer,
+    products: persistedReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(emptySplitApi.middleware),
@@ -51,11 +39,11 @@ const store = configureStore({
 // Set up listeners for RTK Query
 setupListeners(store.dispatch);
 
-const exportedObject = {
-  cartReducer,
 
-  removeFromCart,
-  store,
-};
 
-export default exportedObject;
+export default store;
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

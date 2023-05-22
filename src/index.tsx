@@ -11,18 +11,22 @@ import './sass/common.scss';
 
 import { Provider } from "react-redux";
 import store from "./store";
-import exportedObject from "./store";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
-
+const persistor = persistStore(store);
 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ConfigProvider theme={theme}>
-        <Provider store={exportedObject?.store}>
-          <App />
-        </Provider>
+      <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>,
       </ConfigProvider>
     </BrowserRouter>
   </React.StrictMode>

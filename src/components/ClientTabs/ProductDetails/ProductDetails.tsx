@@ -11,7 +11,7 @@ import type { DrawerProps } from 'antd/es/drawer';
 import type { RadioChangeEvent } from 'antd/es/radio';
 import { Collapse } from 'antd';
 import { useDispatch } from 'react-redux';
-import exportedObject from "../../../store"
+import exportedObject, { useAppSelector } from "../../../store"
 import { addProduct } from "../../../store/Slices/AddToCardSlice"
 
  // Import the addToCart action creator
@@ -19,9 +19,11 @@ import { addProduct } from "../../../store/Slices/AddToCardSlice"
 
 const { Panel } = Collapse;
  const ProductDetails=()=>{
-  const { cartReducer,  removeFromCart, store } = exportedObject;
+
   const dispatch = useDispatch();
   const [sizes ,setSizes]=useState("")
+  const { products }: any = useAppSelector((state) => state.products);
+ 
     const state=useLocation()
     const categoryDetails=state?.state?.productDetails
     const handleSelectSizes=(applicationStageValue:any)=>{
@@ -33,7 +35,7 @@ const { Panel } = Collapse;
     const showDrawer = () => {
       setOpen(true);
     };
-  
+  console.log(products)
     const onChange = (e: RadioChangeEvent) => {
       setPlacement(e.target.value);
     };

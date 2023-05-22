@@ -9,7 +9,7 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     addProduct(state, action:any) {
-      console.log(state)
+      console.log(action.payload)
       state.products.push(action.payload);
     },
     removeProduct(state, action) {
@@ -19,4 +19,4 @@ const productSlice = createSlice({
   },
 });
 export const { addProduct, removeProduct } = productSlice.actions;
-export default productSlice.reducer;
+export default productSlice;
