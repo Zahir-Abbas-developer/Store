@@ -7,6 +7,8 @@ import { Provider } from 'react-redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { PersistGate } from 'redux-persist/integration/react';
+import { combineReducers } from '@reduxjs/toolkit';
+import productReducer from './Slices/AddToCardSlice';
 // Step 2: Define your reducers and actions
 const cartReducer:any = (state = [], action:any) => {
   switch (action.type) {
@@ -20,10 +22,7 @@ const cartReducer:any = (state = [], action:any) => {
   }
 };
 
-const addToCart = (item:any) => ({
-  type: 'ADD_TO_CART',
-  payload: item,
-});
+
 
 const removeFromCart = (itemId:any) => ({
   type: 'REMOVE_FROM_CART',
@@ -43,6 +42,7 @@ const store = configureStore({
   reducer: {
     [emptySplitApi.reducerPath]: emptySplitApi.reducer,
     cart: persistedReducer,
+    products: productReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(emptySplitApi.middleware),
@@ -53,7 +53,7 @@ setupListeners(store.dispatch);
 
 const exportedObject = {
   cartReducer,
-  addToCart,
+
   removeFromCart,
   store,
 };

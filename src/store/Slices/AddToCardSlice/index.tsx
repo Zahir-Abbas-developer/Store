@@ -9,6 +9,7 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     addProduct(state, action:any) {
+      console.log(state)
       state.products.push(action.payload);
     },
     removeProduct(state, action) {
@@ -17,3 +18,5 @@ const productSlice = createSlice({
     // Add more cases for updating, deleting, or modifying products
   },
 });
+export const { addProduct, removeProduct } = productSlice.actions;
+export default productSlice.reducer;

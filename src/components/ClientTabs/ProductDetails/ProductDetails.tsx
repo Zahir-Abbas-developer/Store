@@ -12,13 +12,14 @@ import type { RadioChangeEvent } from 'antd/es/radio';
 import { Collapse } from 'antd';
 import { useDispatch } from 'react-redux';
 import exportedObject from "../../../store"
+import { addProduct } from "../../../store/Slices/AddToCardSlice"
 
  // Import the addToCart action creator
 
 
 const { Panel } = Collapse;
  const ProductDetails=()=>{
-  const { cartReducer, addToCart, removeFromCart, store } = exportedObject;
+  const { cartReducer,  removeFromCart, store } = exportedObject;
   const dispatch = useDispatch();
   const [sizes ,setSizes]=useState("")
     const state=useLocation()
@@ -125,8 +126,8 @@ const { Panel } = Collapse;
 <Col xs={24} lg={24} style={{marginTop:"10px"}}>
 
 <Button  onClick={() => {
-    const item = { sizes };
-    dispatch(addToCart(item));
+    const item:any = { sizes };
+    dispatch(addProduct(item));
  
     showDrawer(); 
  
