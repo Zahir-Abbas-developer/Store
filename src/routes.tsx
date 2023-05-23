@@ -61,6 +61,11 @@ const ProductDetailsPage = Loadable(
   lazy(() => import("./pages/ProductDetails"))
 );
 
+//Cart Details
+const CartDetailsPage=Loadable(
+  lazy(() => import("./pages/CartDetails"))
+);
+
 //Onboarding
 const CarerPage = Loadable(lazy(() => import("./pages/Onboarding/Carer")));
 const CareCoordinatorPage = Loadable(
@@ -643,6 +648,10 @@ export const routes: any = [
             <ClientManagerPage />
           </RequireAuth>
         ),
+      },
+      {
+        path:"productDetails/cart-details",
+        element:<CartDetailsPage/>
       },
       {
         path: "client-manager/client-registration/:id",
