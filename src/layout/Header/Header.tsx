@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 
 // Ant Components
 import { Avatar, Popover, Space } from "antd";
-import { CaretDownOutlined, MenuOutlined } from "@ant-design/icons";
+import { CaretDownOutlined, MenuOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 
 
 // Components
@@ -26,18 +26,22 @@ import SearchImg from "../../assets/images/sidebar/Search.png";
 import { ReactComponent as User } from "../../assets/icons/sidebar/user.svg";
 import { ReactComponent as Logout } from "../../assets/icons/sidebar/logout.svg";
 import { ReactComponent as ChangePassword } from "../../assets/icons/sidebar/changePassword.svg";
-
+import { Badge } from 'antd';
 
 // Styles
 import "./Header.scss";
 import { ROLES } from "../../constants/Roles";
 import { useGetRoleLabel } from "../../utils/useGetRole";
 import { useLogoutMutation } from "../../store/Slices/Signin";
+import { useDispatch } from "react-redux";
+import { useAppSelector } from "../../store";
 
 
 
 const TopHeader = ({ setIsOpen }: any) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { products }: any = useAppSelector((state) => state.products);
   const [open, setOpen] = useState<boolean>(false);
   const [isProfileModal, setIsProfileModal] = useState<boolean>(false);
   const [isExpandedSEarchbar, setIsExpandedSearchbar] = useState<boolean>(false);
@@ -99,8 +103,11 @@ const TopHeader = ({ setIsOpen }: any) => {
         <button className="search-wrapper" onClick={handleExpand}>
           <img src={SearchImg} alt="searchImg" />
         </button>
+       
       </div>
-
+      <Badge count={products?.products?.length} showZero>
+          <ShoppingCartOutlined style={{ fontSize: '24px' }} />
+        </Badge>
       <NotificationsPopup />
 
       <div className="adminDetail">
