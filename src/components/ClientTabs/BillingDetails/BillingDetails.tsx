@@ -2,7 +2,8 @@
 import { Button, Card,  Col, Row, Space, Table,Form, Input, Select } from 'antd'
 import './BillingDetails.scss'
 import deleteIcon from "../../../assets/icons/delete-icon-outlined.svg";
-import { PayPalButton } from "react-paypal-button-v2";
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+
 import { useDispatch } from 'react-redux';
 import { addProduct, removeProduct } from '../../../store/Slices/AddToCardSlice';
 import { text } from 'stream/consumers';
@@ -18,13 +19,31 @@ const BillingDetails=()=>{
     dispatch(removeProduct(id))
     AppSnackbar({ type: "success", messageHeading: "Success!", message: "Successful Deleted!" });
   }
-  useEffect(()=>{
-
-  },[])
+ 
   const onFinishFailed = (errorInfo: any) => console.log('Failed:', errorInfo);
   const onFinish=(values:any)=>{
     console.log(values)
   }
+ 
+
+ 
+ 
+
+  const onApprove = (data: any, actions: any) => {
+    // Implement your logic to handle the approved payment
+    // Use the data object to access the payment details
+    return actions.order.capture().then(function (details: any) {
+      console.log('Payment completed by ' + details.payer.name.given_name);
+      // Call your server to save the transaction
+    });
+  };
+
+  const onError = (err: any) => {
+    // Implement your logic to handle payment errors
+    // Use the err object to access the error details
+    console.error('PayPal error:', err);
+  };
+
  // Using reduce to calculate the total price
 const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any) => {
   // Adding the price of the current object to the accumulator
@@ -101,12 +120,15 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
     <div className="header-image">
   <div className="image-content">
     <h1 className="image-heading-title">CHECKOUT</h1>
+    <Col xs={12}>
+          <PayPalButtons createOrder={(_data: any, actions: any) => actions.order.create({ amount: totalPrice })} onApprove={onApprove} onError={onError} />
+      </Col>
     <p className="image-heading-subheading">We accept Visa, Mastercard,Anex,PayPal and more.</p>
    
   </div>
 </div>
  
-   <Row style={{background:"#181818",padding:"40px"}}>
+   <Row style={{padding:"40px"}}>
   
     <Col xs={24} lg={12}>
     <Form
@@ -220,7 +242,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
         </Form>
     </Col>
     <Col xs={24} lg={12} style={{textAlign:"center",margin:"10px" }}>
-    <Card style={{ width: "100%", background: "#313131" }}>
+    <Card >
   <p style={{ color: "#ffffff" }}>Cart totals</p>
   <Row>
     <Col xs={12}>
@@ -242,28 +264,14 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
     <Col xs={12}>
       <p style={{ color: "#ffffff" }}>$ {totalPrice + 10}</p>
     </Col>
-    <Col xs={12}>
-      {/* <PayPalButton
-        amount="0.01"
-        onSuccess={(details: any, data: any) => {
-          alert("Transaction completed by " + details.payer.name.given_name);
-
-          // OPTIONAL: Call your server to save the transaction
-          return fetch("/paypal-transaction-complete", {
-            method: "post",
-            body: JSON.stringify({
-              orderID: data.orderID
-            })
-          });
-        }}
-      /> */}
-    </Col>
+    
   </Row>
 </Card>
 
     </Col>
    </Row>
-   
+       <PayPalButtons />
+
     </>)
 }
 export default BillingDetails
