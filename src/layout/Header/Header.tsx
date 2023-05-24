@@ -35,12 +35,14 @@ import { useGetRoleLabel } from "../../utils/useGetRole";
 import { useLogoutMutation } from "../../store/Slices/Signin";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../store";
+import { openDrawer } from "../../store/Slices/OpenDrawerSlice";
 
 
 
 const TopHeader = ({ setIsOpen }: any) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const { products }: any = useAppSelector((state) => state.products);
   const [open, setOpen] = useState<boolean>(false);
   const [isProfileModal, setIsProfileModal] = useState<boolean>(false);
@@ -85,7 +87,9 @@ const TopHeader = ({ setIsOpen }: any) => {
     },
   ];
 
-
+const handleOpenDrawer=()=>{
+  dispatch(openDrawer())
+}
   return (
     <div
       className="header"
@@ -105,8 +109,8 @@ const TopHeader = ({ setIsOpen }: any) => {
         </button>
        
       </div>
-      <Badge count={products?.products?.length} showZero>
-          <ShoppingCartOutlined style={{ fontSize: '24px' }} />
+      <Badge   count={products?.products?.length} showZero>
+          <ShoppingCartOutlined style={{ fontSize: '24px' }} onClick={handleOpenDrawer} />
         </Badge>
       <NotificationsPopup />
 

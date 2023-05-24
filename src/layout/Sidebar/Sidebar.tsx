@@ -65,6 +65,7 @@ const Sidebar = ({ outlet }: OutletProps) => {
           </Content>
         </Layout>
       </Layout>
+      
     </>
   );
 };

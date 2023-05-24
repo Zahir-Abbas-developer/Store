@@ -10,6 +10,8 @@ import { combineReducers } from '@reduxjs/toolkit';
 import productReducer from './Slices/AddToCardSlice';
 import productSlice from "./Slices/AddToCardSlice";
 
+import drawerSlice from "./Slices/OpenDrawerSlice";
+
 
 
 
@@ -22,6 +24,7 @@ const persistConfig = {
 
 const reducer = combineReducers({
   products: productSlice.reducer,
+  
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
@@ -31,6 +34,7 @@ const store = configureStore({
   reducer: {
     [emptySplitApi.reducerPath]: emptySplitApi.reducer,
     products: persistedReducer,
+    drawer: drawerSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(emptySplitApi.middleware),

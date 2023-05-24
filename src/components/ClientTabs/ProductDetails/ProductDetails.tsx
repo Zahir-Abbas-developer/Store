@@ -14,6 +14,8 @@ import { useDispatch } from 'react-redux';
 import exportedObject, { useAppSelector } from "../../../store"
 import { addProduct } from "../../../store/Slices/AddToCardSlice"
 import AppSnackbar from "../../../utils/AppSnackbar"
+import { closeDrawer, openDrawer } from "../../../store/Slices/OpenDrawerSlice"
+
 
 // Import the addToCart action creator
 
@@ -25,19 +27,19 @@ const ProductDetails = () => {
   const [sizes, setSizes] = useState("")
   const { products }: any = useAppSelector((state) => state.products);
 
+  const isOpen = useAppSelector((state) => state.drawer.isOpen);
+
   const state = useLocation()
   const navigate=useNavigate()
   const categoryDetails = state?.state?.productDetails
   const handleSelectSizes = (applicationStageValue: any) => {
     setSizes(applicationStageValue)
   }
-  const [open, setOpen] = useState(products?.isOpen);
+
   const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
 
-  const showDrawer = () => {
-    setOpen(true);
-  };
-  console.log(products?.products)
+ 
+
   const onChange = (e: RadioChangeEvent) => {
     setPlacement(e.target.value);
   };
@@ -45,7 +47,7 @@ const ProductDetails = () => {
     if(sizes){
     dispatch(addProduct(item));
     AppSnackbar({ type: "success", messageHeading: "Success!", message: "Successful!" });
-    showDrawer();
+    dispatch(openDrawer());
     }
     else{
       AppSnackbar({ type: "error", messageHeading: "Error!", message: "Please Select Size Before You Want To Proceed Further!" });
@@ -53,7 +55,7 @@ const ProductDetails = () => {
   }
 
   const onClose = () => {
-    setOpen(false);
+    dispatch(closeDrawer());
   };
   const customize = `
     A dog is a type of domesticated animal.
@@ -155,7 +157,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
               className="drawer-details"
               autoFocus={true}
               onClose={onClose}
-              open={open}
+              open={isOpen}
 
               extra={
                 <Space>
@@ -190,7 +192,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
                   <Button
                     className="view-cart"
                     style={{ width: "100%", marginTop: "20px" }}
-                onClick={()=>{setOpen(false);navigate("/productDetails/cart-details", { state: { productDetails: products?.products } }) }
+                onClick={()=>{  dispatch(closeDrawer());navigate("/productDetails/cart-details", { state: { productDetails: products?.products } }) }
                 }  >
                     VIEW CART
                   </Button>
