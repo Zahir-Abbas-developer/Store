@@ -120,9 +120,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
     <div className="header-image">
   <div className="image-content">
     <h1 className="image-heading-title">CHECKOUT</h1>
-    <Col xs={12}>
-          <PayPalButtons createOrder={(_data: any, actions: any) => actions.order.create({ amount: totalPrice })} onApprove={onApprove} onError={onError} />
-      </Col>
+    
     <p className="image-heading-subheading">We accept Visa, Mastercard,Anex,PayPal and more.</p>
    
   </div>
@@ -264,13 +262,16 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
     <Col xs={12}>
       <p style={{ color: "#ffffff" }}>$ {totalPrice + 10}</p>
     </Col>
+    <Col xs={12}>
+   <PayPalButtons createOrder={(_data: any, actions: any) => actions.order.create({ amount: totalPrice })} onApprove={onApprove} onError={onError} />
     
+    </Col>
   </Row>
 </Card>
 
     </Col>
    </Row>
-       <PayPalButtons />
+
 
     </>)
 }
