@@ -2,7 +2,7 @@
 import { Button, Card,  Col, Row, Space, Table } from 'antd'
 import './CartDetails.scss'
 import deleteIcon from "../../../assets/icons/delete-icon-outlined.svg";
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addProduct, removeProduct } from '../../../store/Slices/AddToCardSlice';
 import { text } from 'stream/consumers';
@@ -10,8 +10,7 @@ import AppSnackbar from '../../../utils/AppSnackbar';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../../store';
 const CartDetails=()=>{
-    const state=useLocation()
-    
+  const navigate=useNavigate()
   const dispatch = useDispatch();
   const { products }: any = useAppSelector((state) => state.products);
   const handleDeleteCart=(id:any)=>{
@@ -140,7 +139,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
       <p style={{color:"#ffffff"}}>$ {totalPrice + 10}</p>
       </Col>
       <Col span={24}>
-      <Button  block>
+      <Button  block onClick={()=>navigate("/productDetails/cart-details/checkout-details")}>
       PROCEED TO CHECKOUT
     </Button>
       </Col>

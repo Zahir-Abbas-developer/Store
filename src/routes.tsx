@@ -60,6 +60,9 @@ const ManageGroups = Loadable(
 const ProductDetailsPage = Loadable(
   lazy(() => import("./pages/ProductDetails"))
 );
+const BillingDetailsPage = Loadable(
+  lazy(() => import("./pages/BillingDetails"))
+);
 
 //Cart Details
 const CartDetailsPage=Loadable(
@@ -507,6 +510,10 @@ export const routes: any = [
       {
         path:"productDetails",
         element:<ProductDetailsPage/>
+      },
+      {
+        path:"/productDetails/cart-details/checkout-details",
+        element:<BillingDetailsPage/>
       },
       {
         path: "coordinator-dashboard",
