@@ -35,7 +35,7 @@ const ProductDetails = () => {
   const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
 
   const showDrawer = () => {
-    setOpen(true);
+    setOpen(products?.isOpen);
   };
   console.log(products?.products)
   const onChange = (e: RadioChangeEvent) => {

@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState:any = {
   products: [],
+  isOpen:true
 };
 
 const productSlice = createSlice({
