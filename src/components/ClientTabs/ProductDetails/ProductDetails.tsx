@@ -31,11 +31,11 @@ const ProductDetails = () => {
   const handleSelectSizes = (applicationStageValue: any) => {
     setSizes(applicationStageValue)
   }
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(products?.isOpen);
   const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
 
   const showDrawer = () => {
-    setOpen(products?.isOpen);
+    setOpen(true);
   };
   console.log(products?.products)
   const onChange = (e: RadioChangeEvent) => {
