@@ -49,71 +49,12 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
   // Adding the price of the current object to the accumulator
   return accumulator + currentValue.price;
 }, 0); // 0 is the initial value of the accumulator
-    const columns: any = [
-       
-        {
-          title: <span>REMOVE </span>,
-          dataIndex: "categoryName",
-          key: "categoryName",
-          width: 300,
-          render: (_:any, text:any) => (
-            <Space>
-              <span className="fs-14 fw-400 title-color" onClick={()=>{ handleDeleteCart(text?.id)}} style={{cursor:"pointer"}}> <img src={deleteIcon}/>  </span>
-            </Space>
-          ),
-        },
-        {
-            title: <span>THUMBNAIL </span>,
-            dataIndex: "thumbnail",
-            key: "thumbnail",
-            width: 300,
-            render: (_:any, text:any) => (
-              <Space>
-                <span className="fs-14 fw-400 title-color" style={{cursor:"pointer"}}>  <img src={text?.thumbnail} width={40} height={40}/></span>
-              </Space>
-            ),
-          },
-        {
-            title: <span>PRODUCT </span>,
-            dataIndex: "categoryName",
-            key: "categoryName",
-            width: 300,
-            render: (_:any, text:any) => (
-              <Space>
-                <span className="fs-14 fw-400 title-color">{text?.categoryName}</span>
-              </Space>
-            ),
-          },
-          {
-            title: <span>QUANTITY </span>,
-            dataIndex: "categoryName",
-            key: "categoryName",
-            width: 300,
-            render: (_:any, text:any) => (
-              <Space>
-                <span className="fs-14 fw-400 title-color">1</span>
-              </Space>
-            ),
-          },
-          {
-            title: <span>PRICE </span>,
-            dataIndex: "price",
-            key: "price",
-            width: 300,
-            render: (_:any, text:any) => (
-              <Space>
-                <span className="fs-14 fw-400 title-color">$ {text?.price}</span>
-              </Space>
-            ),
-          },
-        
-    
-       
-    
-       
-        
-      ];
-    
+   
+    const shoeProducts=[{
+      productId:"",
+      quantity:"",
+      price:totalPrice
+    }]
     return(
     <>
     
@@ -126,9 +67,9 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
   </div>
 </div>
  
-   <Row style={{padding:"40px"}}>
+   <Row style={{padding:"40px" ,backgroundColor:"#181818"}}>
   
-    <Col xs={24} lg={12}>
+    <Col xs={24} lg={12} style={{backgroundColor:"#363636",padding:"40px"}}>
     <Form
           name="basic"
           initialValues={{ remember: true }}
@@ -184,8 +125,8 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             </Col>
             <Col xs={24} sm={24} md={12} lg={12} className='onBoarding-input'>
               <Form.Item
-                label="COUNTRY"
-                name="country"
+                label="COUNTY"
+                name="county"
 
                 rules={[{ required: true, message: 'Required field' }]}
               >
@@ -195,7 +136,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             <Col xs={24} sm={24} md={12} lg={12} className='onBoarding-input'>
               <Form.Item
                 label="TOWN / CITY"
-                name="town"
+                name="city"
 
                 rules={[{ required: true, message: 'Required field' }]}
               >
@@ -215,7 +156,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             <Col xs={24} sm={24} md={12} lg={12} className='onBoarding-input'>
               <Form.Item
                 label="STREET ADDRESS"
-                name="address"
+                name="streetAddress"
 
                 rules={[{ required: true, message: 'Required field' }]}
               >
@@ -239,9 +180,10 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
           </Row>
         </Form>
     </Col>
-    <Col xs={24} lg={12} style={{textAlign:"center",margin:"10px" }}>
-    <Card >
-  <p style={{ color: "#ffffff" }}>Cart totals</p>
+    <Col xs={24} lg={12} style={{textAlign:"center"}} >
+    <Card style={{backgroundColor:"#000000"}}>
+  <p style={{ color: "#ffffff",marginBottom:"0px" }}>Your order</p>
+  <span style={{ color: "#ffffff" }}>----------</span>
   <Row>
     <Col xs={12}>
       <p style={{ color: "#ffffff" }}>SUBTOTAL</p>
@@ -262,11 +204,14 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
     <Col xs={12}>
       <p style={{ color: "#ffffff" }}>$ {totalPrice + 10}</p>
     </Col>
-    <Col xs={12}>
+    
+  </Row>
+   <Row>
+   <Col xs={24} style={{textAlign:"center"}}>
    <PayPalButtons createOrder={(_data: any, actions: any) => actions.order.create({ amount: totalPrice })} onApprove={onApprove} onError={onError} />
     
     </Col>
-  </Row>
+   </Row>
 </Card>
 
     </Col>
