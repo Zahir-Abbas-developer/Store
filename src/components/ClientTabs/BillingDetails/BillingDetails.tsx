@@ -243,7 +243,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
       <p style={{ color: "#ffffff" }}>$ {totalPrice + 10}</p>
     </Col>
     <Col xs={12}>
-      <PayPalButton
+      {/* <PayPalButton
         amount="0.01"
         onSuccess={(details: any, data: any) => {
           alert("Transaction completed by " + details.payer.name.given_name);
@@ -256,7 +256,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             })
           });
         }}
-      />
+      /> */}
     </Col>
   </Row>
 </Card>
