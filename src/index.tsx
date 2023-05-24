@@ -19,7 +19,7 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 const persistor = persistStore(store);
 
 root.render(
-  <React.StrictMode>
+  
     <BrowserRouter>
       <ConfigProvider theme={theme}>
       <Provider store={store}>
@@ -29,7 +29,7 @@ root.render(
   </Provider>,
       </ConfigProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
