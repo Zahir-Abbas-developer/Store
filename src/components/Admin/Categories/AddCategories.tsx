@@ -36,17 +36,19 @@ import coloredXlsIcon from "../../../assets/icons/Report/colored-xls.png";
 import "./AddCategories.scss";
 import DeleteModal from "../../../shared/DeleteModal/DeleteModal";
 import CrossAllocationModal from "../../Setting/SettingJobRole/CrossAllocationModal";
-import AddModal from "../../Setting/SettingJobRole/AddModal";
+
 import { renderDashboard } from "../../../utils/useRenderDashboard";
+import AddCategoryModal from "./AddCategoryModal";
+import { useDeleteCategoriesMutation,  useGetAllCategoriessQuery } from "../../../store/Slices/Products";
 
 
 const AddCategories = () => {
 
-  const [pagination, setPagination] = useState({ limit: 6, page: 1 });
+  const [pagination, setPagination] = useState({ limit: 10, page: 1 });
   const [selectedFilterValue, setSelectedFilterValue] = useState<string | undefined>();
   const [selectedCareHomeFilterValue, setSelectedCareHomeFilterValue] = useState<string | undefined>();
   const [crossAllocationRecord, setCrossAllocationRecord] = useState([]);
-
+  const {data:getCategories ,isSuccess:isSuccessCategories}=useGetAllCategoriessQuery({})
   // ============================== Filters ==============================
   const [searchName, setSearchName] = useState<string>("");
 
@@ -75,7 +77,7 @@ const AddCategories = () => {
   const { data, isSuccess } = useGetJobRequestQuery({ refetchOnMountOrArgChange: true });
   const { data: clientData, isSuccess: isClientDataSuccess } = useGetClientsQuery({ refetchOnMountOrArgChange: true });
   const { data: jobRoleFilterData, isLoading: jobRoleFilterIsLoading } = useGetJobRequestFilterQuery({ refetchOnMountOrArgChange: true, query, pagination });
-  const [deleteJobRequest, { isLoading: isDeleteJobRequestMutation }] = useDeleteJobRequestMutation();
+  const [deleteCategories, { isLoading: isDeleteJobRequestMutation }] = useDeleteCategoriesMutation();
 
 
   // ============================== Variables to Assign Values to it ==============================
@@ -83,6 +85,10 @@ const AddCategories = () => {
   let JobRole: any;
   let unchangeUserData: any;
   let clientAPIData: any;
+  let allCategories:any
+  if(isSuccessCategories){
+    allCategories=getCategories
+  }
 
   if (isSuccess) {
     JobRole = jobRoleFilterData;
@@ -121,7 +127,7 @@ const AddCategories = () => {
   // ============================== Handle Delete Job Role ==============================
   const handleDeleteSubmit = async () => {
     try {
-      await deleteJobRequest(jobID).unwrap();
+      await deleteCategories({id:jobID}).unwrap();
       AppSnackbar({
         type: "success",
         messageHeading: "Deleted!",
@@ -176,25 +182,7 @@ const AddCategories = () => {
       ),
       key: "1",
     },
-    {
-      label: (
-        <Space
-          onClick={() => {
-            setShowCrossAllocation(true);
-          }}
-        >
-          <img
-            src={crossAllocation}
-            className="d-flex align-center"
-            alt="delete"
-            height={18}
-            width={16}
-          />
-          <span>Cross Allocation</span>
-        </Space>
-      ),
-      key: "2",
-    },
+    
     {
       label: (
         <Space
@@ -228,20 +216,16 @@ const AddCategories = () => {
       },
     },
     {
-      title: "Position Name",
+      title: "Category Name",
       dataIndex: "name",
       align: "center"
     },
     {
-      title: "Short Form",
-      dataIndex: "shortForm",
+      title: "Category Description",
+      dataIndex: "description",
       align: "center"
     },
-    {
-      title: "Role",
-      dataIndex: "userRole",
-      align: "center"
-    },
+  
 
     ...(role === ROLES.coordinator ?
       [{
@@ -322,13 +306,13 @@ const AddCategories = () => {
               setModalType("Add");
             }}
           >
-            Add Job Role
+            Add Category
             <PlusCircleOutlined style={{ marginLeft: "20px" }} />
           </Button>
 
           {/* ============================== Job Role Top Filters ============================== */}
           <Row gutter={[0, 20]} className='job-role-filters-wrapper'>
-            <Col xs={24} md={10} lg={8} xl={6} xxl={4}>
+            {/* <Col xs={24} md={10} lg={8} xl={6} xxl={4}>
               <p className='fs-14 fw-600 title-color line-height-17 m-0' style={{ marginBottom: "0.563rem" }}>User Role</p>
               <div className="filter-column">
                 <Select
@@ -349,7 +333,7 @@ const AddCategories = () => {
                   options={optimizedUserRoleDropdown}
                 />
               </div>
-            </Col>
+            </Col> */}
 
             {role === ROLES.coordinator && (
               <Col xs={24} md={10} lg={8} xl={6} xxl={4}>
@@ -388,7 +372,7 @@ const AddCategories = () => {
           >
             <Input
               className="search-input"
-              placeholder="Search by position name"
+              placeholder="Search by category name"
               onChange={(event: any) =>
               {  debouncedSearch(event.target.value, setSearchName);
                 setPagination({...pagination ,page:1})
@@ -417,7 +401,7 @@ const AddCategories = () => {
           <Table
             scroll={{ x: 768 }}
             columns={columns}
-            dataSource={JobRole?.data?.result}
+            dataSource={allCategories}
             locale={{ emptyText: !jobRoleFilterIsLoading ? "No Data" : " " }}
             loading={jobRoleFilterIsLoading}
             pagination={{
@@ -432,13 +416,14 @@ const AddCategories = () => {
       </div>
 
       {/* ============================== Add Modal For Job Role ============================== */}
-      <AddModal
+      <AddCategoryModal
         addEditJobRole={addEditJobRole}
         setAddEditJobRole={setAddEditJobRole}
         modalType={modalType}
         setGetFieldValues={setGetFieldValues}
         getTableRowValues={getTableRowValues}
         role={role}
+        jobID={jobID}
       />
 
       {/* ============================== Cross Allocation Modal For Job Role ============================== */}
@@ -458,7 +443,7 @@ const AddCategories = () => {
         deleteModal={isDeleteModal}
         submitTitle="Yes"
         cancelTitle="No"
-        title="Do you want to discard this Details?"
+        title="Do you want to delete this Details?"
         onSubmit={handleDeleteSubmit}
         onCancel={() => setIsDeleteModal(false)}
         isLoading={isDeleteJobRequestMutation}

@@ -38,6 +38,8 @@ import DeleteModal from "../../../shared/DeleteModal/DeleteModal";
 import CrossAllocationModal from "../../Setting/SettingJobRole/CrossAllocationModal";
 import AddModal from "../../Setting/SettingJobRole/AddModal";
 import { renderDashboard } from "../../../utils/useRenderDashboard";
+import AddProductsModal from "./AddProductsModal";
+import { useGetAllMaterialsQuery } from "../../../store/Slices/Products";
 
 
 const AddProducts = () => {
@@ -76,22 +78,25 @@ const AddProducts = () => {
   const { data: clientData, isSuccess: isClientDataSuccess } = useGetClientsQuery({ refetchOnMountOrArgChange: true });
   const { data: jobRoleFilterData, isLoading: jobRoleFilterIsLoading } = useGetJobRequestFilterQuery({ refetchOnMountOrArgChange: true, query, pagination });
   const [deleteJobRequest, { isLoading: isDeleteJobRequestMutation }] = useDeleteJobRequestMutation();
-
+  const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({})
 
   // ============================== Variables to Assign Values to it ==============================
   let optimizedUserRoleDropdown: any;
   let JobRole: any;
   let unchangeUserData: any;
   let clientAPIData: any;
-
+  let allMaterials:any
+  if(isSuccessMaterials){
+    allMaterials=getMaterials
+  }
   if (isSuccess) {
     JobRole = jobRoleFilterData;
     unchangeUserData = data;
 
     // if (isNullOrEmpty(unchangeUserData)) {
     // Making new array for dropdown from data
-    let userRoleDropdown = unchangeUserData?.data?.result?.map((item: any) => ({
-      value: item?.userRole,
+    let userRoleDropdown = allMaterials?.map((item: any) => ({
+      value: item?._id,
       label: item?.userRole,
     }));
 
@@ -322,7 +327,7 @@ const AddProducts = () => {
               setModalType("Add");
             }}
           >
-            Add Job Role
+            Add Product
             <PlusCircleOutlined style={{ marginLeft: "20px" }} />
           </Button>
 
@@ -432,7 +437,7 @@ const AddProducts = () => {
       </div>
 
       {/* ============================== Add Modal For Job Role ============================== */}
-      <AddModal
+      <AddProductsModal
         addEditJobRole={addEditJobRole}
         setAddEditJobRole={setAddEditJobRole}
         modalType={modalType}

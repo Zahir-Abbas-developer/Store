@@ -19,6 +19,32 @@ export const extendedApi = emptySplitApi.injectEndpoints({
   
         providesTags: ["categories"],
       }),
+      postCategories: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `categories`,
+          method: "POST",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["categories"],
+      }),
+      deleteCategories: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `categories/${id}`,
+          method: "DELETE",
+        }),
+  
+        invalidatesTags: ["categories"],
+      }),
+      updateCategories: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `categories/${id}`,
+          method: "PUT",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["categories"],
+      }),
       getAllMaterials: builder.query({
         query: ({page,limit,query}:any) => ({
           url: `/material`,
@@ -35,12 +61,64 @@ export const extendedApi = emptySplitApi.injectEndpoints({
   
         providesTags: ["colors"],
       }),
-    
+      postColors: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `colors`,
+          method: "POST",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["colors"],
+      }),
+      deleteColors: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `colors/${id}`,
+          method: "DELETE",
+        }),
+  
+        invalidatesTags: ["colors"],
+      }),
+      updateColors: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `colors/${id}`,
+          method: "PUT",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["colors"],
+      }),
+      postMaterials: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `material`,
+          method: "POST",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["material"],
+      }),
+      deleteMaterials: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `material/${id}`,
+          method: "DELETE",
+        }),
+  
+        invalidatesTags: ["material"],
+      }),
+      updateMaterials: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `material/${id}`,
+          method: "PUT",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["material"],
+      }),
     }),
   });
   
   export const {
    useGetAllProductsQuery,
-   useGetAllCategoriessQuery,useGetAllColorsQuery,useGetAllMaterialsQuery
+   useGetAllCategoriessQuery,useGetAllColorsQuery,useGetAllMaterialsQuery,usePostCategoriesMutation,useDeleteCategoriesMutation,useUpdateCategoriesMutation,usePostColorsMutation,useUpdateColorsMutation,useDeleteColorsMutation ,
+   useUpdateMaterialsMutation,useDeleteMaterialsMutation,usePostMaterialsMutation
   } = extendedApi;
   

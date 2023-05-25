@@ -38,6 +38,8 @@ import DeleteModal from "../../../shared/DeleteModal/DeleteModal";
 import CrossAllocationModal from "../../Setting/SettingJobRole/CrossAllocationModal";
 import AddModal from "../../Setting/SettingJobRole/AddModal";
 import { renderDashboard } from "../../../utils/useRenderDashboard";
+import AddColorModal from "./AddColorModal";
+import { useDeleteColorsMutation, useGetAllColorsQuery } from "../../../store/Slices/Products";
 
 
 const AddColors = () => {
@@ -75,7 +77,8 @@ const AddColors = () => {
   const { data, isSuccess } = useGetJobRequestQuery({ refetchOnMountOrArgChange: true });
   const { data: clientData, isSuccess: isClientDataSuccess } = useGetClientsQuery({ refetchOnMountOrArgChange: true });
   const { data: jobRoleFilterData, isLoading: jobRoleFilterIsLoading } = useGetJobRequestFilterQuery({ refetchOnMountOrArgChange: true, query, pagination });
-  const [deleteJobRequest, { isLoading: isDeleteJobRequestMutation }] = useDeleteJobRequestMutation();
+  const [deleteColors, { isLoading: isDeleteJobRequestMutation }] = useDeleteColorsMutation();
+  const {data:getColors ,isSuccess:isSuccessCategories}=useGetAllColorsQuery({})
 
 
   // ============================== Variables to Assign Values to it ==============================
@@ -83,6 +86,10 @@ const AddColors = () => {
   let JobRole: any;
   let unchangeUserData: any;
   let clientAPIData: any;
+  let allColors:any
+  if(isSuccessCategories){
+    allColors=getColors
+  }
 
   if (isSuccess) {
     JobRole = jobRoleFilterData;
@@ -121,7 +128,7 @@ const AddColors = () => {
   // ============================== Handle Delete Job Role ==============================
   const handleDeleteSubmit = async () => {
     try {
-      await deleteJobRequest(jobID).unwrap();
+      await deleteColors({id:jobID}).unwrap();
       AppSnackbar({
         type: "success",
         messageHeading: "Deleted!",
@@ -176,25 +183,7 @@ const AddColors = () => {
       ),
       key: "1",
     },
-    {
-      label: (
-        <Space
-          onClick={() => {
-            setShowCrossAllocation(true);
-          }}
-        >
-          <img
-            src={crossAllocation}
-            className="d-flex align-center"
-            alt="delete"
-            height={18}
-            width={16}
-          />
-          <span>Cross Allocation</span>
-        </Space>
-      ),
-      key: "2",
-    },
+   
     {
       label: (
         <Space
@@ -228,20 +217,16 @@ const AddColors = () => {
       },
     },
     {
-      title: "Position Name",
+      title: "Color Name",
       dataIndex: "name",
       align: "center"
     },
     {
-      title: "Short Form",
-      dataIndex: "shortForm",
+      title: "Color Description",
+      dataIndex: "description",
       align: "center"
     },
-    {
-      title: "Role",
-      dataIndex: "userRole",
-      align: "center"
-    },
+
 
     ...(role === ROLES.coordinator ?
       [{
@@ -322,7 +307,7 @@ const AddColors = () => {
               setModalType("Add");
             }}
           >
-            Add Job Role
+            Add Color
             <PlusCircleOutlined style={{ marginLeft: "20px" }} />
           </Button>
 
@@ -388,7 +373,7 @@ const AddColors = () => {
           >
             <Input
               className="search-input"
-              placeholder="Search by position name"
+              placeholder="Search by Color name"
               onChange={(event: any) =>
               {  debouncedSearch(event.target.value, setSearchName);
                 setPagination({...pagination ,page:1})
@@ -417,7 +402,7 @@ const AddColors = () => {
           <Table
             scroll={{ x: 768 }}
             columns={columns}
-            dataSource={JobRole?.data?.result}
+            dataSource={allColors}
             locale={{ emptyText: !jobRoleFilterIsLoading ? "No Data" : " " }}
             loading={jobRoleFilterIsLoading}
             pagination={{
@@ -432,13 +417,14 @@ const AddColors = () => {
       </div>
 
       {/* ============================== Add Modal For Job Role ============================== */}
-      <AddModal
+      <AddColorModal
         addEditJobRole={addEditJobRole}
         setAddEditJobRole={setAddEditJobRole}
         modalType={modalType}
         setGetFieldValues={setGetFieldValues}
         getTableRowValues={getTableRowValues}
         role={role}
+        jobID={jobID}
       />
 
       {/* ============================== Cross Allocation Modal For Job Role ============================== */}
@@ -458,7 +444,7 @@ const AddColors = () => {
         deleteModal={isDeleteModal}
         submitTitle="Yes"
         cancelTitle="No"
-        title="Do you want to discard this Details?"
+        title="Do you want to delete this Details?"
         onSubmit={handleDeleteSubmit}
         onCancel={() => setIsDeleteModal(false)}
         isLoading={isDeleteJobRequestMutation}

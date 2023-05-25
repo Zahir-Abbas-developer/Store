@@ -38,11 +38,13 @@ import DeleteModal from "../../../shared/DeleteModal/DeleteModal";
 import CrossAllocationModal from "../../Setting/SettingJobRole/CrossAllocationModal";
 import AddModal from "../../Setting/SettingJobRole/AddModal";
 import { renderDashboard } from "../../../utils/useRenderDashboard";
+import AddStyleModal from "./AddStylesModal";
+import { useDeleteMaterialsMutation, useGetAllMaterialsQuery } from "../../../store/Slices/Products";
 
 
 const AddStyles = () => {
 
-  const [pagination, setPagination] = useState({ limit: 6, page: 1 });
+  const [pagination, setPagination] = useState({ limit: 10, page: 1 });
   const [selectedFilterValue, setSelectedFilterValue] = useState<string | undefined>();
   const [selectedCareHomeFilterValue, setSelectedCareHomeFilterValue] = useState<string | undefined>();
   const [crossAllocationRecord, setCrossAllocationRecord] = useState([]);
@@ -75,15 +77,18 @@ const AddStyles = () => {
   const { data, isSuccess } = useGetJobRequestQuery({ refetchOnMountOrArgChange: true });
   const { data: clientData, isSuccess: isClientDataSuccess } = useGetClientsQuery({ refetchOnMountOrArgChange: true });
   const { data: jobRoleFilterData, isLoading: jobRoleFilterIsLoading } = useGetJobRequestFilterQuery({ refetchOnMountOrArgChange: true, query, pagination });
-  const [deleteJobRequest, { isLoading: isDeleteJobRequestMutation }] = useDeleteJobRequestMutation();
-
+  const [deleteMaterials, { isLoading: isDeleteJobRequestMutation }] = useDeleteMaterialsMutation();
+  const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({})
 
   // ============================== Variables to Assign Values to it ==============================
   let optimizedUserRoleDropdown: any;
   let JobRole: any;
   let unchangeUserData: any;
   let clientAPIData: any;
-
+  let allMaterials:any
+  if(isSuccessMaterials){
+    allMaterials=getMaterials
+  }
   if (isSuccess) {
     JobRole = jobRoleFilterData;
     unchangeUserData = data;
@@ -121,7 +126,7 @@ const AddStyles = () => {
   // ============================== Handle Delete Job Role ==============================
   const handleDeleteSubmit = async () => {
     try {
-      await deleteJobRequest(jobID).unwrap();
+      await deleteMaterials({id:jobID}).unwrap();
       AppSnackbar({
         type: "success",
         messageHeading: "Deleted!",
@@ -176,25 +181,7 @@ const AddStyles = () => {
       ),
       key: "1",
     },
-    {
-      label: (
-        <Space
-          onClick={() => {
-            setShowCrossAllocation(true);
-          }}
-        >
-          <img
-            src={crossAllocation}
-            className="d-flex align-center"
-            alt="delete"
-            height={18}
-            width={16}
-          />
-          <span>Cross Allocation</span>
-        </Space>
-      ),
-      key: "2",
-    },
+    
     {
       label: (
         <Space
@@ -228,20 +215,16 @@ const AddStyles = () => {
       },
     },
     {
-      title: "Position Name",
+      title: "Material Name",
       dataIndex: "name",
       align: "center"
     },
     {
-      title: "Short Form",
-      dataIndex: "shortForm",
+      title: "Material Description",
+      dataIndex: "description",
       align: "center"
     },
-    {
-      title: "Role",
-      dataIndex: "userRole",
-      align: "center"
-    },
+   
 
     ...(role === ROLES.coordinator ?
       [{
@@ -322,35 +305,13 @@ const AddStyles = () => {
               setModalType("Add");
             }}
           >
-            Add Job Role
+            Add Material
             <PlusCircleOutlined style={{ marginLeft: "20px" }} />
           </Button>
 
           {/* ============================== Job Role Top Filters ============================== */}
           <Row gutter={[0, 20]} className='job-role-filters-wrapper'>
-            <Col xs={24} md={10} lg={8} xl={6} xxl={4}>
-              <p className='fs-14 fw-600 title-color line-height-17 m-0' style={{ marginBottom: "0.563rem" }}>User Role</p>
-              <div className="filter-column">
-                <Select
-                  size="large"
-                  placeholder="Select user role"
-                  optionFilterProp="children"
-                  className="app-select-wrap-class"
-                  defaultValue="All"
-                  popupClassName="app-select-popup-wrap-class"
-                  style={{ width: "100%" }}
-                  value={selectedFilterValue}
-                  onChange={(value: string) =>
-                    value
-                      ? (setPagination({ ...pagination, page: 1 }), setSelectedFilterValue(value))
-                      : setSelectedFilterValue("")
-                  }
-                  
-                  options={optimizedUserRoleDropdown}
-                />
-              </div>
-            </Col>
-
+          
             {role === ROLES.coordinator && (
               <Col xs={24} md={10} lg={8} xl={6} xxl={4}>
                 <p className='fs-14 fw-600 title-color line-height-17 m-0' style={{ marginBottom: "0.563rem" }}>Care Home</p>
@@ -388,7 +349,7 @@ const AddStyles = () => {
           >
             <Input
               className="search-input"
-              placeholder="Search by position name"
+              placeholder="Search by material name"
               onChange={(event: any) =>
               {  debouncedSearch(event.target.value, setSearchName);
                 setPagination({...pagination ,page:1})
@@ -417,7 +378,7 @@ const AddStyles = () => {
           <Table
             scroll={{ x: 768 }}
             columns={columns}
-            dataSource={JobRole?.data?.result}
+            dataSource={allMaterials}
             locale={{ emptyText: !jobRoleFilterIsLoading ? "No Data" : " " }}
             loading={jobRoleFilterIsLoading}
             pagination={{
@@ -432,13 +393,14 @@ const AddStyles = () => {
       </div>
 
       {/* ============================== Add Modal For Job Role ============================== */}
-      <AddModal
+      <AddStyleModal
         addEditJobRole={addEditJobRole}
         setAddEditJobRole={setAddEditJobRole}
         modalType={modalType}
         setGetFieldValues={setGetFieldValues}
         getTableRowValues={getTableRowValues}
         role={role}
+        jobID={jobID}
       />
 
       {/* ============================== Cross Allocation Modal For Job Role ============================== */}
