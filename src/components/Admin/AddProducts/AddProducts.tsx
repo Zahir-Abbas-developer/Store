@@ -181,25 +181,7 @@ const AddProducts = () => {
       ),
       key: "1",
     },
-    {
-      label: (
-        <Space
-          onClick={() => {
-            setShowCrossAllocation(true);
-          }}
-        >
-          <img
-            src={crossAllocation}
-            className="d-flex align-center"
-            alt="delete"
-            height={18}
-            width={16}
-          />
-          <span>Cross Allocation</span>
-        </Space>
-      ),
-      key: "2",
-    },
+   
     {
       label: (
         <Space
@@ -233,20 +215,36 @@ const AddProducts = () => {
       },
     },
     {
-      title: "Position Name",
+      title: "Product Name",
       dataIndex: "name",
       align: "center"
     },
     {
-      title: "Short Form",
-      dataIndex: "shortForm",
+      title: "Product Description",
+      dataIndex: "description",
       align: "center"
     },
     {
-      title: "Role",
-      dataIndex: "userRole",
+      title: "Product Price",
+      dataIndex: "price",
       align: "center"
     },
+    {
+      title: "Category Name",
+      dataIndex: "categoryName",
+      align: "center"
+    },
+    {
+      title: "Color",
+      dataIndex: "color",
+      align: "center"
+    },
+    {
+      title: "Material",
+      dataIndex: "material",
+      align: "center"
+    },
+    
 
     ...(role === ROLES.coordinator ?
       [{
@@ -393,7 +391,7 @@ const AddProducts = () => {
           >
             <Input
               className="search-input"
-              placeholder="Search by position name"
+              placeholder="Search by product name"
               onChange={(event: any) =>
               {  debouncedSearch(event.target.value, setSearchName);
                 setPagination({...pagination ,page:1})
