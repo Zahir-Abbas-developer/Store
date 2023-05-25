@@ -12,6 +12,8 @@ import SystemPerformancePage from "./pages/SystemPerformance";
 import RequireAuth from "./components/Authentication/RequireAuth";
 import LoadingSvg from "../src/assets/Login/loader-icon.gif";
 import { ROLES } from "./constants/Roles";
+import path from "path";
+import AddStyles from "./components/Admin/AddStyles/AddStyles";
 
 const Loadable = (Component: LazyExoticComponent<FC>) => (props: any) =>
   (
@@ -153,6 +155,21 @@ const CompletedShift = Loadable(
 );
 const WorkHistory = Loadable(
   lazy(() => import("./pages/StaffBooking/WorkHistory"))
+);
+const AddProductsPage = Loadable(
+  lazy(() => import("./pages/AddProducts"))
+);
+const AddCategoriesPage = Loadable(
+  lazy(() => import("./pages/AddCategories"))
+);
+const AddColorsPage = Loadable(
+  lazy(() => import("./pages/AddColors"))
+);
+const AddStylesPage = Loadable(
+  lazy(() => import("./pages/AddStyles"))
+);
+const AddOrdersPage = Loadable(
+  lazy(() => import("./pages/AddOrders"))
 );
 
 const BookingCalenderPage = Loadable(
@@ -514,6 +531,26 @@ export const routes: any = [
       {
         path:"/productDetails/cart-details/checkout-details",
         element:<BillingDetailsPage/>
+      },
+      {
+        path:"/add-products",
+        element:<AddProductsPage/>
+      },
+      {
+        path:"/add-categories",
+        element:<AddCategoriesPage/>
+      },
+      {
+        path:"/add-orders",
+        element:<AddOrdersPage/>
+      },
+      {
+        path:"/add-colors",
+        element:<AddColorsPage/>
+      },
+      {
+        path:"/add-styles",
+        element:<AddStyles/>
       },
       {
         path: "coordinator-dashboard",

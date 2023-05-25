@@ -101,6 +101,36 @@ export const getSidebarMenues = (role: any, permissions: any) => {
       icon: <Preferences />,
       role: [ROLES.client],
     },
+    {
+      label: "PRODUCTS",
+      link: "/add-products",
+      icon: <Preferences />,
+      // role: [ROLES.client],
+    },
+    {
+      label: "CATEGORIES",
+      link: "/add-categories",
+      icon: <Preferences />,
+      role: [ROLES.client],
+    },
+    {
+      label: "COLORS",
+      link: "/add-colors",
+      icon: <Preferences />,
+      role: [ROLES.client],
+    },
+    {
+      label: "STYLES",
+      link: "/add-styles",
+      icon: <Preferences />,
+      role: [ROLES.client],
+    },
+    {
+      label: "ORDERS",
+      link: "/add-orders",
+      icon: <Preferences />,
+      role: [ROLES.client],
+    },
    
   ];
   const updateArray = SidebarMenues?.filter((ele) => ele?.role?.includes(role));
