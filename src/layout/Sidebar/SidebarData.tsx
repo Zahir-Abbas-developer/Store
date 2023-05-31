@@ -42,7 +42,7 @@ export const getSidebarMenues = (role: any, permissions: any) => {
     // #######################  Sidebar Items #######################  
     {
       label: "HOME",
-      link: "/client-dashboard",
+      link: "/dashboard",
       icon: <Dashboard />,
       role: [ROLES.client],
     },

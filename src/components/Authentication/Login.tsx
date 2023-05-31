@@ -59,9 +59,10 @@ const Login = () => {
     } else {
       if (!error) {
         const userData = {
-          username: data?.data?.email,
+          username: data?.user?.email,
           token: data?.data?.accessToken,
           refreshToken: data?.data?.refreshToken,
+          role: data?.user?.role,
         };
         const stringifyData = JSON.stringify(userData);
         localStorage.setItem("careUserData", stringifyData);

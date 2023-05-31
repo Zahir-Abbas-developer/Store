@@ -6,6 +6,7 @@ const DashboardLayout = () => {
   return (
     <>
       <Sidebar outlet={<Outlet />} />
+      
       <Footer />
     </>
   );
