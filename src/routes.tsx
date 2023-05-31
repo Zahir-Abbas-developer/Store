@@ -494,7 +494,7 @@ export const routes: any = [
   },
   {
     path: "sign-up",
-    element: <SignUp />,
+    element: <Login />,
   },
   {
     path: "unauthorized",

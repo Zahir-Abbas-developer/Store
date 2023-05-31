@@ -9,6 +9,7 @@ import { useSignInPostRequestMutation } from "../../store/Slices/Signin";
 import Footer from "../../layout/Footer/Footer";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { useChangePasswordPostRequestMutation } from "../../store/Slices/ChangePassword";
+import { useAuthSignUpMutation } from "../../store/Slices/Products";
 
 //comment for testing
 const Login = () => {
@@ -18,6 +19,7 @@ const Login = () => {
   let navigate = useNavigate();
   const location = useLocation();
   const [signInPostRequest, { isLoading }] = useSignInPostRequestMutation();
+  const [authSignUp]=useAuthSignUpMutation()
   const [changePasswordPostRequest, { isLoading: changePasswordLoading }] =
     useChangePasswordPostRequestMutation();
 
@@ -36,16 +38,43 @@ const Login = () => {
       return "/";
     }
   }
+  const onFinishSignUp=async (values:any)=>{
+    delete values?.confirmpassWord
+    if (values?.password === values?.confirmPassword) {
+      const payload = {
+        email: values.email,
+        password: values.password,
+        username:values?.username
+      };
+      const { error, data }: any = await authSignUp({
+        payload:{...payload ,role:"user"},
+
+      });
+      
+      if (!error) {
+        navigate("/login");
+      } else {
+        setChangePasswordErrorMessage(error?.data?.message);
+      }
+    } else {
+      setChangePasswordErrorMessage(
+        "New Password and Confirm New Password Should Be Equal"
+      );
+    }
+    
+  }
 
   const onFinish = async (values: any) => {
     const payload = {
-      emailOrUsername:"johndoe@example.com", // values.username,
-      password: "mypassword",//values.password,
+      emailOrUsername:values?.emailOrUsername, // values.username,
+      password: values?.password,//values.password,
     };
-
+    
+ 
     const { error, data }: any = await signInPostRequest({
       payload,
     });
+    
     console.log(data, "data+++++");
 
     const role = data?.data?.user?.roleData?.name;
@@ -115,8 +144,8 @@ const Login = () => {
               <h1 className="heading-1">
                 <span className="pink-color">
                   {location?.pathname === "/login"
-                    ? "Sign In"
-                    : "Change Password"}
+                    ? "Sign In" 
+                    : location?.pathname === "/sign-up"? "Sign Up": "Change Password"}
                 </span>
                 <span> to</span>
               </h1>
@@ -186,8 +215,8 @@ const Login = () => {
                 <p style={{ color: "red" }}>{errorMessage}</p>
 
                 <div style={{ textAlign: "end", margin: "10px 0px 20px 0px" }}>
-                  <Link to="" className="forgot-password-style">
-                    Forgot Password?
+                  <Link to="/sign-up" className="forgot-password-style">
+                    Sign Up?
                   </Link>
                 </div>
                 <Form.Item>
@@ -287,6 +316,105 @@ const Login = () => {
                     block
                   >
                     Save Password
+                  </Button>
+                </Form.Item>
+              </Form>
+              <Footer />
+              {/* <p className="fs-15-n-gray">
+              Resend <span className="pink-color">Log In</span> Details
+            </p> */}
+            </div>
+          </div>
+        </Col>
+      )}
+       {location?.pathname === "/sign-up" && (
+        <Col xs={24} sm={24} lg={12} xl={10}>
+          <div className="right-outer-div">
+            <div className="img-div">
+              <img
+                src={CareLibraryIcon}
+                alt="care-library-icon"
+                width={199}
+                height={91}
+              />
+            </div>
+            <div>
+              <h2 className="Sign-in-heading">Sign Up</h2>
+              <Form name="currentPassword" onFinish={onFinishSignUp}>
+                <Form.Item
+                  name="username"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Required field",
+                    },
+                  ]}
+                >
+                  <Input
+                    placeholder="Username"
+                    className="input-style"
+                  />
+                </Form.Item>
+                <Form.Item
+                  name="email"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Required field",
+                    },
+                    { validator: validateEmail },
+                  ]}
+                >
+                  <Input placeholder="Useremail" className="input-style" />
+                </Form.Item>
+                <Form.Item
+                  name="password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Required field",
+                    },
+                  ]}
+                >
+                  {/* <Input.Password placeholder="Password" /> */}
+                  <Input.Password
+                    placeholder="Password"
+                    className="input-style"
+                    iconRender={(visible) =>
+                      visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                    }
+                  />
+                </Form.Item>
+                <Form.Item
+                  name="confirmPassword"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Required field",
+                    },
+                  ]}
+                >
+                  {/* <Input.Password placeholder="Password" /> */}
+                  <Input.Password
+                    placeholder="Confirm  Password"
+                    className="input-style"
+                    iconRender={(visible) =>
+                      visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                    }
+                  />
+                </Form.Item>
+                <p style={{ color: "red" }}>{errorMessage}</p>
+                <p style={{ color: "red" }}>{changePasswordErrorMessage}</p>
+
+                <Form.Item>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    loading={isLoading}
+                    className=" btn-signin fw-600 "
+                    block
+                  >
+                    Save 
                   </Button>
                 </Form.Item>
               </Form>

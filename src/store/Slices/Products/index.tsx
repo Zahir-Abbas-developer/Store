@@ -139,6 +139,17 @@ export const extendedApi = emptySplitApi.injectEndpoints({
   
         invalidatesTags: ["material"],
       }),
+
+      //sign-up
+      authSignUp: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `auth/signup`,
+          method: "POST",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["categories"],
+      }),
     }),
   });
   
@@ -147,6 +158,7 @@ export const extendedApi = emptySplitApi.injectEndpoints({
    usePostProductsMutation,
    useDeleteProductsMutation,
    useUpdateProductsMutation,
+   useAuthSignUpMutation,
    useGetAllCategoriessQuery,useGetAllColorsQuery,useGetAllMaterialsQuery,usePostCategoriesMutation,useDeleteCategoriesMutation,useUpdateCategoriesMutation,usePostColorsMutation,useUpdateColorsMutation,useDeleteColorsMutation ,
    useUpdateMaterialsMutation,useDeleteMaterialsMutation,usePostMaterialsMutation
   } = extendedApi;
