@@ -26,8 +26,8 @@ const UploadImage = ({ uploadCertificateId, fileUrl, disabled}: any) => {
   const props: UploadProps = {
     name: "file",
     multiple: true,
-    action: "https://gateway.dev.carelibrary.developersorcalo.com/media/upload",
-    headers: { Authorization: `Bearer ${userData?.token}` },
+    action: "https://thankful-onesies.cyclic.app/uploads",
+    headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5kb2UiLCJzdWIiOiI2NDM1NGY4MmUzOWQ3N2JkNTgzZTIwNzIiLCJpYXQiOjE2ODU1MzI4NDksImV4cCI6MTY4NTYxOTI0OX0.Pa6J_v8K8DUxFkCu5Mam5mfNqW9gA9YPPmpdJbtZBmI` },
     onChange(info) {
       if (info.fileList.length > 0) {
         setShowText(false);
@@ -36,7 +36,8 @@ const UploadImage = ({ uploadCertificateId, fileUrl, disabled}: any) => {
       }
       const { status } = info.file;
       if (status !== "uploading") {
-        uploadCertificateId(info.file?.response?.data?._id);
+       
+        uploadCertificateId(info.file?.response?.url);
       }
       if (status === "done") {
         message.success(`${info.file.name} file uploaded successfully.`);
@@ -51,7 +52,7 @@ const UploadImage = ({ uploadCertificateId, fileUrl, disabled}: any) => {
 
   return (
     <>
-      {userData?.token ? (
+      { (
         <div className="upload-image">
           {fileUrl ? (
             <Dragger disabled={disabled} {...props} accept=".pdf,.svg,.png">
@@ -80,9 +81,9 @@ const UploadImage = ({ uploadCertificateId, fileUrl, disabled}: any) => {
                     <CloudUploadOutlined />
                   </p>
                 {location.pathname==="/client-profile" ? <p className="ant-upload-text fs-14 fw-600 m-0">
-                    Drag and drop, or <span>Browse</span> your Logo
+                    Drag and drop, or <span>Browse</span> your Product files
                   </p> :  <p className="ant-upload-text fs-14 fw-600 m-0">
-                    Drag and drop, or <span>Browse</span> your files
+                    Drag and drop, or <span>Browse</span> your Product files
                   </p>
 }
                 </>
@@ -104,9 +105,7 @@ const UploadImage = ({ uploadCertificateId, fileUrl, disabled}: any) => {
             </Dragger>
           )}
         </div>
-      ) : (
-        <ApiLoader />
-      )}
+      ) }
     </>
   );
 };

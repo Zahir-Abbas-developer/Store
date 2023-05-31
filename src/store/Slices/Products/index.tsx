@@ -11,6 +11,32 @@ export const extendedApi = emptySplitApi.injectEndpoints({
   
         providesTags: ["products"],
       }),
+      postProducts: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `products`,
+          method: "POST",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["products"],
+      }),
+      deleteProducts: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `products/${id}`,
+          method: "DELETE",
+        }),
+  
+        invalidatesTags: ["products"],
+      }),
+      updateProducts: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `products/${id}`,
+          method: "PUT",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["products"],
+      }),
       getAllCategoriess: builder.query({
         query: ({page,limit,query}:any) => ({
           url: `/categories`,
@@ -118,6 +144,9 @@ export const extendedApi = emptySplitApi.injectEndpoints({
   
   export const {
    useGetAllProductsQuery,
+   usePostProductsMutation,
+   useDeleteProductsMutation,
+   useUpdateProductsMutation,
    useGetAllCategoriessQuery,useGetAllColorsQuery,useGetAllMaterialsQuery,usePostCategoriesMutation,useDeleteCategoriesMutation,useUpdateCategoriesMutation,usePostColorsMutation,useUpdateColorsMutation,useDeleteColorsMutation ,
    useUpdateMaterialsMutation,useDeleteMaterialsMutation,usePostMaterialsMutation
   } = extendedApi;

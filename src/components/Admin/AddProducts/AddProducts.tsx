@@ -39,7 +39,7 @@ import CrossAllocationModal from "../../Setting/SettingJobRole/CrossAllocationMo
 import AddModal from "../../Setting/SettingJobRole/AddModal";
 import { renderDashboard } from "../../../utils/useRenderDashboard";
 import AddProductsModal from "./AddProductsModal";
-import { useGetAllMaterialsQuery } from "../../../store/Slices/Products";
+import { useDeleteProductsMutation, useGetAllMaterialsQuery, useGetAllProductsQuery } from "../../../store/Slices/Products";
 
 
 const AddProducts = () => {
@@ -77,7 +77,7 @@ const AddProducts = () => {
   const { data, isSuccess } = useGetJobRequestQuery({ refetchOnMountOrArgChange: true });
   const { data: clientData, isSuccess: isClientDataSuccess } = useGetClientsQuery({ refetchOnMountOrArgChange: true });
   const { data: jobRoleFilterData, isLoading: jobRoleFilterIsLoading } = useGetJobRequestFilterQuery({ refetchOnMountOrArgChange: true, query, pagination });
-  const [deleteJobRequest, { isLoading: isDeleteJobRequestMutation }] = useDeleteJobRequestMutation();
+  const [deleteProducts, { isLoading: isDeleteJobRequestMutation }] = useDeleteProductsMutation();
   const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({})
 
   // ============================== Variables to Assign Values to it ==============================
@@ -110,7 +110,13 @@ const AddProducts = () => {
     optimizedUserRoleDropdown.push({ value: "All", label: "All" });
     // }
   }
+//get products 
 
+const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query:"?"})
+    let productsData:any
+    if(isSuccessProducts){
+        productsData=products
+    }
   let careHomeDataDropdown: any;
   if (isClientDataSuccess) {
     clientAPIData = clientData;
@@ -126,7 +132,7 @@ const AddProducts = () => {
   // ============================== Handle Delete Job Role ==============================
   const handleDeleteSubmit = async () => {
     try {
-      await deleteJobRequest(jobID).unwrap();
+      await deleteProducts({id:jobID}).unwrap();
       AppSnackbar({
         type: "success",
         messageHeading: "Deleted!",
@@ -420,7 +426,7 @@ const AddProducts = () => {
           <Table
             scroll={{ x: 768 }}
             columns={columns}
-            dataSource={JobRole?.data?.result}
+            dataSource={productsData}
             locale={{ emptyText: !jobRoleFilterIsLoading ? "No Data" : " " }}
             loading={jobRoleFilterIsLoading}
             pagination={{

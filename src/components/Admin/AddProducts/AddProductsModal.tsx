@@ -8,20 +8,24 @@ import {
   Select,
 } from "antd";
 import arrowDown from "../../../assets/icons/arrow-down-icon.svg"
+import { useState } from 'react';
 import { usePostJobRequestMutation, useUpdateJobRequestMutation } from "../../../store/Slices/Setting/JobRole";
 import AppSnackbar from "../../../utils/AppSnackbar";
 import { ROLES } from "../../../constants/Roles";
 import { useGetClientsQuery } from "../../../store/Slices/Setting/StaffSettings/RegisterationConfiguration";
 import { handleInputTrimSpaces, handleInputTrimStart } from "../../../utils/useInputTrim";
-import { useGetAllCategoriessQuery, useGetAllColorsQuery,  useGetAllMaterialsQuery } from "../../../store/Slices/Products";
+import { useGetAllCategoriessQuery, useGetAllColorsQuery,  useGetAllMaterialsQuery, useGetAllProductsQuery, usePostProductsMutation, useUpdateProductsMutation } from "../../../store/Slices/Products";
+import UploadImage from "../../Setting/SettingKeyInfo/UploadImage/UploadImage";
+
 
 
 function AddProductsModal(props: any) {
   const [form] = Form.useForm();
+  const [certificateUrl ,setCertificateUrl]=useState("")
   const { addEditJobRole, setAddEditJobRole, modalType, getTableRowValues, setGetFieldValues, role } = props;
   const { data: clientData, isSuccess: isClientDataSuccess, } = useGetClientsQuery({ refetchOnMountOrArgChange: true });
-  const [postJobRequest, { isLoading: isPostJobRequestMutation }] = usePostJobRequestMutation();
-  const [updateJobRequest, { isLoading: isUpdateJobRequestMutation }] = useUpdateJobRequestMutation();
+  const [postProducts, { isLoading: isPostJobRequestMutation }] = usePostProductsMutation();
+  const [updateProducts, { isLoading: isUpdateJobRequestMutation }] = useUpdateProductsMutation();
 
   const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({})
   const {data:getCategories ,isSuccess:isSuccessCategories}=useGetAllCategoriessQuery({})
@@ -66,12 +70,23 @@ function AddProductsModal(props: any) {
     }));
   }
 
+  const uploadCertificateId=(url:any)=>{
+    setCertificateUrl(url)
+}
+
+console.log(getTableRowValues)
+
   if (modalType !== "Add") {
     const formValues = {
       name: getTableRowValues.name,
-      shortForm: getTableRowValues.shortForm,
-      userRole: getTableRowValues.userRole,
-      careHomeId: getTableRowValues?.careHomeData?._id
+      category: getTableRowValues.category,
+      color: getTableRowValues.color,
+      material: getTableRowValues?.material,
+      description:getTableRowValues?.description,
+      price:getTableRowValues?.price,
+      sku:getTableRowValues?.sku,
+      // eu:getTableRowValues?.shoeSizes[0]?.eu,
+      // quantity:getTableRowValues?.shoeSizes[0]?.quantity
     }
     form.setFieldsValue(formValues)
   }
@@ -87,20 +102,24 @@ function AddProductsModal(props: any) {
   const onFinish = async (values: any) => {
     // -------- for error cases --------
     // const valuessss = { mneee: values?.name, ...values };
+    const addProductValues={...values,price:parseInt(values?.price),  thumbnail:certificateUrl,"tags": [
+      "Running",
+      "Sportswear"
+    ],shoeSizes:[{"eu":parseInt(values?.eu),"quantity":parseInt(values?.quantity),"us":8}]}
+
+delete addProductValues?.eu;
+delete addProductValues?.quantity;
 
     const newValues = handleInputTrimSpaces(values);
 
-    console.log("newValues ============> ", newValues);
-    
-
     try {
       if (modalType === 'Edit') {
-        await updateJobRequest({ id: getTableRowValues._id, payload: newValues }).unwrap();
+        await updateProducts({ id: getTableRowValues._id, payload: addProductValues }).unwrap();
         AppSnackbar({ type: "success", messageHeading: "Successfully Updated!", message: "Information updated successfully" });
         // apiErrorMessage = '';
       }
       else {
-        await postJobRequest({ payload: newValues }).unwrap();
+        await postProducts({ payload: addProductValues }).unwrap();
         AppSnackbar({ type: "success", messageHeading: "Successfully Added!", message: "Information added successfully" });
         // apiErrorMessage = '';
       }
@@ -227,6 +246,79 @@ function AddProductsModal(props: any) {
               <Input
                 placeholder="Enter product price"
                 id="price"
+                style={{ marginTop: "2px", height: "40px", }}
+              />
+            </Form.Item>
+          </Col>
+          <Col xs={24} lg={24}>
+                        <UploadImage  uploadCertificateId={uploadCertificateId} />
+                    </Col>
+                    <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
+            <label className="fs-14 fw-600">Product Quantity</label>
+            <Form.Item
+              name="quantity"
+              rules={[{ required: true, message: "Required field " }]}
+              style={{ marginBottom: "8px" }}
+              normalize={(value: any) => handleInputTrimStart(value)}
+            >
+              <Input
+                placeholder="Enter product quantity"
+                id="quantity"
+                style={{ marginTop: "2px", height: "40px", }}
+              />
+            </Form.Item>
+          </Col>
+          <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
+            <label className="fs-14 fw-600">Select Shoe Size</label>
+            <Form.Item
+              name="eu"
+              rules={[{ required: true, message: "Required field " }]}
+              style={{ marginBottom: "8px" }}
+            >
+              <Select
+                suffixIcon={<img src={arrowDown} alt='arrow down' />}
+                className="d-flex"
+                placeholder="Select Product Size"
+                options={[
+                  {
+                    value: '42',
+                    label: '42',
+                  },
+                  {
+                    value: '43',
+                    label: '43',
+                  },
+                  {
+                    value: '44',
+                    label: '44',
+                  },
+                  {
+                    value: '45',
+                    label: '45',
+                  },
+                  {
+                    value: '46',
+                    label: '46',
+                  },
+                  {
+                    value: '47',
+                    label: '47',
+                  },
+                ]}
+              />
+            </Form.Item>
+          </Col>
+          <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
+            <label className="fs-14 fw-600">Product Sku</label>
+            <Form.Item
+              name="sku"
+              rules={[{ required: true, message: "Required field " }]}
+              style={{ marginBottom: "8px" }}
+              normalize={(value: any) => handleInputTrimStart(value)}
+            >
+              <Input
+                placeholder="Enter product sku"
+                id="sku"
                 style={{ marginTop: "2px", height: "40px", }}
               />
             </Form.Item>
