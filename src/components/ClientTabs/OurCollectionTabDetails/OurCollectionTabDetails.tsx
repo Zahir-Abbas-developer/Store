@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card, Col, Row, Select } from 'antd';
-import { useGetAllProductsQuery } from '../../../store/Slices/Products';
+import { useGetAllCategoriessQuery, useGetAllColorsQuery, useGetAllMaterialsQuery, useGetAllProductsQuery } from '../../../store/Slices/Products';
 import CollectionTabFilter from '../CollectionTabFilter/CollectionTabFilter';
 import { useNavigate } from "react-router-dom";
 
@@ -14,8 +14,24 @@ const { Meta } = Card;
   const [materialFilter ,setMaterialFilter]=useState("")
   const [colorFilter ,setColorFilter]=useState("")
   const [sortFilter ,serSortFilter]=useState("")
- //query parameters of search and filter
 
+   const {data ,isSuccess}=useGetAllCategoriessQuery({})
+  
+  const {data:isDataMaterial ,isSuccess:isSuccessMaterial}=useGetAllMaterialsQuery({})
+  const {data:isColorData ,isSuccess:isSuccessColor}=useGetAllColorsQuery({})
+
+let categoryData:any
+let materialFilterData:any
+let colorFilterData:any
+if(isSuccess){
+  categoryData=data
+  materialFilterData=isDataMaterial
+  colorFilterData=isColorData
+}
+ //query parameters of search and filter
+const categoriesFilterValue=categoryData?.map((categoryFilter:any)=> {return {value:categoryFilter?.name,label:categoryFilter?.name}} )
+const styleFilterValue=materialFilterData?.map((categoryFilter:any)=> {return {value:categoryFilter?.name,label:categoryFilter?.name}} )
+const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {value:categoryFilter?.name,label:categoryFilter?.name}} )
  const paramsObj: any = {};
  if (styleFilter) paramsObj["categoryName"] = styleFilter;
  if (materialFilter) paramsObj["materialName"] = materialFilter;
@@ -23,10 +39,10 @@ const { Meta } = Card;
  if (sortFilter) paramsObj["sortBy"] = sortFilter;
 
  const query = "?" + new URLSearchParams(paramsObj).toString();
-    const {data ,isSuccess}=useGetAllProductsQuery({query})
+    const {data:dataProducts ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query})
     let productsData:any
-    if(isSuccess){
-        productsData=data
+    if(isSuccessProducts){
+        productsData=dataProducts
     }
     const handleApplicationStage=(applicationStageValue:any)=>{
       serSortFilter(applicationStageValue)
@@ -43,7 +59,7 @@ const { Meta } = Card;
 </div>
 
         <Row style={{margin:"20px 0px"}}>
-            <Col xs={24} md={12}>
+            <Col xs={24} md={6}>
             <Select
           defaultValue="SORT..."
             className="select-onboarding"
@@ -60,17 +76,50 @@ const { Meta } = Card;
           />
          
             </Col>
+            <Col xs={24} md={6}>
+            <Select
+          defaultValue="STYLE..."
+            className="select-onboarding"
+            onChange={(value:any)=>setStyleFilter(value)}
+            style={{ width: "100%" }}
+            // suffixIcon={<img src={Arrow} />}
+            options={categoriesFilterValue}
+          />
+         
+            </Col>
+            <Col xs={24} md={6}>
+            <Select
+          defaultValue="MATERIAL..."
+            className="select-onboarding"
+            onChange={(value:any)=>setMaterialFilter(value)}
+            style={{ width: "100%" }}
+            // suffixIcon={<img src={Arrow} />}
+            options={styleFilterValue}
+          />
+         
+            </Col>
+            <Col xs={24} md={6}>
+            <Select
+          defaultValue="COLOR..."
+            className="select-onboarding"
+            onChange={(value:any)=>setColorFilter(value)}
+            style={{ width: "100%" }}
+            // suffixIcon={<img src={Arrow} />}
+            options={colorFilterValue}
+          />
+         
+            </Col>
         </Row>
         <Row >
-  <Col xs={24} md={24} lg={6} style={{backgroundColor:"#000000"}}>
+  {/* <Col xs={24} md={24} lg={6} style={{backgroundColor:"#000000"}}>
     <CollectionTabFilter
       setStyleFilter={setStyleFilter}
       setMaterialFilter={setMaterialFilter}
       setColorFilter={setColorFilter}
     />
-  </Col>
+  </Col> */}
 
-  <Col xs={24} md={24} lg={18}>
+  <Col xs={24} md={24} lg={24}>
     <Row >
       {isSuccess &&
         productsData?.map((productData: any) => (
@@ -78,7 +127,7 @@ const { Meta } = Card;
             <Card className="product-card-details"
               hoverable
               onClick={() => navigate("/productDetails", { state: { productDetails: productData } })}
-              style={{ width: 240 }}
+              style={{ width: "50%" }}
               cover={<img alt="example" src={productData?.thumbnail} />}
             >
               <Meta title={productData?.name} description={productData?.description} />
