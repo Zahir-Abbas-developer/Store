@@ -127,8 +127,8 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
             <Card className="product-card-details"
               hoverable
               onClick={() => navigate("/productDetails", { state: { productDetails: productData } })}
-              style={{ width: "50%" }}
-              cover={<img alt="example" src={productData?.thumbnail} />}
+              style={{ width: "50%",minHeight:"300px" }}
+              cover={<img alt="example" src={productData?.thumbnail} width={200} height={200} />}
             >
               <Meta title={productData?.name} description={productData?.description} />
               <p>{productData?.price}</p>
