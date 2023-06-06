@@ -5,6 +5,7 @@ export const ROLES = {
   admin: "admin",
   coordinator: "carer_coordinator",
   superAdmin: "system_admin",
+  user: "user",
 }
 
  

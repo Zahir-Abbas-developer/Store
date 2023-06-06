@@ -44,7 +44,8 @@ const Login = () => {
       const payload = {
         email: values.email,
         password: values.password,
-        username:values?.username
+        username:values?.username,
+        role:"user"
       };
       const { error, data }: any = await authSignUp({
         payload:{...payload ,role:"user"},
@@ -68,6 +69,7 @@ const Login = () => {
     const payload = {
       emailOrUsername:values?.emailOrUsername, // values.username,
       password: values?.password,//values.password,
+     
     };
     
  
@@ -78,7 +80,8 @@ const Login = () => {
     console.log(data, "data+++++");
 
     const role = data?.data?.user?.roleData?.name;
-    navigate("/dashboard");
+  
+
     // console.log("test data", data?.data?.session)
 
     if (data?.data?.session) {
@@ -95,6 +98,7 @@ const Login = () => {
         };
         const stringifyData = JSON.stringify(userData);
         localStorage.setItem("careUserData", stringifyData);
+        navigate("/dashboard");
         
       } else {
         setErrorMessage(error?.data?.message);
@@ -183,7 +187,7 @@ const Login = () => {
               <h2 className="Sign-in-heading">Sign In</h2>
               <Form name="emailOrUsername" onFinish={onFinish}>
                 <Form.Item
-                  name="username"
+                  name="emailOrUsername"
                   rules={[
                     {
                       required: true,
