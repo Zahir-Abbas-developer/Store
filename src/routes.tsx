@@ -534,23 +534,23 @@ export const routes: any = [
       },
       {
         path:"/add-products",
-        element:<AddProductsPage/>
+        element: (<RequireAuth allowedRoles={[ROLES.admin]}> <AddProductsPage/></RequireAuth>)  
       },
       {
         path:"/add-categories",
-        element:<AddCategoriesPage/>
+        element:(<RequireAuth allowedRoles={[ROLES.admin]}><AddCategoriesPage/></RequireAuth> )
       },
       {
         path:"/add-orders",
-        element:<AddOrdersPage/>
+        element:(<RequireAuth allowedRoles={[ROLES.admin]}><AddOrdersPage/></RequireAuth> )
       },
       {
         path:"/add-colors",
-        element:<AddColorsPage/>
+        element:(<RequireAuth allowedRoles={[ROLES.admin]}><AddColorsPage/></RequireAuth> )
       },
       {
         path:"/add-styles",
-        element:<AddStyles/>
+        element:(<RequireAuth allowedRoles={[ROLES.admin]}><AddStyles/></RequireAuth> )
       },
       {
         path: "coordinator-dashboard",

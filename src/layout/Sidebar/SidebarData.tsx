@@ -29,7 +29,7 @@ import { ROLES } from "../../constants/Roles";
 
 export const getSidebarMenues = (role: any, permissions: any) => {
  
-
+console.log(role)
   function formatString(str: string) {
     str = str.replace(/_/g, ' ');
     return str.replace(/\b\w/g, (c) => c.toUpperCase());
@@ -44,92 +44,92 @@ export const getSidebarMenues = (role: any, permissions: any) => {
       label: "HOME",
       link: "/dashboard",
       icon: <Dashboard />,
-      role: [ROLES.client],
+      role: [ROLES.user],
     },
     {
       label: "OUR COLLECTION",
       link: "/client-profile",
       icon: <Profile />,
-      role: [ROLES.client],
+      role: [ROLES.user],
     },
     {
       label: "CUSTOM ORDER",
       link: "/client-booking-calendar",
       icon: <Calendar />,
-      role: [ROLES.client],
+      role: [ROLES.user],
     },
    
     {
       label: "STYLE GUIDE",
       link: "/client-user-management",
       icon: <UserManagement />,
-      role: [ROLES.client],
+      role: [ROLES.user],
     },
     {
       label: "FITTING GUIDE",
       link: "/client-preferences",
       icon: <Preferences />,
-      role: [ROLES.client],
+      role: [ROLES.user],
     },
     {
       label: "MATERIAL GUIDE",
       link: "/client-preferences",
       icon: <Preferences />,
-      role: [ROLES.client],
+      role: [ROLES.user],
     },
     {
       label: "SOLE GUIDE",
       link: "/client-preferences",
       icon: <Preferences />,
-      role: [ROLES.client],
+      role: [ROLES.user],
     },
     {
       label: "SHOE CARE",
       link: "/client-preferences",
       icon: <Preferences />,
-      role: [ROLES.client],
+      role: [ROLES.user],
     },
     {
       label: "SHOPPING",
       link: "/client-preferences",
       icon: <Preferences />,
-      role: [ROLES.client],
+      role: [ROLES.admin],
     },
     {
       label: "CONTACT",
       link: "/client-preferences",
       icon: <Preferences />,
-      role: [ROLES.client],
+      role: [ROLES.admin],
     },
     {
       label: "PRODUCTS",
       link: "/add-products",
       icon: <Preferences />,
-      // role: [ROLES.client],
+      role: [ROLES.admin],
     },
     {
       label: "CATEGORIES",
       link: "/add-categories",
       icon: <Preferences />,
-      role: [ROLES.client],
+      role: [ROLES.admin],
     },
     {
       label: "COLORS",
       link: "/add-colors",
       icon: <Preferences />,
-      role: [ROLES.client],
+      role: [ROLES.admin],
     },
     {
       label: "STYLES",
       link: "/add-styles",
       icon: <Preferences />,
-      role: [ROLES.client],
+      role: [ROLES.admin],
     },
     {
       label: "ORDERS",
       link: "/add-orders",
       icon: <Preferences />,
-      role: [ROLES.client],
+      role: [ROLES.admin],
     },
    
   ];
@@ -139,5 +139,5 @@ export const getSidebarMenues = (role: any, permissions: any) => {
     ?.filter((obj: any) => permissions?.some((ele: any) => formatString(ele?.name) === obj.label));
   const finalArray = role === 'system_admin' ? updateArray : permissionsValues
 
-  return SidebarMenues
+  return updateArray
 }
