@@ -99,11 +99,11 @@ console.log(role)
       label: "SHOPPING",
       link: "/client-preferences",
       icon: <Preferences />,
-      role: [ROLES.admin],
+      role: [ROLES.user],
     },
     {
       label: "CONTACT",
-      link: "/client-preferences",
+      link: "/contact",
       icon: <Preferences />,
       role: [ROLES.admin],
     },
