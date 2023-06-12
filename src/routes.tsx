@@ -14,6 +14,9 @@ import LoadingSvg from "../src/assets/Login/loader-icon.gif";
 import { ROLES } from "./constants/Roles";
 import path from "path";
 import AddStyles from "./components/Admin/AddStyles/AddStyles";
+import OurCollectionTabDetails from "./components/ClientTabs/OurCollectionTabDetails/OurCollectionTabDetails";
+import OurCustomOrderDetails from "./components/ClientTabs/CustomOrderTabDetails/CustomOrderTabDetails";
+
 
 const Loadable = (Component: LazyExoticComponent<FC>) => (props: any) =>
   (
@@ -734,8 +737,9 @@ export const routes: any = [
       {
         path: "client-profile",
         element: (
-          <RequireAuth allowedRoles={[ROLES.client]}>
-            <ClientProfilePage />
+          <RequireAuth allowedRoles={[ROLES.user]}>
+          
+            <OurCollectionTabDetails/>
           </RequireAuth>
         ),
       },
@@ -1983,8 +1987,8 @@ export const routes: any = [
           {
             path: "client-booking-calendar",
             element: (
-              <RequireAuth allowedRoles={[ROLES.client]}>
-                <ClientBookingCalendar />
+              <RequireAuth allowedRoles={[ROLES.user]}>
+                 <OurCustomOrderDetails /> 
               </RequireAuth>
             ),
           },
