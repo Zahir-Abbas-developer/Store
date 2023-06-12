@@ -37,6 +37,40 @@ export const extendedApi = emptySplitApi.injectEndpoints({
   
         invalidatesTags: ["products"],
       }),
+      getOrders: builder.query({
+        query: ({page,limit,query}:any) => ({
+          url: `/products${query}`,
+          method: "GET",
+        }),
+  
+        providesTags: ["orders"],
+      }),
+      postOrders: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `orders`,
+          method: "POST",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["orders"],
+      }),
+      deleteOrders: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `products/${id}`,
+          method: "DELETE",
+        }),
+  
+        invalidatesTags: ["orders"],
+      }),
+      updateOrders: builder.mutation({
+        query: ({ payload ,id }: any) => ({
+          url: `products/${id}`,
+          method: "PUT",
+          body: payload,
+        }),
+  
+        invalidatesTags: ["orders"],
+      }),
       getAllCategoriess: builder.query({
         query: ({page,limit,query}:any) => ({
           url: `/categories`,
@@ -159,6 +193,7 @@ export const extendedApi = emptySplitApi.injectEndpoints({
    useDeleteProductsMutation,
    useUpdateProductsMutation,
    useAuthSignUpMutation,
+   usePostOrdersMutation,
    useGetAllCategoriessQuery,useGetAllColorsQuery,useGetAllMaterialsQuery,usePostCategoriesMutation,useDeleteCategoriesMutation,useUpdateCategoriesMutation,usePostColorsMutation,useUpdateColorsMutation,useDeleteColorsMutation ,
    useUpdateMaterialsMutation,useDeleteMaterialsMutation,usePostMaterialsMutation
   } = extendedApi;

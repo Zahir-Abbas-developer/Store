@@ -25,14 +25,14 @@ const cognitoID = "9539c3dc-29eb-49bb-8e10-2c3180018f10";
 // fetchBaseQuery logic is unchanged, moved out of createApi for readability
 const baseQuery = fetchBaseQuery({
   baseUrl: baseUrlStore,
-  // prepareHeaders: async (headers) => {
-  //   // const userData: any = localStorage.getItem("careUserData")
-  //   // const token: any = JSON.parse(userData);
-  //   // console.log("userData", userData);
-  //   // headers.set("Authorization", `Bearer ${token.token}`);
-  //   headers.set("Content-Type", "application/json");
-  //   return headers;
-  // },
+  prepareHeaders: async (headers) => {
+    const userData: any = localStorage.getItem("careUserData")
+    const token: any = JSON.parse(userData);
+    console.log("userData", userData);
+    headers.set("Authorization", `Bearer ${token.token}`);
+    headers.set("Content-Type", "application/json");
+    return headers;
+  },
 });
 
 export const baseQueryWithReauth: BaseQueryFn<
@@ -75,14 +75,14 @@ export const emptySplitApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://thankful-onesies.cyclic.app/",
 
-    // prepareHeaders: (headers: Headers) => {
-    //   const userData: any = JSON.parse(localStorage.getItem("careUserData") || "{}");
+    prepareHeaders: (headers: Headers) => {
+      const userData: any = JSON.parse(localStorage.getItem("careUserData") || "{}");
 
-    //   if (userData?.token) {
-    //     headers.set("Authorization", `Bearer ${userData?.token}`);
-    //   }
-    //   return headers;
-    // },
+      if (userData?.token) {
+        headers.set("Authorization", `Bearer ${userData?.token}`);
+      }
+      return headers;
+    },
   }),
   // baseQuery: baseQueryWithReauth,
 

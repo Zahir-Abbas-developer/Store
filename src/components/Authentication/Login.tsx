@@ -91,7 +91,7 @@ const Login = () => {
       if (!error) {
         const userData = {
           username: data?.user?.email,
-          token: data?.data?.accessToken,
+          token: data?.accessToken,
           refreshToken: data?.data?.refreshToken,
           role: data?.user?.role,
         };

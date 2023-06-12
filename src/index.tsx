@@ -25,7 +25,7 @@ root.render(
       <ConfigProvider theme={theme}>
       <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-    <PayPalScriptProvider options={{ "client-id": "Ab2KAInp7PNa0-l_lvMhvH_nuFmIpU6aMxnGGEE2bBzJkJGDe9-DLgXI4lkD_rpB5cBDd1SjQypZ1-d7" }}>
+    <PayPalScriptProvider options={{ "client-id": "Ab2KAInp7PNa0-l_lvMhvH_nuFmIpU6aMxnGGEE2bBzJkJGDe9-DLgXI4lkD_rpB5cBDd1SjQypZ1-d7", components:"buttons",currency:"USD",intent:"capture" }}>
     <App />
   </PayPalScriptProvider>,
     
