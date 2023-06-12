@@ -15,6 +15,7 @@ import exportedObject, { useAppSelector } from "../../../store"
 import { addProduct } from "../../../store/Slices/AddToCardSlice"
 import AppSnackbar from "../../../utils/AppSnackbar"
 import { closeDrawer, openDrawer } from "../../../store/Slices/OpenDrawerSlice"
+import DrawerComponent from "./Drawer"
 
 
 // Import the addToCart action creator
@@ -151,56 +152,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
              
 
             }} type="primary" className="cancel-btn  fs-14 fw-600" htmlType="submit" style={{ width: "100%" }} >ADD TO CART</Button>
-            <Drawer
-              title=""
-              placement={placement}
-              className="drawer-details"
-              autoFocus={true}
-              onClose={onClose}
-              open={isOpen}
-
-              extra={
-                <Space>
-                  <Button onClick={onClose}>Cancel</Button>
-
-                </Space>
-              }
-            >
-              {products?.products?.map((productsDetails: any) => {
-               return( <Row style={{ padding: "20px" }}>
-               <Col xs={24} md={12}>
-                 <img src={productsDetails?.thumbnail} width={80} height={80} style={{ borderRadius: "50%" }} />
-
-               </Col>
-               <Col xs={24} md={12}>
-                 <p style={{ color: "#ffffff" }}>{productsDetails?.categoryName}</p>
-                 <p style={{ color: "#ffffff" }}> 1 × $ {productsDetails?.price}</p>
-               </Col>
-               <Col xs={24} md={24} style={{ textAlign: "center", marginTop: "20px" }}>
-                 <span style={{ color: "#ffffff", }}>---------------------------</span>
-               </Col>
-
-             </Row>)
-              })}
-           
-           <Row style={{ padding: "20px" }}>
-                <Col xs={24} md={24} style={{ marginTop: "20px" }}>
-
-                  <p style={{ color: "#ffffff", textAlign: "center", border: "1px dotted", padding: "10px" }}>Subtotal $ {Math.round(totalPrice)}</p>
-                </Col>
-                <Col xs={24} md={24}>
-                  <Button
-                    className="view-cart"
-                    style={{ width: "100%", marginTop: "20px" }}
-                onClick={()=>{  dispatch(closeDrawer());navigate("/productDetails/cart-details", { state: { productDetails: products?.products } }) }
-                }  >
-                    VIEW CART
-                  </Button>
-                  <Button style={{ width: "100%", marginTop: "20px" }} >CHECKOUT</Button>
-                </Col>
-              </Row>
-
-            </Drawer>
+            <DrawerComponent/>
             
           </Col>
         </Row>
