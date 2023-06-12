@@ -484,6 +484,7 @@ const SystemPerformance = Loadable(
 
 export const routes: any = [
   { path: "/", element: <Navigate to="dashboard" /> },
+  
   {
     path: "login",
     element: <Login />,
@@ -513,6 +514,14 @@ export const routes: any = [
         element: (
           <RequireAuth allowedRoles={[ROLES.superAdmin]}>
             <SuperAdminDashboardPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "admin-dashboard",
+        element: (
+          <RequireAuth allowedRoles={[ROLES.admin]}>
+            <StaffAllocationPage />
           </RequireAuth>
         ),
       },
@@ -873,14 +882,7 @@ export const routes: any = [
           </RequireAuth>
         ),
       },
-      {
-        path: "staff-allocation",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-            <StaffAllocationPage />
-          </RequireAuth>
-        ),
-      },
+     
       {
         path: "backup",
         element: (

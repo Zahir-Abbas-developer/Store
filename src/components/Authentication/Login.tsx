@@ -35,7 +35,7 @@ const Login = () => {
     } else if (role === "system_admin") {
       return "/super-admin-dashboard";
     } else {
-      return "/";
+      return "/admin-dashboard";
     }
   }
   const onFinishSignUp=async (values:any)=>{
@@ -45,7 +45,6 @@ const Login = () => {
         email: values.email,
         password: values.password,
         username:values?.username,
-        role:"user"
       };
       const { error, data }: any = await authSignUp({
         payload:{...payload ,role:"user"},
@@ -98,7 +97,8 @@ const Login = () => {
         };
         const stringifyData = JSON.stringify(userData);
         localStorage.setItem("careUserData", stringifyData);
-        navigate("/dashboard");
+        // navigate("/dashboard");
+        navigate(renderDashboard(role))
         
       } else {
         setErrorMessage(error?.data?.message);

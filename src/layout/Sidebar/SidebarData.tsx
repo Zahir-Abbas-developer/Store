@@ -42,6 +42,12 @@ console.log(role)
     // #######################  Sidebar Items #######################  
     {
       label: "HOME",
+      link: "/admin-dashboard",
+      icon: <Dashboard />,
+      role: [ROLES.admin],
+    },
+    {
+      label: "HOME",
       link: "/dashboard",
       icon: <Dashboard />,
       role: [ROLES.user],

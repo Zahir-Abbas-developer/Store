@@ -123,25 +123,25 @@ const StaffAllocation = () => {
     {
       icon: personIcon,
       count: widgetsData?.data?.assignedCareHomes,
-      text: "Assigned Care Homes",
+      text: "Total Products",
       background: "rgba(113, 59, 219, 0.05)",
     },
     {
       icon: markIcon,
       count: widgetsData?.data?.noOfCarers,
-      text: "Number of Carers",
+      text: "Total Categories",
       background: "rgba(51, 214, 159, 0.07)",
     },
     {
       icon: underPerformIcon,
       count: widgetsData?.data?.allocatedCarers,
-      text: "Allocated Carer",
+      text: "Total Orders",
       background: "rgba(255, 76, 97, 0.05)",
     },
     {
       icon: bookIcon,
       count: widgetsData?.data?.newCarers,
-      text: "New Carer",
+      text: "New Products",
       background: "rgba(76, 184, 255, 0.07",
     },
   ];
@@ -320,7 +320,7 @@ const StaffAllocation = () => {
   //BreadCrumb Items
   const breadCrumbItems = [
     {
-      title: "Staff Allocation",
+      title: "Home",
       path: "",
     },
     {
@@ -340,62 +340,10 @@ const StaffAllocation = () => {
             ))}
           </Row>
         </div>
-        <div className="wrapper-filters">
-          <StaffAllocationFilters
-            careHomeId={defaultId}
-            selectedRowKeys={selectedRowKeys}
-            setSelectedRowKeys={setSelectedRowKeys}
-            selectedRecord={selectedRecord}
-            selectedRows={selectedRows}
-            careHomeOptions={careHomeOptions}
-            userTypeOptions={userTypeOptions}
-            filterValues={filterValues}
-            setFilterValues={setFilterValues}
-          />
-        </div>
-        <div className="table-fnc-head-wrapper">
-          <StaffAllocationTable
-            setSelectedRows={setSelectedRows}
-            setSearchTerm={setSearchTerm}
-            careHomeId={defaultId}
-            setSelectedRowKeys={setSelectedRowKeys}
-            selectedRowKeys={selectedRowKeys}
-            setFilterValues={setFilterValues}
-            loading={staffLoad}
-            pagination={{
-              current: pagination.page,
-              pageSize: pagination.limit,
-              total: staffList?.data?.metadata?.total,
-              onChange: (page: number, limit: number) => setPagination({ page, limit }),
-            }}
-            tableHeader={StaffAllocationTableHeader}
-            tableData={staffList?.data?.result}
-          />
-        </div>
-        <AllocateCarerModal
-          defaultId={defaultId}
-          careHomeOptions={clientListOptions}
-          selectedRecord={selectedRecord}
-          isAllocateCarerModal={isAllocateCarerModal}
-          setIsAllocateCarerModal={setIsAllocateCarerModal}
-          isShowTable={true}
-        />
-        <ViewCarerHomeModal
-          selectedRecord={selectedRecord}
-          isViewCarerHomeModal={isViewCarerHomeModal}
-          setIsViewCarerHomeModal={setIsViewCarerHomeModal}
-        />
+        
+       
       </div>
-      <DeleteModal
-        setDeleteModal={setIsDeleteModal}
-        deleteModal={isDeleteModal}
-        submitTitle="Yes, Remove"
-        cancelTitle="Cancel"
-        title="Are you sure you want to remove this record?"
-        onSubmit={handleDeleteSubmit}
-        onCancel={handleCancelSubmit}
-      />
-      <ViewProfile IsProfileModal={isProfileModal} setIsProfileModal={setIsProfileModal} />
+      
     </>
   );
 };
