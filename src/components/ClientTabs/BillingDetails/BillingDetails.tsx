@@ -208,7 +208,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
   </Row>
    <Row>
    <Col xs={24} style={{textAlign:"center"}}>
-   <PayPalButtons createOrder={(_data: any, actions: any) => actions.order.create({ amount: totalPrice })} onApprove={onApprove} onError={onError} />
+   <PayPalButtons  />
     
     </Col>
    </Row>
