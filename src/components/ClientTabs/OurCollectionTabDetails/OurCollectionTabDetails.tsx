@@ -120,18 +120,22 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
   </Col> */}
 
   <Col xs={24} md={24} lg={24}>
-    <Row >
+    <Row gutter={[16,16]}>
       {isSuccess &&
         productsData?.map((productData: any) => (
           <Col xs={24} md={12} lg={8} key={productData.id}>
-            <Card className="product-card-details"
+            <Card 
               hoverable
               onClick={() => navigate("/productDetails", { state: { productDetails: productData } })}
-              style={{ width: "50%",minHeight:"300px" }}
-              cover={<img alt="example" src={productData?.thumbnail} width={200} height={200} />}
+              style={{ width: "100%",minHeight:"300px" }}
+           
             >
-              <Meta title={productData?.name} description={productData?.description} />
-              <p>{productData?.price}</p>
+          <div style={{textAlign:"center"}}>
+          <img alt="example" src={productData?.thumbnail} width={100} height={100} style={{borderRadius:"50%"}} />
+              <p style={{fontWeight:"bold"}}> {productData?.name}</p>
+              <p >{productData?.description}</p>
+              <p style={{fontWeight:"bold",color:"#65cdf0"}}>$ {productData?.price}</p>
+          </div>
             </Card>
           </Col>
         ))}

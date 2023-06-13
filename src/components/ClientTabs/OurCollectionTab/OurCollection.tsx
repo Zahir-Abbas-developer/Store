@@ -26,6 +26,6 @@ const items: TabsProps['items'] = [
   },
 ];
 
-const OurCollectionTab = () => <Tabs defaultActiveKey="1" items={items} onChange={onChange} />;
+const OurCollectionTab = () => <Tabs defaultActiveKey="1" items={items} onChange={onChange} style={{backgroundColor:"transparent !important"}}/>;
 
 export default OurCollectionTab;

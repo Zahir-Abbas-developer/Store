@@ -71,7 +71,7 @@ const DashboardAdmin = () => {
     <>
       <BreadCrumb breadCrumbItems={breadCrumbItems} />
     
-    <Layout className="bgLight-color dashboard">
+    <Layout className=" dashboard" style={{backgroundColor:"transparent"}}>
       <Row gutter={[29, 29]} style={{ paddingBottom: "30px" }}>
         <Col xs={24} sm={24} md={24} lg={24}>
         <OurCollectionTab />

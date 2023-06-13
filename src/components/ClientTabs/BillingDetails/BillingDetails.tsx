@@ -250,7 +250,7 @@ const BillingDetails = () => {
                         {
                           amount: {
                             currency_code: "USD",
-                            value: "1.00",
+                            value: totalPrice + 10,
                           },
                         },
                       ],

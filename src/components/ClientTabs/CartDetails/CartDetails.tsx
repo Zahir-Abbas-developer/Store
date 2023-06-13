@@ -2,10 +2,10 @@
 import { Button, Card,  Col, Row, Space, Table } from 'antd'
 import './CartDetails.scss'
 import deleteIcon from "../../../assets/icons/delete-icon-outlined.svg";
-import { useLocation, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addProduct, removeProduct } from '../../../store/Slices/AddToCardSlice';
-import { text } from 'stream/consumers';
+import {  removeProduct } from '../../../store/Slices/AddToCardSlice';
+
 import AppSnackbar from '../../../utils/AppSnackbar';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../../store';
@@ -14,7 +14,10 @@ const CartDetails=()=>{
   const dispatch = useDispatch();
   const { products }: any = useAppSelector((state) => state.products);
   const handleDeleteCart=(id:any,size:any)=>{
-    dispatch(removeProduct({ id, size }));
+    const allProducts=JSON.parse(JSON.stringify(products.products));   
+    const updatedProductIndex = allProducts.findIndex((product:any) => product.id === id && product.size === size);    
+    allProducts.splice(updatedProductIndex,1)    
+    dispatch(removeProduct(allProducts));
     AppSnackbar({ type: "success", messageHeading: "Success!", message: "Successful Deleted!" });
   }
   useEffect(()=>{

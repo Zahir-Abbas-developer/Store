@@ -10,6 +10,9 @@
 
     &.collapsed {
       padding-left: 30px;
+
+
+      background: linear-gradient(160deg, rgba(0, 0, 0, 1) 3%, rgba(96, 68, 44, 1) 72%, rgba(96, 68, 44, 1) 100%);
     }
 
     .ant-layout-sider-children {
