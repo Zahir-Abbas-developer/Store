@@ -44,7 +44,7 @@ const BussinessDetials = () => {
         <Row gutter={14} className="dateTime">
           <Col xs={24} md={12} lg={10}>
             <Form.Item name="BusinessName" rules={[{ required: false, message: "Required field" }]} label={"Business Name"} className="mb-10">
-              <Input className="input-field" placeholder="Shoe Hub" />
+              <Input className="input-field" placeholder="Solace Leather" />
             </Form.Item>
           </Col>
           <Col xs={24} md={12} lg={10}>
