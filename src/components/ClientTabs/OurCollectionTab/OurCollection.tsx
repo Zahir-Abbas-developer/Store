@@ -3,7 +3,7 @@ import { Tabs } from 'antd';
 import type { App, TabsProps } from 'antd';
 import OurCollectionTabDetails from '../OurCollectionTabDetails/OurCollectionTabDetails';
 import OurCustomOrderDetails from '../CustomOrderTabDetails/CustomOrderTabDetails';
-
+import './OurCollection.scss'
 const onChange = (key: string) => {
   console.log(key);
 };
@@ -26,6 +26,6 @@ const items: TabsProps['items'] = [
   },
 ];
 
-const OurCollectionTab = () => <Tabs defaultActiveKey="1" items={items} onChange={onChange} style={{backgroundColor:"transparent !important"}}/>;
+const OurCollectionTab = () => <Tabs defaultActiveKey="1" items={items} onChange={onChange} className="custom-tabs"  style={{backgroundColor:"transparent !important"}}/>;
 
 export default OurCollectionTab;

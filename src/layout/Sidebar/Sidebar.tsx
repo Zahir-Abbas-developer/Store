@@ -33,7 +33,7 @@ const Sidebar = ({ outlet }: OutletProps) => {
       <Layout className="layout" onClick={()=> setLocation(window.location.pathname)}>
         <Sider iscollapsed={iscollapsed} location={location} setLocation={setLocation} />
         <Layout className="site-layout">
-          <Header style={{ padding: 0, background: colorBgContainer }}>
+          <Header style={{ padding: 0, background: "linear-gradient(250deg, rgba(68,68,68,1) 6%, rgba(45,45,45,1) 100%)" }}>
             <div className="responsive-header">
               <img src={LogoImg} alt="logo" />
             </div>

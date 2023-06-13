@@ -99,6 +99,7 @@ const handleOpenDrawer=()=>{
         justifyContent: "end",
         gap: "20px",
         marginRight: "20px",
+        background: "transparent"
       }}
     >
 
