@@ -19,7 +19,8 @@ const productSlice = createSlice({
 
     },
     removeProduct(state, action) {
-      const updatedProducts = state.products.filter((product:any) => (product.id) !== action.payload);
+      console.log(state?.products ,action?.payload)
+      const updatedProducts = state.products.filter((product:any) => product.id !== action.payload.id && product.size !== action.payload.size);
       return { ...state, products: updatedProducts };
     },
     // Add more cases for updating, deleting, or modifying products

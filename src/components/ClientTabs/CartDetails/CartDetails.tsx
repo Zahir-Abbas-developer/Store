@@ -13,8 +13,8 @@ const CartDetails=()=>{
   const navigate=useNavigate()
   const dispatch = useDispatch();
   const { products }: any = useAppSelector((state) => state.products);
-  const handleDeleteCart=(id:any)=>{
-    dispatch(removeProduct(id))
+  const handleDeleteCart=(id:any,size:any)=>{
+    dispatch(removeProduct({ id, size }));
     AppSnackbar({ type: "success", messageHeading: "Success!", message: "Successful Deleted!" });
   }
   useEffect(()=>{
@@ -34,7 +34,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
           width: 300,
           render: (_:any, text:any) => (
             <Space>
-              <span className="fs-14 fw-400 title-color" onClick={()=>{ handleDeleteCart(text?.id)}} style={{cursor:"pointer"}}> <img src={deleteIcon}/>  </span>
+              <span className="fs-14 fw-400 title-color" onClick={()=>{ handleDeleteCart(text?.id,text?.size)}} style={{cursor:"pointer"}}> <img src={deleteIcon}/>  </span>
             </Space>
           ),
         },
