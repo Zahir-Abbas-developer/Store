@@ -12,7 +12,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-hold">
         <p className='fs-14 line-height-22'>
-          Copyrights © 2020 All rights reserved <span>CARE LIBRARY</span>
+          Copyrights © 2020 All rights reserved <span>Shoe Hub</span>
         </p>
         <ul style={{display:'flex',gap:'30px',listStyleType:'none'}}>
           {footerPages.map((item) => (

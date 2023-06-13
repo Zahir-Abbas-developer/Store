@@ -153,7 +153,7 @@ const Login = () => {
                 </span>
                 <span> to</span>
               </h1>
-              <h3 className="heading-3">Care Library</h3>
+              <h3 className="heading-3">Shoe Hub</h3>
             </div>
             {/* <div>
               <p className="p-tag-description-1">If you don't have an account register</p>
