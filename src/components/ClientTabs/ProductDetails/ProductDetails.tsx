@@ -46,7 +46,7 @@ const ProductDetails = () => {
   };
   const handleAddToCart=(item:any)=>{
     if(sizes){
-    dispatch(addProduct(item));
+      dispatch(addProduct({ ...item, size: sizes })); 
     AppSnackbar({ type: "success", messageHeading: "Success!", message: "Successful!" });
     dispatch(openDrawer());
     }

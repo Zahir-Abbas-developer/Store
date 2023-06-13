@@ -9,8 +9,15 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     addProduct(state, action:any) {
-      console.log(action.payload)
-      state.products.push(action.payload);
+      console.log(action.payload  ,"state",state)
+      const newItem = action.payload;
+      const existingItem = state?.products?.find((item:any) => item?.id === newItem?.id && item?.size === newItem?.size);
+      if (existingItem) {
+        existingItem.quantity += 1; // Increase the quantity of the existing item
+      } else {
+        state?.products?.push({ ...newItem, quantity: 1 }); // Add a new item with quantity 1
+      }
+
     },
     removeProduct(state, action) {
       const updatedProducts = state.products.filter((product:any) => (product.id) !== action.payload);

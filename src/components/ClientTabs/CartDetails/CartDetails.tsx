@@ -67,7 +67,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             width: 300,
             render: (_:any, text:any) => (
               <Space>
-                <span className="fs-14 fw-400 title-color">1</span>
+                <span className="fs-14 fw-400 title-color">{text?.quantity}</span>
               </Space>
             ),
           },
