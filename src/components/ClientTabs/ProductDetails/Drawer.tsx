@@ -16,7 +16,7 @@ const DrawerComponent=()=>{
   }
   const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any) => {
     // Adding the price of the current object to the accumulator
-    return accumulator + currentValue.price;
+    return accumulator + currentValue.price*currentValue.quantity;
   }, 0);
 
     return(<Drawer
@@ -42,7 +42,7 @@ const DrawerComponent=()=>{
          </Col>
          <Col xs={24} md={12}>
            <p style={{ color: "#ffffff" }}>{productsDetails?.categoryName}</p>
-           <p style={{ color: "#ffffff" }}> 1 × $ {productsDetails?.price}</p>
+           <p style={{ color: "#ffffff" }}> {productsDetails?.quantity} × $ {productsDetails?.price}</p>
          </Col>
          <Col xs={24} md={24} style={{ textAlign: "center", marginTop: "20px" }}>
            <span style={{ color: "#ffffff", }}>---------------------------</span>

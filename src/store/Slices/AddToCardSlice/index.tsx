@@ -9,7 +9,6 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     addProduct(state, action:any) {
-      console.log(action.payload  ,"state",state)
       const newItem = action.payload;
       const existingItem = state?.products?.find((item:any) => item?.id === newItem?.id && item?.size === newItem?.size);
       if (existingItem) {
