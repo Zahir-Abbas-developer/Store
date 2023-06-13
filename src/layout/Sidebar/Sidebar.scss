@@ -12,7 +12,7 @@
       padding-left: 30px;
 
 
-      background: linear-gradient(160deg, rgba(0, 0, 0, 1) 3%, rgba(96, 68, 44, 1) 72%, rgba(96, 68, 44, 1) 100%);
+      background: #444444 !important;
     }
 
     .ant-layout-sider-children {
@@ -133,7 +133,7 @@
       }
 
       &.active {
-        background-color: #65cdf0;
+        background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%);
         color: white;
 
         .image-holder {
@@ -141,7 +141,7 @@
         }
 
         svg path {
-          fill: #65cdf0 !important;
+          fill: black !important;
         }
 
         .downIcon {

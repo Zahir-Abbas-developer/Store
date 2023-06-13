@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, Col, Row, Select } from 'antd';
+import { Card,  Col, Row, Select } from 'antd';
 import { useGetAllCategoriessQuery, useGetAllColorsQuery, useGetAllMaterialsQuery, useGetAllProductsQuery } from '../../../store/Slices/Products';
 import CollectionTabFilter from '../CollectionTabFilter/CollectionTabFilter';
 import { useNavigate } from "react-router-dom";
@@ -58,8 +58,8 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
   </div>
 </div>
 
-        <Row style={{margin:"20px 0px"}}>
-            <Col xs={24} md={6}>
+        <Row style={{margin:"20px 0px",padding:"16px"}} gutter={[16,16]}>
+            <Col xs={24} md={6} >
             <Select
           defaultValue="SORT..."
             className="select-onboarding"
@@ -119,22 +119,22 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
     />
   </Col> */}
 
-  <Col xs={24} md={24} lg={24}>
+  <Col xs={24} md={24} lg={24} style={{padding:"30px"}}>
     <Row gutter={[16,16]}>
       {isSuccess &&
         productsData?.map((productData: any) => (
-          <Col xs={24} md={12} lg={8} key={productData.id}>
+          <Col xs={24} md={12} lg={6} key={productData.id}>
             <Card 
               hoverable
               onClick={() => navigate("/productDetails", { state: { productDetails: productData } })}
-              style={{ width: "100%",minHeight:"300px" }}
-           
+              style={{  background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)",border:"0px solid transparent"}}
+           cover={  <img alt="example" src={productData?.thumbnail}  />}
             >
-          <div style={{textAlign:"center"}}>
-          <img alt="example" src={productData?.thumbnail} width={100} height={100} style={{borderRadius:"50%"}} />
-              <p style={{fontWeight:"bold"}}> {productData?.name}</p>
-              <p >{productData?.description}</p>
-              <p style={{fontWeight:"bold",color:"#65cdf0"}}>$ {productData?.price}</p>
+          <div style={{textAlign:"center",padding:"0"}}>
+        
+              <p style={{fontWeight:"bold",color:"white",padding:"0px",margin:"2px"}}> {productData?.name}</p>
+              <p style={{color:"white",padding:"0px",margin:"2px"}}>{productData?.description}</p>
+              <p style={{fontWeight:"bold",color:"#65cdf0",padding:"0px",margin:"2px"}}>$ {productData?.price}</p>
           </div>
             </Card>
           </Col>

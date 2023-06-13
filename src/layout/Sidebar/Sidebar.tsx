@@ -56,9 +56,11 @@ const Sidebar = ({ outlet }: OutletProps) => {
           </Header>
           <Content
             style={{
-              padding: 30,
+              // padding: 30,
               height: "90vh",
               overflow: "auto",
+              background: "#444444",
+              opacity:0.9
             }}
           >
             {outlet}

@@ -74,17 +74,17 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
   return accumulator + currentValue.price;
 }, 0); // 0 is the initial value of the accumulator
   return (
-    <Row>
+    <Row gutter={[10,10]}>
       <Col xs={24} lg={24}>
         <p>Main Collection</p>
       </Col>
       <Col xs={24} lg={12} >
-        <img src={categoryDetails?.thumbnail} style={{ width: "100%" }}></img>
-        <Collapse accordion>
-          <Panel header="CUSTOMIZE" key="1">
+        <img src={categoryDetails?.thumbnail} style={{ width: "80%",display:"block",margin:"0 auto" }}></img>
+        <Collapse className="collapse-shoe" accordion style={{width:"80%",margin:"auto",marginTop:"10px",border:"0px solid transparent"}}>
+          <Panel header="CUSTOMIZE"  key="1" style={{  border:"0px solid transparent",background:"linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)",borderRadius:"27px"}} >
             <p>{customize}</p>
           </Panel>
-          <Panel header="CONTACT US" key="2">
+          <Panel header="CONTACT US" key="2" style={{border:"0px solid transparent",background:"linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)",borderRadius:"27px",marginTop:"10px"}}>
             <p>{contact}</p>
           </Panel>
 
@@ -129,7 +129,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
           <Col xs={24} lg={24}>
             <Select
               defaultValue="SELECT SIZE"
-              className="SELECT SIZE"
+              className="select-size"
               onChange={(value: any) => handleSelectSizes(value)}
               style={{ width: "100%" }}
               // suffixIcon={<img src={Arrow} />}
@@ -151,7 +151,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
               handleAddToCart(item)
              
 
-            }} type="primary" className="cancel-btn  fs-14 fw-600" htmlType="submit" style={{ width: "100%" }} >ADD TO CART</Button>
+            }} type="primary" className="add-to-cart  fs-14 fw-600" htmlType="submit" style={{ width: "100%" }} >ADD TO CART</Button>
             <DrawerComponent/>
             
           </Col>

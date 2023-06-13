@@ -4,6 +4,31 @@
     font-weight: 700;
      color: #000000;
 }
+.collapse-shoe{
+  .ant-collapse-header-text{
+    color: white !important;
+    font-size: medium;
+  }
+}
+
+  .select-size{
+    .ant-select-selector{
+      background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;
+      border-radius: 27px;
+      border: 0px solid transparent !important;
+      .ant-select-selection-item{
+        font-size: medium !important;
+      }
+    }
+    .ant-select-selection-item{
+      color: #FFFFFF;
+    }
+  }
+.add-to-cart {
+  background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;
+  border-radius: 27px;
+  border: 0px solid transparent !important;
+}
 .product-description{
     font-family: "Lexend Giga", Sans-serif;
     font-size: 1rem;
