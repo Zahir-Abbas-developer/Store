@@ -60,16 +60,9 @@ const DashboardAdmin = () => {
     }
   };
 
-   //BreadCrumb Items
-   const breadCrumbItems = [
-    {
-      title: "Dashboard",
-      path: "",
-    }
-  ];
+   
   return (
     <>
-      <BreadCrumb breadCrumbItems={breadCrumbItems} />
     
     <Layout className=" dashboard" style={{backgroundColor:"transparent"}}>
       <Row gutter={[29, 29]} style={{ paddingBottom: "30px" }}>
