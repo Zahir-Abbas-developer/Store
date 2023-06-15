@@ -39,7 +39,7 @@ export const extendedApi = emptySplitApi.injectEndpoints({
       }),
       getOrders: builder.query({
         query: ({page,limit,query}:any) => ({
-          url: `/products${query}`,
+          url: `/orders`,
           method: "GET",
         }),
   
@@ -194,6 +194,7 @@ export const extendedApi = emptySplitApi.injectEndpoints({
    useUpdateProductsMutation,
    useAuthSignUpMutation,
    usePostOrdersMutation,
+   useGetOrdersQuery,
    useGetAllCategoriessQuery,useGetAllColorsQuery,useGetAllMaterialsQuery,usePostCategoriesMutation,useDeleteCategoriesMutation,useUpdateCategoriesMutation,usePostColorsMutation,useUpdateColorsMutation,useDeleteColorsMutation ,
    useUpdateMaterialsMutation,useDeleteMaterialsMutation,usePostMaterialsMutation
   } = extendedApi;

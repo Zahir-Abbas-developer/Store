@@ -233,22 +233,32 @@ const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query
     {
       title: "Product Price",
       dataIndex: "price",
-      align: "center"
+      align: "center",
+      
     },
     {
       title: "Category Name",
-      dataIndex: "categoryName",
-      align: "center"
+      dataIndex: "name",
+      align: "center",
+      render: (value: any, record: any, index: any) => {
+        return <span>{record?.categoryData?.name}</span>;
+      },
     },
     {
       title: "Color",
       dataIndex: "color",
-      align: "center"
+      align: "center",
+      render: (value: any, record: any, index: any) => {
+        return <span>{record?.colorData?.name}</span>;
+      },
     },
     {
       title: "Material",
       dataIndex: "material",
-      align: "center"
+      align: "center",
+      render: (value: any, record: any, index: any) => {
+        return <span>{record?.materialData?.name}</span>;
+      },
     },
     
 
