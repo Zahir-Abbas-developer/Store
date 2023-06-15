@@ -3,7 +3,7 @@ import { Card,  Col, Row, Select } from 'antd';
 import { useGetAllCategoriessQuery, useGetAllColorsQuery, useGetAllMaterialsQuery, useGetAllProductsQuery } from '../../../store/Slices/Products';
 import CollectionTabFilter from '../CollectionTabFilter/CollectionTabFilter';
 import { useNavigate } from "react-router-dom";
-
+import Arrow  from "../../../assets/images/OnBoarding/arrow.svg"
 import './OurCollectionDetails.scss'
 import { text } from "stream/consumers";
 
@@ -65,7 +65,7 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
             className="select-onboarding"
             onChange={(value:any)=>handleApplicationStage(value)}
             style={{ width: "100%" }}
-            // suffixIcon={<img src={Arrow} />}
+            suffixIcon={<img src={Arrow} />}
             options={[
          
               { value: "popularity", label: "By Popularity" },
@@ -82,7 +82,7 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
             className="select-onboarding"
             onChange={(value:any)=>setStyleFilter(value)}
             style={{ width: "100%" }}
-            // suffixIcon={<img src={Arrow} />}
+            suffixIcon={<img src={Arrow} />}
             options={categoriesFilterValue}
           />
          
@@ -93,7 +93,7 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
             className="select-onboarding"
             onChange={(value:any)=>setMaterialFilter(value)}
             style={{ width: "100%" }}
-            // suffixIcon={<img src={Arrow} />}
+            suffixIcon={<img src={Arrow} />}
             options={styleFilterValue}
           />
          
@@ -104,7 +104,7 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
             className="select-onboarding"
             onChange={(value:any)=>setColorFilter(value)}
             style={{ width: "100%" }}
-            // suffixIcon={<img src={Arrow} />}
+            suffixIcon={<img src={Arrow} />}
             options={colorFilterValue}
           />
          

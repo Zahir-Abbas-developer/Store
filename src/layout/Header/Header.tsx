@@ -106,14 +106,14 @@ const handleOpenDrawer=()=>{
       <div className={`container ${isExpandedSEarchbar && "expand-container"}`}>
         <input className="search-input" type="text" placeholder="Type here" />
         <button className="search-wrapper" onClick={handleExpand}>
-          <img src={SearchImg} alt="searchImg" />
+          {/* <img src={SearchImg} alt="searchImg" /> */}
         </button>
        
       </div>
-      <Badge   count={products?.products?.length} showZero>
+      <Badge   count={products?.products?.length} showZero style={{color:"white"}}>
           <ShoppingCartOutlined style={{ fontSize: '24px' }} onClick={handleOpenDrawer} />
         </Badge>
-      <NotificationsPopup />
+      {/* <NotificationsPopup /> */}
 
       <div className="adminDetail">
         <Popover

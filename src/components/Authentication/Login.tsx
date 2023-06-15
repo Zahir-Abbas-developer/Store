@@ -1,5 +1,5 @@
 import { Col, Row } from "antd";
-import CareLibraryIcon from "./../../assets/Login/care-library-icon.png";
+import CareLibraryIcon from "../../assets/icons/logo.png";
 import LazyIcon from "./../../assets/Login/lazy-icon-care.png";
 import { useState } from "react";
 import { Form, Input, Button } from "antd";
@@ -180,7 +180,7 @@ const Login = () => {
                 src={CareLibraryIcon}
                 alt="care-library-icon"
                 width={199}
-                height={91}
+                height={199}
               />
             </div>
             <div>
