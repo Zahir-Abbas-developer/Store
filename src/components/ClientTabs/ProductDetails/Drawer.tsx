@@ -29,7 +29,7 @@ const DrawerComponent=()=>{
 
         extra={
           <Space>
-            <Button onClick={onClose}>Cancel</Button>
+            {/* <Button onClick={onClose}>Cancel</Button> */}
 
           </Space>
         }
@@ -64,7 +64,7 @@ const DrawerComponent=()=>{
           }  >
               VIEW CART
             </Button>
-            <Button style={{ width: "100%", marginTop: "20px" }} >CHECKOUT</Button>
+            <Button  className="view-cart" style={{ width: "100%", marginTop: "20px" }} >CHECKOUT</Button>
           </Col>
         </Row>
 

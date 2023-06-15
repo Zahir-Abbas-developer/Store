@@ -16,6 +16,7 @@ import { addProduct } from "../../../store/Slices/AddToCardSlice"
 import AppSnackbar from "../../../utils/AppSnackbar"
 import { closeDrawer, openDrawer } from "../../../store/Slices/OpenDrawerSlice"
 import DrawerComponent from "./Drawer"
+import Arrow from '../../../assets/images/OnBoarding/arrow.svg'
 
 
 // Import the addToCart action creator
@@ -74,9 +75,9 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
   return accumulator + currentValue.price;
 }, 0); // 0 is the initial value of the accumulator
   return (
-    <Row gutter={[10,10]}>
+    <Row gutter={[10,10]} style={{padding:"30px"}}>
       <Col xs={24} lg={24}>
-        <p style={{color:"white"}}>Main Collection</p>
+        <p style={{color:"white",fontSize:"large" ,marginTop:"0px"}}>Main Collection</p>
       </Col>
       <Col xs={24} lg={12} >
         <img src={categoryDetails?.thumbnail} style={{ width: "80%",display:"block",margin:"0 auto" }}></img>
@@ -101,7 +102,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
           <p style={{color:"white"}}>LARCH relies upon modern craftsmanship, blended with traditional methods to craft the finest quality shoes. Our highest quality leather ensures proper air circulation and prevents moisture through the surface.</p>
         </div>
 
-        <Row>
+        <Row >
           <Col xs={6} >
             <img src={leather}></img>
           </Col>
@@ -132,7 +133,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
               className="select-size"
               onChange={(value: any) => handleSelectSizes(value)}
               style={{ width: "100%" }}
-              // suffixIcon={<img src={Arrow} />}
+              suffixIcon={<img src={Arrow} />}
               options={[
 
                 { value: "US 8", label: "US 8" },
