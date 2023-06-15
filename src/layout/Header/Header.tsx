@@ -187,7 +187,7 @@ const handleOpenDrawer=()=>{
                   className="fs-12 fw-400"
                   style={{ textTransform: "capitalize" }}
                 >
-                  {roleName?.label}
+                {role==="admin"?"Admin":"User"}  
                 </span>
               </p>
             </div>
