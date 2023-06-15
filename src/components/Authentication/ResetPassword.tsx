@@ -135,7 +135,7 @@ const ResetPassword = () => {
                 <span className="pink-color">Reset Password</span>
                 <span> to</span>
               </h1>
-              <h3 className="heading-3">Care Library</h3>
+              <h3 className="heading-3">Solace Leather</h3>
             </div>
             <div className="demo-wrap">
               <div className="demo-content">
