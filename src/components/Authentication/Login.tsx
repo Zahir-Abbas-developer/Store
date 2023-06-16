@@ -1,5 +1,5 @@
 import { Col, Row } from "antd";
-import CareLibraryIcon from "../../assets/icons/logo.png";
+import CareLibraryIcon from "../../assets/icons/logo.jpg";
 import LazyIcon from "./../../assets/Login/lazy-icon-care.png";
 import { useState } from "react";
 import { Form, Input, Button } from "antd";
@@ -146,14 +146,14 @@ const Login = () => {
           <div className="inner-left-div">
             <div>
               <h1 className="heading-1">
-                <span className="pink-color">
+                <span className="pink-color" style={{color:"#8c430c"}}>
                   {location?.pathname === "/login"
                     ? "Sign In" 
                     : location?.pathname === "/sign-up"? "Sign Up": "Change Password"}
                 </span>
-                <span> to</span>
+                <span style={{color:"white"}}> to</span>
               </h1>
-              <h3 className="heading-3">Solace Leather</h3>
+              <h3 className="heading-3" style={{color:"white"}}>Solace Leather</h3>
             </div>
             {/* <div>
               <p className="p-tag-description-1">If you don't have an account register</p>
@@ -175,12 +175,11 @@ const Login = () => {
       {location?.pathname === "/login" && (
         <Col xs={24} sm={24} lg={12} xl={10}>
           <div className="right-outer-div">
-            <div className="img-div">
+            <div className="img-div" style={{textAlign:"center"}}>
               <img
                 src={CareLibraryIcon}
                 alt="care-library-icon"
-                width={199}
-                height={199}
+                style={{width:"100px",height:"100px",borderRadius:"50%"}}
               />
             </div>
             <div>
@@ -233,6 +232,7 @@ const Login = () => {
                   >
                     Sign In
                   </Button>
+                
                 </Form.Item>
               </Form>
               <Footer />
@@ -334,12 +334,13 @@ const Login = () => {
        {location?.pathname === "/sign-up" && (
         <Col xs={24} sm={24} lg={12} xl={10}>
           <div className="right-outer-div">
-            <div className="img-div">
+            <div className="img-div" style={{textAlign:"center"}}>
               <img
                 src={CareLibraryIcon}
                 alt="care-library-icon"
-                width={199}
-                height={91}
+                width={100}
+                height={100}
+                style={{borderRadius:"50%"}}
               />
             </div>
             <div>
@@ -355,6 +356,7 @@ const Login = () => {
                   ]}
                 >
                   <Input
+                  style={{color:"white"}}
                     placeholder="Username"
                     className="input-style"
                   />

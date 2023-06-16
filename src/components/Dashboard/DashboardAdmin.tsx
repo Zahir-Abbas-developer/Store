@@ -60,24 +60,24 @@ const DashboardAdmin = () => {
     }
   };
 
-   
+
   return (
     <>
-    
-    <Layout className=" dashboard" style={{backgroundColor:"transparent"}}>
-      <Row gutter={[29, 29]} style={{ paddingBottom: "30px" }}>
-        <Col xs={24} sm={24} md={24} lg={24}>
-        <OurCollectionTab />
-        </Col>
-      </Row>
- 
-      <Row>
-            <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} >
-      
-        <FooterPage/>
-        </Col>
-      </Row>
-    </Layout>
+
+      <Layout className=" dashboard" style={{ backgroundColor: "transparent" }}>
+        <Row gutter={[29, 29]} style={{ paddingBottom: "30px" }}>
+          <Col xs={24} sm={24} md={24} lg={24}>
+            <OurCollectionTab />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} >
+
+            <FooterPage />
+          </Col>
+        </Row>
+      </Layout>
     </>
   );
 };

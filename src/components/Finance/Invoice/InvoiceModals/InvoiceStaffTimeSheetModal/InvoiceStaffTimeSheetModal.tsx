@@ -1,5 +1,5 @@
 import { Col, Modal, Row } from 'antd';
-import MainLogo from "../../../../../assets/brand/Logo.png";
+import MainLogo from "../../../../../assets/brand/Logo.jpg";
 import Print from "../../../../../assets/icons/finance-setup/print.png";
 import Download from "../../../../../assets/icons/finance-setup/download.png";
 import Close from '../../../../../assets/images/OnBoarding/Close.svg';

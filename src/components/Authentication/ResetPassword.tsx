@@ -1,5 +1,5 @@
 import { Col, Row } from "antd";
-import CareLibraryIcon from "./../../assets/Login/care-library-icon.png";
+import CareLibraryIcon from "../../assets/icons/logo.jpg";
 import LazyIcon from "./../../assets/Login/lazy-icon-care.png";
 import { useState } from "react";
 import { Form, Input, Button } from "antd";

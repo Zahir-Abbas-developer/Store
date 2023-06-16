@@ -1,5 +1,5 @@
 import certificateLogo from "../../../../assets/images/Training/certificate.png";
-import logo from "../../../../assets/brand/Logo.png";
+import logo from "../../../../assets/brand/Logo.jpg";
 import downloadIcon from "../../../../assets/icons/training/download-icon.png";
 import signature from "../../../../assets/icons/training/signature.png";
 import { Divider } from "antd";

@@ -1,7 +1,7 @@
 import { Col, Modal, Row } from "antd";
 import Close from '../../../../../assets/images/OnBoarding/Close.svg';
 import { Button, Form, Input, InputNumber } from 'antd';
-import MainLogo from "../../../../../assets/brand/Logo.png";
+import MainLogo from "../../../../../assets/brand/Logo.jpg";
 import "./OtpVerificationModal.scss";
 import Print from "../../../../../assets/icons/finance-setup/print.png";
 import Download from "../../../../../assets/icons/finance-setup/download.png";

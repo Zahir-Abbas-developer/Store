@@ -78,7 +78,7 @@ const AddProducts = () => {
   const { data: clientData, isSuccess: isClientDataSuccess } = useGetClientsQuery({ refetchOnMountOrArgChange: true });
   const { data: jobRoleFilterData, isLoading: jobRoleFilterIsLoading } = useGetJobRequestFilterQuery({ refetchOnMountOrArgChange: true, query, pagination });
   const [deleteProducts, { isLoading: isDeleteJobRequestMutation }] = useDeleteProductsMutation();
-  const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({})
+  const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({refetchOnMountOrArgChange: true, query, pagination})
 
   // ============================== Variables to Assign Values to it ==============================
   let optimizedUserRoleDropdown: any;
