@@ -82,7 +82,6 @@ const AddOrders = () => {
   if(isSuccessOrders){
     getOrders=isGetOrders
   }
-console.log(getOrders)
 
   // ============================== Variables to Assign Values to it ==============================
   let optimizedUserRoleDropdown: any;
