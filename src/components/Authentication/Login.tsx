@@ -6,7 +6,7 @@ import { Form, Input, Button } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./SignIn.scss";
 import { useSignInPostRequestMutation } from "../../store/Slices/Signin";
-import Footer from "../../layout/Footer/Footer";
+
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { useChangePasswordPostRequestMutation } from "../../store/Slices/ChangePassword";
 import { useAuthSignUpMutation } from "../../store/Slices/Products";
@@ -218,8 +218,8 @@ const Login = () => {
                 <p style={{ color: "red" }}>{errorMessage}</p>
 
                 <div style={{ textAlign: "end", margin: "10px 0px 20px 0px" }}>
-                  <Link to="/sign-up" className="forgot-password-style">
-                    Sign Up?
+                  <Link to="/change-password" className="forgot-password-style">
+                    Forgot Password?
                   </Link>
                 </div>
                 <Form.Item>
@@ -232,10 +232,14 @@ const Login = () => {
                   >
                     Sign In
                   </Button>
-                
+                  <div style={{ textAlign: "end", margin: "10px 0px 20px 0px" }}>
+                  <Link to="/sign-up" className="forgot-password-style">
+                  New to Solace Leather? Sign Up
+                  </Link>
+                </div>
                 </Form.Item>
               </Form>
-              <Footer />
+         
               {/* <p className="fs-15-n-gray">
               Resend <span className="pink-color">Log In</span> Details
             </p> */}
@@ -247,12 +251,13 @@ const Login = () => {
       {location?.pathname === "/change-password" && (
         <Col xs={24} sm={24} lg={12} xl={10}>
           <div className="right-outer-div">
-            <div className="img-div">
+            <div className="img-div" style={{textAlign:"center"}}>
               <img
                 src={CareLibraryIcon}
                 alt="care-library-icon"
-                width={199}
-                height={91}
+                width={90}
+                height={90}
+                style={{borderRadius:"50%"}}
               />
             </div>
             <div>
@@ -323,7 +328,7 @@ const Login = () => {
                   </Button>
                 </Form.Item>
               </Form>
-              <Footer />
+            
               {/* <p className="fs-15-n-gray">
               Resend <span className="pink-color">Log In</span> Details
             </p> */}
@@ -424,7 +429,7 @@ const Login = () => {
                   </Button>
                 </Form.Item>
               </Form>
-              <Footer />
+            
               {/* <p className="fs-15-n-gray">
               Resend <span className="pink-color">Log In</span> Details
             </p> */}

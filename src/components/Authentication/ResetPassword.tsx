@@ -6,7 +6,7 @@ import { Form, Input, Button } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./SignIn.scss";
 import { useResetPasswordRequestMutation, useSignInPostRequestMutation } from "../../store/Slices/Signin";
-import Footer from "../../layout/Footer/Footer";
+
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import AppSnackbar from "../../utils/AppSnackbar";
 
@@ -204,7 +204,7 @@ const ResetPassword = () => {
                 </Button>
               </Form.Item>
             </Form>
-            <Footer />
+       
             {/* <p className="fs-15-n-gray">
               Resend <span className="pink-color">Log In</span> Details
             </p> */}
