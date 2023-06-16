@@ -318,17 +318,14 @@ const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query
 
       <BreadCrumb breadCrumbItems={[
         {
-          title: "Job Role",
+          title: "Product",
           path: "",
         },
         {
-          title: "Dashboard",
+          title: "Home",
           path: renderDashboard(role),
         },
-        {
-          title: "Settings",
-          path: "/settings",
-        }
+      
       ]} />
 
       <div className="setting-job-role">

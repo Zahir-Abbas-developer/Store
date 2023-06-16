@@ -322,17 +322,13 @@ console.log(getOrders)
 
       <BreadCrumb breadCrumbItems={[
         {
-          title: "Job Role",
+          title: "Orders",
           path: "",
         },
         {
-          title: "Dashboard",
+          title: "Home",
           path: renderDashboard(role),
         },
-        {
-          title: "Settings",
-          path: "/settings",
-        }
       ]} />
 
       <div className="setting-job-role">

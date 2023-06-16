@@ -16,13 +16,13 @@ const BreadCrumb = (props: PropType) => {
     <div className="breadcrumb-wrapper">
       <Breadcrumb separator={<img className="seprator" src={seprator} alt="" />}>
         {breadCrumbItems.length === 1 ? (
-          <Breadcrumb.Item className="fs-24 fw-500">{breadCrumbItems[0].title}</Breadcrumb.Item>
+          <Breadcrumb.Item className="fs-24 fw-500 breadcrumb-text" >{breadCrumbItems[0].title}</Breadcrumb.Item>
         ) : (
           <>
-            <Breadcrumb.Item className="fs-24 fw-500">{breadCrumbItems[0].title}</Breadcrumb.Item>
+            <Breadcrumb.Item className="fs-24 fw-500 breadcrumb-text">{breadCrumbItems[0].title}</Breadcrumb.Item>
             {breadCrumbItems.slice(1).map((item: any) => (
               <Breadcrumb.Item key={item?.path}>
-                <Link to={item?.path}>{item?.title}</Link>
+                <Link to={item?.path} style={{color:"#8c430c"}}>{item?.title}</Link>
               </Breadcrumb.Item>
             ))}
           </>

@@ -281,18 +281,14 @@ const AddStyles = () => {
     <>
 
       <BreadCrumb breadCrumbItems={[
-        {
-          title: "Job Role",
-          path: "",
-        },
-        {
-          title: "Dashboard",
-          path: renderDashboard(role),
-        },
-        {
-          title: "Settings",
-          path: "/settings",
-        }
+       {
+        title: "Styles",
+        path: "",
+      },
+      {
+        title: "Home",
+        path: renderDashboard(role),
+      },
       ]} />
 
       <div className="setting-job-role">

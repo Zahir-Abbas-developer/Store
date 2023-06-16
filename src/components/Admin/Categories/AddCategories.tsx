@@ -282,18 +282,14 @@ const AddCategories = () => {
     <>
 
       <BreadCrumb breadCrumbItems={[
-        {
-          title: "Job Role",
-          path: "",
-        },
-        {
-          title: "Dashboard",
-          path: renderDashboard(role),
-        },
-        {
-          title: "Settings",
-          path: "/settings",
-        }
+       {
+        title: "Categories",
+        path: "",
+      },
+      {
+        title: "Home",
+        path: renderDashboard(role),
+      },
       ]} />
 
       <div className="setting-job-role">
