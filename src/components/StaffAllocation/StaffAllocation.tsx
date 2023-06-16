@@ -153,12 +153,7 @@ const StaffAllocation = () => {
       text: "Total Orders",
       background: "rgba(255, 76, 97, 0.05)",
     },
-    {
-      icon: bookIcon,
-      count: widgetsData?.data?.newCarers,
-      text: "New Products",
-      background: "rgba(76, 184, 255, 0.07",
-    },
+   
   ];
 
   const items: any = [
