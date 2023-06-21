@@ -45,6 +45,7 @@ const ProductDetails = () => {
   const onChange = (e: RadioChangeEvent) => {
     setPlacement(e.target.value);
   };
+  console.log(categoryDetails)
   const handleAddToCart=(item:any)=>{
     if(sizes){
       dispatch(addProduct({ ...item, size: sizes })); 
@@ -69,6 +70,8 @@ const ProductDetails = () => {
 
   The more information that you provide us, the quicker we can respond to your enquiry. If you would prefer to speak to a member of our Customer Care Team, you can do so through our WhatsApp: +92 (324) 833-2704
 `;
+const selectSizeOptions=categoryDetails?.shoeSizes?.map((shoeSizes:any)=>{return {value:`US ${shoeSizes?.us},EU ${shoeSizes?.eu}`,label:`US ${shoeSizes?.us},EU ${shoeSizes?.eu}`}})
+console.log(selectSizeOptions)
 // Using reduce to calculate the total price
 const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any) => {
   // Adding the price of the current object to the accumulator
@@ -134,15 +137,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
               onChange={(value: any) => handleSelectSizes(value)}
               style={{ width: "100%" }}
               suffixIcon={<img src={Arrow} />}
-              options={[
-
-                { value: "US 8", label: "US 8" },
-                { value: "US 9", label: "US 9" },
-                { value: "US 10", label: "US 10" },
-                { value: "US 11", label: "US 11" },
-                { value: "US 12", label: "US 12" },
-
-              ]}
+              options={selectSizeOptions}
             />
           </Col>
           <Col xs={24} lg={24} style={{ marginTop: "10px" }}>
