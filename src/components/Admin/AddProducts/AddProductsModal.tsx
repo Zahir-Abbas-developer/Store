@@ -16,12 +16,18 @@ import { useGetClientsQuery } from "../../../store/Slices/Setting/StaffSettings/
 import { handleInputTrimSpaces, handleInputTrimStart } from "../../../utils/useInputTrim";
 import { useGetAllCategoriessQuery, useGetAllColorsQuery,  useGetAllMaterialsQuery, useGetAllProductsQuery, usePostProductsMutation, useUpdateProductsMutation } from "../../../store/Slices/Products";
 import UploadImage from "../../Setting/SettingKeyInfo/UploadImage/UploadImage";
+import { PlusCircleOutlined } from "@ant-design/icons";
 
 
 
 function AddProductsModal(props: any) {
   const [form] = Form.useForm();
   const [certificateUrl ,setCertificateUrl]=useState("")
+  const [fieldCount, setFieldCount] = useState(1);
+  const [quantities, setQuantities] = useState([""]); // Array to hold quantity values
+  const [sizes, setSizes] = useState([""]); // Array to hold size values
+  const [fields, setFields] = useState([{ quantity: "", size: "" }]);
+
   const { addEditJobRole, setAddEditJobRole, modalType, getTableRowValues, setGetFieldValues, role } = props;
   const { data: clientData, isSuccess: isClientDataSuccess, } = useGetClientsQuery({ refetchOnMountOrArgChange: true });
   const [postProducts, { isLoading: isPostJobRequestMutation }] = usePostProductsMutation();
@@ -44,6 +50,7 @@ function AddProductsModal(props: any) {
       label: item?.name,
     }));
   }
+  console.log(fields)
   if(isSuccessColors){
     selectColor=getColors
    
@@ -73,8 +80,12 @@ function AddProductsModal(props: any) {
   const uploadCertificateId=(url:any)=>{
     setCertificateUrl(url)
 }
+const handleAddField = () => {
+  setFieldCount(fieldCount + 1);
+ 
+  setFields([...fields, { quantity: "", size: "" }]);
+};
 
-console.log(getTableRowValues)
 
   if (modalType !== "Add") {
     const formValues = {
@@ -102,13 +113,57 @@ console.log(getTableRowValues)
   const onFinish = async (values: any) => {
     // -------- for error cases --------
     // const valuessss = { mneee: values?.name, ...values };
+    const shoeSizes = fields.map((field) => {
+      let usValue = ""; // Default value for the 'us' field
+    
+      if (field.size === "42") {
+        usValue = "7";
+      } else if (field.size === "43") {
+        usValue = "8";
+      }
+      else if (field.size === "43") {
+        usValue = "8";
+      }
+      else if (field.size === "44") {
+        usValue = "9";
+      }
+      else if (field.size === "45") {
+        usValue = "8";
+      }
+      else if (field.size === "46") {
+        usValue = "8";
+      }
+      else if (field.size === "47") {
+        usValue = "8";
+      }
+    
+      return {
+        quantity: parseInt(field.quantity),
+        eu: parseInt(field.size),
+        us: parseInt(usValue),
+      };
+    });
     const addProductValues={...values,price:parseInt(values?.price),  thumbnail:certificateUrl,"tags": [
       "Running",
       "Sportswear"
-    ],shoeSizes:[{"eu":parseInt(values?.eu),"quantity":parseInt(values?.quantity),"us":8}]}
+    ],shoeSizes:shoeSizes}
 
-delete addProductValues?.eu;
-delete addProductValues?.quantity;
+for (let i = 0; i <= 100; i++) {
+  const euProperty = `eu${i}`;
+  const quantityProperty = `quantity${i}`;
+  
+  if (addProductValues.hasOwnProperty(euProperty)) {
+    delete addProductValues[euProperty];
+  }
+  
+  if (addProductValues.hasOwnProperty(quantityProperty)) {
+    delete addProductValues[quantityProperty];
+  }
+}
+
+
+
+
 
     const newValues = handleInputTrimSpaces(values);
 
@@ -250,28 +305,40 @@ delete addProductValues?.quantity;
               />
             </Form.Item>
           </Col>
-          <Col xs={24} lg={24}>
-                        <UploadImage  uploadCertificateId={uploadCertificateId} />
-                    </Col>
-                    <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
-            <label className="fs-14 fw-600">Product Quantity</label>
-            <Form.Item
-              name="quantity"
-              rules={[{ required: true, message: "Required field " }]}
-              style={{ marginBottom: "8px" }}
-              normalize={(value: any) => handleInputTrimStart(value)}
-            >
-              <Input
-                placeholder="Enter product quantity"
-                id="quantity"
-                style={{ marginTop: "2px", height: "40px", }}
-              />
-            </Form.Item>
-          </Col>
+         
+<Col xs={24} lg={24}>
+         <UploadImage  uploadCertificateId={uploadCertificateId} />
+     </Col>
+     <Col  xs={24} lg={24} style={{textAlign:"end"}}>
+     <PlusCircleOutlined style={{ marginLeft: "20px",cursor:"pointer" }} onClick={handleAddField} /> Click to  Add More Shoe Sizes and Quantity
+     </Col>
+     {fields.map((field:any, index:any) => (
+         <>  <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
+<label className="fs-14 fw-600">Product Quantity</label>
+<Form.Item
+  name={`quantity${index}`}
+  rules={[{ required: true, message: "Required field " }]}
+  style={{ marginBottom: "8px" }}
+  normalize={(value: any) => handleInputTrimStart(value)}
+>
+  <Input
+    placeholder="Enter product quantity"
+    id={`quantity${index}`}
+    style={{ marginTop: "2px", height: "40px" }}
+    value={field.quantity}
+    onChange={(e) => {
+      const newFields = [...fields];
+      newFields[index].quantity = e.target.value;
+      setFields(newFields);
+    }}
+  />
+</Form.Item>
+
+       </Col>  
           <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
             <label className="fs-14 fw-600">Select Shoe Size</label>
             <Form.Item
-              name="eu"
+              name={`eu${index}`}
               rules={[{ required: true, message: "Required field " }]}
               style={{ marginBottom: "8px" }}
             >
@@ -279,6 +346,13 @@ delete addProductValues?.quantity;
                 suffixIcon={<img src={arrowDown} alt='arrow down' />}
                 className="d-flex"
                 placeholder="Select Product Size"
+                
+                 value={field.size}
+              onChange={(value) => {
+                const newFields = [...fields];
+                newFields[index].size = value;
+                setFields(newFields);
+              }}
                 options={[
                   {
                     value: '42',
@@ -307,7 +381,8 @@ delete addProductValues?.quantity;
                 ]}
               />
             </Form.Item>
-          </Col>
+          </Col>    </>
+              ))}
           <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
             <label className="fs-14 fw-600">Product Sku</label>
             <Form.Item
