@@ -22,7 +22,7 @@ const BreadCrumb = (props: PropType) => {
             <Breadcrumb.Item className="fs-24 fw-500 breadcrumb-text">{breadCrumbItems[0].title}</Breadcrumb.Item>
             {breadCrumbItems.slice(1).map((item: any) => (
               <Breadcrumb.Item key={item?.path}>
-                <Link to={item?.path} style={{color:"#8c430c"}}>{item?.title}</Link>
+                <Link to={item?.path} style={{color:"white"}}>{item?.title}</Link>
               </Breadcrumb.Item>
             ))}
           </>

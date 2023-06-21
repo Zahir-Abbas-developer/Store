@@ -2,17 +2,17 @@ import { ROLES } from "../constants/Roles";
 
 export const renderDashboard = (role: string) => {
   if (role === ROLES.carer) {
-    return "/carer-dashboard";
+    return "/admin-dashboard";
   } else if (role === ROLES.coordinator) {
-    return "/coordinator-dashboard";
+    return "/admin-dashboard";
   } else if (role === ROLES.client) {
-    return "/client-dashboard";
+    return "/admin-dashboard";
   } else if (role === ROLES.instructor) {
-    return "/instructor-dashboard";
+    return "/admin-dashboard";
   } else if (role === ROLES.superAdmin) {
-    return "/super-admin-dashboard";
+    return "/admin-dashboard";
   }
 
   // If Non of above condition's true, so return dashboard (Admin)
-  return "/dashboard"
+  return "/admin-dashboard"
 }
