@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card,  Col, Row, Select } from 'antd';
+import { Card,  Col, Row, Select, Spin } from 'antd';
 import { useGetAllCategoriessQuery, useGetAllColorsQuery, useGetAllMaterialsQuery, useGetAllProductsQuery } from '../../../store/Slices/Products';
 import CollectionTabFilter from '../CollectionTabFilter/CollectionTabFilter';
 import { useNavigate } from "react-router-dom";
@@ -120,8 +120,9 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
   </Col> */}
 
   <Col xs={24} md={24} lg={24} style={{padding:"30px"}}>
+    {productsData?.length>0?
     <Row gutter={[16,16]}>
-      {isSuccess &&
+      {isSuccess ?
         productsData?.map((productData: any) => (
           <Col xs={24} md={12} lg={6} key={productData.id}>
             <Card 
@@ -138,8 +139,8 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
           </div>
             </Card>
           </Col>
-        ))}
-    </Row>
+       )) :<Spin/>}
+    </Row>:<p style={{color:"white",fontSize:"large",textAlign:"center"}}>No Products</p>}
   </Col>
      </Row>
         

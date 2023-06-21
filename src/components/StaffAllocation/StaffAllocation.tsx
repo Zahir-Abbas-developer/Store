@@ -30,7 +30,7 @@ import dayjs from "dayjs";
 import { useGetUserTypesListQuery } from "../../store/Slices/BookingCalendar";
 import AppSnackbar from "../../utils/AppSnackbar";
 import BreadCrumb from "../../layout/BreadCrumb/BreadCrumb";
-import { useGetAllCategoriessQuery, useGetAllMaterialsQuery, useGetOrdersQuery } from "../../store/Slices/Products";
+import { useGetAllCategoriessQuery, useGetAllMaterialsQuery, useGetAllProductsQuery, useGetOrdersQuery } from "../../store/Slices/Products";
 
 const StaffAllocation = () => {
   const [selectedRecord, setSelectedRecord] = useState<any>(null);
@@ -96,6 +96,11 @@ const StaffAllocation = () => {
   const { data: userTypes }: any = useGetUserTypesListQuery({});
   const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({refetchOnMountOrArgChange: true})
   const {data:getCategories ,isSuccess:isSuccessCategories}=useGetAllCategoriessQuery({})
+  const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query:"?"})
+    let productsData:any
+    if(isSuccessProducts){
+        productsData=products
+    }
   let allMaterials:any
   if(isSuccessMaterials){
     allMaterials=getMaterials
@@ -137,7 +142,7 @@ const StaffAllocation = () => {
   const cardData = [
     {
       icon: personIcon,
-      count: allMaterials?.length<9?`0${allMaterials?.length}`:allMaterials?.length,
+      count: productsData?.length<9?`0${productsData?.length}`:productsData?.length,
       text: "Total Products",
       background: "rgba(113, 59, 219, 0.05)",
     },
