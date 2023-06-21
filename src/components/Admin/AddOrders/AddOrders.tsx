@@ -38,6 +38,7 @@ import DeleteModal from "../../../shared/DeleteModal/DeleteModal";
 import CrossAllocationModal from "../../Setting/SettingJobRole/CrossAllocationModal";
 import AddModal from "../../Setting/SettingJobRole/AddModal";
 import { renderDashboard } from "../../../utils/useRenderDashboard";
+import { useGetOrdersQuery } from "../../../store/Slices/Products";
 
 
 const AddOrders = () => {
@@ -76,7 +77,11 @@ const AddOrders = () => {
   const { data: clientData, isSuccess: isClientDataSuccess } = useGetClientsQuery({ refetchOnMountOrArgChange: true });
   const { data: jobRoleFilterData, isLoading: jobRoleFilterIsLoading } = useGetJobRequestFilterQuery({ refetchOnMountOrArgChange: true, query, pagination });
   const [deleteJobRequest, { isLoading: isDeleteJobRequestMutation }] = useDeleteJobRequestMutation();
-
+  const {data:isGetOrders ,isSuccess:isSuccessOrders}=useGetOrdersQuery({})
+  let getOrders:any
+  if(isSuccessOrders){
+    getOrders=isGetOrders
+  }
 
   // ============================== Variables to Assign Values to it ==============================
   let optimizedUserRoleDropdown: any;
@@ -228,21 +233,40 @@ const AddOrders = () => {
       },
     },
     {
-      title: "Position Name",
-      dataIndex: "name",
+      title: "First Name",
+      dataIndex: "firstName",
       align: "center"
     },
     {
-      title: "Short Form",
-      dataIndex: "shortForm",
+      title: "Last Name",
+      dataIndex: "lastName",
       align: "center"
     },
     {
-      title: "Role",
-      dataIndex: "userRole",
+      title: "Email",
+      dataIndex: "email",
       align: "center"
     },
-
+    {
+      title: "County",
+      dataIndex: "county",
+      align: "center"
+    },
+    {
+      title: "Phone",
+      dataIndex: "phone",
+      align: "center"
+    },
+    {
+      title: "PaymentMethod",
+      dataIndex: "paymentMethod",
+      align: "center"
+    },
+    {
+      title: "Subtotal",
+      dataIndex: "subtotal",
+      align: "center"
+    },
     ...(role === ROLES.coordinator ?
       [{
         title: "Care Home",
@@ -255,66 +279,60 @@ const AddOrders = () => {
         )
       }] : []
     ),
-    {
-      title: "Action",
-      dataIndex: "action",
-      align: "center",
-      render: (_: any, text: any) => (
-        <div>
-          <Dropdown
-            menu={{ items }}
-            placement="bottom"
-            trigger={["click"]}
-            overlayClassName="actionDropDownBlocking my-dropdown-blocking"
-            overlayStyle={{ borderRadius: "4px" }}
-            onOpenChange={(visible) => {
-              if (!visible) {
-                // Do something when the dropdown is closed
-                handleResetFormValues()
-              }
-            }}
-          >
-            <Space>
-              <div
-                className="border-color cursor-pointer"
-                onClick={() => {
-                  setJobID(text._id);
-                  setGetFieldValues(text);
-                  handleCrossAllocationValues(text);
-                }}
-              >
-                <img src={actionImg} alt="ElpiseIcon" />
-              </div>
-            </Space>
-          </Dropdown>
-        </div>
-      ),
-    },
+    // {
+    //   title: "Action",
+    //   dataIndex: "action",
+    //   align: "center",
+    //   render: (_: any, text: any) => (
+    //     <div>
+    //       <Dropdown
+    //         menu={{ items }}
+    //         placement="bottom"
+    //         trigger={["click"]}
+    //         overlayClassName="actionDropDownBlocking my-dropdown-blocking"
+    //         overlayStyle={{ borderRadius: "4px" }}
+    //         onOpenChange={(visible) => {
+    //           if (!visible) {
+    //             // Do something when the dropdown is closed
+    //             handleResetFormValues()
+    //           }
+    //         }}
+    //       >
+    //         <Space>
+    //           <div
+    //             className="border-color cursor-pointer"
+    //             onClick={() => {
+    //               setJobID(text._id);
+    //               setGetFieldValues(text);
+    //               handleCrossAllocationValues(text);
+    //             }}
+    //           >
+    //             <img src={actionImg} alt="ElpiseIcon" />
+    //           </div>
+    //         </Space>
+    //       </Dropdown>
+    //     </div>
+    //   ),
+    // },
   ];
-
-
 
   return (
     <>
 
       <BreadCrumb breadCrumbItems={[
         {
-          title: "Job Role",
+          title: "Orders",
           path: "",
         },
         {
-          title: "Dashboard",
+          title: "Home",
           path: renderDashboard(role),
         },
-        {
-          title: "Settings",
-          path: "/settings",
-        }
       ]} />
 
       <div className="setting-job-role">
         <div className="header border-radius-10">
-          <Button
+          {/* <Button
             className="add-job-role-btn fs-14 fw-600 border-radius-10 d-flex justify-center align-items-center"
             onClick={() => {
               setGetFieldValues({});
@@ -322,9 +340,9 @@ const AddOrders = () => {
               setModalType("Add");
             }}
           >
-            Add Job Role
+            Add Order
             <PlusCircleOutlined style={{ marginLeft: "20px" }} />
-          </Button>
+          </Button> */}
 
           {/* ============================== Job Role Top Filters ============================== */}
           <Row gutter={[0, 20]} className='job-role-filters-wrapper'>
@@ -404,11 +422,11 @@ const AddOrders = () => {
                 />
               }
             />
-            <Space size={[25, 0]}>
+            {/* <Space size={[25, 0]}>
               <img src={coloredCopyIcon} alt="csv" className="img-hover" />
               <img src={coloredCsvIcon} alt="csv" className="img-hover" />
               <img src={coloredXlsIcon} alt="csv" className="img-hover" />
-            </Space>
+            </Space> */}
           </Space>
         </div>
 
@@ -417,7 +435,7 @@ const AddOrders = () => {
           <Table
             scroll={{ x: 768 }}
             columns={columns}
-            dataSource={JobRole?.data?.result}
+            dataSource={getOrders}
             locale={{ emptyText: !jobRoleFilterIsLoading ? "No Data" : " " }}
             loading={jobRoleFilterIsLoading}
             pagination={{

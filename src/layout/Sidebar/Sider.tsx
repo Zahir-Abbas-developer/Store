@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Layout, Timeline } from "antd";
-import LogoImg from "../../assets/brand/Logo.png";
+import LogoImg from "../../assets/brand/Logo.jpg";
 import LogoIcon from "../../assets/images/sidebar/logoIcon.png";
 import SearchImg from "../../assets/images/sidebar/Search.png";
 import { getSidebarMenues } from "./SidebarData";
@@ -35,8 +35,8 @@ const Sider = (props: Props) => {
       style={{ backgroundColor: iscollapsed ? "#65cdf0" : "#FFFAFC" }}
       onClick={() => setLocation(window.location.pathname)}
     >
-      <div className="logo" style={{ margin: "15px" }}>
-        <img src={iscollapsed ? LogoIcon : LogoImg} alt="logo" />
+      <div className="logo" style={{ marginTop: "15px" ,textAlign:"center"}}>
+        <img src={iscollapsed ? LogoIcon : LogoImg} alt="logo"  style={{width:"80px",height:"80px",borderRadius:"50%"}}/>
       </div>
       <div className="sidebar-search-wrapper">
         <input className="search-inputs" type="text" placeholder="Type here" />

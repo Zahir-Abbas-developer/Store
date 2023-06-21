@@ -1,12 +1,12 @@
 import { Col, Row } from "antd";
-import CareLibraryIcon from "./../../assets/Login/care-library-icon.png";
+import CareLibraryIcon from "../../assets/icons/logo.jpg";
 import LazyIcon from "./../../assets/Login/lazy-icon-care.png";
 import { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./SignIn.scss";
 import { useSignInPostRequestMutation } from "../../store/Slices/Signin";
-import Footer from "../../layout/Footer/Footer";
+
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { useChangePasswordPostRequestMutation } from "../../store/Slices/ChangePassword";
 import { useAuthSignUpMutation } from "../../store/Slices/Products";
@@ -146,14 +146,14 @@ const Login = () => {
           <div className="inner-left-div">
             <div>
               <h1 className="heading-1">
-                <span className="pink-color">
+                <span className="pink-color" style={{color:"#8c430c"}}>
                   {location?.pathname === "/login"
                     ? "Sign In" 
                     : location?.pathname === "/sign-up"? "Sign Up": "Change Password"}
                 </span>
-                <span> to</span>
+                <span style={{color:"white"}}> to</span>
               </h1>
-              <h3 className="heading-3">Solace Leather</h3>
+              <h3 className="heading-3" style={{color:"white"}}>Solace Leather</h3>
             </div>
             {/* <div>
               <p className="p-tag-description-1">If you don't have an account register</p>
@@ -175,12 +175,11 @@ const Login = () => {
       {location?.pathname === "/login" && (
         <Col xs={24} sm={24} lg={12} xl={10}>
           <div className="right-outer-div">
-            <div className="img-div">
+            <div className="img-div" style={{textAlign:"center"}}>
               <img
                 src={CareLibraryIcon}
                 alt="care-library-icon"
-                width={199}
-                height={91}
+                style={{width:"100px",height:"100px",borderRadius:"50%"}}
               />
             </div>
             <div>
@@ -219,8 +218,8 @@ const Login = () => {
                 <p style={{ color: "red" }}>{errorMessage}</p>
 
                 <div style={{ textAlign: "end", margin: "10px 0px 20px 0px" }}>
-                  <Link to="/sign-up" className="forgot-password-style">
-                    Sign Up?
+                  <Link to="/change-password" className="forgot-password-style">
+                    Forgot Password?
                   </Link>
                 </div>
                 <Form.Item>
@@ -233,9 +232,14 @@ const Login = () => {
                   >
                     Sign In
                   </Button>
+                  <div style={{ textAlign: "end", margin: "10px 0px 20px 0px" }}>
+                  <Link to="/sign-up" className="forgot-password-style">
+                  New to Solace Leather? Sign Up
+                  </Link>
+                </div>
                 </Form.Item>
               </Form>
-              <Footer />
+         
               {/* <p className="fs-15-n-gray">
               Resend <span className="pink-color">Log In</span> Details
             </p> */}
@@ -247,12 +251,13 @@ const Login = () => {
       {location?.pathname === "/change-password" && (
         <Col xs={24} sm={24} lg={12} xl={10}>
           <div className="right-outer-div">
-            <div className="img-div">
+            <div className="img-div" style={{textAlign:"center"}}>
               <img
                 src={CareLibraryIcon}
                 alt="care-library-icon"
-                width={199}
-                height={91}
+                width={90}
+                height={90}
+                style={{borderRadius:"50%"}}
               />
             </div>
             <div>
@@ -323,7 +328,7 @@ const Login = () => {
                   </Button>
                 </Form.Item>
               </Form>
-              <Footer />
+            
               {/* <p className="fs-15-n-gray">
               Resend <span className="pink-color">Log In</span> Details
             </p> */}
@@ -334,12 +339,13 @@ const Login = () => {
        {location?.pathname === "/sign-up" && (
         <Col xs={24} sm={24} lg={12} xl={10}>
           <div className="right-outer-div">
-            <div className="img-div">
+            <div className="img-div" style={{textAlign:"center"}}>
               <img
                 src={CareLibraryIcon}
                 alt="care-library-icon"
-                width={199}
-                height={91}
+                width={100}
+                height={100}
+                style={{borderRadius:"50%"}}
               />
             </div>
             <div>
@@ -355,6 +361,7 @@ const Login = () => {
                   ]}
                 >
                   <Input
+                  style={{color:"white"}}
                     placeholder="Username"
                     className="input-style"
                   />
@@ -422,7 +429,7 @@ const Login = () => {
                   </Button>
                 </Form.Item>
               </Form>
-              <Footer />
+            
               {/* <p className="fs-15-n-gray">
               Resend <span className="pink-color">Log In</span> Details
             </p> */}

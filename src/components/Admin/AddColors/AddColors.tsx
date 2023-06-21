@@ -283,18 +283,14 @@ const AddColors = () => {
     <>
 
       <BreadCrumb breadCrumbItems={[
-        {
-          title: "Job Role",
-          path: "",
-        },
-        {
-          title: "Dashboard",
-          path: renderDashboard(role),
-        },
-        {
-          title: "Settings",
-          path: "/settings",
-        }
+       {
+        title: "Colors",
+        path: "",
+      },
+      {
+        title: "Home",
+        path: renderDashboard(role),
+      },
       ]} />
 
       <div className="setting-job-role">
@@ -389,11 +385,11 @@ const AddColors = () => {
                 />
               }
             />
-            <Space size={[25, 0]}>
+            {/* <Space size={[25, 0]}>
               <img src={coloredCopyIcon} alt="csv" className="img-hover" />
               <img src={coloredCsvIcon} alt="csv" className="img-hover" />
               <img src={coloredXlsIcon} alt="csv" className="img-hover" />
-            </Space>
+            </Space> */}
           </Space>
         </div>
 

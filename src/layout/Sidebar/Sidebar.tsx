@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Drawer, Layout, theme } from "antd";
 import SideIcon from "../../assets/images/sidebar/collaps-icon.png";
-import LogoImg from "../../assets/brand/Logo.png";
+import LogoImg from "../../assets/icons/logo.jpg";
 import TopHeader from "../Header/Header";
 import Sider from "./Sider";
 import "./Sidebar.scss";
@@ -56,7 +56,7 @@ const Sidebar = ({ outlet }: OutletProps) => {
           </Header>
           <Content
             style={{
-              // padding: 30,
+              padding: 30,
               height: "90vh",
               overflow: "auto",
               background: "#444444",

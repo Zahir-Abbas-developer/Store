@@ -1,12 +1,12 @@
 import { Col, Row } from "antd";
-import CareLibraryIcon from "./../../assets/Login/care-library-icon.png";
+import CareLibraryIcon from "../../assets/icons/logo.jpg";
 import LazyIcon from "./../../assets/Login/lazy-icon-care.png";
 import { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./SignIn.scss";
 import { useResetPasswordRequestMutation, useSignInPostRequestMutation } from "../../store/Slices/Signin";
-import Footer from "../../layout/Footer/Footer";
+
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import AppSnackbar from "../../utils/AppSnackbar";
 
@@ -135,7 +135,7 @@ const ResetPassword = () => {
                 <span className="pink-color">Reset Password</span>
                 <span> to</span>
               </h1>
-              <h3 className="heading-3">Care Library</h3>
+              <h3 className="heading-3">Solace Leather</h3>
             </div>
             <div className="demo-wrap">
               <div className="demo-content">
@@ -204,7 +204,7 @@ const ResetPassword = () => {
                 </Button>
               </Form.Item>
             </Form>
-            <Footer />
+       
             {/* <p className="fs-15-n-gray">
               Resend <span className="pink-color">Log In</span> Details
             </p> */}

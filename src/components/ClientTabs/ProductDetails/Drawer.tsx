@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../../store";
 import { closeDrawer } from "../../../store/Slices/OpenDrawerSlice";
 import { useState } from "react"
+import NoProduct from "../../../assets/icons/No Product.png"
 import './ProductDetails.scss'
 import { useNavigate } from "react-router-dom";
 const DrawerComponent=()=>{
@@ -29,7 +30,7 @@ const DrawerComponent=()=>{
 
         extra={
           <Space>
-            <Button onClick={onClose}>Cancel</Button>
+            {/* <Button onClick={onClose}>Cancel</Button> */}
 
           </Space>
         }
@@ -50,7 +51,7 @@ const DrawerComponent=()=>{
 
        </Row>)
         })}
-     
+     {products?.products?.length>0?  
      <Row style={{ padding: "20px" }}>
           <Col xs={24} md={24} style={{ marginTop: "20px" }}>
 
@@ -64,9 +65,16 @@ const DrawerComponent=()=>{
           }  >
               VIEW CART
             </Button>
-            <Button style={{ width: "100%", marginTop: "20px" }} >CHECKOUT</Button>
+            <Button  className="view-cart" style={{ width: "100%", marginTop: "20px" }} >CHECKOUT</Button>
           </Col>
-        </Row>
+        </Row>:
+        <div style={{textAlign:"center",position:"absolute",left:"50%",top:"50%",transform:"translate(-50%,-50%)"}}>
+ <img width={50} height={50} src={NoProduct}/>
+ <p style={{color:"white",textAlign:"center",fontSize:"large"}}> No Products Found 
+          </p> 
+        </div>}
+       
+    
 
       </Drawer>)
 }

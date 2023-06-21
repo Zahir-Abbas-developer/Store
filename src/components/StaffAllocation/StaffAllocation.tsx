@@ -30,6 +30,7 @@ import dayjs from "dayjs";
 import { useGetUserTypesListQuery } from "../../store/Slices/BookingCalendar";
 import AppSnackbar from "../../utils/AppSnackbar";
 import BreadCrumb from "../../layout/BreadCrumb/BreadCrumb";
+import { useGetAllCategoriessQuery, useGetAllMaterialsQuery, useGetOrdersQuery } from "../../store/Slices/Products";
 
 const StaffAllocation = () => {
   const [selectedRecord, setSelectedRecord] = useState<any>(null);
@@ -93,7 +94,21 @@ const StaffAllocation = () => {
 
   //Get user types list
   const { data: userTypes }: any = useGetUserTypesListQuery({});
-
+  const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({refetchOnMountOrArgChange: true})
+  const {data:getCategories ,isSuccess:isSuccessCategories}=useGetAllCategoriessQuery({})
+  let allMaterials:any
+  if(isSuccessMaterials){
+    allMaterials=getMaterials
+  }
+  let allCategories:any
+  if(isSuccessCategories){
+    allCategories=getCategories
+  }
+  const {data:isGetOrders ,isSuccess:isSuccessOrders}=useGetOrdersQuery({})
+  let getOrders:any
+  if(isSuccessOrders){
+    getOrders=isGetOrders
+  }
   const careHomeOptions = careHomes?.data?.result?.map((item: any) => {
     return {
       value: item?._id,
@@ -122,28 +137,23 @@ const StaffAllocation = () => {
   const cardData = [
     {
       icon: personIcon,
-      count: widgetsData?.data?.assignedCareHomes,
+      count: allMaterials?.length<9?`0${allMaterials?.length}`:allMaterials?.length,
       text: "Total Products",
       background: "rgba(113, 59, 219, 0.05)",
     },
     {
       icon: markIcon,
-      count: widgetsData?.data?.noOfCarers,
+      count: allCategories?.length<9?`0${allCategories?.length}`:allCategories?.length,
       text: "Total Categories",
       background: "rgba(51, 214, 159, 0.07)",
     },
     {
       icon: underPerformIcon,
-      count: widgetsData?.data?.allocatedCarers,
+      count: getOrders?.length<9?`0${getOrders?.length}`:getOrders?.length,
       text: "Total Orders",
       background: "rgba(255, 76, 97, 0.05)",
     },
-    {
-      icon: bookIcon,
-      count: widgetsData?.data?.newCarers,
-      text: "New Products",
-      background: "rgba(76, 184, 255, 0.07",
-    },
+   
   ];
 
   const items: any = [

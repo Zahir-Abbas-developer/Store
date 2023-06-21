@@ -78,7 +78,7 @@ const AddProducts = () => {
   const { data: clientData, isSuccess: isClientDataSuccess } = useGetClientsQuery({ refetchOnMountOrArgChange: true });
   const { data: jobRoleFilterData, isLoading: jobRoleFilterIsLoading } = useGetJobRequestFilterQuery({ refetchOnMountOrArgChange: true, query, pagination });
   const [deleteProducts, { isLoading: isDeleteJobRequestMutation }] = useDeleteProductsMutation();
-  const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({})
+  const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({refetchOnMountOrArgChange: true, query, pagination})
 
   // ============================== Variables to Assign Values to it ==============================
   let optimizedUserRoleDropdown: any;
@@ -89,6 +89,7 @@ const AddProducts = () => {
   if(isSuccessMaterials){
     allMaterials=getMaterials
   }
+
   if (isSuccess) {
     JobRole = jobRoleFilterData;
     unchangeUserData = data;
@@ -233,22 +234,32 @@ const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query
     {
       title: "Product Price",
       dataIndex: "price",
-      align: "center"
+      align: "center",
+      
     },
     {
       title: "Category Name",
-      dataIndex: "categoryName",
-      align: "center"
+      dataIndex: "name",
+      align: "center",
+      render: (value: any, record: any, index: any) => {
+        return <span>{record?.categoryData?.name}</span>;
+      },
     },
     {
       title: "Color",
       dataIndex: "color",
-      align: "center"
+      align: "center",
+      render: (value: any, record: any, index: any) => {
+        return <span>{record?.colorData?.name}</span>;
+      },
     },
     {
       title: "Material",
       dataIndex: "material",
-      align: "center"
+      align: "center",
+      render: (value: any, record: any, index: any) => {
+        return <span>{record?.materialData?.name}</span>;
+      },
     },
     
 
@@ -308,17 +319,14 @@ const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query
 
       <BreadCrumb breadCrumbItems={[
         {
-          title: "Job Role",
+          title: "Product",
           path: "",
         },
         {
-          title: "Dashboard",
+          title: "Home",
           path: renderDashboard(role),
         },
-        {
-          title: "Settings",
-          path: "/settings",
-        }
+      
       ]} />
 
       <div className="setting-job-role">
@@ -413,11 +421,11 @@ const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query
                 />
               }
             />
-            <Space size={[25, 0]}>
+            {/* <Space size={[25, 0]}>
               <img src={coloredCopyIcon} alt="csv" className="img-hover" />
               <img src={coloredCsvIcon} alt="csv" className="img-hover" />
               <img src={coloredXlsIcon} alt="csv" className="img-hover" />
-            </Space>
+            </Space> */}
           </Space>
         </div>
 

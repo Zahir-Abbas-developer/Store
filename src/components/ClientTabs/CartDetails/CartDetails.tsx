@@ -34,7 +34,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
           title: <span>REMOVE </span>,
           dataIndex: "categoryName",
           key: "categoryName",
-          width: 300,
+          width: 150,
           render: (_:any, text:any) => (
             <Space>
               <span className="fs-14 fw-400 title-color" onClick={()=>{ handleDeleteCart(text?.id,text?.size)}} style={{cursor:"pointer"}}> <img src={deleteIcon}/>  </span>
@@ -45,7 +45,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             title: <span>THUMBNAIL </span>,
             dataIndex: "thumbnail",
             key: "thumbnail",
-            width: 300,
+            width: 150,
             render: (_:any, text:any) => (
               <Space>
                 <span className="fs-14 fw-400 title-color" style={{cursor:"pointer"}}>  <img src={text?.thumbnail} width={40} height={40}/></span>
@@ -56,7 +56,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             title: <span>PRODUCT </span>,
             dataIndex: "categoryName",
             key: "categoryName",
-            width: 300,
+            width: 150,
             render: (_:any, text:any) => (
               <Space>
                 <span className="fs-14 fw-400 title-color">{text?.categoryName}</span>
@@ -67,7 +67,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             title: <span>QUANTITY </span>,
             dataIndex: "categoryName",
             key: "categoryName",
-            width: 300,
+            width: 150,
             render: (_:any, text:any) => (
               <Space>
                 <span className="fs-14 fw-400 title-color">{text?.quantity}</span>
@@ -78,7 +78,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             title: <span>PRICE </span>,
             dataIndex: "price",
             key: "price",
-            width: 300,
+            width: 150,
             render: (_:any, text:any) => (
               <Space>
                 <span className="fs-14 fw-400 title-color">$ {text?.price}</span>

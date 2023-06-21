@@ -3,7 +3,7 @@ import { Button, Card, Col, Row, Space, Table, Form, Input, Select } from 'antd'
 import './BillingDetails.scss'
 import deleteIcon from "../../../assets/icons/delete-icon-outlined.svg";
 import { PayPalScriptProvider, PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
-
+import storage from 'redux-persist/lib/storage';
 import { useDispatch } from 'react-redux';
 import { addProduct, removeProduct } from '../../../store/Slices/AddToCardSlice';
 import { text } from 'stream/consumers';
@@ -266,7 +266,13 @@ const BillingDetails = () => {
                     return actions.order.capture().then(function () {
                       console.log("ressssssssss", data);
                       postOrders({ payload: { ...payloadValues, companyName: "asfas", additionalInfo: "asf", subtotal: totalPrice, total: totalPrice, paymentMethod: "PAYPAL", paymentTransactionId: data?.orderID, shoeProducts: [{ productId: products?.products[0]?.id, shoesize:products?. products[0]?.size, quantity: "01", price:products?. products[0]?.price }] } })
-                      // Your code here after capture the order
+                      AppSnackbar({
+                        type: "success",
+                        messageHeading: "Congratulations!",
+                        message: "Paid Successful!",
+                      });
+                      storage.removeItem("persist:role");
+                      
                     });
                   }} />
 
