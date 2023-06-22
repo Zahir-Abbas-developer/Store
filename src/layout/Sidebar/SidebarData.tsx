@@ -50,7 +50,7 @@ console.log(role)
       label: "HOME",
       link: "/dashboard",
       icon: <Dashboard />,
-      role: [ROLES.user],
+      role: [],
     },
     {
       label: "OUR COLLECTION",
@@ -87,7 +87,7 @@ console.log(role)
       label: "SOLE GUIDE",
       link: "/client-preferences",
       icon: <Preferences />,
-      role: [ROLES.user],
+      role:  [ROLES.user],
     },
     {
       label: "SHOE CARE",
@@ -139,7 +139,11 @@ console.log(role)
     },
    
   ];
-  const updateArray = SidebarMenues?.filter((ele) => ele?.role?.includes(role));
+  const updateArray = SidebarMenues?.filter((ele) => {
+    if(role==="admin")
+   return  ele?.role?.includes(role)
+    else return !ele.role?.includes("admin")
+  });
 
   const permissionsValues = updateArray
     ?.filter((obj: any) => permissions?.some((ele: any) => formatString(ele?.name) === obj.label));

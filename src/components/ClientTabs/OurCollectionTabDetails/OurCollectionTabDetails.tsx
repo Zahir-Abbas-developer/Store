@@ -69,8 +69,8 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
             options={[
          
               { value: "popularity", label: "By Popularity" },
-              { value: "from_a-z", label: "From A-Z" },
-              { value: "from_z-a", label: "From Z-A" },
+              { value: "name_asc", label: "From A-Z" },
+              { value: "name_desc", label: "From Z-A" },
              
             ]}
           />

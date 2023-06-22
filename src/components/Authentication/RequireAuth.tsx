@@ -1,8 +1,7 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 const RequireAuth = ({ children, allowedRoles }: any) => {
   const { role }: any = JSON.parse(localStorage.getItem("careUserData") || "{}");
-  console.log(role);
-  
+ 
 
   const location = useLocation();
 

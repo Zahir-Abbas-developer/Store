@@ -109,7 +109,7 @@ const Login = () => {
     if (values?.newPassword === values?.confirmNewPassword) {
       const payload = {
         currentPassword: values.currentPassword,
-        newPassword: values.newPassword,
+        updatedPassword: values.newPassword,
       };
       const { error, data }: any = await changePasswordPostRequest({
         payload,

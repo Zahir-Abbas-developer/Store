@@ -3,7 +3,7 @@ export const extendedApi = emptySplitApi.injectEndpoints({
   endpoints: (builder: any) => ({
     changePasswordPostRequest: builder.mutation({
       query: ({ payload }: any) => ({
-        url: "/auth/change-password",
+        url: "/auth/password-change",
         method: "post",
         body: payload,
       }),

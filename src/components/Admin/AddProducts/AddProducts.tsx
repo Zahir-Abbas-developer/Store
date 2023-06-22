@@ -63,11 +63,9 @@ const AddProducts = () => {
   // ============================== Query Parameters Of Search and Filter ==============================
   const paramsObj: any = {};
   if (searchName) paramsObj["name"] = searchName;
-  if (selectedFilterValue) paramsObj["userRole"] = selectedFilterValue;
-  if (selectedFilterValue === "All") paramsObj["userRole"] = "";
-  if (selectedCareHomeFilterValue) paramsObj["careHomeId"] = selectedCareHomeFilterValue;
 
-  const query = "&" + new URLSearchParams(paramsObj).toString();
+
+  const query = "?" + new URLSearchParams(paramsObj).toString();
 
   // ============================== ROLES ==============================
   const { role }: any = JSON.parse(localStorage.getItem("careUserData") || "{}");
@@ -113,7 +111,7 @@ const AddProducts = () => {
   }
 //get products 
 
-const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query:"?"})
+const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query})
     let productsData:any
     if(isSuccessProducts){
         productsData=products
