@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 
 // Ant Components
 import { Avatar, Popover, Space } from "antd";
-import { CaretDownOutlined, MenuOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { CaretDownOutlined, MenuOutlined, ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 
 
 // Components
@@ -74,10 +74,7 @@ const TopHeader = ({ setIsOpen }: any) => {
 
   // ========================== Profile Dropdown ==========================
   const profileDropdown = [
-    {
-      title: "Profile Preview",
-      icon: <User />,
-    },
+    
     {
       title: "Change Password",
       icon: <ChangePassword />,
@@ -115,7 +112,7 @@ const handleOpenDrawer=()=>{
           <ShoppingCartOutlined style={{ fontSize: '24px' }} onClick={handleOpenDrawer} />
         </Badge>
       {/* <NotificationsPopup /> */}
-
+      
       <div className="adminDetail">
         <Popover
           rootClassName="profile-dropdown"
@@ -159,7 +156,7 @@ const handleOpenDrawer=()=>{
           onOpenChange={() => setOpen(false)}
         >
           <Space onClick={() => setOpen(!open)}>
-            {!role ? <Link to="/login">Sign In</Link>:
+            {!role ? <Link to="/login"><UserOutlined style={{fontSize: '24px'}} /></Link>:
             <Avatar style={{ verticalAlign: "middle" }} size="large">
               <img src={
                 carerProfile?.data?.userprofile?.profilePhoto
@@ -179,18 +176,18 @@ const handleOpenDrawer=()=>{
                   flexDirection: "column",
                 }}
               >
-                <span style={{ height: "20px" }}>
+               {role && <> <span style={{ height: "20px" }}>
                   {
                     carerProfile?.data?.userprofile?.firstName ? (carerProfile?.data?.userprofile?.firstName + " " + carerProfile?.data?.userprofile?.lastName) : carerProfile?.data?.userprofile?.clientName
                   }
-                  <CaretDownOutlined className="fs-16" />
+                  <CaretDownOutlined className="fs-16" style={{fontSize: '24px'}} />
                 </span>
                 <span
                   className="fs-12 fw-400"
                   style={{ textTransform: "capitalize" }}
                 >
-                {role==="admin"?"Admin":"User"}  
-                </span>
+                {role==="admin"? <p  style={{marginTop:"0px",color:"white"}}>Admin</p> :<p style={{marginTop:"0px",color:"white"}}>User</p>}  
+                </span></>}
               </p>
             </div>
           </Space>

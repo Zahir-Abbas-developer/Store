@@ -477,6 +477,7 @@ const ClientUpcomingShifts = Loadable(
 const ClientCompletedShifts = Loadable(
   lazy(() => import("./pages/ClientManageShift/ClientCompletedShift"))
 );
+const ContactDetailsPage=Loadable((lazy(()=>import("./pages/ContactDetails"))))
 const ClientSignOffShifts = Loadable(
   lazy(() => import("./pages/ClientManageShift/ClientSignOffShift"))
 );
@@ -508,6 +509,7 @@ export const routes: any = [
     path: "reset-password",
     element: <ResetPassword />,
   },
+  
   {
     path: "/",
     element: <DashboardLayout />,
@@ -535,6 +537,10 @@ export const routes: any = [
             <DashboardPage />
           //  </RequireAuth>
         ),
+      },
+      {
+        path:"contact-details",
+        element:<ContactDetailsPage/>
       },
       {
         path:"productDetails",
