@@ -55,7 +55,7 @@ const ContactDetails = () => {
     const navigate = useNavigate();
     return (
         <>
-            <div className="header-image-our-collection">
+            <div className="header-image-card-details">
                 <div className="image-content">
                     <h1 className="image-heading-title">Contact</h1>
                     <p className="image-heading-subheading">Our experts are here to help you with orders, fittings and more</p>

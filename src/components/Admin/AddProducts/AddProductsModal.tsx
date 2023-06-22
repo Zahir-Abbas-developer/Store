@@ -148,7 +148,7 @@ const handleAddField = () => {
       "Sportswear"
     ],shoeSizes:shoeSizes}
 
-for (let i = 0; i <= 100; i++) {
+for (let i = 0; i <= 300; i++) {
   const euProperty = `eu${i}`;
   const quantityProperty = `quantity${i}`;
   
