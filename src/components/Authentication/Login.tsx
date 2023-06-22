@@ -24,18 +24,12 @@ const Login = () => {
     useChangePasswordPostRequestMutation();
 
   function renderDashboard(role: string): string {
-    if (role === "carer") {
-      return "/carer-dashboard";
-    } else if (role === "carer_coordinator") {
-      return "/coordinator-dashboard";
-    } else if (role === "client") {
-      return "/client-dashboard";
-    } else if (role === "training_instructor") {
-      return "/instructor-dashboard";
-    } else if (role === "system_admin") {
-      return "/super-admin-dashboard";
-    } else {
+    if (role === "user") {
+      return "/dashboard";
+    } else if (role === "admin") {
       return "/admin-dashboard";
+    }  else {
+      return "/dashboard";
     }
   }
   const onFinishSignUp=async (values:any)=>{

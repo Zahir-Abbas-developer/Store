@@ -10,6 +10,8 @@ import AppSnackbar from '../../../utils/AppSnackbar';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../../store';
 const CartDetails=()=>{
+  const { role }: any = JSON.parse(localStorage.getItem("careUserData") || "{}");
+
   const navigate=useNavigate()
   const dispatch = useDispatch();
   const { products }: any = useAppSelector((state) => state.products);
@@ -142,7 +144,8 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
       <p style={{color:"#ffffff"}}>$ {totalPrice + 10}</p>
       </Col>
       <Col span={24}>
-      <Button  block onClick={()=>navigate("/productDetails/cart-details/checkout-details")}>
+     
+      <Button  disabled={!role}  block onClick={()=>navigate("/productDetails/cart-details/checkout-details")}>
       PROCEED TO CHECKOUT
     </Button>
       </Col>

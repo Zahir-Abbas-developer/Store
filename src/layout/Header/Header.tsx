@@ -36,6 +36,7 @@ import { useLogoutMutation } from "../../store/Slices/Signin";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../store";
 import { openDrawer } from "../../store/Slices/OpenDrawerSlice";
+import { Link } from "react-router-dom";
 
 
 
@@ -158,13 +159,14 @@ const handleOpenDrawer=()=>{
           onOpenChange={() => setOpen(false)}
         >
           <Space onClick={() => setOpen(!open)}>
+            {!role ? <Link to="/login">Sign In</Link>:
             <Avatar style={{ verticalAlign: "middle" }} size="large">
               <img src={
                 carerProfile?.data?.userprofile?.profilePhoto
                   ? `https://rnd-s3-public-dev-001.s3.eu-west-2.amazonaws.com/${carerProfile?.data?.userprofile?.profilePhoto?.mediaId}.${carerProfile?.data?.userprofile?.profilePhoto?.mediaMeta?.extension}`
                   : `https://ui-avatars.com/api/?rounded=true&name=${carerProfile?.data?.userprofile?.firstName} ${carerProfile?.data?.userprofile?.firstName}`
               } alt="userimg" width={40} />
-            </Avatar>
+            </Avatar>}
             <div
               className="details"
               style={{ display: "flex", flexDirection: "column" }}
