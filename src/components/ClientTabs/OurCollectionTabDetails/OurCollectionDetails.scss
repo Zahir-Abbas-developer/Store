@@ -10,9 +10,15 @@
   justify-content: center;
 }
 
+
 .image-content {
   text-align: center;
+  @media only screen and (min-width: 200px) and (max-width:991px) {
+    display: none;
+ }
+ 
 }
+
 
 .image-heading-title {
   color: #FFFFFF;
