@@ -8,11 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-@media only screen and (min-width: 200px) and (max-width:991px) {
-  .header-image-our-collection {
-    background-size: contain;
-  }
+  background-size: contain;
 }
 
 .image-content {
