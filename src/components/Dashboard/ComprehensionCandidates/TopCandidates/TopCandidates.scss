@@ -1,0 +1,43 @@
+.dashboard {
+    .top-candidates {
+        .top-candidates-card{
+            display: flex;
+            justify-content: space-between;
+        }
+        .top-candidates-cards {
+            .ant-card-body {
+
+                padding: 17px !important;
+            }
+        }
+        .top-projects-candidates-details::-webkit-scrollbar{
+            
+                display: none !important;
+            
+        }
+    }
+}
+
+
+
+
+@media only screen and (max-width:520px) and (min-width:280px) {
+    .dashboard {
+        .top-candidates {
+            .top-candidates-card{
+                display: block !important;
+                margin-bottom: 15px !important;
+            }
+            .top-candidates-details {
+                display: block !important;
+            }
+
+            .top-candidates-button {
+                text-align: center !important;
+                margin-top: 10px !important;
+            }
+        }
+    }
+
+
+}

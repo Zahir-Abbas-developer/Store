@@ -1,0 +1,113 @@
+@import '../../../../../sass/variables.scss';
+
+.booking-allocate-modal-wrapper {
+  .allocate-paragraph {
+    font-size: 15px;
+    padding-top: 10px;
+  }
+  .ant-picker-input>input::placeholder {
+    color:#888888 !important ;
+   } textarea::placeholder {
+    color: #888888 !important;
+  }
+  .allocate-modal-content {
+    margin-top: 30px;
+    height: 60vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 6px;
+
+    .date-picker-wrapper {
+      .ant-form-item {
+        margin: 0;
+
+        .ant-form-item-label {
+          padding: 0;
+        }
+      }
+    }
+
+    .ant-collapse {
+      background: #FFFFFF;
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+
+      .ant-collapse-item {
+        .ant-collapse-header {
+          padding: 10px 16px !important;
+
+          .ant-collapse-header-text {
+            font-weight: $fw-500;
+            font-size: 15px;
+            line-height: 28px;
+            color: #000000;
+          }
+        }
+      }
+    }
+
+    .view-preference {
+      padding-bottom: 10px;
+
+      .view-preference-content {
+        border-radius: 4px;
+        padding: 14px 15px;
+
+        p {
+          color: #4E4B66;
+        }
+
+        .view-preference-icon {
+          gap: 15px;
+        }
+      }
+    }
+
+    .ant-form-item-control-input-content {
+      .ant-input {
+        border: 1.5px solid #A0A3BD;
+        border-radius: 3px;
+        cursor: pointer;
+
+        &:hover {
+          border: 1.5px solid #65CDF0 !important;
+        }
+      }
+    }
+
+    .allocate-shift-btn {
+      gap: 20px;
+      padding-top: 40px;
+
+      button {
+        padding: 12px 35px;
+        height: 100%;
+        border: none !important;
+        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+        border-radius: 2px;
+      }
+
+      .cancel-btn {
+        background-color: #FAAD14;
+      }
+
+      .save-btn {
+        background-color: #65cdf0;
+      }
+    }
+
+    .view-preference-btn {
+      margin-top: 10px;
+
+      button {
+        padding: 12px 35px;
+        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+        border-radius: 2px;
+        border: none;
+        background-color: #65CDF0;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,31 @@
+.client-rate-wrapper-table {
+  ::-webkit-scrollbar {
+    height: 5px;
+  }
+  
+  .ant-table-tbody {
+    tr {
+      .ant-table-cell {
+        border: none;
+        padding: 3px 5px !important;
+      }
+    }
+  }
+  .ant-table-tbody > tr.ant-table-row:hover > td {
+    background: none !important;
+  }
+  .ant-table-thead {
+    tr {
+      .ant-table-cell {
+        padding: 0px 5px !important;
+      }
+      th {
+        background: transparent;
+        border: none;
+        &::before {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+}

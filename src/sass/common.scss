@@ -1,0 +1,582 @@
+@import "./variables.scss";
+
+.btn-primary,
+.btn-cancel,
+.btn-secondary {
+  border: none;
+  color: $white-color;
+  padding: 12px 35px;
+  line-height: $line-height-20;
+  font-size: $fs-16;
+  font-weight: $fw-600;
+  // border-radius: $border-radius-2;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  cursor: pointer;
+
+  .ant-btn-loading-icon{
+    svg {
+      color: $white-color !important;
+    }
+  }
+}
+
+.ant-btn {
+  font-weight: 500 !important;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+}
+
+.audit-button {
+  background-color: $audit-button;
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+
+.error-color {
+  color: $error-color;
+}
+
+.bg-error-color {
+  background-color: $error-color;
+}
+
+.approved-color {
+  color: $approved-color;
+}
+
+.btn-cancel {
+  background-color: $cancle-button-background;
+}
+
+.dark-brown-color {
+  color: $cancle-button-background;
+}
+
+.title-color {
+  color: $title-color;
+}
+
+.blue-color {
+  color: $blue-color;
+}
+
+.label-color {
+  color: $label-color;
+}
+
+.snow-white-color {
+  color: $snow-white-color;
+}
+
+.form-heading-color {
+  color: $form-heading-color;
+}
+
+.bg-orange-color {
+  background-color: $orange-color;
+}
+
+.orange-color {
+  color: $orange-color;
+}
+
+.card-heading {
+  color: $card-heading;
+}
+
+.card-heading {
+  color: $card-heading;
+}
+
+.pink-color {
+  color: $pink-color;
+}
+
+.card-text {
+  color: $card-text-color;
+}
+
+.light-black-color {
+  color: $light-black-color;
+}
+
+.black-color {
+  color: $black-color;
+}
+
+.bg-inner-shadow {
+  background-color: $tabs-inner-shadow;
+}
+
+.orange-color {
+  color: $orange-color;
+}
+
+// border radius classes
+.border-radius-2 {
+  border-radius: $border-radius-2;
+}
+
+.border-radius-4 {
+  border-radius: $border-radius-4;
+}
+
+.border-radius-6 {
+  border-radius: $border-radius-6;
+}
+
+.border-radius-8 {
+  border-radius: $border-radius-8;
+}
+
+.border-radius-10 {
+  border-radius: $border-radius-10;
+}
+
+.border-radius-12 {
+  border-radius: $border-radius-12;
+}
+
+.border-radius-14 {
+  border-radius: $border-radius-14;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.border-none {
+  border: none !important;
+}
+
+//color
+.bg-white {
+  background-color: $white-color;
+}
+
+.white-color {
+  color: $white-color;
+}
+
+.light-grey-color {
+  color: $gray-placeholder;
+}
+
+// font classes start here
+.fs-10 {
+  font-size: $fs-10;
+}
+
+.fs-12 {
+  font-size: $fs-12;
+}
+
+.fs-14 {
+  font-size: $fs-14;
+}
+
+.fs-16 {
+  font-size: $fs-16;
+}
+
+.fs-18 {
+  font-size: $fs-18;
+}
+
+.fs-20 {
+  font-size: $fs-20;
+}
+
+.fs-22 {
+  font-size: $fs-22;
+}
+
+.fs-24 {
+  font-size: $fs-24;
+}
+
+.fs-26 {
+  font-size: $fs-26;
+}
+
+.fs-28 {
+  font-size: $fs-28;
+}
+
+.fs-30 {
+  font-size: $fs-30;
+}
+
+.fs-32 {
+  font-size: $fs-32;
+}
+
+.fs-40 {
+  font-size: $fs-40;
+}
+
+// font weight classes
+.fw-300 {
+  font-weight: $fw-300;
+}
+
+.fw-400 {
+  font-weight: $fw-400;
+}
+
+.fw-500 {
+  font-weight: $fw-500;
+}
+
+.fw-600 {
+  font-weight: $fw-600;
+}
+
+.fw-700 {
+  font-weight: $fw-700;
+}
+
+// line height end here
+.line-height-16 {
+  line-height: $line-height-16;
+}
+
+.line-height-17 {
+  line-height: $line-height-17;
+}
+
+.line-height-18 {
+  line-height: $line-height-18;
+}
+
+.line-height-20 {
+  line-height: $line-height-20;
+}
+
+.line-height-22 {
+  line-height: $line-height-22;
+}
+
+.line-height-24 {
+  line-height: $line-height-24;
+}
+
+.line-height-30 {
+  line-height: $line-height-30;
+}
+
+.line-height-32 {
+  line-height: $line-height-32;
+}
+
+.line-height-40 {
+  line-height: $line-height-40;
+}
+
+// width and margin
+.m-0 {
+  margin: 0px;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.text-no-wrap {
+  white-space: nowrap;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.d-block {
+  display: block;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.border-radius-50 {
+  border-radius: 50%;
+}
+
+.card-box-shadow {
+  box-shadow: $card-box-shadow;
+}
+
+.text-upercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+// ########## APP Snackbar Wrapper Class ##########
+.custom-notification-class {
+  font-weight: $fw-500;
+  font-size: $fs-12;
+  line-height: $line-height-24;
+  margin-top: 0;
+  min-width: 294px;
+  width: 450px;
+  padding: 0.625rem;
+  border-radius: $border-radius-4;
+
+  a {
+    top: 24px !important;
+    right: 0.938rem !important;
+  }
+
+  div {
+    span {
+      top: 15px !important;
+    }
+  }
+
+  .ant-notification-notice-icon {
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+    .white-cross {
+      filter: brightness(0) invert(1) !important;
+    }
+
+  .ant-notification-notice-message {
+    margin-bottom: 0px !important;
+  }
+
+  &.error-snackbar {
+    div {
+      color: $white-color !important;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+// common wrapper class for reports childs
+.reports-child-wrapper-class {
+
+  // background: $white-color;
+  // border: 1px solid #D9DBE9;
+  // box-shadow: $card-box-shadow;
+  // border-radius: $border-radius-8;
+  // padding: 1.875rem;
+  .filter-div {
+    // background: $white-color;
+    // border: 1px solid #d9dbe9;
+    // box-shadow: $card-box-shadow;
+    // border-radius: $border-radius-8;
+    // padding: 1.875rem !important;
+
+
+    .right-card-heading {
+      transition: all 0.6s ease;
+    }
+
+    &:hover {
+      .right-card-heading {
+        /* IE 9 */
+        -ms-transform: scale(1.21);
+        /* Safari 3-8 */
+        -webkit-transform: scale(1.21);
+        transform: scale(1.21);
+        padding-left: 0.6rem;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      padding: 1rem !important;
+    }
+  }
+
+  min-height: 100%;
+
+  @media screen and (max-width: 500px) {
+    padding: 1rem 0.875rem;
+  }
+}
+
+// ####### Common Border Class #######
+.common-border {
+  border: 1px solid #d9dbe9;
+}
+
+.common-border-bottom {
+  border-bottom: 1px solid #d9dbe9;
+}
+
+.input-search-wrapper {
+  .ant-input::placeholder {
+    color: $label-color;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .ant-input-affix-wrapper {
+    border: 1px solid #d9dbe9;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15);
+    height: 40px;
+    border-radius: 2px;
+  }
+
+  .icon {
+    margin-left: 10px;
+    margin-right: 6px;
+  }
+}
+
+.position-relative {
+  position: relative;
+}
+
+//tabs global styling
+
+.ant-tabs .ant-tabs-tab {
+  padding: 15px 30px 12px 30px;
+  border-bottom: 2px solid transparent;
+}
+
+.ant-tabs .ant-tabs-tab-btn {
+  color: white;
+  
+}
+
+.ant-tabs .ant-tabs-tab:hover {
+  background: rgba(39, 112, 173, 0.1);
+  border-bottom: 2px solid #92e5fc;
+  transition: all 0.5s ease;
+}
+
+.ant-tabs-ink-bar {
+  height: 3px !important;
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  font-weight: 600 !important;
+  color: white;
+
+  text-shadow: none !important;
+}
+
+.ant-tabs .ant-tabs-tab+.ant-tabs-tab {
+  margin: 0;
+}
+
+.ant-tabs .ant-tabs-tab-btn:focus-visible {
+  outline: none !important;
+}
+
+.ant-form-vertical .ant-form-item-label {
+  padding: 0 0 2px;
+}
+
+.ant-form-item .ant-form-item-label>label {
+  // flex-direction: row-reverse;
+  font-weight: $fw-600;
+  font-size: $fs-14;
+  color: $label-color;
+}
+
+::-webkit-scrollbar {
+  display: block;
+  width: 5px !important;
+  height: 5px !important;
+
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(176, 176, 176);
+  border-right: none;
+  border-left: none;
+  border-radius: 20px;
+}
+
+
+// ########################## Esterick Icons to right for whole app ##########################
+.ant-form-item .ant-form-item-label>label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+  color: $error-color;
+  font-size: $fs-14;
+  content: "*";
+  margin-left: 0.3rem;
+}
+
+// this to take esterick to right end
+.ant-form-item .ant-form-item-label>label.ant-form-item-required:not(.ant-form-item-required-mark-optional) {
+  display: inline-flex;
+  flex-direction: row-reverse;
+}

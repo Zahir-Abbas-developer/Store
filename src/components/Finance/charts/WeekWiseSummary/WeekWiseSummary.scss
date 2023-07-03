@@ -1,0 +1,41 @@
+.finance-week-wise-summary{
+    .finance-week-wise-summary-card{
+        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15) !important;
+        height: 526px;
+        .ant-card-body {
+            padding: 12px 24px;
+        }
+    }
+}
+@media only screen and (max-width:480px)  {
+    .finance-week-wise-summary{
+        .ant-card{
+            height: fit-content !important;
+        }
+    }
+}
+@media only screen and (max-width:1328px)  {
+    .finance-week-wise-summary  .finance-week-wise-summary-card{
+      height: fit-content;
+    }
+}
+
+@media only screen and (max-width:397px)  {
+    .finance-week-wise-summary .week-wise-summary-left-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }.week-wise-summary-link{
+        padding-top: 14px;
+        padding-bottom: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+        
+    
+}
+

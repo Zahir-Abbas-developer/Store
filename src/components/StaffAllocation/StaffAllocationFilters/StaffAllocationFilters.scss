@@ -1,0 +1,54 @@
+@import "../../../sass/variables";
+.inner-wrap-filters{
+    .select-radius-wrapper{
+        .sliderbar-wrapper {
+            gap: 19px;
+            .slider-text {
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 17px;
+              color: #4e4b66;
+            }
+            .slider-bar {
+              .ant-slider-handle {
+                &::after {
+                  display: none;
+                }
+              }
+            }
+          }
+          .ant-slider-rail{
+            box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.25);
+          }
+    }
+    .bottom-inset-filters{
+        margin-top: 44px;
+        flex-wrap: wrap;
+        gap: 15px;
+        .bottom-filters-buttons{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            .bottom-filter-btn{
+                height: 46px;
+                border-radius: 0;
+                outline: none;
+                color: #fff;
+                font-size: $fs-16;
+                font-weight: $fw-600;
+            }
+            .apply-filter-btn{ background-color: #FAAD14; width: 162px;}
+            .allocate-staff-btn{background-color: $secondary-color; width: 179px;}
+            .remove-staff-btn{background-color: $error-color; width: 179px;}
+            .disabled-btns{
+              background-color: #A0A3BD;
+              color: #fff;
+            }
+        }
+    }
+}
+@media (max-width: 600px){
+  .apply-filter-btn{width: 100% !important;}
+  .allocate-staff-btn{width: 100% !important;}
+  .remove-staff-btn{width: 100% !important;}
+}

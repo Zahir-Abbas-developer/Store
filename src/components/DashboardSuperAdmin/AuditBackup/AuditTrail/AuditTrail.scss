@@ -1,0 +1,10 @@
+.super-admin{
+    .audit-trail-card{
+        transition: all 0.3s ease-in-out;
+    }
+    .audit-trail-card:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        box-shadow: -7.07129px 7.07129px 10.6069px rgba(131, 164, 249, 0.15);
+      }
+}

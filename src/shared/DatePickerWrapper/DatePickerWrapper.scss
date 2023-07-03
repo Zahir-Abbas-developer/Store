@@ -1,0 +1,124 @@
+@import '../../sass/variables.scss';
+
+.date-picker-content {
+    .ant-picker-panel-container {
+        .ant-picker-panel-layout {
+            .ant-picker-date-panel {
+
+                .ant-picker-header-prev-btn,
+                .ant-picker-header-next-btn {
+                    color: rgba(63, 82, 109, 0.3) !important;
+                }
+
+                .ant-picker-header-super-next-btn,
+                .ant-picker-header-super-prev-btn {
+                    display: none !important;
+                }
+
+                .ant-picker-header-view {
+
+                    .ant-picker-month-btn,
+                    .ant-picker-year-btn {
+                        font-weight: $fw-700;
+                        font-size: $fs-16;
+                        line-height: 19px;
+                        color: #3F526D;
+                        vertical-align: middle
+                    }
+                }
+
+                .ant-picker-body {
+                    .ant-picker-content {
+                        thead {
+                            display: none;
+                        }
+
+                        tbody {
+                            .ant-picker-cell.ant-picker-cell-in-view {
+                                .ant-picker-cell-inner {
+                                    &::before {
+                                        border: 1px solid #65CDF0 !important;
+                                        border-radius: 8px;
+                                    }
+                                }
+
+                            }
+
+                            .ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-selected {
+                                .ant-picker-cell-inner {
+                                    background: #65CDF0 !important;
+                                    border-radius: 8px;
+                                    font-weight: $fw-700;
+                                    font-size: $fs-12;
+                                    color: #fff;
+                                }
+                            }
+
+                            .ant-picker-cell.ant-picker-cell-in-view {
+                                .ant-picker-cell-inner {
+                                    font-weight: $fw-400;
+                                    font-size: $fs-12;
+                                    color: #23183D;
+                                }
+                            }
+
+                            .ant-picker-cell {
+                                .ant-picker-cell-inner {
+                                    color: rgba(63, 82, 109, 0.3);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ant-picker-footer {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.date-picker-wrapper {
+    .ant-form-item-control-input {
+        .ant-picker {
+            border: 1.5px solid #A0A3BD;
+            border-radius: 3px;
+            width: 100%;
+            height: 45px;
+            cursor: pointer;
+
+            // &:hover {
+            //     border: 1.5px solid #65CDF0 !important;
+            // }
+
+        }
+    }
+
+    .ant-form-item-explain-error {
+        position: absolute;
+    }
+
+    .ant-form-item .ant-form-item-label>label {
+        flex-direction: row-reverse;
+        font-weight: 600;
+        font-size: 14px;
+        color: #6e7191;
+      }
+
+    // .ant-form-item {
+    //     .ant-form-item-label {
+    //         .ant-form-item-required {
+    //             font-weight: 500;
+    //             font-size: 15px;
+    //             line-height: 28px;
+    //             color: rgba(0, 0, 0, 0.85);
+    //         }
+    //     }
+    // }
+
+    .ant-picker-status-error {
+        border: 1.5px solid #ff4d4f !important;
+    }
+
+}

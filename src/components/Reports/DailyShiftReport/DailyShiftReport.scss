@@ -1,0 +1,46 @@
+.daily-shit-report-details-modal {
+    .ant-modal {
+        min-width: 802px;
+
+        .ant-modal-content {
+            padding: 1.875rem !important;
+
+            .ant-table-thead {
+
+                tr,
+                th {
+                    background-color: unset;
+                    padding-top: 1.688rem;
+                    padding-bottom: 1.688rem
+                }
+
+                td {
+                    border: none;
+                }
+            }
+
+            tr:nth-child(even) {
+                background: #F7F7FC !important;
+            }
+
+            td {
+                border: none;
+            }
+
+
+            .ant-modal-footer {
+                margin: 0px;
+            }
+
+        }
+
+
+        @media screen and (max-width:820px) {
+            min-width: 90% !important;
+
+            .ant-modal-content {
+                padding: 0 0.5rem;
+            }
+        }
+    }
+}

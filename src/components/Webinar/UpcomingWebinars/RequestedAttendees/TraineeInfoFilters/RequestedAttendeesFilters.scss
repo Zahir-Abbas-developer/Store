@@ -1,0 +1,103 @@
+.wrapper-fliters {
+    width: fit-content;
+  }
+  .flex-filters {
+    border: 1px solid #d9dbe9;
+    border-radius: 4px;
+    height: 40px;
+    .inner-flex-filters {
+      display: flex;
+      margin-top: -4px;
+      .col-box {
+        position: relative;
+        width: 15vw;
+        height: 44px;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 1px;
+          background-color: #4e4b66;
+          height: 22px;
+          top: 12px;
+          z-index: 1;
+        }
+        .area-fliters {
+          .filters-label {
+            margin-top: -25px;
+            margin-bottom: 10px;
+          }
+          .ant-select-selector {
+            border: none ;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            border-radius: 0px;
+            box-shadow: none !important;
+            
+          }
+          .ant-select-arrow {
+            top: 32%;
+          }
+        }
+        &:nth-child(1) {
+          &::before {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1000px){
+    .flex-filters{
+      width: 100%;
+      .inner-flex-filters{
+        .col-box{
+          width: 22vw;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .wrapper-fliters{
+     width: 100% !important;
+    }
+    .flex-filters {
+      border: none !important;
+      border-radius: 4px;
+      height: fit-content !important;
+      .inner-flex-filters {
+        display: flex;
+        flex-wrap: wrap !important;
+        margin-top: 0px !important;
+        .col-box {
+          position: unset !important;
+          width: 100% !important;
+          height: fit-content !important;
+          &::before {
+            display: none !important;
+          }
+          .area-fliters {
+            .filters-label {
+              margin-top: 0px !important;
+              margin-bottom: 5px !important;
+            }
+            .ant-select-selector {
+              margin-bottom: 20px;
+              display: flex;
+              align-items: center;
+              box-shadow: none !important;
+              border: 1px solid #d9dbe9 !important;
+              border-radius: 4px !important;
+              height: 40px;
+              margin-bottom: 12px !important;
+            }
+            .ant-select-arrow {
+              top: 35% !important;
+            }
+          }
+        }
+      }
+    }
+  }

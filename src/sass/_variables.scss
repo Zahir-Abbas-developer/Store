@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+$font-family-Roboto: "Roboto", "sans-serif";
+
+//colors
+$black-color: #000000;
+$white-color: #ffffff;
+$primary-color: #F0488E;
+$secondary-color: #65CDF0;
+$title-color: #4E4B66;
+$light-primary-color:#FFE2EE;
+$form-heading-color:#14142B;
+$label-color:#6E7191;
+$selected-tab-background: #EFF0F6;
+$orange-color: #F7B923;
+$card-text-color:#152536;
+$card-heading:#434242;
+$light-orange-color:#FDF4DD;
+$audit-button:#52C41A;
+$approved-color:#52C41A;
+$light-audit-color:#F0FFF3;
+$light-green-color:#63E1A5;
+$dark-blue-background:#DCF6FF;
+$layout-text-color:#969BA0;
+$error-color: #FF4D4F;
+$gray-placeholder:#A0A3BD;
+$tabs-inner-shadow:#F5F5F5;
+$cancle-button-background:#4E132C;
+$success-progressbar-color: #52C41A;
+$pink-color:#EE2E7E;
+$input-border-color:#A0A3BD;
+$blue-color: #1890FF;
+$flame-progressbar-color:#EF6327;
+$green-progressbar-color:#0BB783;
+$shifts-calendar-background:rgba(72, 195, 173, 0.29);
+$light-black-color: rgba(0, 0, 0, 0.85);
+$snow-white-color: #FFFAFA;
+
+/* box shadow */
+$box-shadow: 0px 12px 23px rgba(101, 205, 240, 0.1);
+
+
+$card-box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+
+/*font-size vars */
+$fs-100: 100px;
+$fs-55: 55px;
+$fs-48: 48px;
+$fs-40: 40px;
+$fs-32: 32px;
+$fs-30:30px;
+$fs-28: 28px;
+$fs-26: 26px;
+$fs-24: 24px;
+$fs-22: 22px;
+$fs-20: 20px;
+$fs-18: 18px;
+$fs-16: 16px;
+$fs-14: 14px;
+$fs-12: 12px;
+$fs-10: 10px;
+
+/* font-weight-vars */
+$fw-300: 300;
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+
+/* line-height vars*/
+$line-height-16: 16px;
+$line-height-17: 17px;
+$line-height-18: 18px;
+$line-height-20: 20px;
+$line-height-22: 22px;
+$line-height-24: 24px;
+$line-height-28: 28px;
+$line-height-30: 30px;
+$line-height-32: 32px;
+$line-height-38: 38px;
+$line-height-40: 40px;
+
+/* padding vars */
+$btn-padding: 10px 22px;
+
+/* radius vars */
+$border-radius-2: 2px;
+$border-radius-4: 4px;
+$border-radius-6: 6px;
+$border-radius-8: 8px;
+$border-radius-9: 9px;
+$border-radius-10: 10px;
+$border-radius-12: 12px;
+$border-radius-14: 14px;

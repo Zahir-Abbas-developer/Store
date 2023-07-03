@@ -1,0 +1,21 @@
+@import "../../../../sass/variables";
+
+.gross-profit-loss-top-filters-wrapper {
+
+    @media screen and (min-width: 1199px) {
+        & :nth-last-child(-n+2) {
+            .filter-column {
+                border-right: 1px solid #D9DBE9 !important;
+            }
+        }
+
+    }
+
+    .top-filter-single-card {
+        padding-left: 0.5rem;
+
+        @media screen and (min-width:1200px) {
+            padding-left: 1.5rem
+        }
+    }
+}

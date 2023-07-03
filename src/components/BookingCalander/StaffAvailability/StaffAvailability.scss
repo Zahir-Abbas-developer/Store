@@ -1,0 +1,142 @@
+.staff-availability {
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+    .input-search-wrapper{
+      .search-input{
+        width: 350px;
+      }
+    }
+    .date {
+      font-size: 14px;
+      color: #4e132c;
+      span {
+        color: #000;
+        font-weight: 600;
+      }
+    }
+    @media only screen and (max-width:768px) {
+      display: block;
+      .input-search-wrapper{
+        .search-input{
+          width: 100%;
+        }
+      }
+    }
+  }
+  .staff-details {
+    margin-top: 20px;
+    padding: 14px 22px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+    .title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .staff-card {
+      background: #ffffff;
+      padding: 10px 15px;
+      margin-top: 15px;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.13);
+      border-radius: 5px;
+      p,
+      h2 {
+        margin: 0;
+      }
+      .card-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .user-info {
+        display: flex;
+        align-items: center;
+        .user-name {
+          font-size: 14px;
+          font-weight: 600;
+          color: #4e4b66;
+        }
+        .user-role {
+          color: #4e4b66;
+          font-size: 10px;
+        }
+      }
+      .total-shift {
+        color: #4e4b66;
+        font-size: 14px;
+        font-weight: 600;
+        span {
+          background: #f7b923;
+          padding: 0 2px;
+          font-weight: 400;
+          font-size: 14px;
+          color: #fff;
+          border-radius: 1px;
+        }
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 38px 0;
+        .tag {
+          display: flex;
+          align-items: center;
+          p {
+            font-size: 14px;
+            color: #4e4b66;
+            margin-left: 5px;
+          }
+        }
+      }
+      .card-btn {
+        .btn {
+          border: none;
+          color: #fff;
+          cursor: pointer;
+          font-weight: 600;
+          padding: 8px 20px;
+          box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+          border-radius: 2px;
+          @media screen and (min-width: 1200px) and (max-width: 1366px) {
+            width: 100%;
+          }
+          @media screen and (min-width: 768px) and (max-width: 847px) {
+            width: 100%;
+          }
+          @media screen and (max-width: 503px) {
+            width: 100%;
+          }
+        }
+        .confirm {
+          background: #65cdf0;
+        }
+        .allocate {
+          background: #f7b923;
+          margin-left: 10px;
+          @media screen and (min-width: 1200px) and (max-width: 1366px) {
+            margin-top: 10px;
+            margin-left: 0;
+          }
+          @media screen and (min-width: 768px) and (max-width: 847px) {
+            margin-top: 10px;
+            margin-left: 0;
+          }
+          @media screen and (max-width: 503px) {
+            margin-top: 10px;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

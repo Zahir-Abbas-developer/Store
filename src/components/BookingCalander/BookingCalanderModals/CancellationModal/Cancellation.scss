@@ -1,0 +1,20 @@
+.cancellation-modal {
+  .btn-wrapper {
+    gap: 10px;
+    .warning-btn {
+      background-color: #faad14;
+      color: #fff;
+    }
+    .cancel-btn {
+      background-color: #65cdf0;
+      color: #fff;
+    }
+    @media only screen and (max-width:768px) {
+      display: block;
+      .warning-btn,.cancel-btn {
+        margin: 5px 0px;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.wrap-system-performance-memoory-usage-card{
+    margin-top: 24px;
+    height: 294px;
+    .ant-card-body{
+        padding: 12px;
+    }
+}
+.wrap-system-performance-used-card{
+    margin-top: 17px;
+    height: 288px;
+    padding-bottom: 18px;
+    .ant-card-body{
+        padding: 18px;
+}.system-performance-inner-card-title{
+    margin: 0px 22px;
+}.system-performance-inner-used-card{
+        height: 36px;       
+        background: #F5F5F5;
+        box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.2);
+      
+}
+.system-performance-used-graph{
+    margin-right:  300px!important;
+    margin-top: -54px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+    .wrap-system-performance-used-card .system-performance-used-graph{
+        margin-left:  0px!important; 
+        margin-top: 20px;
+    }
+  }
+@media only screen and (max-width: 1200px) {
+    .wrap-system-performance-memoory-usage-card {
+      height: fit-content;
+    }
+    .wrap-system-performance-used-card{
+        height: fit-content;
+    }
+  }
+  @media only screen and (max-width: 340px) {
+   .wrap-system-performance-used-card .system-performance-inner-used-card{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+   }
+  }
+ 

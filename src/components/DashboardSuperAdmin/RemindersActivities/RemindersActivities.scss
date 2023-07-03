@@ -1,0 +1,83 @@
+
+@import "../../../sass/variables";
+.super-admin-dashbboard {
+  
+  .remiders-activities-cards{
+    .ant-card-body{
+      padding-top: 17px  !important;
+      // padding-bottom: 0px !important;
+  
+    }
+    .reminders{
+      .ant-card-body{
+        
+        padding-bottom: 10px !important;
+    
+      }
+    }
+  }
+   .recent-activities-card{
+    .ant-card-body{
+      padding-top: 16px  !important;
+      padding-bottom: 0px !important;
+  
+    }
+   }
+    p {
+      margin: 0 !important;
+    }
+    .card-title{
+      margin-right: 10px !important;
+    }
+    .table-user-img{
+      object-fit: cover;
+      border-radius: 6px;
+    }
+  span svg{
+    color: #f4772E;
+  }
+    .w-80{
+      width: 80%;
+      border: 1px solid #000;
+    }
+    .timeline-content-wrapper {
+      img.timeline-before-circle {
+        position: absolute;
+        left: -3px;
+        top: 12px;
+      }
+  
+      img.recent-activity-user-img {
+        object-fit: cover;
+        border-radius: 50px;
+        margin-right: 10px;
+      }
+  
+     
+    }
+  
+    .custom-scroll {
+      &.activity{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: #cacaca;
+        border-radius: 10px;
+      }
+    }
+  }
+  @media only screen and (max-width:700px) and (min-width:280px) {
+    .recent-activites-avatar-description{
+        display: block !important;
+        img{
+          display: block !important;
+          margin: auto !important;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.manage-users-card{
+    .ant-card-body{
+        padding-bottom: 10px !important;
+    }
+}
+@media only screen and (max-width:4500px) and (min-width:280px) {
+    .manage-users-row{
+        padding-bottom: 30px ;
+    }
+}

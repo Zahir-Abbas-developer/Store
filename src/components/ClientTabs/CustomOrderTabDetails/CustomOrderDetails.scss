@@ -1,0 +1,67 @@
+.header-image {
+  background-image: url("../../../assets/images/Header/h-custom-order-1.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-content {
+  text-align: center;
+}
+.image-heading-title{
+  color: #FFFFFF;
+  margin-top: 0px;
+  font-size: 2rem;
+  line-height: 1.25em;
+  font-family: "Lexend Giga", Sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.image-heading-title-custom {
+  color: #FFFFFF;
+  margin-top: 0px;
+  font-size: 2rem;
+  line-height: 1.25em;
+  font-family: "Lexend Giga", Sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.image-heading-subheading {
+  font-family: "Lexend Giga", Sans-Serif;
+  font-size: 1.5rem;
+  line-height: 1.25em;
+  letter-spacing: 0em;
+  font-weight: 100;
+  text-align: center;
+  color: #FFFFFF;
+}
+.product-card-details{
+  .ant-card-body{
+    background-color: #000000;
+  }
+  .ant-card-meta-title{
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+  .ant-card-meta-description{
+    color: #FFFFFF;
+  }
+  p{
+    color: #FFFFFF;
+  }
+}
+
+.select-onboarding{
+  .ant-select-selector{
+    background-color: #313131 !important;
+  }
+  .ant-select-selection-item{
+    color: #FFFFFF;
+  }
+}

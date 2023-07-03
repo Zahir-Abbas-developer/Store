@@ -1,0 +1,34 @@
+.form-lower-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .inner-button {
+      height: 46px;
+      color: #fff !important;
+      border-radius: 0;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .inner-form-buttons-audit {
+      background-color: #52c41a;
+      width: 114px;
+    }
+
+    .inner-form-buttons-save {
+      background-color: #f7b923;
+      width: 111px;
+    }
+
+    .inner-form-buttons-continue {
+      background-color: #65cdf0;
+      width: 145px;
+    }
+    @media (max-width: 500px){
+      .inner-form-buttons-audit, .inner-form-buttons-save, .inner-form-buttons-continue {
+        width: 100% !important;
+      }
+    }
+  }
+

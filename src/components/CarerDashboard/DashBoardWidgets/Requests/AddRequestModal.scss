@@ -1,0 +1,40 @@
+//Modal Styling
+.add-request-modal {
+  .ant-form-vertical .ant-form-item-label {
+    padding: 0;
+  }
+  .ant-input:hover {
+    border: 1px solid #65cdf0 !important;
+  }
+  .ant-picker:hover {
+    border: 1px solid #65cdf0 !important;
+  }
+  .modal-content {
+    .cancel-btn {
+      background-color: #4e132c;
+      color: #fff;
+      width: 128px;
+      height: 46px;
+      border-radius: 2px;
+      font-size: 16px;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .save-btn {
+      margin-left: 10px;
+      background-color: #65cdf0;
+      width: 111px;
+      height: 46px;
+      color: #fff;
+      border-radius: 2px;
+      font-size: 16px;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

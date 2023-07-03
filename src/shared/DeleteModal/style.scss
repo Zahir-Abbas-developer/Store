@@ -1,0 +1,67 @@
+.delete-modal {
+  text-align: center;
+  margin-top: 100px;
+
+  .modal-content {
+    margin-top: 50px;
+    margin-bottom: 35px;
+
+    p {
+      font-size: 30px;
+      text-align: center;
+      font-weight: 500;
+      color: #000;
+    }
+
+    .btn-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-reverse {
+      flex-direction: row-reverse;
+    }
+
+    .yes-btn {
+      background-color: #ff4d4f;
+      color: #fff;
+      margin-right: 5px;
+      cursor: pointer;
+      border: none;
+      padding: 8px 37px;
+      box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+      border-radius: 2px;
+
+      &:focus-visible{
+        outline: none;
+        outline-offset: 0px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+    }
+
+    .no-btn {
+      background-color: #65cdf0;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 5px;
+      border: none;
+      padding: 8px 35px;
+      box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+      border-radius: 2px;
+      font-size: 14px;
+
+    }
+  }
+
+  .ant-modal-close-icon {
+    width: 16px;
+    height: 1px;
+    color: #4e132c;
+  }
+}

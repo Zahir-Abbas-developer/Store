@@ -1,0 +1,86 @@
+.main-notifications-wrapper {
+  .select-onboarding {
+    .ant-select-selector {
+      border-radius: 20px;
+      border-color: #4ad1fe;
+    }
+  }
+  .ant-table {
+    border-radius: 10px;
+    th,
+    td {
+      color: #4e4b66 !important;
+      background-color: transparent !important;
+      &::before {
+        background-color: #4e4b66 !important;
+      }
+    }
+    .selection,
+    .selection-mail {
+      border: 1px solid #65cdf0;
+      border-radius: 28px;
+      padding: 4px 5px;
+      width: 50px;
+      text-align: center;
+    }
+
+    .selection-mail {
+      width: 120px;
+    }
+
+    .ant-checkbox {
+      border: 1px solid #65cdf0;
+      border-radius: 4px;
+
+      &.ant-checkbox-checked .ant-checkbox-inner {
+        background-color: #65cdf0 !important;
+        border-color: #65cdf0 !important;
+      }
+    }
+  }
+}
+.ant-select.checked .ant-select-selector,
+.selection.checked {
+  background-color: #dedede !important;
+  border: 1px solid #dedede !important;
+}
+.actionDropDown .ant-dropdown-menu {
+  width: 180px !important;
+  padding: 10px 5px;
+  .ant-space {
+    gap: 20px !important;
+  }
+  .ant-dropdown-menu-item {
+    padding-block: 8px;
+  }
+}
+
+.ant-modal.add-modal {
+  .ant-modal-header {
+    margin-bottom: 30px;
+  }
+  .ant-modal-content {
+    .ant-form {
+      label {
+        flex-direction: row-reverse !important;
+        gap: 3px;
+      }
+      .btn-error {
+        background-color: #ff4d4f !important;
+      }
+    }
+  }
+  .selection {
+    .ant-select-selector {
+      height: 45px !important;
+      align-items: center;
+    }
+    &.ant-select-dropdown .ant-select-item {
+      padding: 10px 20px !important;
+      border-bottom: 1px solid #d9dbe9 !important;
+      .ant-select-item-option-content {
+        color: #888888;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.client-rate-setup-main {
+  margin: 20px 30px;
+    .accordian-header-title {
+      padding-left: 1rem;
+    }
+  .client-collapse-panel {
+    .ant-collapse-item {
+      border-radius: 2px !important;
+    }
+  }
+  .client-rate-setup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .client-search-input {
+      width: 350px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    margin: 0;
+      .accordian-header-title {
+        padding-left: 5px;
+      }
+    .client-rate-setup-header {
+      display: block;
+      .client-search-input {
+        width: 100%;
+      }
+      .client-rate-add-button {
+        width: 100%;
+        margin-block: 1rem;
+      }
+    }
+  }
+}
+.ant-collapse-item-active {
+  .accordianImg {
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+    transform: rotateX(180deg);
+  }
+}

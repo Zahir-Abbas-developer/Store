@@ -1,0 +1,138 @@
+@import '../../../../../sass/variables';
+
+.common-staff-allocation-table-wrapper {
+    // background: $white-color !important;
+
+    .common-staff-allocation-table {
+        background-color: #fff;
+        border: 1px solid #D9DBE9;
+            padding: 0.75rem;
+            border-radius: 10px !important;
+            // margin-top: 30px;
+            overflow: hidden;
+        .ant-table {
+            
+
+            .ant-table-thead {
+                tr {
+                    height: 65px;
+
+                    .ant-table-cell {
+                        background: none !important;
+                        font-weight: 600 !important;
+                        font-size: 14px !important;
+                        line-height: 17px !important;
+                        color: #4E4B66 !important;
+
+                        // border-bottom: 1px solid #D9DBE9 !important;
+                        &::before {
+                            background-color: #4E4B66 !important;
+                        }
+                    }
+                }
+            }
+
+            .ant-table-tbody {
+                tr {
+                    height: 71px;
+                    border-bottom: 1px solid #D9DBE9;
+
+                    .ant-table-cell {
+                        padding: 10px 16px !important;
+                    }
+
+                    &:last-child {
+                        border-bottom: none !important;
+
+                        td {
+                            border-bottom: none !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        // To show table 1,2,3 pagination
+        
+    }
+
+    .custom-pagination-search {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0px;
+
+        .input-export-icons {
+            .search-input {
+                background: $white-color;
+                // border: 1px solid #D9DBE9;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 22px;
+                height: 40px;
+                border-radius: 0px;
+                max-width: 345px;
+                // min-width: 345px;
+                width: 345px;
+
+                .ant-input {
+                    &::placeholder {
+                        color: #6E7191;
+                    }
+                }
+
+
+                @media screen and (max-width:1100px) {
+                    width: 100% !important;
+                }
+            }
+            .files-icons{
+                .files-export-icons{
+                    width: 35px;
+                    height: 35px;
+                    filter: invert(1) grayscale(1) brightness(0.6);
+                    transition: 0.3s;
+                    cursor: pointer;
+                    &:hover{
+                        filter: none !important;
+                        transform: scale(1.3);
+                    }
+                }
+            }
+        }
+
+
+        @media screen and (max-width:980px) {
+            flex-direction: column-reverse;
+
+            .input-export-icons {
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+
+    }
+
+    .custom-pagination-wrapper-class {
+
+        .ant-pagination-next,
+        .ant-pagination-prev,
+        .ant-pagination-item {
+            display: none !important;
+        }
+
+        .ant-pagination-options {
+            margin: 0px !important;
+        }
+        .ant-select-selector {
+            width: 100%;
+            height: 34px;
+            padding: 0 11px;
+            border: 1px solid #D9DBE9;
+            box-shadow: 0px 1px 6px rgb(0 0 0 / 15%);
+        }
+    }
+}
+

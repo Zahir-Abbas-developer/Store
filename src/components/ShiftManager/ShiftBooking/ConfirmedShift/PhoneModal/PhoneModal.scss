@@ -1,0 +1,53 @@
+.phone-modal-wrapper {
+  position: absolute;
+  width: 260px;
+  height: 345px;
+  right: 0px;
+  top: -345px; /* Start the animation above the viewport */
+  animation: slide-in 0.5s forwards;
+  background: #FFFAFC;
+  border: 1px solid #6E7191;
+  border-radius: 8px;
+
+  @keyframes slide-in {
+    to {
+      top: 0;
+    }
+  }
+
+  .modal-header {
+    position: relative;
+    width: 260px;
+    height: 79px;
+    background: #4E4B66;
+    border-radius: 8px 8px 0px 0px;
+    .cross-icon{
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      cursor: pointer;
+    }
+    .profile {
+      img {
+        margin-top: 19px;
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 40px 20px;
+
+    .title {
+      margin-top: 45px;
+      color: #4E4B66;
+    }
+
+    .devices-wraper {
+      padding: 5px 20px;
+
+      .text {
+        color: #4E4B66;
+      }
+    }
+  }
+}

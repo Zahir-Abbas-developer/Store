@@ -1,0 +1,14 @@
+.staff-contact-card-wrapper {
+  min-height: 260px;
+  padding: 30px 30px;
+  background: #ffffff;
+  box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+  border-radius: 8px;
+  margin-top: 25px;
+  max-height: 216px;
+
+  .staff-contact-data {
+    gap: 10px;
+    padding-block: 10px;
+  }
+}

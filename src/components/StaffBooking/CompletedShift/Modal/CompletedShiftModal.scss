@@ -1,0 +1,111 @@
+@import '../../../../sass/variables.scss';
+
+.completed-shift-modal-wrapper {
+    .confirm-modal-content {
+        .profile-information {
+            h2 {
+                padding-top: 10px;
+            }
+        }
+
+        padding-top: 20px;
+
+        .shift-info {
+            gap: 15px;
+            flex: 100%;
+
+            .shift-icon-wrap {
+                flex: 50%;
+                gap: 15px;
+                padding-bottom: 15px;
+
+                .shift-item-img {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50px;
+                }
+            }
+
+            .shifts-title {
+                flex: 40%;
+
+                p {
+                    text-align: left;
+                }
+            }
+        }
+
+        .ant-modal-title {
+            font-weight: $fw-500;
+            font-size: $fs-20;
+            color: #14142B;
+        }
+
+        .shift-textare-content {
+            padding: 20px 20px;
+            box-shadow: 0px 0px 10px rgba(101, 205, 240, 0.15);
+            .shift-rating-wrapper {
+                padding-bottom: 10px;
+                p {
+                    display: block;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+
+        .shift-modify-wrap {
+            padding-bottom: 10px;
+        }
+
+        .shift-modify-value {
+            gap: 6px;
+            p {
+                border: 1.5px solid #A0A3BD;
+                padding: 0 7px;
+                box-shadow: 0px 0px 4px 0px #00000040 inset;
+                border-radius: 3px;
+            }
+        }
+        .ant-select-selector {
+            border: 1.5px solid #A0A3BD !important;
+            box-shadow: 0px 0px 4px 0px #00000040 inset !important;
+            border-radius: 3px !important;
+            .ant-select-selection-item {
+                font-size: 14px !important;
+            }
+        }
+
+        .shift-textarea-wrapper {
+            padding-top: 20px;
+
+            .ant-input {
+                border: 1.5px solid #A0A3BD !important;
+                box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25) !important;
+                border-radius: 3px !important;
+                padding: 12px 12px;
+            }
+        }
+
+        .shift-btn-wrapper {
+            gap: 10px;
+            flex-wrap: wrap;
+            padding-top: 25px;
+
+            .cancel-btn {
+                background-color: #4E132C;
+            }
+
+            .confirm-btn {
+                background-color: #65CDF0;
+            }
+
+            button {
+                padding: 10px 35px;
+                height: 100%;
+                border: none !important;
+                box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+                border-radius: 2px;
+            }
+        }
+    }
+}

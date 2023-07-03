@@ -1,0 +1,18 @@
+.payslip-main {
+  .main-heading {
+    background-color: #eff0f6;
+    padding: 5px 1px;
+    h2 {
+      padding-left: 10px;
+      color: "#4E4B66";
+    }
+  }
+  .icon-wrapper {
+    gap: 10px;
+    align-items: end;
+  }
+  .table-wrapper {
+    border: 1px solid #d9dbe9;
+    border-radius: 10px;
+  }
+}

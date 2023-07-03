@@ -1,0 +1,11 @@
+.work-histor-search-filter {
+  border: 1px solid #d9dbe9;
+  box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+  border-radius: 8px;
+  padding: 20px 20px;
+  margin-block: 20px;
+  @media (max-width: 1535px) {
+    height: fit-content !important;
+    padding: 40px;
+  }
+}

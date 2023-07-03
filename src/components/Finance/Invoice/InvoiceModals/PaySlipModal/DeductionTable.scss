@@ -1,0 +1,27 @@
+.payslip-table-main {
+  .ant-table-tbody {
+    tr {
+      .ant-table-cell {
+        padding: 16px 25px !important;
+      }
+    }
+  }
+  .ant-table-tbody > tr.ant-table-row:hover > td {
+    background: none !important;
+  }
+  .ant-table-thead {
+    tr {
+      .ant-table-cell {
+        color: #4e4b66;
+        padding: 25px 25px !important;
+      }
+      th {
+        background: transparent;
+        &::before {
+          background-color: #4e4b66 !important;
+          height: 31px !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+@import "../../../../sass/variables";
+
+.wrapper-create-your-content {
+  padding: 18px;
+  overflow: scroll;
+  height: 71vh;
+  &::-webkit-scrollbar {
+    width: 7px;
+    height: 0px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ffffff00;
+    border-radius: 10px;
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: #dadada;
+      // background-color: $primary-color;
+      border-radius: 10px;
+    }
+  }
+
+  .wrapper-course-section {
+    background: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 18px;
+    .course-section-head {
+      height: 40px;
+      gap: 2px;
+      background-color: #eff0f7;
+      position: relative;
+      .section-Title {
+        background-color: $label-color;
+        width: 100px;
+      }
+      .section-info {
+        background-color: #eff0f7;
+        width: 60%;
+        padding-left: 20px;
+        border-left: 2px solid #fff;
+        .f--hover-to-show {
+          display: none;
+        }
+        &:hover {
+          background-color: #eff0f7;
+          .f--hover-to-show {
+            display: block;
+          }
+        }
+        .edit-discription{
+          width: 200px;
+          height: 30px;
+          margin-right: 10px;
+        }
+      }
+      .icon-section-delete {
+        display: none;
+        position: absolute;
+        right: 20px;
+        top: 9px;
+        width: 20px;
+        height: 20px;
+      }
+      &:hover {
+        .icon-section-delete {
+          display: block !important;
+        }
+      }
+    }
+    // .inner-lecture-tiles-wrapper{
+    // padding: 20px;
+    .lecture-tiles {
+      padding: 15px;
+      .bg--dark {
+        background-color: #eff0f7;
+      }
+      .lecture-tile-head {
+        height: 42px;
+        .tile-title {
+          padding: 0px 15px;
+        }
+        .tile-name {
+          padding: 0px 15px;
+        }
+        .tile-features {
+          gap: 15px;
+          .delete-icon {
+            padding: 0px 11px;
+            border-left: 1px solid $label-color;
+          }
+        }
+        .f--hover-to-show {
+          display: none;
+        }
+        &:hover {
+          background-color: #eff0f7;
+          .f--hover-to-show {
+            display: block;
+          }
+        }
+        .edit-discription{
+          width: 200px;
+          height: 30px;
+          margin-right: 10px;
+        }
+      }
+
+      .lecture-tile-content {
+        background-color: #f7f7fc;
+        height: 265px;
+        padding: 0px 20px;
+        position: relative;
+        .wrapper-description--upload-doc {
+          .inner-upper-level {
+            height: 132px;
+            padding-top: 5px;
+            border-bottom: 1px solid $label-color;
+            .area-description {
+              gap: 10px;
+              position: relative;
+              padding: 10px;
+              .edit-icon {
+                position: absolute;
+                top: 15px;
+                right: 18px;
+              }
+              .text-area-styles {
+                width: 99.5%;
+              }
+            }
+            .upload-file {
+              border-left: 1px solid $label-color;
+              height: 100px;
+              margin-top: 15px;
+              gap: 10px;
+            }
+          }
+        }
+        .wrapper-uploaded-files-details {
+          height: 132px;
+          padding: 10px 20px;
+        }
+        .inner-absolute-wrapper-upload-resourse {
+          background-color: #00000036;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          .upload-box {
+            position: relative;
+            z-index: 1;
+            width: 81%;
+            margin-left: 4%;
+            margin-top: 22px;
+            .upload-image .file-upload-container {
+              background-color: #fff !important;
+            }
+          }
+          .close-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+    // }
+  }
+  .add-more-fields {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #65cdf0;
+    width: fit-content;
+    margin-bottom: 30px;
+  }
+  .editable-panel-header {
+    .ant-collapse-header {
+      padding: 0px !important;
+      border-radius: 0px !important;
+    }
+  }
+  .ant-collapse {
+    background-color: #fff;
+    border-radius: 0px !important;
+    border: none !important;
+  }
+  .ant-collapse-content-box {
+    padding: 0 !important;
+  }
+  .ant-collapse-item {
+    border-bottom: 1px solid #d9d9d9;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 769px) {
+    .inner-upper-level{
+        height: auto !important;
+    }
+    .upload-file{
+        border-left: 0px !important;
+        border-top: 1px solid $label-color;
+
+    }
+    .lecture-tile-content{
+        height: auto !important;
+    }
+
+    
+  }
+
+  @media (max-width: 400px) {
+    .lecture-tile-head{
+        height: 60px !important;
+        .tile-name{
+            padding-left: 14px !important;
+            border-left: 0px !important;
+        }
+    }
+    .flex--res-column{
+        flex-direction: column !important;
+    }
+  }
+}

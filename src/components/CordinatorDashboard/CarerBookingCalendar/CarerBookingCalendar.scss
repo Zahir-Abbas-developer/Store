@@ -1,0 +1,132 @@
+@import "../../../sass/variables.scss";
+
+.carer-booking-calendar-wrapper {
+  padding: 20px 20px;
+  border-radius: 8px;
+  @media screen and (max-width: 500px) {
+    padding: 15px 10px;
+  }
+
+  .carer-booking-content {
+    padding-top: 50px;
+
+    .fc-timeline-slot.fc-timeline-slot-lane {
+      height: 90px !important;
+    }
+
+    .fc-timeline-slot.fc-timeline-slot-label {
+      .fc-timeline-slot-frame {
+        height: 90px !important;
+      }
+    }
+
+    .fc-datagrid-cell-frame,
+    .fc-timeline-lane-frame {
+      height: 90px !important;
+    }
+
+    .fc-datagrid-cell.fc-resource {
+      height: 90px !important;
+    }
+
+    .fc-view-harness.fc-view-harness-active {
+      background: #fff !important;
+      box-shadow: 0px 0px 6px rgba(16, 24, 40, 0.1);
+      border-radius: 8px;
+      height: 100vh !important;
+    }
+
+    .fc-scrollgrid.fc-scrollgrid-liquid {
+      border-radius: 8px;
+    }
+
+    .fc .fc-resource-timeline-divider {
+      width: 1px !important;
+    }
+
+    .fc-h-event {
+      background: none !important;
+      border: none !important;
+    }
+
+    .fc-timeline-slot-frame {
+      display: flex;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+
+    .fc-resource-timeline-divider.fc-cell-shaded {
+      cursor: none !important;
+    }
+  }
+
+  .fc .fc-daygrid-day.fc-day-today {
+    background: none;
+  }
+
+  .fc-datagrid-cell-cushion.fc-scrollgrid-sync-inner {
+    display: flex;
+    height: 100%;
+    padding: 0 !important;
+  }
+
+  .fc-datagrid-cell-main {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-left: 15px;
+    color: #4e4b66;
+    font-weight: $fw-600;
+    font-size: $fs-14;
+  }
+
+  .resource-user {
+    padding-left: 25px;
+
+    h2 {
+      line-height: 11px;
+      text-align: left;
+    }
+  }
+
+  .booking-header {
+    gap: 20px;
+    .calander-header {
+      align-items: center;
+      overflow-x: scroll;
+      @media only screen and (max-width: 990px) {
+        margin-top: 1.5rem;
+      }
+      .calendar-header-wrap {
+        min-width: 1380px;
+        gap: 15px;
+      }
+      .calendar-header {
+        gap: 10px;
+        span {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      gap: 3px;
+    }
+  }
+
+  .care-booking-event-wrap {
+    border-radius: 6px;
+
+    .event-icon {
+      padding: 5px 11px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 6px 6px 0 0;
+    }
+
+    .event-content {
+      gap: 30px;
+      padding: 10px 11px;
+    }
+  }
+}

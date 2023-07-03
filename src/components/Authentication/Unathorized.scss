@@ -1,0 +1,30 @@
+.unathorized-main {
+    .page-content {
+        height: 100vh;
+
+    }
+    .link-button {
+      background: none;
+      border: none;
+      color: #007bff;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+    .link-button:hover {
+      color: #0056b3;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .unathorized-main {
+        padding: 0 12px;
+        .page-content {
+            h2{ 
+                font-size: 22px;
+            }
+        }
+    }
+}

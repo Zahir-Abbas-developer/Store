@@ -1,0 +1,108 @@
+// commoms scss start
+.chat-margin {
+  margin: 20px 0px;
+}
+
+.chat-padding {
+  padding: 15px;
+}
+
+.gap {
+  gap: 15px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.wrap-support-dashboard {
+  background: white;
+  margin-bottom: 1rem;
+  padding: 20px;
+  border: 0.864446px solid #CCCCCC;
+  border-radius: 6.91557px;
+  box-shadow: 0px 5.18667px 12.1022px -5.18667px rgba(24, 39, 75, 0.12), 0px 8.64446px 27.6623px -3.45778px rgba(24, 39, 75, 0.1);
+
+  .wrap-chat {
+    background-color: #f9f9fb;
+    padding: 1px 30px;
+    // min-height: 47rem;
+    max-height: max-content;
+  }
+
+  .wrap-profile-image {
+    text-align: center;
+    margin-top: 16px;
+
+    .profile-img-circle {
+      width: 235px;
+      height: 235px;
+
+      @media only screen and (max-width:768px) {
+        width: 180px;
+        height: 180px;
+      }
+
+      @media only screen and (max-width:768px) {
+        width: 135px;
+        height: 135px;
+      }
+    }
+  }
+
+  .form-section {
+    @media only screen and (max-width:500px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .uploaded-file-name {
+    margin-right: 10rem;
+
+    @media only screen and (max-width:500px) {
+      margin-right: 1.4rem;
+    }
+  }
+
+  .document-file-type {
+    .document-icon {
+      font-size: 10rem;
+
+      &:hover {
+        color: #65cdf0;
+      }
+
+      @media only screen and (max-width: 600px) {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .chat-name {
+    margin-bottom: 20px;
+  }
+
+  .chat-user-type {
+    margin-bottom: 20px;
+  }
+
+  .chat-email {
+    margin-bottom: 20px;
+  }
+
+  .chat-images {
+    margin: 20px 0px;
+  }
+
+  .documents-img {
+    margin-right: 20px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50px;
+    background-color: #65cdf0;
+  }
+
+  .wrap-chat-document {
+    margin: 20px 0px 30px 0px;
+  }
+}

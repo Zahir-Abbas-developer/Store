@@ -1,0 +1,83 @@
+.Shift-Time-Settings {
+    .header {
+        padding: 25px;
+    }
+    label{
+       color: #4E4B66; 
+    }
+    .ant-select-single {
+        width: 250px;
+        @media only screen and (max-width: 500px) {
+            width: 100%;
+          }
+    }
+
+    .ant-select-single .ant-select-selector {
+        align-items: center;
+        height: 40px;
+        border-radius:4px;
+        text-transform: capitalize;
+    }
+    .shift-slots{
+        margin: 20px 0;
+        padding: 25px;
+        @media only screen and (max-width: 600px) {
+            padding: 10px;
+          }
+        .shift-row{
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            margin-bottom: 25px;
+            @media only screen and (max-width: 600px) {
+                padding: 5px;
+              }          
+            input{
+                height: 30px;
+                border: 2px solid #A0A3BD;
+                border-radius: 4px;
+                width: 81px;
+                margin-left: 10px;
+                padding-top: 2px;
+            }
+            .start-time{
+                // flex-wrap: wrap;
+                @media only screen and (max-width: 768px) {
+                    margin-bottom: 10px;
+                    gap: 8px;
+                  }
+                .ant-select-single{
+                    margin-left: 10px;
+                }
+                .ant-select-single .ant-select-selector{
+                    font-size: 12px;
+                    color: #4E4B66;
+                          height: 30px;
+                border: 2px solid #A0A3BD; 
+                }
+         
+            }
+            .ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder{
+                padding-inline-end: 0;
+            }
+            input[type="time"]::-webkit-calendar-picker-indicator {
+                display: none;
+            }
+            
+            input[type="time"]::-webkit-datetime-edit-ampm-field {
+                display: none;
+            }
+            input[type="time"]:focus {
+                outline: none;
+            }
+        }
+        p{
+            color: #333333;
+            margin-left: 11px;
+        }
+        h6{
+            color: #4E4B66;
+            margin-left: 11px;
+        }
+      
+    }
+}

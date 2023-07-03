@@ -1,0 +1,237 @@
+@import "../../../../../sass/variables";
+
+.attendance-report-details-filter-wrapper {
+    background: $white-color;
+    border-radius: $border-radius-8;
+    padding: 1.625rem 1.875rem;
+    height: 100%;
+    margin-bottom: 1rem;
+
+    .filter-wrapper {
+        transition: opacity 0.3s ease-in-out, height 0.5s cubic-bezier(0, 1, 0, 1);
+
+        &.show-transition {
+            opacity: 1;
+            height: auto;
+        }
+
+        &.hide-transition {
+            opacity: 0;
+            height: 0;
+        }
+
+        .app-select-wrap-class {
+            width: 100%;
+
+            .ant-select-selector {
+                border-radius: 0px;
+                border-top: 1px solid #D9DBE9;
+                border-bottom: 1px solid #D9DBE9;
+                border-left: none;
+                border-right: none;
+
+                &:hover {
+                    border-color: #D9DBE9 !important;
+                    box-shadow: none !important;
+                }
+
+                .ant-select-selection-placeholder , .ant-select-selection-item{
+                  font-size: 14px;
+                  font-weight: 400;
+                }
+
+                @media screen and (max-width:575px) {
+                    border-right: 1px solid #D9DBE9;
+                }
+
+            }
+        }
+
+        .ant-select-focused.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
+            border-color: #D9DBE9 !important;
+            box-shadow: none !important;
+            outline: 0;
+        }
+
+
+        .date-picker {
+            width: 100%;
+            height: 40px;
+            border-top: 1px solid #D9DBE9;
+            border-bottom: 1px solid #D9DBE9;
+            border-left: none;
+            border-right: none;
+            border-radius: 0px;
+
+            &:hover {
+                border-color: #D9DBE9;
+            }
+
+            &.ant-picker-focused {
+                box-shadow: none;
+            }
+
+            .ant-picker-input {
+                input {
+                    color: $title-color;
+
+                    &::placeholder {
+                        color: #888888 !important;
+                    }
+                }
+            }
+
+        }
+
+        & :not(:first-child) {
+            .filter-column {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    height: 60%;
+                    width: 1px;
+                    // border-radius: 10px;
+                    display: block;
+                    position: absolute;
+                    bottom: 20%;
+                    top: 20%;
+                    left: 0;
+                    background: #4E4B66;
+                }
+
+                @media screen and (max-width:575px) {
+                    border-left: 1px solid #D9DBE9;
+                    border-right: 1px solid #D9DBE9;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        & :last-child {
+            .filter-column {
+                border-right: 1px solid #D9DBE9;
+            }
+        }
+
+        & :first-child {
+            .filter-column {
+                border-left: 1px solid #D9DBE9;
+            }
+        }
+
+
+        @media screen and (min-width: 1199px) {
+            & :nth-last-child(-n+1) {
+                .filter-column {
+                    border-right: 1px solid #D9DBE9;
+                }
+            }
+        }
+
+    }
+
+
+    // ########### Extra Cards ################
+
+    .extra-cards-parent {
+        .extra-cards {
+            cursor: pointer;
+
+
+            .extra-cards-bg-div-parent {
+                position: relative;
+
+                .extra-card-heading {
+                    transition: all 0.5s ease;
+                }
+
+                .extra-cards-bg-div {
+                    margin: auto;
+                    width: 57px;
+                    height: 57px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.5s ease;
+                    // background: linear-gradient(201.18deg, rgba(211, 255, 231, 0.82) 1.97%, rgba(239, 255, 246, 0.76) 85.86%);
+                }
+
+                img {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &:hover {
+                    .extra-cards-bg-div {
+                        transform: rotate(165deg);
+                        -webkit-transform: rotate(165deg);
+                        -moz-transform: rotate(165deg);
+                        -o-transform: rotate(165deg);
+                        -ms-transform: rotate(165deg);
+                        transform: rotate(165deg);
+                    }
+
+                    .extra-card-heading {
+                        /* IE 9 */
+                        -ms-transform: scale(1.21);
+                        /* Safari 3-8 */
+                        -webkit-transform: scale(1.21);
+                        transform: scale(1.21);
+                        padding-left: 0.6rem;
+                    }
+                }
+            }
+
+
+        }
+
+        & :nth-child(1) {
+            .extra-cards .extra-cards-bg-div {
+                background-image: url(../../../../../assets/images/Reports/working-hours-bg.png);
+            }
+        }
+
+        & :nth-child(2) {
+            .extra-cards .extra-cards-bg-div {
+                background-image: url(../../../../../assets/images/Reports/missed-checkout-bg.png);
+            }
+        }
+
+        & :nth-child(3) {
+            .extra-cards .extra-cards-bg-div {
+                background-image: url(../../../../../assets/images/Reports/un-approved-hours-bg.png);
+            }
+        }
+
+        & :nth-child(2) {
+            .extra-cards .extra-cards-bg-div {
+                background-image: url(../../../../../assets/images/Reports/average-hours-bg.png);
+            }
+        }
+
+        & :nth-child(3) {
+            .extra-cards .extra-cards-bg-div {
+                background-image: url(../../../../../assets/images/Reports/late-comings-bg.png);
+            }
+        }
+
+        & :nth-child(4) {
+            .extra-cards .extra-cards-bg-div {
+                background-image: url(../../../../../assets/images/Reports/absent-bg.png);
+            }
+        }
+    }
+
+
+    @media screen and (max-width:1224px) {
+        padding: 1rem 1.25rem;
+    }
+
+
+}

@@ -1,0 +1,57 @@
+@import "../../sass/variables.scss";
+
+.select-wrapper {
+  .ant-form-item {
+    margin-bottom: 0 !important;
+  }
+
+  .ant-form-item .ant-form-item-label > label::after {
+    content: "";
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+  }
+  .ant-form-item-label {
+    padding: 0 !important;
+
+    label {
+      font-weight: $fw-500;
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.85);
+    }
+  }
+
+  .ant-form-item .ant-form-item-label > label {
+    flex-direction: row-reverse;
+    font-weight: 600;
+    font-size: 14px;
+    color: #6e7191;
+  }
+
+  .ant-select {
+    .ant-select-selector {
+      border: 1.5px solid #a0a3bd;
+      border-radius: 3px;
+      height: 45px;
+
+      .ant-select-selection-placeholder {
+        line-height: 41px;
+        color: #888888 !important;
+      }
+
+      .ant-select-selection-item {
+        line-height: 40px;
+        color: $title-color;
+      }
+    }
+  }
+
+  .ant-select.ant-select-disabled {
+    .ant-select-selector {
+      border: 1.5px solid #dedede !important;
+    }
+  }
+
+  .ant-form-item-explain-error {
+    position: absolute;
+  }
+}

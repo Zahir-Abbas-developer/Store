@@ -1,0 +1,21 @@
+.staff-code-setup{
+    .staff-code-search-bar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .staff-code-search{
+            width: 350px;
+        }
+    }
+    @media only screen and (max-width:600px) {
+        .staff-code-search-bar{
+            display: block;
+            .staff-filters-number-select{
+                margin-bottom: 1rem;
+            }
+            .staff-code-search{
+                width: 100%;
+            }
+        }
+    }
+}

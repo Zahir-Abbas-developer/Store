@@ -1,0 +1,37 @@
+.wrap-ratings-report-tabs{
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15) !important;
+  background: #fff;
+  height: 216px;
+  padding: 10px 0px;
+  border-radius: 10px;
+.ant-tabs >.ant-tabs-nav{
+  overflow: hidden;
+}
+
+  .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color:#19456A !important;
+  }.ant-tabs .ant-tabs-ink-bar {
+      background: #65CDF0 !important;
+  }.ant-tabs .ant-tabs-tab-btn {
+      color:#19456A !important;
+  }  
+}
+@media only screen and (max-width: 1198px) {
+  .wrap-ratings-report-tabs{
+      height: 280px;
+  }.wrapper-report-carer-and-client-ratings-table{
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .wrap-ratings-report-tabs{
+      height: 100%;
+  }.wrapper-report-carer-and-client-ratings-table{
+    margin-top: 80px;
+  }
+}
+@media only screen and (max-width: 769px) {
+.wrapper-report-carer-and-client-ratings-table-style{
+  margin-top: 160px;
+}
+}

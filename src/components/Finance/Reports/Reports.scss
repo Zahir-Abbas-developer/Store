@@ -1,0 +1,10 @@
+@import '../../../sass/variables';
+
+.finance-reports-wrapper {
+    padding: 1.875rem;
+    background: $white-color;
+    border: 1px solid #D9DBE9;
+    border-radius: 8px;
+    min-height: 100%;
+    box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+}
