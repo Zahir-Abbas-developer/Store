@@ -122,6 +122,8 @@ const { permissions }: any = JSON.parse(
   localStorage.getItem("careUserData") || "{}"
 );
 
+// testing
+
   return (
     <div
       className="header"
