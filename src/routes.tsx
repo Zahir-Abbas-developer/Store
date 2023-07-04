@@ -406,6 +406,9 @@ const JobRole = Loadable(lazy(() => import("./pages/Settings/JobRole")));
 const ShiftTimeSettings = Loadable(
   lazy(() => import("./pages/Settings/ShiftTimeSettings"))
 );
+const SelectServices=Loadable(
+  lazy(() => import("./components/ClientTabs/SelectServices/SelectServices"))
+);
 const StaffSettings = Loadable(
   lazy(() => import("./pages/Settings/StaffSettings"))
 );
@@ -516,11 +519,11 @@ export const routes: any = [
     element: <DashboardLayout />,
     children: [
       {
-        path: "super-admin-dashboard",
+        path: "services",
         element: (
-          <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-            <SuperAdminDashboardPage />
-          </RequireAuth>
+          // <RequireAuth allowedRoles={[ROLES.superAdmin]}>
+            <SelectServices />
+          // </RequireAuth>
         ),
       },
       {

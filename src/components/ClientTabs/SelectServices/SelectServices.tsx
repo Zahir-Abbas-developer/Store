@@ -17,16 +17,16 @@ const SelectServices = () => (
   <Carousel autoplay>
     <div>
 
-      <img src={shoesImage}/>
+      <img src={shoesImage} width={100} height={100}/>
     </div>
     <div>
-    <img src={shoesImage1}/>
+    <img src={shoesImage1} width={100} height={100}/>
     </div>
     <div>
-    <img src={shoesImage2}/>
+    <img src={shoesImage2} width={100} height={100}/>
     </div>
     <div>
-    <img src={shoesImage3}/>
+    <img src={shoesImage3} width={100} height={100}/>
     </div>
   </Carousel>
 );
