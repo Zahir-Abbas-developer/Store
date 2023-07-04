@@ -1,3 +1,61 @@
+.layout {
+  min-height: 100vh;
+
+  .main-content {
+    padding: 0 50px;
+
+    // Removed because app background would be cutt off at the bottom
+    // margin-bottom: 15px;
+
+    @media only screen and (max-width: 700px) {
+      padding: 20px 20px;
+    }
+
+    .ant-breadcrumb a {
+      background-color: transparent;
+      color: #999999 !important;
+
+      &:hover {
+        background-color: transparent;
+        color: rgba(38, 70, 83, 0.45);
+      }
+    }
+
+    .ant-breadcrumb-link {
+      color: inherit;
+      text-transform: capitalize;
+    }
+    .ant-breadcrumb-separator {
+      color: #999999 !important;
+    }
+
+    .site-layout-content {
+      min-height: 80vh;
+      padding: 25px;
+
+      @media only screen and (max-width: 700px) {
+        padding: 15px;
+      }
+    }
+    .site-layout-reports {
+      min-height: 80vh;
+      // padding: 25px;
+      @media only screen and (max-width: 700px) {
+        padding: 0px;
+      }
+    }
+    .topButtons {
+      display: flex;
+      justify-content: end;
+      flex-wrap: wrap;
+      @media only screen and (max-width:400px){
+        flex-direction: column;
+        justify-content: start;
+      }
+    }
+  }
+}
+
 .ant-layout.layout,
 .ant-drawer-body {
   .ant-layout-sider.ant-layout-sider-dark {
@@ -43,7 +101,6 @@
     position: relative;
     top: -46px;
     right: 16px;
-    display: none;
     margin: 0 auto;
   }
 

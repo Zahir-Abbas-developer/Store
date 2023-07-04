@@ -12,9 +12,9 @@
       h2 {
         font-size: 150px;
 
-        &.under {
-          font-size: $fs-55;
-        }
+        // &.under {
+        //   font-size: $fs-55;
+        // }
       }
     }
 
@@ -39,13 +39,7 @@
 
     .page-found-wrapper {
       .page-found-heading {
-        h2 {
-          font-size: $fs-100;
-
-          &.under {
-            font-size: $fs-30;
-          }
-        }
+        
       }
 
       p {

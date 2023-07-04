@@ -40,7 +40,6 @@
             font-weight: $fw-500;
             font-size: $fs-14;
             line-height: $line-height-22;
-            color: $cancle-button-background;
             text-transform: uppercase;
           }
         }
@@ -180,7 +179,7 @@
         padding-top: 8px;
 
         p {
-          border-radius: $border-radius-2;
+
           max-width: 88px;
           padding: 3px 0;
           margin: 0 auto;

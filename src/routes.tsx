@@ -1,6 +1,6 @@
 import { FC, lazy, LazyExoticComponent, Suspense } from "react";
 import { Navigate } from "react-router-dom";
-import DashboardLayout from "./layout/DashboardLayout";
+
 
 import Login from "./components/Authentication/Login";
 import NotFound from "./components/Authentication/NotFound";
@@ -16,6 +16,7 @@ import path from "path";
 import AddStyles from "./components/Admin/AddStyles/AddStyles";
 import OurCollectionTabDetails from "./components/ClientTabs/OurCollectionTabDetails/OurCollectionTabDetails";
 import OurCustomOrderDetails from "./components/ClientTabs/CustomOrderTabDetails/CustomOrderTabDetails";
+import DashboardLayout from "./layout/Header/dashboard.layout";
 
 
 const Loadable = (Component: LazyExoticComponent<FC>) => (props: any) =>

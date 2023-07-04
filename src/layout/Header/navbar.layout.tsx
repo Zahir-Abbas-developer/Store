@@ -1,85 +1,122 @@
-import { useState } from "react";
-import { useNavigate } from "react-router";
-
-
-// Ant Components
-import { Avatar, Popover, Space } from "antd";
-import { CaretDownOutlined, DownOutlined, MenuOutlined, ShoppingCartOutlined, UpOutlined, UserOutlined } from "@ant-design/icons";
-
-
-// Components
-
-import ViewProfile from "../../components/OnBoarding/Carer/ViewProfile/ViewProfile";
-import ClientViewProfileModal from "../../components/ClientManager/ClientViewProfileModal/ClientViewProfileModal";
-
-
-// RTK Hooks
-import { useGetRequestByIdQuery } from "../../store/Slices/OnBoarding";
-
-
-// Utils and Packages
+import { Fragment, useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  MenuOutlined,
+  DownOutlined,
+  UpOutlined,
+  UserOutlined,
+  ShoppingCartOutlined,
+  CaretDownOutlined,
+} from "@ant-design/icons";
+import { Avatar, Badge, Drawer, Dropdown, Popover, Space, Switch } from "antd";
 import { v4 as uuidv4 } from "uuid";
-
-
-// Assets
 import ClickAwayListener from "react-click-away-listener";
-import SearchImg from "../../assets/images/sidebar/Search.png";
-import { ReactComponent as User } from "../../assets/icons/sidebar/user.svg";
+import { navItems } from "./nav-data";
 import { ReactComponent as Logout } from "../../assets/icons/sidebar/logout.svg";
 import { ReactComponent as ChangePassword } from "../../assets/icons/sidebar/changePassword.svg";
-import { Badge } from 'antd';
-
-// Styles
-import "./Header.scss";
-import { ROLES } from "../../constants/Roles";
-import { useGetRoleLabel } from "../../utils/useGetRole";
-import { useLogoutMutation } from "../../store/Slices/Signin";
-import { useDispatch } from "react-redux";
+// import Logo from "../../src/assets/images/brands/Final-Clock.gif";
+// import Bell from "../assets/images/header/bell.png";
+import DrawerNavsLinks from "./drawer-navs-links";
+import DrawerComp from "./drawer";
+// import NotifyTabs from "../components/notifications/notification-tabs.component";
+import type { MenuProps } from "antd";
+import "./navbar.styles.scss";
 import { useAppSelector } from "../../store";
 import { openDrawer } from "../../store/Slices/OpenDrawerSlice";
-import { Link } from "react-router-dom";
-import { navItems } from "./nav-data";
-import { Fragment } from "@fullcalendar/core/preact";
-import NavBar from "./navbar.layout";
+import { useDispatch } from "react-redux";
+import { useLogoutMutation } from "../../store/Slices/Signin";
+import DrawerComponent from "../../components/ClientTabs/ProductDetails/Drawer";
 
 
-
-const TopHeader = ({ setIsOpen }: any) => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const { products }: any = useAppSelector((state) => state.products);
-  const [open, setOpen] = useState<boolean>(false);
+const NavBar = () => {
+  const [toggleDrawer, setToggleDrawer] = useState({
+    open: false,
+    placement: "",
+    type: "",
+  });
+  const [toggleNotifications, setToggleNotifications] = useState({
+    open: false,
+    placement: "",
+    type: "",
+  });
   const [active, setActive] = useState<string>("Dashboard");
-  const [isProfileModal, setIsProfileModal] = useState<boolean>(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isExpandedSEarchbar, setIsExpandedSearchbar] = useState<boolean>(false);
-  const [viewClientModal, setviewClientModal] = useState<boolean>(false)
   const [dropDown, setDropDown] = useState(false);
   const [visible, setVisible] = useState(false);
   const [activeChild, setActiveChild] = useState("");
-  // ========================== CONSTANTS ==========================
-  const { role, id }: any = JSON.parse(localStorage.getItem("careUserData") || "{}");
-  let roleName: { name: string, label: string } | undefined;
-  roleName = useGetRoleLabel(role);
-  
-
-
-  const handleExpand = () => {
-    const search: any = document.querySelector(".search-input");
-    search.classList.toggle("search-expanded");
-    setIsExpandedSearchbar(!isExpandedSEarchbar);
-  };
-
-  // ========================== RTK Query ==========================
-  const { data, isSuccess } = useGetRequestByIdQuery({ id, detail: "ABOUT" })
+  const navigate = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+  const [isProfileModal, setIsProfileModal] = useState<boolean>(false);
+  const [isExpandedSEarchbar, setIsExpandedSearchbar] = useState<boolean>(false);
+  const [viewClientModal, setviewClientModal] = useState<boolean>(false)
+  const { products }: any = useAppSelector((state) => state.products);
   const [logOutUser]:any=useLogoutMutation()
+  const { pathname } = useLocation();
+  const dispatch = useDispatch();
+  const renderComponent: any = {
+    navbar: (
+      <DrawerNavsLinks
+        setToggleDrawer={setToggleDrawer}
+        toggleDrawer={toggleDrawer}
+      />
+    ),
+  };
+  const onLogOut = async () => {
+    setVisible(false);
+    // const { error }: any = await postUserLogout({});
+    
 
-  let carerProfile: any;
-  if (isSuccess) {
-    carerProfile = data
+  };
+  const handleMyAccount = () => {
+    setVisible(false);
+    setActive("");
+    setActiveChild("");
+  };
+  useEffect(() => {
+    handleMyAccount();
+  }, [pathname.includes("my-account")]);
+  const items: MenuProps["items"] = [
+    {
+      key: "1",
+      label: (
+        <Link
+          to="/my-account"
+          className="m-0 title-color fs-14 d-block links-hover"
+          onClick={handleMyAccount}
+        >
+          My Account
+        </Link>
+      ),
+    },
+    {
+      key: "2",
+      label: (
+        <p
+          className="m-0 title-color fs-14 d-block links-hover"
+          onClick={onLogOut}
+        >
+          Sign Out
+        </p>
+      ),
+    },
+  ];
+
+  // const userData: any = JSON.parse(localStorage.getItem("UserData") || "{}");
+  const { role,permissions }: any = JSON.parse(
+    localStorage.getItem("careUserData") || "{}"
+  );
+  const handleOpenDrawer=()=>{
+    dispatch(openDrawer())
   }
-
+  const handleRole = (item: any) => {
+    if (role === "EMPLOYEE" && item.title === "Reports") {
+      navigate("reports/project-task/1");
+      setActive("Reports");
+    } else {
+      navigate(item.path);
+      setActive(item.title);
+    }
+  };
   // ========================== Profile Dropdown ==========================
   const profileDropdown = [
     
@@ -92,40 +129,50 @@ const TopHeader = ({ setIsOpen }: any) => {
       icon: <Logout />,
     },
   ];
+  // ###################### Effect to get theme mode #####################
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDarkMode ? "dark" : "light"
+    );
+  }, [isDarkMode]);
 
-const handleOpenDrawer=()=>{
-  dispatch(openDrawer())
-}
-const handleRole = (item: any) => {
-  if (role === "EMPLOYEE" && item.title === "Reports") {
-    navigate("reports/project-task/1");
-    setActive("Reports");
-  } else {
-    navigate(item.path);
-    setActive(item.title);
-  }
-};
+  useEffect(() => {
+    navItems?.map((e: any) => {
+      if (e?.path.includes(pathname)) {
+        setActive(e?.title);
+        setActiveChild("");
+      }
+      e?.subItems?.map((subitem: any) => {
+        if (`/${subitem?.path}` === pathname) {
+          setActive(e.title);
+          setActiveChild(subitem.title);
+        }
+      });
+    });
+  }, [pathname]);
+  const overlayStyle = { borderRadius: 0 };
   return (
-    <div
-      className="header"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "end",
-        gap: "20px",
-        marginRight: "20px",
-        background: "transparent"
-      }}
-    >
-
-      <div className={`container ${isExpandedSEarchbar && "expand-container"}`}>
-        <input className="search-input" type="text" placeholder="Type here" />
-        <button className="search-wrapper" onClick={handleExpand}>
-          {/* <img src={SearchImg} alt="searchImg" /> */}
-        </button>
-       
-      </div>
-      <div
+    <>
+      <div className="header-main-wrapper header-bg">
+        <div className="logo">
+          <MenuOutlined
+            className="menu-bar"
+            onClick={() =>
+              setToggleDrawer({ open: true, placement: "left", type: "navbar" })
+            }
+          />
+          <img
+            // src={Logo}
+            alt="brand_logo"
+            height={60}
+            className="brand cursor-pointer"
+            onClick={() => {
+              navigate("/dashboard");
+            }}
+          />
+        </div>
+        <div
           className={role === "user" ? "employeeMenu" : "menus"}
         >
           <nav className="nav">
@@ -208,12 +255,17 @@ const handleRole = (item: any) => {
             </ul>
           </nav>
         </div>
-      <Badge   count={products?.products?.length} showZero style={{color:"white"}}>
+        <div className="short_hands">
+          <Switch
+            className="switch fs-12"
+            checkedChildren="Dark"
+            unCheckedChildren="Light"
+            onChange={() => setIsDarkMode(!isDarkMode)}
+          />
+          <Badge   count={products?.products?.length} showZero style={{color:"white"}}>
           <ShoppingCartOutlined style={{ fontSize: '24px' }} onClick={handleOpenDrawer} />
         </Badge>
-      {/* <NotificationsPopup /> */}
-      
-      <div className="adminDetail">
+        <div className="adminDetail">
         <Popover
           rootClassName="profile-dropdown"
           content={
@@ -258,11 +310,7 @@ const handleRole = (item: any) => {
           <Space onClick={() => setOpen(!open)}>
             {!role ? <Link to="/login"><UserOutlined style={{fontSize: '24px'}} /></Link>:
             <Avatar style={{ verticalAlign: "middle" }} size="large">
-              <img src={
-                carerProfile?.data?.userprofile?.profilePhoto
-                  ? `https://rnd-s3-public-dev-001.s3.eu-west-2.amazonaws.com/${carerProfile?.data?.userprofile?.profilePhoto?.mediaId}.${carerProfile?.data?.userprofile?.profilePhoto?.mediaMeta?.extension}`
-                  : `https://ui-avatars.com/api/?rounded=true&name=${carerProfile?.data?.userprofile?.firstName} ${carerProfile?.data?.userprofile?.firstName}`
-              } alt="userimg" width={40} />
+             
             </Avatar>}
             <div
               className="details"
@@ -277,9 +325,7 @@ const handleRole = (item: any) => {
                 }}
               >
                {role && <> <span style={{ height: "20px" }}>
-                  {
-                    carerProfile?.data?.userprofile?.firstName ? (carerProfile?.data?.userprofile?.firstName + " " + carerProfile?.data?.userprofile?.lastName) : carerProfile?.data?.userprofile?.clientName
-                  }
+                 
                   <CaretDownOutlined className="fs-16" style={{fontSize: '24px'}} />
                 </span>
                 <span
@@ -292,22 +338,56 @@ const handleRole = (item: any) => {
             </div>
           </Space>
         </Popover>
+        <DrawerComponent/>
       </div>
-
+{/* 
       <div className="togglebar" onClick={() => setIsOpen(true)}>
         <MenuOutlined className="fs-18  text-white" />
+      </div> */}
+        </div>
       </div>
- <NavBar />
-      {role === ROLES.client ? <ClientViewProfileModal viewClientModal={viewClientModal} setviewClientModal={setviewClientModal} />
-        : <ViewProfile
-          selectedTableData={id}
-          IsProfileModal={isProfileModal}
-          setIsProfileModal={setIsProfileModal}
-        />
-      }
-    </div>
-
+      {toggleDrawer && (
+        <DrawerComp
+          open={toggleDrawer.open}
+          placement={toggleDrawer.placement}
+          onClose={() =>
+            setToggleDrawer({ ...toggleDrawer, open: false, type: "navbar" })
+          }
+          width={270}
+        >
+          {renderComponent[toggleDrawer.type]}
+        </DrawerComp>
+      )}
+      {toggleNotifications && (
+        <Drawer
+          className="notificationDrawer"
+          maskStyle={{ background: "none", border: "none" }}
+          style={{
+            padding: "10px",
+            height: "80%",
+            position: "absolute",
+            top: "65px",
+            right: "15px",
+            borderRadius: "6px",
+          }}
+          placement="right"
+          width={window.innerWidth > 1200 ? "30%" : "90%"}
+          onClose={() =>
+            setToggleNotifications({
+              ...toggleNotifications,
+              open: false,
+              type: "",
+            })
+          }
+          open={toggleNotifications.open}
+          closable={false}
+        >
+          <p className="fs-24 fw-600 p-0 m-0 title-color">Notifications</p>
+          {/* <NotifyTabs /> */}
+        </Drawer>
+        
+      )}
+    </>
   );
 };
-
-export default TopHeader;
+export default NavBar;

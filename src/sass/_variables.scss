@@ -4,50 +4,62 @@ $font-family-Roboto: "Roboto", "sans-serif";
 //colors
 $black-color: #000000;
 $white-color: #ffffff;
-$primary-color: #F0488E;
-$secondary-color: #65CDF0;
-$title-color: #4E4B66;
-$light-primary-color:#FFE2EE;
-$form-heading-color:#14142B;
-$label-color:#6E7191;
-$selected-tab-background: #EFF0F6;
-$orange-color: #F7B923;
-$card-text-color:#152536;
-$card-heading:#434242;
-$light-orange-color:#FDF4DD;
-$audit-button:#52C41A;
-$approved-color:#52C41A;
-$light-audit-color:#F0FFF3;
-$light-green-color:#63E1A5;
-$dark-blue-background:#DCF6FF;
-$layout-text-color:#969BA0;
+$primary-color: #FE5C36;
+$secondary-color: #E76F51;
+$title-color: #264653;
+$selected-tab-color: #323131;
+$orange-color: #E9C46A;
+$greyScale-color:#4E6073;
 $error-color: #FF4D4F;
-$gray-placeholder:#A0A3BD;
-$tabs-inner-shadow:#F5F5F5;
-$cancle-button-background:#4E132C;
-$success-progressbar-color: #52C41A;
-$pink-color:#EE2E7E;
-$input-border-color:#A0A3BD;
+$Orange-color: #FF6A6C;
+$bgLight-color: #FFF4F1;
+$bgDark-color: #FFC6B8;
+$successLight-color: #52C41A;
+$successDark-color: #409D12;
+$placeholder-color: #A5AEB5;
+$grey-color: #3B4D60;
+$innerProgress-color: #C7C7C7;
+$progress-color: #2A9D8F;
+$progressLight: #C0DDD9;
+$heading-color: #0E0E0E;
+$border-color: #A0ACBB;
+$breadcrumb-color: #999999;
+$checkbox-border-color: #C1C1C7;
+$warning-color: #FAAD14;
+$low-yellow-color: #FDCA64;
+$line-color: #DBE4EF;
+$varient4-color: #EAEEF2;
+$default-color: #E5ECF3;
 $blue-color: #1890FF;
-$flame-progressbar-color:#EF6327;
-$green-progressbar-color:#0BB783;
-$shifts-calendar-background:rgba(72, 195, 173, 0.29);
-$light-black-color: rgba(0, 0, 0, 0.85);
-$snow-white-color: #FFFAFA;
+$lightBlue-color: #6993FF;
+$darkBlue-color: #1B2559;
+$purple-color: #49416D;
+$idleTime-color: #898347;
+$light-green-progress-color: #37B4A4;
+$light-yellow-color: #FACD74;
+$darkGreen-color: #045162;
+$darkOrange-color: #F78812;
+$light-grey: #A3AED0;
+$darkOrange-color: #F78812;
+$lightOrange-color: #F4A261;
+$lightDarkBlue-color: #0354A6;
+$button-light-bg-color: #F4F9FF;
+$delete-btn-bg-color: #FF5F68;
 
+$label-color: #848588;
+$light-grey: #A3AED0;
+
+$darkRed-color: #E75151;
 /* box shadow */
-$box-shadow: 0px 12px 23px rgba(101, 205, 240, 0.1);
+$box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.18);
 
 
-$card-box-shadow: 0px 12px 23px rgba(62, 73, 84, 0.04);
+$card-box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1);
 
 /*font-size vars */
-$fs-100: 100px;
-$fs-55: 55px;
 $fs-48: 48px;
 $fs-40: 40px;
 $fs-32: 32px;
-$fs-30:30px;
 $fs-28: 28px;
 $fs-26: 26px;
 $fs-24: 24px;
@@ -68,7 +80,6 @@ $fw-700: 700;
 
 /* line-height vars*/
 $line-height-16: 16px;
-$line-height-17: 17px;
 $line-height-18: 18px;
 $line-height-20: 20px;
 $line-height-22: 22px;
@@ -83,11 +94,8 @@ $line-height-40: 40px;
 $btn-padding: 10px 22px;
 
 /* radius vars */
-$border-radius-2: 2px;
 $border-radius-4: 4px;
 $border-radius-6: 6px;
 $border-radius-8: 8px;
 $border-radius-9: 9px;
 $border-radius-10: 10px;
-$border-radius-12: 12px;
-$border-radius-14: 14px;
