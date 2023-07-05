@@ -11,6 +11,7 @@ import { useContext, useEffect } from "react";
 import "../../sass/common.scss";
 import "./dashboard-layout.styles.scss";
 import { FilterContext } from "../../components/date-picker";
+import FooterDetails from "../../components/Footer/Footer";
 
 
 
@@ -266,6 +267,7 @@ const DashboardLayout = ({ children }: any) => {
             </div>
           )}
         </Content>
+        <FooterDetails/>
       </Layout>
     </>
   );

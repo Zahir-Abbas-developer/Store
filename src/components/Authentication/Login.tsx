@@ -25,11 +25,11 @@ const Login = () => {
 
   function renderDashboard(role: string): string {
     if (role === "user") {
-      return "/dashboard";
+      return "/services";
     } else if (role === "admin") {
       return "/admin-dashboard";
     }  else {
-      return "/dashboard";
+      return "/services";
     }
   }
   const onFinishSignUp=async (values:any)=>{

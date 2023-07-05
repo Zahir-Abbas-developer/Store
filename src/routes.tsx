@@ -406,8 +406,8 @@ const JobRole = Loadable(lazy(() => import("./pages/Settings/JobRole")));
 const ShiftTimeSettings = Loadable(
   lazy(() => import("./pages/Settings/ShiftTimeSettings"))
 );
-const SelectServices=Loadable(
-  lazy(() => import("./components/ClientTabs/SelectServices/SelectServices"))
+const Services=Loadable(
+  lazy(() => import("./components/ClientTabs/Services/Services"))
 );
 const StaffSettings = Loadable(
   lazy(() => import("./pages/Settings/StaffSettings"))
@@ -522,7 +522,7 @@ export const routes: any = [
         path: "services",
         element: (
           // <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-            <SelectServices />
+            <Services />
           // </RequireAuth>
         ),
       },
