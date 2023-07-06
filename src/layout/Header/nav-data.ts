@@ -23,7 +23,7 @@ export const navItems = [
   },
   {
     toshowforrole: [
-       'user',
+       'user',"newUser"
     ],
     title: "Shoes",
     path: "/dashboard",
@@ -32,7 +32,7 @@ export const navItems = [
   },
   {
     toshowforrole: [
-       'user',
+       'user',"newUser"
     ],
     title: "Jackets",
     path: "/jacket-details",

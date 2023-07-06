@@ -180,7 +180,7 @@ const NavBar = () => {
               {navItems.map((item: any) => {
                 return (
                   <Fragment key={uuidv4()}>
-                    {item.toshowforrole.includes(role) && (
+                    {item.toshowforrole.includes(role ?role: "newUser") && (
                       <div>
                         <li
                           className={`nav-link ${active === item.title && "activeNav"

@@ -70,7 +70,6 @@ const Login = () => {
       payload,
     });
     
-    console.log(data, "data+++++");
 
     const role = data?.data?.user?.roleData?.name;
   
