@@ -15,7 +15,6 @@ import AllocateStaffModal from "../Modals/AllocateStaffModal/AllocateStaffModal"
 import DeleteModal from "../../../shared/DeleteModal/DeleteModal";
 import SendResendModal from "../Modals/SendResendModal/SendResendModal";
 import SendEmailModal from "../Modals/SendEmailModal/SendEmailModal";
-import ViewProfile from "../../OnBoarding/Carer/ViewProfile/ViewProfile";
 import PostCodeImg from "../../../assets/images/staffManager/postCodeImg.png";
 import { useDeleteProfileMutation } from "../../../store/Slices/StaffManager";
 import AppSnackbar from "../../../utils/AppSnackbar";
@@ -338,7 +337,6 @@ const StaffManagerInfo = (props: any) => {
       {isModalOpen && <SendResendModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} data={staffDetails} />}
       {allocateStaff && <AllocateStaffModal staffId={staffId} allocateStaff={allocateStaff} setAllocateStaff={setAllocateStaff} />}
       {isSendEmailModalOpen && <SendEmailModal staffDetails={staffDetails} isSendEmailModalOpen={isSendEmailModalOpen} setIsSendEmailModalOpen={setIsSendEmailModalOpen} />}
-      {IsProfileModal && <ViewProfile staffDetails={staffDetails} IsProfileModal={IsProfileModal} setIsProfileModal={setIsProfileModal} selectedTableData={profileViewData} selectProfileData={selectProfileData} />}
     </>
   );
 };

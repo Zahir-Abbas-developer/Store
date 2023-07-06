@@ -17,7 +17,6 @@ import deleteCare from "../../assets/icons/StaffAllocation/delete-care.svg";
 import threeDots from "../../assets/icons/three-dots.svg";
 import ViewCarerHomeModal from "./staffAllocationModals/ViewCarerHomeModal";
 import DeleteModal from "../../shared/DeleteModal/DeleteModal";
-import ViewProfile from "../OnBoarding/Carer/ViewProfile/ViewProfile";
 import {
   useGetStaffListQuery,
   useGetCarerWidgetsDataQuery,

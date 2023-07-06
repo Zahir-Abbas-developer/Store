@@ -6,7 +6,6 @@ import { Rate } from "antd";
 // Components
 import CallModal from "./Modals/CallModal";
 import MessageMailModal from "./Modals/MessageMailModal";
-import ViewProfile from "../OnBoarding/Carer/ViewProfile/ViewProfile";
 
 // RTK Hooks
 import { useGetCoordinatorDashboardCarersQuery } from "../../store/Slices/CoordinatorDashboard";
@@ -114,11 +113,7 @@ const TopRatedCarers = () => {
           selectProfileData={isShowMailModalOpen && isProfileModalData ? isProfileModalData : undefined}
 
         />
-        <ViewProfile
-          IsProfileModal={IsProfileModal}
-          setIsProfileModal={setIsProfileModal}
-          selectProfileData={IsProfileModal && isProfileModalData ? isProfileModalData : undefined}
-        />
+    
       </div></>
 
   );

@@ -35,16 +35,11 @@ const Loadable = (Component: LazyExoticComponent<FC>) => (props: any) =>
     </Suspense>
   );
 
-const ClientDetailsPage = Loadable(
-  lazy(() => import("./pages/Onboarding/CareCoordinator/ClientDetails"))
-);
+
 
 const ApiInventoryPage = Loadable(lazy(() => import("./pages/ApiInventory")));
-const ManageUsersPage = Loadable(lazy(() => import("./pages/ManageUsers")));
 const ReviewCareHomesPage = Loadable(lazy(() => import("./pages/Ratings")));
-const ManageUsersTypesPage = Loadable(
-  lazy(() => import("./pages/ManageUserTypes"))
-);
+
 
 const SuperAdminDashboardPage = Loadable(
   lazy(() => import("./pages/SuperAdminDashboard"))
@@ -76,35 +71,7 @@ const CartDetailsPage=Loadable(
   lazy(() => import("./pages/CartDetails"))
 );
 
-//Onboarding
-const CarerPage = Loadable(lazy(() => import("./pages/Onboarding/Carer")));
-const CareCoordinatorPage = Loadable(
-  lazy(() => import("./pages/Onboarding/CareCoordinator"))
-);
-const TrainingInstructorPage = Loadable(
-  lazy(() => import("./pages/Onboarding/TrainingInstructor"))
-);
 
-const CarerEditProfilePage = Loadable(
-  lazy(() => import("./pages/Onboarding/Carer/EditProfile"))
-);
-const CareCoordinatorEditProfilePage = Loadable(
-  lazy(() => import("./pages/Onboarding/CareCoordinator/EditProfile"))
-);
-const TraingingInstructorEditProfilePage = Loadable(
-  lazy(() => import("./pages/Onboarding/TrainingInstructor/EditProfile"))
-);
-
-//profile
-
-const InstructorProfilePage = Loadable(
-  lazy(() => import("./pages/InstructorProfile"))
-);
-
-const CarerProfilePage = Loadable(lazy(() => import("./pages/CarerProfile")));
-const CarerCoordinatorProfilePage = Loadable(
-  lazy(() => import("./pages/CareCoordinatorProfile"))
-);
 const ClientProfilePage = Loadable(lazy(() => import("./pages/ClientProfile")));
 
 
@@ -166,33 +133,6 @@ const AddOrdersPage = Loadable(
   lazy(() => import("./pages/AddOrders"))
 );
 
-const BookingCalenderPage = Loadable(
-  lazy(() => import("./pages/BookingCalender"))
-);
-const StaffAvailabilityPage = Loadable(
-  lazy(
-    () =>
-      import("./components/BookingCalander/StaffAvailability/StaffAvailability")
-  )
-);
-const ShiftManagerPage = Loadable(lazy(() => import("./pages/ShiftManager")));
-const ShiftManagerDetails = Loadable(
-  lazy(() => import("./pages/ShiftManager/ShiftBooking"))
-);
-const ShiftManagerConfirmedShift = Loadable(
-  lazy(() => import("./pages/ShiftManager/ShiftBooking/ConfirmedShift"))
-);
-const ShiftManagerUnfilledShift = Loadable(
-  lazy(() => import("./pages/ShiftManager/ShiftBooking/UnfilledShift"))
-);
-const ShiftManagerUnPublishedShift = Loadable(
-  lazy(() => import("./pages/ShiftManager/ShiftBooking/UnPublishedShift"))
-);
-const ShiftManagerBookStaff = Loadable(
-  lazy(
-    () => import("./pages/ShiftManager/ShiftBooking/UnPublishedShift/BookStaff")
-  )
-);
 const UnpublishedShiftPage = Loadable(
   lazy(() => import("./pages/UnpublishedShift"))
 );
@@ -200,39 +140,9 @@ const BookStaffPage = Loadable(
   lazy(() => import("./pages/UnpublishedShift/BookStaff"))
 );
 
-const TrainingPage = Loadable(lazy(() => import("./pages/Training")));
-const MyCoursesPage = Loadable(
-  lazy(() => import("./pages/Training/MyCourses"))
-);
-const CourseDetailsPage = Loadable(
-  lazy(() => import("./pages/Training/CourseDetails"))
-);
-const MyNotesPage = Loadable(lazy(() => import("./pages/Training/MyNotes")));
-const MyResultsPage = Loadable(
-  lazy(() => import("./pages/Training/MyResults"))
-);
-const CertificatePage = Loadable(
-  lazy(() => import("./pages/Training/CourseCertificate"))
-);
-const AllCoursesPage = Loadable(
-  lazy(() => import("./pages/Training/AllCourses"))
-);
-const CarerTrainingPage = Loadable(
-  lazy(() => import("./pages/Training/CarerTraining"))
-);
+
 const InstructorDashboard = Loadable(
   lazy(() => import("./pages/InstructorDashboard"))
-);
-const ManageCourses = Loadable(lazy(() => import("./pages/ManageCourses")));
-const CoursesDetail = Loadable(
-  lazy(() => import("./pages/ManageCourses/CourseDetails"))
-);
-const AddCourses = Loadable(
-  lazy(() => import("./pages/ManageCourses/AddCourse"))
-);
-const TraineeInfo = Loadable(lazy(() => import("./pages/TraineeInfo")));
-const TraineeCourses = Loadable(
-  lazy(() => import("./pages/TraineeInfo/TraineeCourses"))
 );
 
 
@@ -242,9 +152,7 @@ const SettingsPage = Loadable(lazy(() => import("./pages/Settings")));
 const FAQsPage = Loadable(lazy(() => import("./pages/Help/FAQs")));
 const BackUp = Loadable(lazy(() => import("./pages/BackUp")));
 const AuditLogs = Loadable(lazy(() => import("./pages/AuditLogs")));
-const ManageNotifications = Loadable(
-  lazy(() => import("./pages/ManageNotifications/ManageNotifications"))
-);
+
 const RatingsFeedback = Loadable(
   lazy(() => import("./pages/RatingAndFeedback"))
 );
@@ -311,51 +219,22 @@ const ElectronicAttendanceMonitoring = Loadable(
   lazy(() => import("./pages/Settings/ElectronicAttendanceMonitoring"))
 );
 
-// client
-const ClientBookingCalendar = Loadable(
-  lazy(() => import("./pages/ClientBookingCalendar"))
-);
-const ClientCalendarShiftDetails = Loadable(
-  lazy(() => import("./pages/ClientBookingCalendar/BookingShiftDetails"))
-);
+
 const ClientUserManagement = Loadable(
   lazy(() => import("./pages/ClientUserManagement"))
 );
 const ClientPreferences = Loadable(
   lazy(() => import("./pages/ClientPreferences"))
 );
-const ClientDashboard = Loadable(lazy(() => import("./pages/ClientDashboard")));
 
-const AvailableShifts = Loadable(
-  lazy(() => import("./pages/ShiftDetails/AvailableShifts"))
-);
-const UpcomingShifts = Loadable(
-  lazy(() => import("./pages/ShiftDetails/UpcomingShifts"))
-);
-const CompletedShifts = Loadable(
-  lazy(() => import("./pages/ShiftDetails/CompletedShifts"))
-);
-const CancelledShifts = Loadable(
-  lazy(() => import("./pages/ShiftDetails/CancelledShifts"))
-);
+
 const CarerMyCalendarPage = Loadable(
   lazy(() => import("./pages/CarerMyCalendar"))
 );
 
-// Client Manage Shift
-const ClientRequestedShifts = Loadable(
-  lazy(() => import("./pages/ClientManageShift/ClientRequestedShift"))
-);
-const ClientUpcomingShifts = Loadable(
-  lazy(() => import("./pages/ClientManageShift/ClientUpcomingShift"))
-);
-const ClientCompletedShifts = Loadable(
-  lazy(() => import("./pages/ClientManageShift/ClientCompletedShift"))
-);
+
 const ContactDetailsPage=Loadable((lazy(()=>import("./pages/ContactDetails"))))
-const ClientSignOffShifts = Loadable(
-  lazy(() => import("./pages/ClientManageShift/ClientSignOffShift"))
-);
+
 
 const SystemPerformance = Loadable(
   lazy(() => import("./pages/SystemPerformance"))
@@ -476,48 +355,7 @@ export const routes: any = [
           </RequireAuth>
         ),
       },
-      {
-        path: "",
-        children: [
-          {
-            path: "shift-details/available-shifts",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer]}>
-                <AvailableShifts />
-              </RequireAuth>
-            ),
-          },
-
-          {
-            path: "shift-details/upcoming-shifts",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer]}>
-                <UpcomingShifts />
-              </RequireAuth>
-            ),
-          },
-
-          {
-            path: "shift-details/completed-shifts",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer]}>
-                <CompletedShifts />
-              </RequireAuth>
-            ),
-          },
-
-          {
-            path: "shift-details/cancelled-shifts",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer]}>
-                <CancelledShifts />
-              </RequireAuth>
-            ),
-          },
-        ],
-      },
-      // SystemPerformance
-
+     
       {
         path: "system-performance",
         children: [
@@ -532,59 +370,7 @@ export const routes: any = [
         ],
       },
 
-      {
-        path: "",
-        children: [
-          {
-            path: "manage-user",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-                <ManageUsersTypesPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "manage-user/manage-user-tabs",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-                <ManageUsersPage />
-              </RequireAuth>
-            ),
-          },
-          // {
-          //   path: "manage-user/carer",
-          //   element: (
-          //     <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-          //       <InvoicePage />
-          //     </RequireAuth>
-          //   ),
-          // },
-          // {
-          //   path: "manage-user/carer-cordinator",
-          //   element: (
-          //     <RequireAuth allowedRoles={[ROLES.admin]}>
-          //       <StaffPaymentDetailsPage />
-          //     </RequireAuth>
-          //   ),
-          // },
-          // {
-          //   path: "manage-user/client",
-          //   element: (
-          //     <RequireAuth allowedRoles={[ROLES.admin]}>
-          //       <ClientPaymentDetailsPage />
-          //     </RequireAuth>
-          //   ),
-          // },
-          // {
-          //   path: "manage-user/agency-admin",
-          //   element: (
-          //     <RequireAuth allowedRoles={[ROLES.admin]}>
-          //       <FinanceReportsPage />
-          //     </RequireAuth>
-          //   ),
-          // },
-        ],
-      },
+     
       {
         path: "client-manager",
         element: (
@@ -613,14 +399,7 @@ export const routes: any = [
           </RequireAuth>
         ),
       },
-      {
-        path: "instructor-profile",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <InstructorProfilePage />
-          </RequireAuth>
-        ),
-      },
+    
 
       {
         path: "client-profile",
@@ -631,85 +410,9 @@ export const routes: any = [
           </RequireAuth>
         ),
       },
-      {
-        path: "carer-profile",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.carer]}>
-            <CarerProfilePage />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "care-coordinator-profile",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.coordinator]}>
-            <CarerCoordinatorProfilePage />
-          </RequireAuth>
-        ),
-      },
+     
 
-      {
-        path: "",
-        children: [
-          {
-            path: "onboarding/carer",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin]}>
-                <CarerPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "onboarding/carer/edit-profile",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin]}>
-                <CarerEditProfilePage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "onboarding/care-coordinator/edit-profile",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin]}>
-                <CareCoordinatorEditProfilePage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "onboarding/training-instructor/edit-profile",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin]}>
-                <TraingingInstructorEditProfilePage />
-              </RequireAuth>
-            ),
-          },
-
-          {
-            path: "onboarding/care-coordinator/client-details",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin]}>
-                <ClientDetailsPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "onboarding/care-coordinator",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin]}>
-                <CareCoordinatorPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "onboarding/training-instructor",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin]}>
-                <TrainingInstructorPage />
-              </RequireAuth>
-            ),
-          },
-        ],
-      },
+      
       {
         path: "staff-manager",
         element: (
@@ -799,14 +502,7 @@ export const routes: any = [
           </RequireAuth>
         ),
       },
-      {
-        path: "notifications",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-            <ManageNotifications />
-          </RequireAuth>
-        ),
-      },
+      
       {
         path: "staff-booking",
         element: (
@@ -855,196 +551,9 @@ export const routes: any = [
           </RequireAuth>
         ),
       },
-      {
-        path: "manage-courses",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <ManageCourses />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "manage-courses/courses-detail/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <CoursesDetail />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "manage-courses/courses-detail/view-course/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin, ROLES.instructor, ROLES.coordinator, ROLES.carer]}>
-            <CourseDetailsPage />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "manage-courses/add-courses",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <AddCourses />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "manage-courses/edit-course/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <AddCourses />
-          </RequireAuth>
-        ),
-      },
+    
      
-      {
-        path: "",
-        children: [
-          {
-            path: "training",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <TrainingPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "training/my-courses",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <MyCoursesPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "training/my-courses/:id",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <CourseDetailsPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "training/all-courses",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <AllCoursesPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "training/courses/:category",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <AllCoursesPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "training/all-courses/:id",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <CoursesDetail />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "training/carer-training",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <CarerTrainingPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "training/carer-training/certificate/:id",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <CertificatePage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "training/my-notes",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <MyNotesPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "training/my-results",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <MyResultsPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "training/my-results/certificate/:id",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.carer,ROLES.coordinator]}>
-                <CertificatePage />
-              </RequireAuth>
-            ),
-          },
-        ],
-      },
-      {
-        path: "booking-calendar",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-            <BookingCalenderPage />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "booking-calendar/staff-availability",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <StaffAvailabilityPage />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "shift-manager",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-            <ShiftManagerPage />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "shift-manager/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-            <ShiftManagerDetails />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "shift-manager/:id/confirmed-shift",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-            <ShiftManagerConfirmedShift />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "shift-manager/:id/unfilled-shift",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-            <ShiftManagerUnfilledShift />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "shift-manager/:id/unpublished-shift",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-            <ShiftManagerUnPublishedShift />
-          </RequireAuth>
-        ),
-      },
+  
       {
         path: "unpublished-shift",
         element: (
@@ -1062,14 +571,7 @@ export const routes: any = [
         ),
       },
 
-      {
-        path: "unpublished-shift/book-staff",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-            <ShiftManagerBookStaff />
-          </RequireAuth>
-        ),
-      },
+      
      
       {
         path: "api-inventory",
@@ -1087,30 +589,8 @@ export const routes: any = [
           </RequireAuth>
         ),
       },
-      {
-        path: "trainee-info",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <TraineeInfo />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "trainee-info/trainee-courses/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <TraineeCourses />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "trainee-info/trainee-courses/course-content/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <CourseDetailsPage />
-          </RequireAuth>
-        ),
-      },
+     
+    
    
       {
         path: "",
@@ -1385,14 +865,7 @@ export const routes: any = [
               </RequireAuth>
             ),
           },
-          {
-            path: "client-booking-calendar/:id",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.client]}>
-                <ClientCalendarShiftDetails />
-              </RequireAuth>
-            ),
-          },
+          
         ],
       },
       {
@@ -1411,52 +884,8 @@ export const routes: any = [
           </RequireAuth>
         ),
       },
-      {
-        path: "client-dashboard",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.client]}>
-            <ClientDashboard />
-          </RequireAuth>
-        ),
-      },
-      // client manage shift
-      {
-        path: "",
-        children: [
-          {
-            path: "client-requested-shift",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.client]}>
-                <ClientRequestedShifts />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "client-upcoming-shift",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.client]}>
-                <ClientUpcomingShifts />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "client-completed-shift",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.client]}>
-                <ClientCompletedShifts />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "client-signoff-shift",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.client]}>
-                <ClientSignOffShifts />
-              </RequireAuth>
-            ),
-          },
-        ],
-      },
+      
+     
     ],
   },
   {

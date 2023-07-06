@@ -9,7 +9,6 @@ import { CaretDownOutlined, DownOutlined, MenuOutlined, ShoppingCartOutlined, Up
 
 // Components
 
-import ViewProfile from "../../components/OnBoarding/Carer/ViewProfile/ViewProfile";
 import ClientViewProfileModal from "../../components/ClientManager/ClientViewProfileModal/ClientViewProfileModal";
 
 
