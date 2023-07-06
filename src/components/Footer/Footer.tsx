@@ -36,7 +36,7 @@ const FooterDetails=()=>{
       </Row>
       <Row className="footer-main">
         <Col xs={24} md={8}>
-       <div style={{textAlign:"center"}}> <img src={LogoWhite}></img></div>
+       <div style={{textAlign:"center"}}></div>
         </Col>
         <Col xs={24} md={8}>
       <div style={{textAlign:"center"}}>
@@ -62,20 +62,15 @@ const FooterDetails=()=>{
       </Row>
       <Row className="footer-main">
         <Col xs={24} md={8}>
-       <div style={{textAlign:"center"}}> <p><img src={fb}></img><img src={instasvg}></img><img src={Twitter}></img></p></div>
+       {/* <div style={{textAlign:"center"}}> <p><img src={fb}></img><img src={instasvg}></img><img src={Twitter}></img></p></div> */}
         </Col>
         <Col xs={24} md={8}>
       <div style={{textAlign:"center"}}>
-      <p style={{color:"#fff" ,fontWeight:"700"}}>  © LARCH 2023</p>
+      <p style={{color:"#fff" ,fontWeight:"700"}}>  © SOLACE LEATHER </p>
       </div>
 
         </Col>
-        <Col xs={24} md={8}>
-         <div style={{textAlign:"center"}}>
-       <p>  <Link to="" style={{color:"#AAAAAA"}}>Site by Reptagon</Link></p>
-         </div>
        
-        </Col>
       </Row>
     </section>
       

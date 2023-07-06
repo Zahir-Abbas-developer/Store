@@ -27,7 +27,7 @@ const Loadable = (Component: LazyExoticComponent<FC>) => (props: any) =>
           className="d-flex justify-center align-center"
           style={{ height: "80vh" }}
         >
-          <img src={LoadingSvg} height={200} width={200} alt="LoadingSvg" />
+          <img src={LoadingSvg} height={200} width={200} alt="LoadingSvg" /> 
         </div>
       }
     >

@@ -121,9 +121,7 @@ const DashboardLayout = ({ children }: any) => {
     : path.trim().split(" ");
 
 
-    console.log(" breadCrumbItems",breadCrumbItems);
-    console.log(" result",result);
-    
+
 
 
   breadCrumbItems = breadCrumbItems.map((item: string) =>
