@@ -1,5 +1,13 @@
 
 // Dark Mode Icons
+import shoes from "../../assets/icons/sidebar/sport-shoe.png";
+import jacket from "../../assets/icons/sidebar/jacket.png";
+
+import color from "../../assets/icons/sidebar/color-picker.png";
+import order from "../../assets/icons/sidebar/order.png";
+import add from "../../assets/icons/sidebar/add.png";
+import filing from "../../assets/icons/sidebar/filing-cabinet.png";
+import category from "../../assets/icons/sidebar/add-product.png";
 
 
 
@@ -10,7 +18,7 @@ export const navItems = [
     ],
     title: "HOME",
     path: "/admin-dashboard",
-    
+    lightIcon: jacket,
     alt: "dashboard"
   },
   {
@@ -19,16 +27,16 @@ export const navItems = [
     ],
     title: "Shoes",
     path: "/dashboard",
-    
+    lightIcon: shoes,
     alt: "dashboard"
   },
   {
     toshowforrole: [
        'user',
     ],
-    title: "Leathers",
-    path: "/dashboard",
-    
+    title: "Jackets",
+    path: "/jacket-details",
+    lightIcon: jacket,
     alt: "dashboard"
   },
   {
@@ -37,7 +45,7 @@ export const navItems = [
     ],
     title: "PRODUCTS",
     path: "/add-products",
-    
+    lightIcon: add,
     alt: "dashboard"
   },
   {
@@ -46,7 +54,7 @@ export const navItems = [
     ],
     title: "CATEGORIES",
     path: "/add-categories",
-    
+    lightIcon: category,
     alt: "dashboard"
   },
   
@@ -56,7 +64,7 @@ export const navItems = [
     ],
     title: "COLORS",
     path: "/add-colors",
-    
+    lightIcon: color,
     alt: "dashboard"
   },
   {
@@ -65,7 +73,7 @@ export const navItems = [
     ],
     title: "STYLES",
     path: "/add-styles",
-    
+    lightIcon: filing,
     alt: "dashboard"
   },
   {
@@ -74,7 +82,7 @@ export const navItems = [
     ],
     title: "ORDERS",
     path: "/add-orders",
-    
+    lightIcon: order,
     alt: "dashboard"
   },
   

@@ -49,7 +49,7 @@ const ShoeProductDetails=()=>{
         </Row>
          <Row>
             <Col sm={24} style={{textAlign:"center"}}>
-            <Link to="/dashboard" style={{background:"black",padding:"14px" ,color:"white"}}>VIEW ALL PRODUCTS</Link>
+            <Link to="/jacket-details" style={{background:"black",padding:"14px" ,color:"white"}}>VIEW ALL PRODUCTS</Link>
             </Col>
          </Row>
         </div>

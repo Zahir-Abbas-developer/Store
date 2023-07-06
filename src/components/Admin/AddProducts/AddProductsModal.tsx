@@ -14,7 +14,7 @@ import AppSnackbar from "../../../utils/AppSnackbar";
 import { ROLES } from "../../../constants/Roles";
 import { useGetClientsQuery } from "../../../store/Slices/Setting/StaffSettings/RegisterationConfiguration";
 import { handleInputTrimSpaces, handleInputTrimStart } from "../../../utils/useInputTrim";
-import { useGetAllCategoriessQuery, useGetAllColorsQuery,  useGetAllMaterialsQuery, useGetAllProductsQuery, usePostProductsMutation, useUpdateProductsMutation } from "../../../store/Slices/Products";
+import { useGetAllCategoriessQuery, useGetAllColorsQuery, useGetAllMaterialsQuery, useGetAllProductsQuery, usePostProductsMutation, useUpdateProductsMutation } from "../../../store/Slices/Products";
 import UploadImage from "../../Setting/SettingKeyInfo/UploadImage/UploadImage";
 import { PlusCircleOutlined } from "@ant-design/icons";
 
@@ -22,7 +22,7 @@ import { PlusCircleOutlined } from "@ant-design/icons";
 
 function AddProductsModal(props: any) {
   const [form] = Form.useForm();
-  const [certificateUrl ,setCertificateUrl]=useState("")
+  const [certificateUrl, setCertificateUrl] = useState("")
   const [fieldCount, setFieldCount] = useState(1);
   const [quantities, setQuantities] = useState([""]); // Array to hold quantity values
   const [sizes, setSizes] = useState([""]); // Array to hold size values
@@ -33,40 +33,40 @@ function AddProductsModal(props: any) {
   const [postProducts, { isLoading: isPostJobRequestMutation }] = usePostProductsMutation();
   const [updateProducts, { isLoading: isUpdateJobRequestMutation }] = useUpdateProductsMutation();
 
-  const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({})
-  const {data:getCategories ,isSuccess:isSuccessCategories}=useGetAllCategoriessQuery({})
-  const {data:getColors ,isSuccess:isSuccessColors}=useGetAllColorsQuery({})
+  const { data: getMaterials, isSuccess: isSuccessMaterials } = useGetAllMaterialsQuery({})
+  const { data: getCategories, isSuccess: isSuccessCategories } = useGetAllCategoriessQuery({})
+  const { data: getColors, isSuccess: isSuccessColors } = useGetAllColorsQuery({})
   // ------------------ Error cases Variable ------------------
   let userRoleDropdown: any;
-  let selectColor:any;
-  let selectCategory:any
+  let selectColor: any;
+  let selectCategory: any
   let clientAPIData: any;
 
-  let allMaterials:any
-  if(isSuccessCategories){
-    selectCategory=getCategories
+  let allMaterials: any
+  if (isSuccessCategories) {
+    selectCategory = getCategories
     selectCategory = selectCategory?.map((item: any) => ({
       value: item?._id,
       label: item?.name,
     }));
   }
   console.log(fields)
-  if(isSuccessColors){
-    selectColor=getColors
-   
+  if (isSuccessColors) {
+    selectColor = getColors
+
     selectColor = selectColor?.map((item: any) => ({
       value: item?._id,
       label: item?.name,
     }));
-    
+
   }
-  if(isSuccessMaterials){
-    allMaterials=getMaterials
+  if (isSuccessMaterials) {
+    allMaterials = getMaterials
     userRoleDropdown = allMaterials?.map((item: any) => ({
       value: item?._id,
       label: item?.name,
     }));
-   
+
   }
   if (isClientDataSuccess) {
     clientAPIData = clientData;
@@ -77,14 +77,14 @@ function AddProductsModal(props: any) {
     }));
   }
 
-  const uploadCertificateId=(url:any)=>{
+  const uploadCertificateId = (url: any) => {
     setCertificateUrl(url)
-}
-const handleAddField = () => {
-  setFieldCount(fieldCount + 1);
- 
-  setFields([...fields, { quantity: "", size: "" }]);
-};
+  }
+  const handleAddField = () => {
+    setFieldCount(fieldCount + 1);
+
+    setFields([...fields, { quantity: "", size: "" }]);
+  };
 
 
   if (modalType !== "Add") {
@@ -93,9 +93,9 @@ const handleAddField = () => {
       category: getTableRowValues.category,
       color: getTableRowValues.color,
       material: getTableRowValues?.material,
-      description:getTableRowValues?.description,
-      price:getTableRowValues?.price,
-      sku:getTableRowValues?.sku,
+      description: getTableRowValues?.description,
+      price: getTableRowValues?.price,
+      sku: getTableRowValues?.sku,
       // eu:getTableRowValues?.shoeSizes[0]?.eu,
       // quantity:getTableRowValues?.shoeSizes[0]?.quantity
     }
@@ -115,7 +115,7 @@ const handleAddField = () => {
     // const valuessss = { mneee: values?.name, ...values };
     const shoeSizes = fields.map((field) => {
       let usValue = ""; // Default value for the 'us' field
-    
+
       if (field.size === "42") {
         usValue = "7";
       } else if (field.size === "43") {
@@ -136,30 +136,33 @@ const handleAddField = () => {
       else if (field.size === "47") {
         usValue = "8";
       }
-    
+
       return {
         quantity: parseInt(field.quantity),
         eu: parseInt(field.size),
         us: parseInt(usValue),
       };
     });
-    const addProductValues={...values,price:parseInt(values?.price),  thumbnail:certificateUrl,"tags": [
-      "Running",
-      "Sportswear"
-    ],shoeSizes:shoeSizes}
 
-for (let i = 0; i <= 300; i++) {
-  const euProperty = `eu${i}`;
-  const quantityProperty = `quantity${i}`;
-  
-  if (addProductValues.hasOwnProperty(euProperty)) {
-    delete addProductValues[euProperty];
-  }
-  
-  if (addProductValues.hasOwnProperty(quantityProperty)) {
-    delete addProductValues[quantityProperty];
-  }
-}
+    const addProductValues = {
+      ...values, price: parseInt(values?.price), thumbnail: certificateUrl,images:[certificateUrl], "tags": [
+        "Running",
+        "Sportswear"
+      ], shoeSizes: shoeSizes
+    }
+
+    for (let i = 0; i <= 300; i++) {
+      const euProperty = `eu${i}`;
+      const quantityProperty = `quantity${i}`;
+
+      if (addProductValues.hasOwnProperty(euProperty)) {
+        delete addProductValues[euProperty];
+      }
+
+      if (addProductValues.hasOwnProperty(quantityProperty)) {
+        delete addProductValues[quantityProperty];
+      }
+    }
 
 
 
@@ -271,7 +274,35 @@ for (let i = 0; i <= 300; i++) {
                 suffixIcon={<img src={arrowDown} alt='arrow down' />}
                 className="d-flex"
                 placeholder="Select material"
-                options={userRoleDropdown }
+                options={userRoleDropdown}
+              />
+            </Form.Item>
+          </Col>
+          <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
+            <label className="fs-14 fw-600">Select Product</label>
+            <Form.Item
+              name="productType"
+              rules={[{ required: true, message: "Required field " }]}
+              style={{ marginBottom: "8px" }}
+            >
+              <Select
+                suffixIcon={<img src={arrowDown} alt='arrow down' />}
+                className="d-flex"
+                placeholder="Select product"
+
+                options={[
+                  {
+                    value: 'SHOES',
+                    label: 'Shoes',
+                  },
+                  {
+                    value: 'JACKETS',
+                    label: 'Jackets',
+                  },
+
+
+
+                ]}
               />
             </Form.Item>
           </Col>
@@ -305,84 +336,84 @@ for (let i = 0; i <= 300; i++) {
               />
             </Form.Item>
           </Col>
-         
-<Col xs={24} lg={24}>
-         <UploadImage  uploadCertificateId={uploadCertificateId} />
-     </Col>
-     <Col  xs={24} lg={24} style={{textAlign:"end"}}>
-     <PlusCircleOutlined style={{ marginLeft: "20px",cursor:"pointer" }} onClick={handleAddField} /> Click to  Add More Shoe Sizes and Quantity
-     </Col>
-     {fields.map((field:any, index:any) => (
-         <>  <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
-<label className="fs-14 fw-600">Product Quantity</label>
-<Form.Item
-  name={`quantity${index}`}
-  rules={[{ required: true, message: "Required field " }]}
-  style={{ marginBottom: "8px" }}
-  normalize={(value: any) => handleInputTrimStart(value)}
->
-  <Input
-    placeholder="Enter product quantity"
-    id={`quantity${index}`}
-    style={{ marginTop: "2px", height: "40px" }}
-    value={field.quantity}
-    onChange={(e) => {
-      const newFields = [...fields];
-      newFields[index].quantity = e.target.value;
-      setFields(newFields);
-    }}
-  />
-</Form.Item>
 
-       </Col>  
-          <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
-            <label className="fs-14 fw-600">Select Shoe Size</label>
-            <Form.Item
-              name={`eu${index}`}
-              rules={[{ required: true, message: "Required field " }]}
-              style={{ marginBottom: "8px" }}
-            >
-              <Select
-                suffixIcon={<img src={arrowDown} alt='arrow down' />}
-                className="d-flex"
-                placeholder="Select Product Size"
-                
-                 value={field.size}
-              onChange={(value) => {
-                const newFields = [...fields];
-                newFields[index].size = value;
-                setFields(newFields);
-              }}
-                options={[
-                  {
-                    value: '42',
-                    label: '42',
-                  },
-                  {
-                    value: '43',
-                    label: '43',
-                  },
-                  {
-                    value: '44',
-                    label: '44',
-                  },
-                  {
-                    value: '45',
-                    label: '45',
-                  },
-                  {
-                    value: '46',
-                    label: '46',
-                  },
-                  {
-                    value: '47',
-                    label: '47',
-                  },
-                ]}
-              />
-            </Form.Item>
-          </Col>    </>
-              ))}
+          <Col xs={24} lg={24}>
+            <UploadImage uploadCertificateId={uploadCertificateId} />
+          </Col>
+          <Col xs={24} lg={24} style={{ textAlign: "end" }}>
+            <PlusCircleOutlined style={{ marginLeft: "20px", cursor: "pointer" }} onClick={handleAddField} /> Click to  Add More Shoe Sizes and Quantity
+          </Col>
+          {fields.map((field: any, index: any) => (
+            <>  <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
+              <label className="fs-14 fw-600">Product Quantity</label>
+              <Form.Item
+                name={`quantity${index}`}
+                rules={[{ required: true, message: "Required field " }]}
+                style={{ marginBottom: "8px" }}
+                normalize={(value: any) => handleInputTrimStart(value)}
+              >
+                <Input
+                  placeholder="Enter product quantity"
+                  id={`quantity${index}`}
+                  style={{ marginTop: "2px", height: "40px" }}
+                  value={field.quantity}
+                  onChange={(e) => {
+                    const newFields = [...fields];
+                    newFields[index].quantity = e.target.value;
+                    setFields(newFields);
+                  }}
+                />
+              </Form.Item>
+
+            </Col>
+              <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
+                <label className="fs-14 fw-600">Select Shoe Size</label>
+                <Form.Item
+                  name={`eu${index}`}
+                  rules={[{ required: true, message: "Required field " }]}
+                  style={{ marginBottom: "8px" }}
+                >
+                  <Select
+                    suffixIcon={<img src={arrowDown} alt='arrow down' />}
+                    className="d-flex"
+                    placeholder="Select Product Size"
+
+                    value={field.size}
+                    onChange={(value) => {
+                      const newFields = [...fields];
+                      newFields[index].size = value;
+                      setFields(newFields);
+                    }}
+                    options={[
+                      {
+                        value: '42',
+                        label: '42',
+                      },
+                      {
+                        value: '43',
+                        label: '43',
+                      },
+                      {
+                        value: '44',
+                        label: '44',
+                      },
+                      {
+                        value: '45',
+                        label: '45',
+                      },
+                      {
+                        value: '46',
+                        label: '46',
+                      },
+                      {
+                        value: '47',
+                        label: '47',
+                      },
+                    ]}
+                  />
+                </Form.Item>
+              </Col>    </>
+          ))}
           <Col lg={12} xs={24} style={{ marginBottom: "20px" }}>
             <label className="fs-14 fw-600">Product Sku</label>
             <Form.Item

@@ -29,6 +29,7 @@ const UploadImage = ({ uploadCertificateId, fileUrl, disabled}: any) => {
     action: "https://thankful-onesies.cyclic.app/uploads",
     headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5kb2UiLCJzdWIiOiI2NDM1NGY4MmUzOWQ3N2JkNTgzZTIwNzIiLCJpYXQiOjE2ODU1MzI4NDksImV4cCI6MTY4NTYxOTI0OX0.Pa6J_v8K8DUxFkCu5Mam5mfNqW9gA9YPPmpdJbtZBmI` },
     onChange(info) {
+      console.log(info.file)
       if (info.fileList.length > 0) {
         setShowText(false);
       } else {
@@ -37,7 +38,7 @@ const UploadImage = ({ uploadCertificateId, fileUrl, disabled}: any) => {
       const { status } = info.file;
       if (status !== "uploading") {
        
-        uploadCertificateId(info.file?.response?.url);
+        uploadCertificateId(info.file?.response[0]?.url);
       }
       if (status === "done") {
         message.success(`${info.file.name} file uploaded successfully.`);

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Arrow  from "../../../assets/images/OnBoarding/arrow.svg"
 import './OurCollectionDetails.scss'
 import { text } from "stream/consumers";
-
+import jacketImage4 from "../../../assets/images/jackets/tobias-tullius-Fg15LdqpWrs-unsplash.jpg"
 const { Meta } = Card;
 
  const OurCollectionTabDetails=()=>{
@@ -38,7 +38,7 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
  if (colorFilter) paramsObj["colorName"] = colorFilter;
  if (sortFilter) paramsObj["sortBy"] = sortFilter;
 
- const query = "?" + new URLSearchParams(paramsObj).toString();
+ const query = "&" + new URLSearchParams(paramsObj).toString();
     const {data:dataProducts ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query})
     let productsData:any
     if(isSuccessProducts){
@@ -50,13 +50,7 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
     const navigate = useNavigate();
     return (
         <>
-       <div className="header-image-our-collection">
-  <div className="image-content">
-    <h1 className="image-heading-title">BROWSE COLLECTION</h1>
-    <p className="image-heading-subheading">Shop from our range of finest leather shoes crafted to perfection</p>
-    <p className="image-heading-subheading">We design footwear to last you a lifetime. The finest designs — a pinnacle of elegance.</p>
-  </div>
-</div>
+       <img src={jacketImage4} style={{ width: "100%", height: "90vh" }} />
 
         <Row style={{margin:"20px 0px",padding:"16px"}} gutter={[16,16]}>
             <Col xs={24} md={6} >

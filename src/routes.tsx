@@ -50,6 +50,7 @@ const SuperAdminDashboardPage = Loadable(
   lazy(() => import("./pages/SuperAdminDashboard"))
 );
 const DashboardPage = Loadable(lazy(() => import("./pages/Dashboard")));
+const JacketDetailsPage = Loadable(lazy(() => import("./pages/JacketDetails")));
 const CarerDashboardPage = Loadable(
   lazy(() => import("./pages/CarerDashboard"))
 );
@@ -560,6 +561,10 @@ export const routes: any = [
       {
         path:"/add-products",
         element: (<RequireAuth allowedRoles={[ROLES.admin]}> <AddProductsPage/></RequireAuth>)  
+      },
+      {
+        path:"/jacket-details",
+        element:(<JacketDetailsPage/>)
       },
       {
         path:"/add-categories",

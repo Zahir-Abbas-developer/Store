@@ -1,0 +1,71 @@
+.header-image-our-collection {
+    background-image: url("../../../assets/images/main-image-shoes.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+//   .image-content {
+//     text-align: center;
+//     @media only screen and (min-width: 200px) and (max-width:991px) {
+//       display: none;
+//    }
+   
+//   }
+  
+  
+  .image-heading-title {
+    color: #FFFFFF;
+    margin-top: 0px;
+    font-size: 2rem;
+    line-height: 1.25em;
+    font-family: "Lexend Giga", Sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  
+  .image-heading-subheading {
+    font-family: "Lexend Giga", Sans-Serif;
+    font-size: 1.5rem;
+    line-height: 1.25em;
+    letter-spacing: 0em;
+    font-weight: 100;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .product-card-details{
+    .ant-card-body{
+      background-color: #000000;
+    }
+    .ant-card-meta-title{
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+    .ant-card-meta-description{
+      color: #FFFFFF;
+    }
+    p{
+      color: #FFFFFF;
+    }
+  }
+  
+  .select-onboarding{
+    .ant-select-selector{
+      background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;
+      border-radius: 27px;
+      border: 0px solid transparent !important;
+      .ant-select-selection-item{
+        font-size: medium !important;
+      }
+    }
+    .ant-select-selection-item{
+      color: #FFFFFF;
+    }
+  }

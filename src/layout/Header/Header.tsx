@@ -298,13 +298,7 @@ const handleRole = (item: any) => {
         <MenuOutlined className="fs-18  text-white" />
       </div>
  <NavBar />
-      {role === ROLES.client ? <ClientViewProfileModal viewClientModal={viewClientModal} setviewClientModal={setviewClientModal} />
-        : <ViewProfile
-          selectedTableData={id}
-          IsProfileModal={isProfileModal}
-          setIsProfileModal={setIsProfileModal}
-        />
-      }
+      
     </div>
 
   );

@@ -64,7 +64,7 @@ const DrawerNavsLinks = (props: Props) => {
                       : "drawerList_items"
                   }
                 >
-                  <img src={items.lightIcon} alt="icons" height="20" />
+                  <img src={items.lightIcon} alt="icons" height={40} width={40} />
                   <p
                     className="drawerList_text"
                     onClick={() => {
