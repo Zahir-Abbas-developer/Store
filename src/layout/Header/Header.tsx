@@ -256,7 +256,7 @@ const handleRole = (item: any) => {
           onOpenChange={() => setOpen(false)}
         >
           <Space onClick={() => setOpen(!open)}>
-            {!role ? <Link to="/login"><UserOutlined style={{fontSize: '24px'}} /></Link>:
+            {!role ? <Link to="/login"><UserOutlined style={{fontSize: '24px' ,color:"black"}} /></Link>:
             <Avatar style={{ verticalAlign: "middle" }} size="large">
               <img src={
                 carerProfile?.data?.userprofile?.profilePhoto
