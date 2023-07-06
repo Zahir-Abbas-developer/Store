@@ -6,7 +6,6 @@ import searchIcon from "../../assets/icons/search.svg";
 import { useGetStaffManagerQuery, useGetUserTypeQuery } from "../../store/Slices/StaffManager";
 import { debouncedSearch } from "../../utils/utils";
 import "./StaffManager.scss";
-import '../Reports/StaffAvailabilitySheet/StaffAvailabilitySheetCommonFilter/StaffAvailabilitySheetCommonFilter.scss'
 import BreadCrumb from "../../layout/BreadCrumb/BreadCrumb";
 
 const StaffManager = () => {

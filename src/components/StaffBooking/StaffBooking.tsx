@@ -3,7 +3,6 @@ import { Col, Input, Row, Select } from "antd";
 import searchIcon from "../../assets/icons/search.svg";
 import StaffBookingTable from "./StaffBookingTable/StaffBookingTable";
 import "./StaffBooking.scss";
-import "../Reports/StaffAvailabilitySheet/StaffAvailabilitySheetCommonFilter/StaffAvailabilitySheetCommonFilter.scss";
 import { debouncedSearch } from "../../utils/utils";
 import { useGetStaffBookingQuery, useGetUserTypeQuery } from "../../store/Slices/StaffBooking";
 import BreadCrumb from "../../layout/BreadCrumb/BreadCrumb";

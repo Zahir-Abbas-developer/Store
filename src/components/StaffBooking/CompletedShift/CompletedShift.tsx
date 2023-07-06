@@ -4,7 +4,6 @@ import "./CompletedShift.scss";
 import { useGetCompletedShiftQuery } from "../../../store/Slices/StaffManager";
 import HomeImg from "../../../assets/images/staffManager/home.png";
 import CompletedShiftModal from "./Modal/CompletedShiftModal";
-import '../../Reports/StaffAvailabilitySheet/StaffAvailabilitySheetCommonFilter/StaffAvailabilitySheetCommonFilter.scss'
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import BreadCrumb from "../../../layout/BreadCrumb/BreadCrumb";

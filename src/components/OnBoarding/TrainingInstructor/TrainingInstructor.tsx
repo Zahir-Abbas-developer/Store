@@ -6,7 +6,6 @@ import Edit from "../../../assets/icons/OnBoarding/edit.svg";
 import View from "../../../assets/images/OnBoarding/View.svg";
 import Arrow from "../../../assets/images/OnBoarding/arrow.svg";
 import Search from "../../../assets/images/OnBoarding/Search.svg";
-import "../../Reports/StaffAvailabilitySheet/StaffAvailabilitySheetCommonFilter/StaffAvailabilitySheetCommonFilter.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import OnboardingAddModal from "../Carer/OnboardingAddModal/OnboardingAddModal";

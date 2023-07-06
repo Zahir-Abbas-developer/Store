@@ -19,11 +19,7 @@ const items: TabsProps['items'] = [
     label: `CUSTOM ORDER`,
     children: <OurCustomOrderDetails/>,
   },
-  {
-    key: '3',
-    label: `FITING GUIDE`,
-    children: `Content of Tab Pane 3`,
-  },
+  
 ];
 
 const OurCollectionTab = () => <Tabs defaultActiveKey="1" items={items} onChange={onChange} className="custom-tabs"  style={{backgroundColor:"transparent !important"}}/>;

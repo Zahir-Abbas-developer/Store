@@ -3,7 +3,6 @@ import { Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import Search from '../../../../assets/images/OnBoarding/Search.svg';
 import ActionArrow from '../../../../assets/images/OnBoarding/ActionArrow.svg';
-import "../../../Reports/StaffAvailabilitySheet/StaffAvailabilitySheetCommonFilter/StaffAvailabilitySheetCommonFilter.scss";
 import AllocateNewCareHomeModal from './AllocateNewCareHomeModal';
 import DiscardModal from './DiscardModal';
 import { useState } from 'react';

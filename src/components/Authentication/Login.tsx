@@ -91,7 +91,7 @@ const Login = () => {
         };
         const stringifyData = JSON.stringify(userData);
         localStorage.setItem("careUserData", stringifyData);
-        // navigate("/dashboard");
+   
         navigate(renderDashboard(role))
         
       } else {

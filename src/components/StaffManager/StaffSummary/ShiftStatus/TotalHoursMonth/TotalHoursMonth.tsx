@@ -7,7 +7,7 @@ import "../ShiftStatus.scss";
 import BreadCrumb from "../../../../../layout/BreadCrumb/BreadCrumb";
 import { useLocation, useParams } from "react-router-dom";
 import { useGetWorkHistoryQuery } from "../../../../../store/Slices/StaffManager";
-import '../../../../Reports/StaffAvailabilitySheet/StaffAvailabilitySheetCommonFilter/StaffAvailabilitySheetCommonFilter';
+
 import { useGetClientsListQuery } from "../../../../../store/Slices/BookingCalendar";
 import { debouncedSearch } from "../../../../../utils/utils";
 

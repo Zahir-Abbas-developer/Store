@@ -12,7 +12,6 @@ import {
   ICarerCordinatorDetails,
 } from "../../../mock/OnBoarding";
 import { useNavigate } from "react-router-dom";
-import "../../Reports/StaffAvailabilitySheet/StaffAvailabilitySheetCommonFilter/StaffAvailabilitySheetCommonFilter.scss";
 import { useState } from "react";
 import OnboardingAddModal from "../Carer/OnboardingAddModal/OnboardingAddModal";
 import ViewProfile from "../Carer/ViewProfile/ViewProfile";

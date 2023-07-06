@@ -25,7 +25,6 @@ import coloredCopyIcon from "../../../../assets/icons/Report/colored-copy.png";
 import coloredCsvIcon from "../../../../assets/icons/Report/colored-csv.png";
 import coloredXlsIcon from "../../../../assets/icons/Report/colored-xls.png";
 
-import "../../../Reports/CommonReportChildFilters/CommonReportChildFilters.scss";
 import "./ItHelpTicketSummaryDetail.scss";
 
 const { RangePicker } = DatePicker;

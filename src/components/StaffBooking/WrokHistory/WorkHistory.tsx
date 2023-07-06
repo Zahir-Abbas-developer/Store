@@ -5,7 +5,6 @@ import searchIcon from "../../../assets/icons/search.svg";
 import { useLocation } from "react-router-dom";
 import { useGetStaffWorkHistoryQuery } from "../../../store/Slices/StaffBooking";
 import "./WorkHistory.scss";
-import '../../Reports/StaffAvailabilitySheet/StaffAvailabilitySheetCommonFilter/StaffAvailabilitySheetCommonFilter.scss';
 import BreadCrumb from "../../../layout/BreadCrumb/BreadCrumb";
 import { useState } from "react";
 import { useGetClientsListQuery } from "../../../store/Slices/BookingCalendar";

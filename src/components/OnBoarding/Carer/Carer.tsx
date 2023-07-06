@@ -10,7 +10,6 @@ import { applicationStage, ICarerDetails } from "../../../mock/OnBoarding";
 import { useState } from "react";
 import ViewProfile from "./ViewProfile/ViewProfile";
 import { useNavigate } from "react-router-dom";
-import "../../Reports/StaffAvailabilitySheet/StaffAvailabilitySheetCommonFilter/StaffAvailabilitySheetCommonFilter.scss";
 import OnboardingAddModal from "./OnboardingAddModal/OnboardingAddModal";
 import { useGetRequestQuery } from "../../../store/Slices/OnBoarding";
 import { debouncedSearch, isNullOrEmpty } from "../../../utils/utils";

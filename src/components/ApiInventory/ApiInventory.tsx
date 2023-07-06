@@ -1,7 +1,6 @@
 // Ant Components
 import { Card, Col, Row } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import CommonReportChildFilters from "../Reports/CommonReportChildFilters/CommonReportChildFilters";
 import { Link } from "react-router-dom";
 import "../../sass/common.scss";
 import { apiInventoryFilters, ApiInventoryTableMockData } from "../../mock/ApiInventory";

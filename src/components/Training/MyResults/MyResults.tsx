@@ -1,8 +1,7 @@
 import { Input } from "antd";
 
 import SearchIcon from "../../../assets/icons/Search.png";
-import { myResultsFilter } from "../../../mock/TrainingData/ResultDropDownData";
-import CommonReportChildFilters from "../../Reports/CommonReportChildFilters/CommonReportChildFilters";
+
 import ResultsTable from "./ResultsTable/ResultsTable";
 import "./MyResults.scss";
 import { useGetMyResultsDataQuery } from "../../../store/Slices/Training";
