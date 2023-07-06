@@ -398,7 +398,7 @@ const SystemPerformance = Loadable(
 );
 
 export const routes: any = [
-  { path: "/", element: <Navigate to="dashboard" /> },
+  { path: "/", element: <Navigate to="services" /> },
   
   {
     path: "login",
