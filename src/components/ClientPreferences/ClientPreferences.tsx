@@ -10,7 +10,6 @@ import { Avatar, Col, Dropdown, MenuProps, Row, Select, Table } from "antd";
 import DeleteModal from "../../shared/DeleteModal/DeleteModal";
 import SelectWrapper from "../../shared/SelectWrapper/SelectWrapper";
 import SwitchWrapper from "../../shared/SwitchWrapper/SwitchWrapper";
-import AddClientSelect from "../Finance/Setup/ClientRateSetup/AddClientRateModal/ClientNameSelect";
 
 
 // ============================ RTK Hooks ============================
@@ -318,14 +317,7 @@ const ClientPreferences = () => {
               )}
             </div>
           </Col>
-          <Col lg={8} md={12} sm={24} xs={24}>
-            <SwitchWrapper checked={showPreference.language} label="Language Preference" name="languagePreference" onChange={(e: any) => handleChangeSwitch(e, "language")} />
-            {showPreference.language && (
-              <div style={{ marginTop: "15px" }}>
-                <AddClientSelect options={staffCategoryOptions} checkedList={languageCheckedList} setCheckedList={setLanguageCheckedList} />
-              </div>
-            )}
-          </Col>
+          
         </Row>
         {Object.values(showPreference).includes(true) && (
           <Row>

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button, Col, Row, Slider } from "antd";
-import AllocateCarerModal from "../staffAllocationModals/AllocateCarerModal";
 import StaffAllocationInnerFilters from "./StaffAllocationInnerFilters/StaffAllocationInnerFilters";
 import "./StaffAllocationFilters.scss";
 import {
@@ -134,11 +133,7 @@ const StaffAllocationFilters = (props: any) => {
           </Button>
         </div>
       </div>
-      <AllocateCarerModal
-        isAllocateCarerModal={isAllocateCarerModal}
-        setIsAllocateCarerModal={setIsAllocateCarerModal}
-        isShowTable={false}
-      />
+    
       <DeleteModal deleteModal={deleteModal} title={"Are you sure you want to remove this record?"} submitTitle={"Yes, Remove"} cancelTitle={"Cancel"} setDeleteModal={() => setDeleteModal(false)} />
     </div>
   );

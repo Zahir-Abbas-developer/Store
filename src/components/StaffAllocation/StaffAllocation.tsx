@@ -15,7 +15,6 @@ import allocateCarePerson from "../../assets/icons/StaffAllocation/allocate-care
 import deleteCare from "../../assets/icons/StaffAllocation/delete-care.svg";
 
 import threeDots from "../../assets/icons/three-dots.svg";
-import AllocateCarerModal from "./staffAllocationModals/AllocateCarerModal";
 import ViewCarerHomeModal from "./staffAllocationModals/ViewCarerHomeModal";
 import DeleteModal from "../../shared/DeleteModal/DeleteModal";
 import ViewProfile from "../OnBoarding/Carer/ViewProfile/ViewProfile";

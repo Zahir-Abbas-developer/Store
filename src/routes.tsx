@@ -107,18 +107,7 @@ const CarerCoordinatorProfilePage = Loadable(
 );
 const ClientProfilePage = Loadable(lazy(() => import("./pages/ClientProfile")));
 
-const InvoiceCareHomePage = Loadable(
-  lazy(() => import("./pages/Finance/Invoice/InvoiceCareHome"))
-);
-const InvoiceWeeksPage = Loadable(
-  lazy(() => import("./pages/Finance/Invoice/InvoiceWeeks"))
-);
-const InvoiceWeeksDetailPage = Loadable(
-  lazy(() => import("./pages/Finance/Invoice/InvoiceWeeksDetails"))
-);
-const InvoiceStaffDetailPage = Loadable(
-  lazy(() => import("./pages/Finance/Invoice/InvoiceStaffDetails"))
-);
+
 
 //staff manager
 const StaffManagerPage = Loadable(lazy(() => import("./pages/StaffManager")));
@@ -210,16 +199,6 @@ const UnpublishedShiftPage = Loadable(
 const BookStaffPage = Loadable(
   lazy(() => import("./pages/UnpublishedShift/BookStaff"))
 );
-const FinancePage = Loadable(lazy(() => import("./pages/Finance/Finance")));
-const SetupPage = Loadable(lazy(() => import("./pages/Finance/Setup")));
-
-const InvoicePage = Loadable(lazy(() => import("./pages/Finance/Invoice")));
-const StaffPaymentDetailsPage = Loadable(
-  lazy(() => import("./pages/Finance/StaffPaymentDetails"))
-);
-const ClientPaymentDetailsPage = Loadable(
-  lazy(() => import("./pages/Finance/ClientPaymentDetails"))
-);
 
 const TrainingPage = Loadable(lazy(() => import("./pages/Training")));
 const MyCoursesPage = Loadable(
@@ -256,21 +235,6 @@ const TraineeCourses = Loadable(
   lazy(() => import("./pages/TraineeInfo/TraineeCourses"))
 );
 
-const Webinars = Loadable(
-  lazy(() => import("./pages/Webinars/UpcomingWebinar"))
-);
-
-const RequestedAttendees = Loadable(
-  lazy(() => import("./pages/Webinars/UpcomingWebinar/RequestedAttendees"))
-);
-
-const WebinarHistory = Loadable(
-  lazy(() => import("./pages/Webinars/WebinarHistory"))
-);
-const ViewDetails = Loadable(
-  lazy(() => import("./pages/Webinars/WebinarHistory/ViewDetails"))
-);
-const AddWebinar = Loadable(lazy(() => import("./pages/Webinars/AddWebinar")));
 
 // Reports and its Child Routes Ends Here
 
@@ -931,70 +895,7 @@ export const routes: any = [
           </RequireAuth>
         ),
       },
-      {
-        path: "webinar/upcomming-webinar",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <Webinars />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "webinar/upcoming-webninar/requested-attendees/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <RequestedAttendees />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "webinar/webinar-history",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <WebinarHistory />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "webinar/webinar-history/view-details/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <ViewDetails />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "webinar/add-webinar",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <AddWebinar />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "webinar/edit-webinar/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <AddWebinar />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "webinar/view-webinar/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <AddWebinar />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "webinar/:mode",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <AddWebinar />
-          </RequireAuth>
-        ),
-      },
+     
       {
         path: "",
         children: [
@@ -1169,84 +1070,7 @@ export const routes: any = [
           </RequireAuth>
         ),
       },
-      {
-        path: "",
-        children: [
-          {
-            path: "finance",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-                <FinancePage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "finance/setup",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-                <SetupPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "finance/invoice",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-                <InvoicePage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "finance/invoice/invoice-coordinator/:id",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-                <InvoiceCareHomePage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "finance/invoice/invoice-coordinator/week/:id",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-                <InvoiceWeeksPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "finance/invoice/invoice-coordinator/week/detail/:id",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-                <InvoiceWeeksDetailPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "finance/invoice/invoice-coordinator/week/detail/staff-detail/:id",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-                <InvoiceStaffDetailPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "finance/staff-payment-details",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-                <StaffPaymentDetailsPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "finance/client-payment-details",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-                <ClientPaymentDetailsPage />
-              </RequireAuth>
-            ),
-          },
-        
-        ],
-      },
+     
       {
         path: "api-inventory",
         element: (
