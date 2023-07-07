@@ -27,6 +27,7 @@ import { openDrawer, openGlobalSearchDrawer } from "../../store/Slices/OpenDrawe
 import { useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../store/Slices/Signin";
 import DrawerComponent from "../../components/ClientTabs/ProductDetails/Drawer";
+import GlobalSearch from "../../components/ClientTabs/GlobalSearch/GlobalSearchDrawer";
 
 
 const NavBar = () => {
@@ -346,6 +347,7 @@ const NavBar = () => {
           </Space>
         </Popover>
         <DrawerComponent/>
+        <GlobalSearch/>
       </div>
 {/* 
       <div className="togglebar" onClick={() => setIsOpen(true)}>
