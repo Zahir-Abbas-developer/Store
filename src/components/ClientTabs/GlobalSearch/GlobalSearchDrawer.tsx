@@ -57,7 +57,7 @@ const GlobalSearch = () => {
     <Link to="">View All</Link>
       </Col>
     </Row>
-     {globalSearch?.length>0 &&
+     {(globalSearch?.length>0 && productsData?.length>0) ?
     <Row gutter={[16,16]} style={{marginTop:"20px"}}>
       {
         productsData?.map((productData: any) => (
@@ -77,7 +77,7 @@ const GlobalSearch = () => {
             </Card>
           </Col>
        )) }
-    </Row>}
+    </Row>:<p style={{color:"white",fontSize:"large",textAlign:"center"}}>No Products</p>}
       </Drawer>
     </>
   );
