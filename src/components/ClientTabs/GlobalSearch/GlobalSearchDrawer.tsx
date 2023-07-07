@@ -35,7 +35,7 @@ const GlobalSearch = () => {
   return (
     <>
      
-      <Drawer title="" placement="right" className='drawer-main' onClose={onClose} open={isOpen} >
+      <Drawer title="" width={"100%"} placement="right" className='drawer-main' onClose={onClose} open={isOpen} >
       <Input
               className="search-input"
               placeholder="Search..."
