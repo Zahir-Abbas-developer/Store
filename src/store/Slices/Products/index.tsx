@@ -13,7 +13,7 @@ export const extendedApi = emptySplitApi.injectEndpoints({
       }),
       globalSearch: builder.query({
         query: ({page,limit,query}:any) => ({
-          url: `/products?${query}`,
+          url: `/products${query}`,
           method: "GET",
         }),
   

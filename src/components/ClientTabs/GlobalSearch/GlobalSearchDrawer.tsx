@@ -35,7 +35,7 @@ const GlobalSearch = () => {
   return (
     <>
      
-      <Drawer title="Basic Drawer" placement="right" onClose={onClose} open={isOpen}>
+      <Drawer title="" placement="right" onClose={onClose} open={isOpen} style={{width:"100%"}}>
       <Input
               className="search-input"
               placeholder="Search..."
@@ -50,9 +50,9 @@ const GlobalSearch = () => {
                 />
               }
             />
-        {globalSearch?.length>0?
+     
     <Row gutter={[16,16]}>
-      {isSuccessProducts ?
+      {
         productsData?.map((productData: any) => (
           <Col xs={24} md={12} lg={6} key={productData.id}>
             <Card 
@@ -69,8 +69,8 @@ const GlobalSearch = () => {
           </div>
             </Card>
           </Col>
-       )) :<Spin/>}
-    </Row>:<p style={{color:"white",fontSize:"large",textAlign:"center"}}>No Products</p>}
+       )) }
+    </Row>
       </Drawer>
     </>
   );
