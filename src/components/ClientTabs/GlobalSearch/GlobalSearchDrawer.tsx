@@ -7,7 +7,7 @@ import searchIcon from "../../../assets/icons/search.svg";
 import { useGlobalSearchQuery } from '../../../store/Slices/Products';
 import { useNavigate } from 'react-router-dom';
 import { debouncedSearch } from '../../../utils/utils';
-
+import './GlobalSearch.scss'
 const GlobalSearch = () => {
   const [globalSearch ,setGlobalSearch]=useState("")
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const GlobalSearch = () => {
   return (
     <>
      
-      <Drawer title="" placement="right" onClose={onClose} open={isOpen} style={{width:"100%"}}>
+      <Drawer title="" placement="right" className='drawer-main' onClose={onClose} open={isOpen} >
       <Input
               className="search-input"
               placeholder="Search..."
