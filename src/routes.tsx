@@ -41,9 +41,6 @@ const ApiInventoryPage = Loadable(lazy(() => import("./pages/ApiInventory")));
 const ReviewCareHomesPage = Loadable(lazy(() => import("./pages/Ratings")));
 
 
-const SuperAdminDashboardPage = Loadable(
-  lazy(() => import("./pages/SuperAdminDashboard"))
-);
 const DashboardPage = Loadable(lazy(() => import("./pages/Dashboard")));
 const JacketDetailsPage = Loadable(lazy(() => import("./pages/JacketDetails")));
 const CarerDashboardPage = Loadable(
@@ -103,20 +100,7 @@ const StaffAllocationPage = Loadable(
   lazy(() => import("./pages/StaffAllocation"))
 );
 
-//staff booking
-const StaffBookingPage = Loadable(lazy(() => import("./pages/StaffBooking")));
-const AvailableShift = Loadable(
-  lazy(() => import("./pages/StaffBooking/AvailableShift"))
-);
-const UpComingShift = Loadable(
-  lazy(() => import("./pages/StaffBooking/UpComingShift"))
-);
-const CompletedShift = Loadable(
-  lazy(() => import("./pages/StaffBooking/CompletedShift"))
-);
-const WorkHistory = Loadable(
-  lazy(() => import("./pages/StaffBooking/WorkHistory"))
-);
+
 const AddProductsPage = Loadable(
   lazy(() => import("./pages/AddProducts"))
 );
@@ -156,9 +140,7 @@ const AuditLogs = Loadable(lazy(() => import("./pages/AuditLogs")));
 const RatingsFeedback = Loadable(
   lazy(() => import("./pages/RatingAndFeedback"))
 );
-const CoordinatorDashboard = Loadable(
-  lazy(() => import("./pages/CareCoordinatorDashboard"))
-);
+
 const ItHelpDeskPage = Loadable(lazy(() => import("./pages/Help/ItHelpDesk")));
 const ItHelpDeskAllTicketsPage = Loadable(
   lazy(() => import("./pages/Help/ItHelpDesk/AllTickets/AllTickets"))
@@ -331,14 +313,7 @@ export const routes: any = [
         path:"/add-styles",
         element:(<RequireAuth allowedRoles={[ROLES.admin]}><AddStyles/></RequireAuth> )
       },
-      {
-        path: "coordinator-dashboard",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.coordinator]}>
-            <CoordinatorDashboard />
-          </RequireAuth>
-        ),
-      },
+      
       {
         path: "carer-dashboard",
         element: (
@@ -503,46 +478,7 @@ export const routes: any = [
         ),
       },
       
-      {
-        path: "staff-booking",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <StaffBookingPage />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-booking/available-shift/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <AvailableShift />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-booking/UpComing-shift/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <UpComingShift />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-booking/completed-shift/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <CompletedShift />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-booking/work-history/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <WorkHistory />
-          </RequireAuth>
-        ),
-      },
+  
       {
         path: "instructor-dashboard",
         element: (
