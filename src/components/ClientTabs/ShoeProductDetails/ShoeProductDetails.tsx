@@ -41,7 +41,8 @@ const ShoeProductDetails=()=>{
         }
     ]
     return(
-        <div>
+        <>
+        {productsData?.length > 0 ? <div>
          <p style={{textAlign:"center",fontSize:"20px"}}>BEST SELLERS</p>
          <p style={{textAlign:"center",fontSize:"20px"}}>LEATHER GOODS</p>
          <Row >
@@ -80,7 +81,10 @@ const ShoeProductDetails=()=>{
        
             
         
-        </div>
+        </div>:<Spin/>
+        }
+        </>
+       
     )
 }
 export default ShoeProductDetails

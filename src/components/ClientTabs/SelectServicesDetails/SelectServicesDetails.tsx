@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "antd"
+import { Card, Col, Row, Spin } from "antd"
 import jacketImage1 from "../../../assets/images/jackets/benjamin-voros-TnNo84AJJ5A-unsplash.jpg"
 import jacketImage2 from "../../../assets/images/jackets/caio-coelho-QRN47la37gw-unsplash.jpg"
 import jacketImage3 from "../../../assets/images/jackets/lea-ochel-nsRBbE6-YLs-unsplash.jpg"
@@ -40,7 +40,8 @@ const SelectServicesDetails=()=>{
         }
     ]
     return(
-        <div>
+        <>
+        {productsData?.length>0 ? <div>
          <p style={{textAlign:"center",fontSize:"20px"}}>BEST SELLERS</p>
          <p style={{textAlign:"center",fontSize:"20px"}}>LEATHER GOODS</p>
          {productsData?.length > 0 ? <Row>
@@ -67,7 +68,9 @@ const SelectServicesDetails=()=>{
       
            
       
-        </div>
+        </div>:<Spin/>}
+        </>
+        
     )
 }
 export default SelectServicesDetails
