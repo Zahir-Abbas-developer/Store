@@ -69,11 +69,12 @@ const ShoeProductDetails=()=>{
                             </div>
                         </Card>
                     </Col>
-                    <Col sm={24} style={{textAlign:"center" ,marginTop:"10px"}}>
-                    <Link to="/jacket-details" style={{background:"black",padding:"14px" ,color:"white"}}>VIEW ALL PRODUCTS</Link>
-                    </Col></>
+                   </>
 
                 )) : <Spin />}
+                 <Col sm={24} style={{textAlign:"center" ,marginTop:"10px"}}>
+                    <Link to="/jacket-details" style={{background:"black",padding:"14px" ,color:"white"}}>VIEW ALL PRODUCTS</Link>
+                    </Col>
         </Row> : <p style={{ color: "white", fontSize: "large", textAlign: "center" }}>No Products</p>}
 </Col>
 
