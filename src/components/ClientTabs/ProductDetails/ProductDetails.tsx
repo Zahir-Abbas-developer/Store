@@ -45,7 +45,6 @@ const ProductDetails = () => {
   const onChange = (e: RadioChangeEvent) => {
     setPlacement(e.target.value);
   };
-  console.log(categoryDetails)
   const handleAddToCart=(item:any)=>{
     if(sizes){
       dispatch(addProduct({ ...item, size: sizes })); 

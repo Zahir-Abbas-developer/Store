@@ -23,7 +23,7 @@ import DrawerComp from "./drawer";
 import type { MenuProps } from "antd";
 import "./navbar.styles.scss";
 import { useAppSelector } from "../../store";
-import { openDrawer } from "../../store/Slices/OpenDrawerSlice";
+import { openDrawer, openGlobalSearchDrawer } from "../../store/Slices/OpenDrawerSlice";
 import { useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../store/Slices/Signin";
 import DrawerComponent from "../../components/ClientTabs/ProductDetails/Drawer";
@@ -108,6 +108,9 @@ const NavBar = () => {
   );
   const handleOpenDrawer=()=>{
     dispatch(openDrawer())
+  }
+  const handleOpenGlobalSearchDrawer=()=>{
+    dispatch(openGlobalSearchDrawer())
   }
   const handleRole = (item: any) => {
     if (role === "EMPLOYEE" && item.title === "Reports") {
@@ -259,7 +262,7 @@ const NavBar = () => {
           </nav>
         </div>
         <div className="short_hands">
-        <img src={SearchImg}/>
+        <img src={SearchImg}  onClick={handleOpenGlobalSearchDrawer}  />
           <Switch
             className="switch fs-12"
             checkedChildren="Dark"

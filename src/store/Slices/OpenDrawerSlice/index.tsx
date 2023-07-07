@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isOpen: false,
+  isOpenGlobalSearchDrawer:false
 };
 
 const drawerSlice = createSlice({
@@ -16,8 +17,14 @@ const drawerSlice = createSlice({
     closeDrawer(state) {
       state.isOpen = false;
     },
+    openGlobalSearchDrawer(state){
+      state.isOpenGlobalSearchDrawer = true;
+    },
+    closeGlobalSearchDrawer(state){
+      state.isOpenGlobalSearchDrawer = false;
+    }
   },
 });
 
-export const { openDrawer, closeDrawer } = drawerSlice.actions;
+export const { openDrawer, closeDrawer,openGlobalSearchDrawer, closeGlobalSearchDrawer} = drawerSlice.actions;
 export default drawerSlice;
