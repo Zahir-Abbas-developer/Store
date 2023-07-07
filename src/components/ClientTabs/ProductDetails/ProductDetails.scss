@@ -6,7 +6,7 @@
 }
 .collapse-shoe{
   .ant-collapse-header-text{
-    color: white !important;
+  
     font-size: medium;
   }
 }
@@ -20,9 +20,7 @@
         font-size: medium !important;
       }
     }
-    .ant-select-selection-item{
-      color: #FFFFFF;
-    }
+  
   }
 .add-to-cart {
   background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;
@@ -42,16 +40,16 @@
     text-align: left;
 }.drawer-details{
   .anticon svg{
-    color: white !important;
+    // color: white !important;
   }
    background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;;
    .view-cart{
     background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;
     border-radius: 27px;
-    color: white;
+    // color: white;
     border: 0px solid transparent !important;
    }
-  .view-cart:hover {
-    background-color: #ffffff;
-  }
+  // .view-cart:hover {
+  //   background-color: #ffffff;
+  // }
 }

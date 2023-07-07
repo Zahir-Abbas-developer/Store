@@ -4,7 +4,15 @@ import jacketImage2 from "../../../assets/images/jackets/caio-coelho-QRN47la37gw
 import jacketImage3 from "../../../assets/images/jackets/lea-ochel-nsRBbE6-YLs-unsplash.jpg"
 import jacketImage4 from "../../../assets/images/jackets/tobias-tullius-Fg15LdqpWrs-unsplash.jpg"
 import { Link } from "react-router-dom"
+import { useGetAllProductsQuery } from "../../../store/Slices/Products"
 const SelectServicesDetails=()=>{
+    const paramsObj: any = {};
+    const query = "&" + new URLSearchParams(paramsObj).toString();
+    const {data:dataProducts ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query})
+    let productsData:any
+    if(isSuccessProducts){
+        productsData=dataProducts
+    }
     const productDetails=[
         {
             jacketImages:jacketImage4,
@@ -35,18 +43,24 @@ const SelectServicesDetails=()=>{
         <div>
          <p style={{textAlign:"center",fontSize:"20px"}}>BEST SELLERS</p>
          <p style={{textAlign:"center",fontSize:"20px"}}>LEATHER GOODS</p>
-        <Row>
-        {productDetails?.map((details)=>{
-            return(<Col md={6}>
-            
-             <Card style={{border:"none"}}>
-                <img src={details?.jacketImages} style={{width:"100%",height:"100%"}} />
-                <p style={{textAlign:"center",fontSize:"20px"}}>{details?.name}</p>
-                <p style={{textAlign:"center",fontSize:"20px"}}>{details?.price}</p>
-             </Card>
-            </Col>)
-         })}
-        </Row>
+         {productsData?.length > 0 ? <Row>
+       { productsData?.slice(0,4)?.map((productData: any) => (
+          <Col xs={24} md={12} lg={6} key={productData.id}>
+            <Card 
+              hoverable
+              style={{  background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)",border:"0px solid transparent"}}
+           cover={  <img alt="example" src={productData?.thumbnail}  />}
+            >
+          <div style={{textAlign:"center",padding:"0"}}>
+        
+              <p style={{fontWeight:"bold",color:"white",padding:"0px",margin:"2px"}}> {productData?.name}</p>
+              <p style={{color:"white",padding:"0px",margin:"2px"}}>{productData?.description}</p>
+              <p style={{fontWeight:"bold",color:"#65cdf0",padding:"0px",margin:"2px"}}>$ {productData?.price}</p>
+          </div>
+            </Card>
+          </Col>
+       ))}
+        </Row>: <p style={{ color: "white", fontSize: "large", textAlign: "center" }}>No Products</p>}
          <Row>
             <Col sm={24} style={{textAlign:"center"}}>
             <Link to="/dashboard" style={{background:"black",padding:"14px" ,color:"white"}}>VIEW ALL PRODUCTS</Link>

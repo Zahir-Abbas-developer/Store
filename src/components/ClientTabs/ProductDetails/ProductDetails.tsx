@@ -79,7 +79,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
   return (
     <Row gutter={[10,10]} style={{padding:"30px"}}>
       <Col xs={24} lg={24}>
-        <p style={{color:"white",fontSize:"large" ,marginTop:"0px"}}>Main Collection</p>
+        <p style={{fontSize:"large" ,marginTop:"0px"}}>Main Collection</p>
       </Col>
       <Col xs={24} lg={12} >
         <img src={categoryDetails?.thumbnail} style={{ width: "80%",display:"block",margin:"0 auto" }}></img>
@@ -95,13 +95,13 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
       </Col>
       <Col xs={24} lg={11} offset={1}>
 
-        <h1 className="product-title" style={{color:"white"}}> {categoryDetails?.name}</h1>
-        <p className="product-description" style={{color:"white"}}> {categoryDetails?.description}</p>
-        <p className="product-price" style={{color:"white"}}> ${categoryDetails?.price}</p>
+        <h1 className="product-title"> {categoryDetails?.name}</h1>
+        <p className="product-description" > {categoryDetails?.description}</p>
+        <p className="product-price" > ${categoryDetails?.price}</p>
         <div>
           <img src={artisan}></img>
           <img src={HandCraft} style={{ marginLeft: "10px" }}></img>
-          <p style={{color:"white"}}>LARCH relies upon modern craftsmanship, blended with traditional methods to craft the finest quality shoes. Our highest quality leather ensures proper air circulation and prevents moisture through the surface.</p>
+          <p >LARCH relies upon modern craftsmanship, blended with traditional methods to craft the finest quality shoes. Our highest quality leather ensures proper air circulation and prevents moisture through the surface.</p>
         </div>
 
         <Row >
@@ -109,7 +109,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             <img src={leather}></img>
           </Col>
           <Col xs={6}>
-            <p style={{color:"white"}}>Calf Leather</p>
+            <p >Calf Leather</p>
           </Col>
         </Row>
         <Row>
@@ -117,7 +117,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             <img src={sole}></img>
           </Col>
           <Col xs={6}>
-            <p style={{color:"white"}}>Double Sole</p>
+            <p >Double Sole</p>
           </Col>
         </Row>
         <Row>
@@ -125,7 +125,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
             <img src={sizing}></img>
           </Col>
           <Col xs={6}>
-            <p style={{color:"white"}}>FITTING GUIDE</p>
+            <p >FITTING GUIDE</p>
           </Col>
         </Row>
         <Row>
