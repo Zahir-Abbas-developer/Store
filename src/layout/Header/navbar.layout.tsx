@@ -10,6 +10,7 @@ import {
 } from "@ant-design/icons";
 import { Avatar, Badge, Drawer, Dropdown, Popover, Space, Switch } from "antd";
 import { v4 as uuidv4 } from "uuid";
+import SearchImg from "../../assets/images/sidebar/Search.png";
 import ClickAwayListener from "react-click-away-listener";
 import { navItems } from "./nav-data";
 import { ReactComponent as Logout } from "../../assets/icons/sidebar/logout.svg";
@@ -258,6 +259,7 @@ const NavBar = () => {
           </nav>
         </div>
         <div className="short_hands">
+        <img src={SearchImg}/>
           <Switch
             className="switch fs-12"
             checkedChildren="Dark"
