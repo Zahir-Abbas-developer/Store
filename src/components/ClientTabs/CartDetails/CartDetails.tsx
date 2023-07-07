@@ -144,7 +144,8 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
       <p style={{color:"#ffffff"}}>$ {totalPrice + 10}</p>
       </Col>
       <Col span={24}>
-     
+        {!role &&
+       <p style={{color:"red"}}>Please Sign In First</p>}
       <Button  disabled={!role}  block onClick={()=>navigate("/productDetails/cart-details/checkout-details")}>
       PROCEED TO CHECKOUT
     </Button>
