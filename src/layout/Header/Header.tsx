@@ -35,7 +35,7 @@ import { useGetRoleLabel } from "../../utils/useGetRole";
 import { useLogoutMutation } from "../../store/Slices/Signin";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../store";
-import { openDrawer } from "../../store/Slices/OpenDrawerSlice";
+import { openDrawer, openGlobalSearchDrawer } from "../../store/Slices/OpenDrawerSlice";
 import { Link } from "react-router-dom";
 import { navItems } from "./nav-data";
 import { Fragment } from "@fullcalendar/core/preact";
@@ -94,6 +94,9 @@ const TopHeader = ({ setIsOpen }: any) => {
 
 const handleOpenDrawer=()=>{
   dispatch(openDrawer())
+}
+const handleOpenGlobalSearchDrawer=()=>{
+  dispatch(openGlobalSearchDrawer())
 }
 const handleRole = (item: any) => {
   if (role === "EMPLOYEE" && item.title === "Reports") {
@@ -207,7 +210,7 @@ const handleRole = (item: any) => {
             </ul>
           </nav>
         </div>
-        {/* <img src={SearchImg}/> */}
+        <img src={SearchImg} onClick={handleOpenGlobalSearchDrawer}  />
       <Badge   count={products?.products?.length} showZero style={{color:"white"}}>
           <ShoppingCartOutlined style={{ fontSize: '24px' }} onClick={handleOpenDrawer} />
         </Badge>
