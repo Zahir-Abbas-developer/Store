@@ -45,27 +45,28 @@ const SelectServicesDetails=()=>{
          <p style={{textAlign:"center",fontSize:"20px"}}>LEATHER GOODS</p>
          {productsData?.length > 0 ? <Row>
        { productsData?.slice(0,4)?.map((productData: any) => (
-          <Col xs={24} md={12} lg={6} key={productData.id}>
-            <Card 
-              hoverable
-              style={{  background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)",border:"0px solid transparent"}}
-           cover={  <img alt="example" src={productData?.thumbnail}  />}
-            >
-          <div style={{textAlign:"center",padding:"0"}}>
-        
-              <p style={{fontWeight:"bold",color:"white",padding:"0px",margin:"2px"}}> {productData?.name}</p>
-              <p style={{color:"white",padding:"0px",margin:"2px"}}>{productData?.description}</p>
-              <p style={{fontWeight:"bold",color:"#65cdf0",padding:"0px",margin:"2px"}}>$ {productData?.price}</p>
-          </div>
-            </Card>
-          </Col>
+          <><Col xs={24} md={12} lg={6} key={productData.id}>
+          <Card 
+            hoverable
+            style={{  background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)",border:"0px solid transparent"}}
+         cover={  <img alt="example" src={productData?.thumbnail}  />}
+          >
+        <div style={{textAlign:"center",padding:"0"}}>
+      
+            <p style={{fontWeight:"bold",color:"white",padding:"0px",margin:"2px"}}> {productData?.name}</p>
+            <p style={{color:"white",padding:"0px",margin:"2px"}}>{productData?.description}</p>
+            <p style={{fontWeight:"bold",color:"#65cdf0",padding:"0px",margin:"2px"}}>$ {productData?.price}</p>
+        </div>
+          </Card>
+        </Col>
+         <Col sm={24} style={{textAlign:"center",marginTop:"10px"}} >
+         <Link to="/dashboard" style={{background:"black",padding:"14px" ,color:"white"}}>VIEW ALL PRODUCTS</Link>
+         </Col></>
        ))}
         </Row>: <p style={{ color: "white", fontSize: "large", textAlign: "center" }}>No Products</p>}
-         <Row>
-            <Col sm={24} style={{textAlign:"center"}}>
-            <Link to="/dashboard" style={{background:"black",padding:"14px" ,color:"white"}}>VIEW ALL PRODUCTS</Link>
-            </Col>
-         </Row>
+      
+           
+      
         </div>
     )
 }

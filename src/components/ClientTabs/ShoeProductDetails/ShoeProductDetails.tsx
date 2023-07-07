@@ -52,6 +52,7 @@ const ShoeProductDetails=()=>{
         <Row gutter={[16, 16]}>
             {isSuccessProducts ?
                 productsData?.slice(0,4)?.map((productData: any) => (
+                 <>
                     <Col xs={24} md={12} lg={6} key={productData.id}>
                         <Card
                             hoverable
@@ -67,15 +68,18 @@ const ShoeProductDetails=()=>{
                             </div>
                         </Card>
                     </Col>
+                    <Col sm={24} style={{textAlign:"center" ,marginTop:"10px"}}>
+                    <Link to="/jacket-details" style={{background:"black",padding:"14px" ,color:"white"}}>VIEW ALL PRODUCTS</Link>
+                    </Col></>
+
                 )) : <Spin />}
         </Row> : <p style={{ color: "white", fontSize: "large", textAlign: "center" }}>No Products</p>}
 </Col>
+
 </Row>
-         <Row>
-            <Col sm={24} style={{textAlign:"center"}}>
-            <Link to="/jacket-details" style={{background:"black",padding:"14px" ,color:"white"}}>VIEW ALL PRODUCTS</Link>
-            </Col>
-         </Row>
+       
+            
+        
         </div>
     )
 }
