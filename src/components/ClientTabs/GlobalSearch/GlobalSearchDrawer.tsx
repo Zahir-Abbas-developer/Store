@@ -5,7 +5,7 @@ import { useAppSelector } from '../../../store';
 import { closeGlobalSearchDrawer } from '../../../store/Slices/OpenDrawerSlice';
 import searchIcon from "../../../assets/icons/search.svg";
 import { useGlobalSearchQuery } from '../../../store/Slices/Products';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { debouncedSearch } from '../../../utils/utils';
 import './GlobalSearch.scss'
 const GlobalSearch = () => {
@@ -36,6 +36,8 @@ const GlobalSearch = () => {
     <>
      
       <Drawer title="" width={"100%"} placement="right" className='drawer-main' onClose={onClose} open={isOpen} >
+    <Row>
+      <Col sm={24}>
       <Input
               className="search-input"
               placeholder="Search..."
@@ -50,8 +52,13 @@ const GlobalSearch = () => {
                 />
               }
             />
-     
-    <Row gutter={[16,16]}>
+      </Col>
+      <Col sm={24} style={{textAlign:"center"}}>
+    <Link to="">View All</Link>
+      </Col>
+    </Row>
+     {globalSearch?.length>0 &&
+    <Row gutter={[16,16]} style={{marginTop:"20px"}}>
       {
         productsData?.map((productData: any) => (
           <Col xs={24} md={12} lg={6} key={productData.id}>
@@ -70,7 +77,7 @@ const GlobalSearch = () => {
             </Card>
           </Col>
        )) }
-    </Row>
+    </Row>}
       </Drawer>
     </>
   );
