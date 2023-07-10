@@ -53,7 +53,7 @@ const DrawerNavsLinks = (props: Props) => {
               }}
               key={items.title}
             >
-              {items.toshowforrole.includes(role) && (
+              {items.toshowforrole.includes(role ?role: "newUser") && (
                 <div
                   className={
                     (items.subItems &&
