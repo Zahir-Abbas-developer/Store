@@ -85,7 +85,21 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
         <p style={{fontSize:"large" ,marginTop:"0px"}}>Main Collection</p>
       </Col>
       <Col xs={24} lg={12} >
-        <img src={categoryDetails?.thumbnail} style={{ width: "80%",display:"block",margin:"0 auto" }}></img>
+      <Carousel emulateTouch={true}>
+                <div>
+                <img src={categoryDetails?.thumbnail} ></img>
+                  
+                </div>
+                <div>
+                    <img src={leather}  alt="leather"/>
+                  
+                </div>
+                <div>
+                    <img src={sole} alt="sole" />
+                   
+                </div>
+            </Carousel>
+     
         <Collapse className="collapse-shoe" accordion style={{width:"80%",margin:"auto",marginTop:"10px",border:"0px solid transparent"}}>
           <Panel header="CUSTOMIZE"  key="1" style={{  border:"0px solid transparent",background:"linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)",borderRadius:"27px"}} >
             <p>{customize}</p>
@@ -156,20 +170,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
         </Row>
 
       </Col>
-      <Carousel>
-                <div>
-                    <img src={HandCraft} />
-                  
-                </div>
-                <div>
-                    <img src={leather}  alt="leather"/>
-                  
-                </div>
-                <div>
-                    <img src={sole} alt="sole" />
-                   
-                </div>
-            </Carousel>
+      
     </Row>
   )
 }
