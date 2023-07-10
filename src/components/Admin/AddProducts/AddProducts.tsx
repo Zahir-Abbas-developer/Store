@@ -39,7 +39,7 @@ import CrossAllocationModal from "../../Setting/SettingJobRole/CrossAllocationMo
 import AddModal from "../../Setting/SettingJobRole/AddModal";
 import { renderDashboard } from "../../../utils/useRenderDashboard";
 import AddProductsModal from "./AddProductsModal";
-import { useDeleteProductsMutation, useGetAllMaterialsQuery, useGetAllProductsQuery } from "../../../store/Slices/Products";
+import { useDeleteProductsMutation, useGetAllMaterialsQuery, useGetAllProductsQuery, useGetOverAllProductsQuery } from "../../../store/Slices/Products";
 
 
 const AddProducts = () => {
@@ -111,7 +111,7 @@ const AddProducts = () => {
   }
 //get products 
 
-const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query})
+const {data:products ,isSuccess:isSuccessProducts}=useGetOverAllProductsQuery({})
     let productsData:any
     if(isSuccessProducts){
         productsData=products
@@ -343,29 +343,7 @@ const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query
 
           {/* ============================== Job Role Top Filters ============================== */}
           <Row gutter={[0, 20]} className='job-role-filters-wrapper'>
-            <Col xs={24} md={10} lg={8} xl={6} xxl={4}>
-              <p className='fs-14 fw-600 title-color line-height-17 m-0' style={{ marginBottom: "0.563rem" }}>User Role</p>
-              <div className="filter-column">
-                <Select
-                  size="large"
-                  placeholder="Select user role"
-                  optionFilterProp="children"
-                  className="app-select-wrap-class"
-                  defaultValue="All"
-                  popupClassName="app-select-popup-wrap-class"
-                  style={{ width: "100%" }}
-                  value={selectedFilterValue}
-                  onChange={(value: string) =>
-                    value
-                      ? (setPagination({ ...pagination, page: 1 }), setSelectedFilterValue(value))
-                      : setSelectedFilterValue("")
-                  }
-                  
-                  options={optimizedUserRoleDropdown}
-                />
-              </div>
-            </Col>
-
+          
             {role === ROLES.coordinator && (
               <Col xs={24} md={10} lg={8} xl={6} xxl={4}>
                 <p className='fs-14 fw-600 title-color line-height-17 m-0' style={{ marginBottom: "0.563rem" }}>Care Home</p>

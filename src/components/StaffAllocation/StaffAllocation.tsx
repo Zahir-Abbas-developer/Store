@@ -28,7 +28,7 @@ import dayjs from "dayjs";
 import { useGetUserTypesListQuery } from "../../store/Slices/BookingCalendar";
 import AppSnackbar from "../../utils/AppSnackbar";
 import BreadCrumb from "../../layout/BreadCrumb/BreadCrumb";
-import { useGetAllCategoriessQuery, useGetAllMaterialsQuery, useGetAllProductsQuery, useGetOrdersQuery } from "../../store/Slices/Products";
+import { useGetAllCategoriessQuery, useGetAllMaterialsQuery, useGetAllProductsQuery, useGetOrdersQuery, useGetOverAllProductsQuery } from "../../store/Slices/Products";
 
 const StaffAllocation = () => {
   const [selectedRecord, setSelectedRecord] = useState<any>(null);
@@ -94,7 +94,7 @@ const StaffAllocation = () => {
   const { data: userTypes }: any = useGetUserTypesListQuery({});
   const {data:getMaterials ,isSuccess:isSuccessMaterials}=useGetAllMaterialsQuery({refetchOnMountOrArgChange: true})
   const {data:getCategories ,isSuccess:isSuccessCategories}=useGetAllCategoriessQuery({})
-  const {data:products ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query:"?"})
+  const {data:products ,isSuccess:isSuccessProducts}=useGetOverAllProductsQuery({})
     let productsData:any
     if(isSuccessProducts){
         productsData=products

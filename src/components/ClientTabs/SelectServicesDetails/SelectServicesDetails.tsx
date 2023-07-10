@@ -44,7 +44,7 @@ const SelectServicesDetails=()=>{
         {productsData?.length>0 ? <div>
          <p style={{textAlign:"center",fontSize:"20px"}}>BEST SELLERS</p>
          <p style={{textAlign:"center",fontSize:"20px"}}>LEATHER GOODS</p>
-         {productsData?.length > 0 ? <Row>
+         {productsData?.length > 0 ? <Row gutter={[16, 16]}>
        { productsData?.slice(0,4)?.map((productData: any) => (
           <><Col xs={24} md={12} lg={6} key={productData.id}>
           <Card 

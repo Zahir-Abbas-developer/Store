@@ -53,9 +53,11 @@ const GlobalSearch = () => {
               }
             />
       </Col>
-      <Col sm={24} style={{textAlign:"center"}}>
-    <Link to="">View All</Link>
-      </Col>
+      {globalSearch?.length>0 && productsData?.length>0 &&
+      <Col sm={24} style={{justifyContent:"space-between",display:"flex"}}>
+      <p>{productsData?.length>0 && productsData?.length} Results</p>
+      <Link to="">View All</Link>
+      </Col>}
     </Row>
      {(globalSearch?.length>0 && productsData?.length>0) ?
     <Row gutter={[16,16]} style={{marginTop:"20px"}}>

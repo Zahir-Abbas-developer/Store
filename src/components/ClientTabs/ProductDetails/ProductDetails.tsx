@@ -153,7 +153,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
         </Row>
 
       </Col>
-
+   
     </Row>
   )
 }

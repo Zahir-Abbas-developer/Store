@@ -3,6 +3,14 @@ import { emptySplitApi } from "../../Services";
 
 export const extendedApi = emptySplitApi.injectEndpoints({
     endpoints: (builder: any) => ({
+      getOverAllProducts: builder.query({
+        query: ({page,limit,query}:any) => ({
+          url: `/products?`,
+          method: "GET",
+        }),
+  
+        providesTags: ["products"],
+      }),
       getAllProducts: builder.query({
         query: ({page,limit,query}:any) => ({
           url: `/products?productType=SHOES${query}`,
@@ -205,6 +213,7 @@ export const extendedApi = emptySplitApi.injectEndpoints({
   
   export const {
    useGetAllProductsQuery,
+   useGetOverAllProductsQuery,
    useGlobalSearchQuery,
    usePostProductsMutation,
    useDeleteProductsMutation,

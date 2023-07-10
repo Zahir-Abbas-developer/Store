@@ -36,7 +36,14 @@ const FooterDetails=()=>{
       </Row>
       <Row className="footer-main">
         <Col xs={24} md={8}>
-       <div style={{textAlign:"center"}}></div>
+       <div style={{textAlign:"center"}}>
+         <p style={{color:"#fff" ,fontWeight:"700",marginBottom:"0px"}} >Address </p>
+         <p style={{color:"#fff" ,marginTop:"0px"}}>Saddar ,Rawalpindi </p>
+         <p style={{color:"#fff" ,fontWeight:"700",marginBottom:"0px"}}>Phone</p>
+         <p style={{color:"#fff" ,marginTop:"0px"}}>+923075209625</p>
+         <p style={{color:"#fff" ,fontWeight:"700",marginBottom:"0px"}}>Email </p>
+         <p style={{color:"#fff" ,marginTop:"0px"}}>SolaceLeather@gmail.com</p>
+       </div>
         </Col>
         <Col xs={24} md={8}>
       <div style={{textAlign:"center"}}>
@@ -62,7 +69,7 @@ const FooterDetails=()=>{
       </Row>
       <Row className="footer-main">
         <Col xs={24} md={8}>
-       {/* <div style={{textAlign:"center"}}> <p><img src={fb}></img><img src={instasvg}></img><img src={Twitter}></img></p></div> */}
+        {/* <p style={{color:"#fff"}}>  © SOLACE LEATHER </p> */}
         </Col>
         <Col xs={24} md={8}>
       <div style={{textAlign:"center"}}>

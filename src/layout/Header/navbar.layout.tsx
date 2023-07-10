@@ -159,6 +159,7 @@ const NavBar = () => {
   const overlayStyle = { borderRadius: 0 };
   return (
     <>
+  
       <div className="header-main-wrapper header-bg">
         <div className="logo">
           <MenuOutlined
@@ -263,7 +264,7 @@ const NavBar = () => {
           </nav>
         </div>
         <div className="short_hands">
-        <img src={SearchImg}  onClick={handleOpenGlobalSearchDrawer}  />
+        <img src={SearchImg}  onClick={handleOpenGlobalSearchDrawer}  style={{cursor:"pointer"}}/>
           <Switch
             className="switch fs-12"
             checkedChildren="Dark"
