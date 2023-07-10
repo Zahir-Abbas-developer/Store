@@ -17,6 +17,8 @@ import AppSnackbar from "../../../utils/AppSnackbar"
 import { closeDrawer, openDrawer } from "../../../store/Slices/OpenDrawerSlice"
 import DrawerComponent from "./Drawer"
 import Arrow from '../../../assets/images/OnBoarding/arrow.svg'
+import { Carousel } from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 // Import the addToCart action creator
@@ -78,6 +80,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
 }, 0); // 0 is the initial value of the accumulator
   return (
     <Row gutter={[10,10]} style={{padding:"30px"}}>
+      
       <Col xs={24} lg={24}>
         <p style={{fontSize:"large" ,marginTop:"0px"}}>Main Collection</p>
       </Col>
@@ -153,7 +156,20 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
         </Row>
 
       </Col>
-   
+      <Carousel>
+                <div>
+                    <img src={HandCraft} />
+                  
+                </div>
+                <div>
+                    <img src={leather}  alt="leather"/>
+                  
+                </div>
+                <div>
+                    <img src={sole} alt="sole" />
+                   
+                </div>
+            </Carousel>
     </Row>
   )
 }
