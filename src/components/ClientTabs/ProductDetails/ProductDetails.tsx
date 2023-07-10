@@ -91,12 +91,11 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
                   
                 </div>
                 <div>
-                    <img src={leather}  alt="leather"/>
+                <img src={categoryDetails?.thumbnail} ></img>
                   
                 </div>
                 <div>
-                    <img src={sole} alt="sole" />
-                   
+                    <img src={categoryDetails?.thumbnail} ></img>   
                 </div>
             </Carousel>
      
