@@ -17,12 +17,15 @@ import { handleInputTrimSpaces, handleInputTrimStart } from "../../../utils/useI
 import { useGetAllCategoriessQuery, useGetAllColorsQuery, useGetAllMaterialsQuery, useGetAllProductsQuery, usePostProductsMutation, useUpdateProductsMutation } from "../../../store/Slices/Products";
 import UploadImage from "../../Setting/SettingKeyInfo/UploadImage/UploadImage";
 import { PlusCircleOutlined } from "@ant-design/icons";
+import Thumbnail from "../../Setting/SettingKeyInfo/UploadImage/Thumbnail";
 
 
 
 function AddProductsModal(props: any) {
   const [form] = Form.useForm();
   const [certificateUrl, setCertificateUrl] = useState("")
+  const [certificateUrlThumbnail, setCertificateUrlThumbnail] = useState("")
+
   const [fieldCount, setFieldCount] = useState(1);
   const [quantities, setQuantities] = useState([""]); // Array to hold quantity values
   const [sizes, setSizes] = useState([""]); // Array to hold size values
@@ -79,6 +82,9 @@ function AddProductsModal(props: any) {
 
   const uploadCertificateId = (url: any) => {
     setCertificateUrl(url)
+  }
+  const uploadCertificateThumbnail = (url: any) => {
+    setCertificateUrlThumbnail(url)
   }
   const handleAddField = () => {
     setFieldCount(fieldCount + 1);
@@ -145,13 +151,13 @@ function AddProductsModal(props: any) {
     });
 
     const addProductValues = {
-      ...values, price: parseInt(values?.price), thumbnail: certificateUrl,images:[certificateUrl], "tags": [
+      ...values, price: parseInt(values?.price), thumbnail: certificateUrlThumbnail,images:[certificateUrl], "tags": [
         "Running",
         "Sportswear"
       ], shoeSizes: shoeSizes
     }
 
-    for (let i = 0; i <= 300; i++) {
+    for (let i = 0; i <= 400; i++) {
       const euProperty = `eu${i}`;
       const quantityProperty = `quantity${i}`;
 
@@ -337,8 +343,13 @@ function AddProductsModal(props: any) {
             </Form.Item>
           </Col>
 
-          <Col xs={24} lg={24}>
+          <Col xs={12} lg={12}>
+          <p style={{fontWeight:600,color:"#6E7191"}}>Images</p>
             <UploadImage uploadCertificateId={uploadCertificateId} />
+          </Col>
+          <Col xs={24} lg={24}>
+          <p style={{fontWeight:600,color:"#6E7191"}}>Thumbnail</p>
+          <Thumbnail uploadCertificateThumbnail={uploadCertificateThumbnail}  />
           </Col>
           <Col xs={24} lg={24} style={{ textAlign: "end" }}>
             <PlusCircleOutlined style={{ marginLeft: "20px", cursor: "pointer" }} onClick={handleAddField} /> Click to  Add More Shoe Sizes and Quantity
