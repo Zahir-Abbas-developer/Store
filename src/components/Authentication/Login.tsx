@@ -109,8 +109,8 @@ const Login = () => {
     }
     try{
       const res:any= await forgetPasswordRequest({payload}).unwrap()
-    console.log(res)
-    navigate(`/reset-password?token=${res?.token}`)
+    // console.log(res)
+    // navigate(`/reset-password?token=${res?.token}`)
    
     }
    catch(error){
