@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./SignIn.scss";
-import { useSignInPostRequestMutation } from "../../store/Slices/Signin";
+import { useForgetPasswordRequestMutation, useNewPasswordRequestMutation, useSignInPostRequestMutation } from "../../store/Slices/Signin";
 
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { useChangePasswordPostRequestMutation } from "../../store/Slices/ChangePassword";
@@ -19,6 +19,9 @@ const Login = () => {
   let navigate = useNavigate();
   const location = useLocation();
   const [signInPostRequest, { isLoading }] = useSignInPostRequestMutation();
+  const [forgetPasswordRequest ,{isLoading:isLoadingForgetPassword}]=useForgetPasswordRequestMutation()
+  const [resetPasswordRequest ,{isLoading:isLoadingNewPassword}]=useNewPasswordRequestMutation()
+
   const [authSignUp]=useAuthSignUpMutation()
   const [changePasswordPostRequest, { isLoading: changePasswordLoading }] =
     useChangePasswordPostRequestMutation();
@@ -70,7 +73,7 @@ const Login = () => {
       payload,
     });
     
-
+    let token
     const role = data?.data?.user?.roleData?.name;
   
 
@@ -98,6 +101,41 @@ const Login = () => {
       }
     }
   };
+
+  const onFinishForgetPassword=async(values:any)=>{
+    const payload={
+      email:values?.email,
+      url:window?.location?.origin + "/reset-password"
+    }
+    try{
+      const res:any= await forgetPasswordRequest({payload}).unwrap()
+    console.log(res)
+    navigate(`/reset-password?token=${res?.token}`)
+   
+    }
+   catch(error){
+    console.log(error)
+   }
+  }
+  const myParam = useLocation().search;
+  const resetToken= new URLSearchParams(myParam).get("token");
+  const onFinishNewPassword=async(values:any)=>{
+    const payload={
+      password:values?.password,
+      token:resetToken
+    }
+    try{
+  const res= await resetPasswordRequest({payload}).unwrap()
+  console.log(res)
+    }
+    catch(error){
+      console.log(error)
+     }
+   
+  }
+
+
+
   const onFinishChangePassword = async (values: any) => {
     if (values?.newPassword === values?.confirmNewPassword) {
       const payload = {
@@ -211,8 +249,8 @@ const Login = () => {
                 <p style={{ color: "red" }}>{errorMessage}</p>
 
                 <div style={{ textAlign: "end", margin: "10px 0px 20px 0px" }}>
-                  <Link to="/change-password" className="forgot-password-style">
-                    Forgot Password?
+                  <Link to="/forget-password" className="forgot-password-style">
+                    Forget Password?
                   </Link>
                 </div>
                 <Form.Item>
@@ -415,6 +453,128 @@ const Login = () => {
                     type="primary"
                     htmlType="submit"
                     loading={isLoading}
+                    className=" btn-signin fw-600 "
+                    block
+                  >
+                    Save 
+                  </Button>
+                </Form.Item>
+              </Form>
+            
+              {/* <p className="fs-15-n-gray">
+              Resend <span className="pink-color">Log In</span> Details
+            </p> */}
+            </div>
+          </div>
+        </Col>
+      )}
+       {location?.pathname === "/forget-password" && (
+        <Col xs={24} sm={24} lg={12} xl={10}>
+          <div className="right-outer-div">
+            <div className="img-div" style={{textAlign:"center"}}>
+              <img
+                src={CareLibraryIcon}
+                alt="care-library-icon"
+                width={100}
+                height={100}
+                style={{borderRadius:"50%"}}
+              />
+            </div>
+            <div>
+              <h2 className="Sign-in-heading">Forget Password</h2>
+              <Form name="currentPassword" onFinish={onFinishForgetPassword}>
+                <Form.Item
+                  name="email"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Required field",
+                    },
+                  ]}
+                >
+                  <Input
+                  style={{color:"white"}}
+                    placeholder="Enter Email"
+                    className="input-style"
+                  />
+                </Form.Item>
+                <Form.Item>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    loading={isLoadingForgetPassword}
+                    className=" btn-signin fw-600 "
+                    block
+                  >
+                    Save 
+                  </Button>
+                </Form.Item>
+              </Form>
+            
+              {/* <p className="fs-15-n-gray">
+              Resend <span className="pink-color">Log In</span> Details
+            </p> */}
+            </div>
+          </div>
+        </Col>
+      )}
+       {location?.pathname === "/reset-password" && (
+        <Col xs={24} sm={24} lg={12} xl={10}>
+          <div className="right-outer-div">
+            <div className="img-div" style={{textAlign:"center"}}>
+              <img
+                src={CareLibraryIcon}
+                alt="care-library-icon"
+                width={100}
+                height={100}
+                style={{borderRadius:"50%"}}
+              />
+            </div>
+            <div>
+              <h2 className="Sign-in-heading">New Password</h2>
+              <Form name="password" onFinish={onFinishNewPassword}>
+              <Form.Item
+                  name="password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Required field",
+                    },
+                  ]}
+                >
+                  {/* <Input.Password placeholder="Password" /> */}
+                  <Input.Password
+                    placeholder="New Password"
+                    className="input-style"
+                    iconRender={(visible) =>
+                      visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                    }
+                  />
+                </Form.Item>
+                <Form.Item
+                  name="confirmNewPassword"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Required field",
+                    },
+                  ]}
+                >
+                  {/* <Input.Password placeholder="Password" /> */}
+                  <Input.Password
+                    placeholder="Confirm New Password"
+                    className="input-style"
+                    iconRender={(visible) =>
+                      visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                    }
+                  />
+                   </Form.Item>
+                <Form.Item>
+                  
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    loading={isLoadingNewPassword}
                     className=" btn-signin fw-600 "
                     block
                   >

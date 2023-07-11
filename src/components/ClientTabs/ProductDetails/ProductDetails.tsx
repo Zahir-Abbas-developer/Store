@@ -72,7 +72,7 @@ const ProductDetails = () => {
   The more information that you provide us, the quicker we can respond to your enquiry. If you would prefer to speak to a member of our Customer Care Team, you can do so through our WhatsApp: +92 (324) 833-2704
 `;
 const selectSizeOptions=categoryDetails?.shoeSizes?.map((shoeSizes:any)=>{return {value:`US ${shoeSizes?.us},EU ${shoeSizes?.eu}`,label:`US ${shoeSizes?.us},EU ${shoeSizes?.eu}`}})
-
+console.log(categoryDetails)
 // Using reduce to calculate the total price
 const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any) => {
   // Adding the price of the current object to the accumulator
@@ -86,17 +86,10 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
       </Col>
       <Col xs={24} lg={12} >
       <Carousel emulateTouch={true}>
-                <div>
-                <img src={categoryDetails?.thumbnail} ></img>
-                  
-                </div>
-                <div>
-                <img src={categoryDetails?.thumbnail} ></img>
-                  
-                </div>
-                <div>
-                    <img src={categoryDetails?.thumbnail} ></img>   
-                </div>
+        {categoryDetails?.images?.map((imagePath:any)=>{
+return( <img src={imagePath} ></img>)
+        })}
+              
             </Carousel>
      
         <Collapse className="collapse-shoe" accordion style={{width:"80%",margin:"auto",marginTop:"10px",border:"0px solid transparent"}}>

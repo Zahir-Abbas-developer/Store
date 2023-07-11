@@ -229,8 +229,14 @@ export const routes: any = [
     path: "login",
     element: <Login />,
   },
+  {path:"forget-password", element: <Login />,
+},
   {
     path: "change-password",
+    element: <Login />,
+  },
+  {
+    path: "reset-password",
     element: <Login />,
   },
   {

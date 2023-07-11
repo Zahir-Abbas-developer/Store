@@ -124,7 +124,7 @@ const handleUpload = () => {
     .then((res) =>   res.json())
     .then((result) => {
       console.log("result ",result);
-      uploadCertificateId(result[0].url)
+      uploadCertificateId(result.map((image:any)=>image.url))
       setFileList([]);
       message.success('upload successfully.');
     })

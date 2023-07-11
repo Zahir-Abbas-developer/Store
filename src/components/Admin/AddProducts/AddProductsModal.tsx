@@ -23,7 +23,7 @@ import Thumbnail from "../../Setting/SettingKeyInfo/UploadImage/Thumbnail";
 
 function AddProductsModal(props: any) {
   const [form] = Form.useForm();
-  const [certificateUrl, setCertificateUrl] = useState("")
+  const [certificateUrl, setCertificateUrl] = useState([])
   const [certificateUrlThumbnail, setCertificateUrlThumbnail] = useState("")
 
   const [fieldCount, setFieldCount] = useState(1);
@@ -151,7 +151,7 @@ function AddProductsModal(props: any) {
     });
 
     const addProductValues = {
-      ...values, price: parseInt(values?.price), thumbnail: certificateUrlThumbnail,images:[certificateUrl], "tags": [
+      ...values, price: parseInt(values?.price), thumbnail: certificateUrlThumbnail,images:[...certificateUrl], "tags": [
         "Running",
         "Sportswear"
       ], shoeSizes: shoeSizes

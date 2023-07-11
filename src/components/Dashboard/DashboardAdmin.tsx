@@ -14,7 +14,6 @@ import { useGetAllCardsDataQuery } from "../../store/Slices/AdminDashboard";
 import "../../sass/common.scss";
 import BreadCrumb from "../../layout/BreadCrumb/BreadCrumb";
 import OurCollectionTab from "../ClientTabs/OurCollectionTab/OurCollection";
-import FooterPage from "../../pages/Footer";
 
 
 const DashboardAdmin = () => {
@@ -72,10 +71,7 @@ const DashboardAdmin = () => {
         </Row>
 
         <Row>
-          <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} >
-
-            <FooterPage />
-          </Col>
+         
         </Row>
       </Layout>
     </>

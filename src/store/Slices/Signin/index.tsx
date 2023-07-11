@@ -20,6 +20,24 @@ export const extendedApi = emptySplitApi.injectEndpoints({
 
       invalidatesTags: ["signin"],
     }),
+    forgetPasswordRequest: builder.mutation({
+      query: ({ payload }: any) => ({
+        url: "/auth/password-reset",
+        method: "post",
+        body: payload,
+      }),
+
+      invalidatesTags: ["signin"],
+    }),
+    newPasswordRequest: builder.mutation({
+      query: ({ payload }: any) => ({
+        url: "/auth/password-reset/confirm",
+        method: "post",
+        body: payload,
+      }),
+
+      invalidatesTags: ["signin"],
+    }),
     logout: builder.mutation({
       queryFn: () => ({ data: null }),
 
@@ -28,5 +46,5 @@ export const extendedApi = emptySplitApi.injectEndpoints({
   }),
 });
 
-export const { useSignInPostRequestMutation, useResetPasswordRequestMutation ,useLogoutMutation } =
+export const { useSignInPostRequestMutation, useResetPasswordRequestMutation ,useLogoutMutation,useForgetPasswordRequestMutation ,useNewPasswordRequestMutation } =
   extendedApi;

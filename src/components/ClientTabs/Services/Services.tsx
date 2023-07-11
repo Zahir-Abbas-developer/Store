@@ -4,6 +4,8 @@ import SelectServicesDetails from "../SelectServicesDetails/SelectServicesDetail
 import ShoeProductDetails from "../ShoeProductDetails/ShoeProductDetails"
 
 const Services=()=>{
+    console.log(window.location.origin + "/reset-password");
+    
     return(
     
     <Row>
