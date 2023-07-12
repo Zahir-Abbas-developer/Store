@@ -61,7 +61,10 @@ const BillingDetailsPage = Loadable(
 const CartDetailsPage=Loadable(
   lazy(() => import("./pages/CartDetails"))
 );
-
+//UserVerification page
+const UserVerficationPage=Loadable(
+  lazy(() => import("./pages/UserVerification"))
+);
 
 //staff manager
 const StaffManagerPage = Loadable(lazy(() => import("./pages/StaffManager")));
@@ -216,6 +219,10 @@ export const routes: any = [
   {
     path: "change-password",
     element: <Login />,
+  },
+  {
+    path:"user-verification",
+    element:<UserVerficationPage/>
   },
   {
     path: "reset-password",

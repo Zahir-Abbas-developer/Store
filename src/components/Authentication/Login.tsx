@@ -42,6 +42,7 @@ const Login = () => {
         email: values.email,
         password: values.password,
         username:values?.username,
+        url:window?.location?.origin + "/user-verification"
       };
       const { error, data }: any = await authSignUp({
         payload:{...payload ,role:"user"},

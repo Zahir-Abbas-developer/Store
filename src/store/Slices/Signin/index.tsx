@@ -20,6 +20,15 @@ export const extendedApi = emptySplitApi.injectEndpoints({
 
       invalidatesTags: ["signin"],
     }),
+    verifyUser: builder.mutation({
+      query: ({ payload }: any) => ({
+        url: "/verify-user",
+        method: "post",
+        body: payload,
+      }),
+
+      invalidatesTags: ["signin"],
+    }),
     forgetPasswordRequest: builder.mutation({
       query: ({ payload }: any) => ({
         url: "/auth/password-reset",
@@ -46,5 +55,5 @@ export const extendedApi = emptySplitApi.injectEndpoints({
   }),
 });
 
-export const { useSignInPostRequestMutation, useResetPasswordRequestMutation ,useLogoutMutation,useForgetPasswordRequestMutation ,useNewPasswordRequestMutation } =
+export const { useSignInPostRequestMutation, useResetPasswordRequestMutation ,useLogoutMutation,useForgetPasswordRequestMutation ,useNewPasswordRequestMutation ,useVerifyUserMutation} =
   extendedApi;
