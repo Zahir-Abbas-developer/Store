@@ -49,13 +49,7 @@ const CarerDashboardPage = Loadable(
 const OverAllRatingsPage = Loadable(
   lazy(() => import("./pages/OverAllRatings"))
 );
-const ClientManagerPage = Loadable(lazy(() => import("./pages/ClientManager")));
-const ClientRegistration = Loadable(
-  lazy(() => import("./pages/ClientManager/ClientRegisteration"))
-);
-const ManageGroups = Loadable(
-  lazy(() => import("./pages/ClientManager/ManageGroups"))
-);
+
 const ProductDetailsPage = Loadable(
   lazy(() => import("./pages/ProductDetails"))
 );
@@ -67,10 +61,6 @@ const BillingDetailsPage = Loadable(
 const CartDetailsPage=Loadable(
   lazy(() => import("./pages/CartDetails"))
 );
-
-
-const ClientProfilePage = Loadable(lazy(() => import("./pages/ClientProfile")));
-
 
 
 //staff manager
@@ -117,12 +107,6 @@ const AddOrdersPage = Loadable(
   lazy(() => import("./pages/AddOrders"))
 );
 
-const UnpublishedShiftPage = Loadable(
-  lazy(() => import("./pages/UnpublishedShift"))
-);
-const BookStaffPage = Loadable(
-  lazy(() => import("./pages/UnpublishedShift/BookStaff"))
-);
 
 
 const InstructorDashboard = Loadable(
@@ -134,8 +118,6 @@ const InstructorDashboard = Loadable(
 
 const SettingsPage = Loadable(lazy(() => import("./pages/Settings")));
 const FAQsPage = Loadable(lazy(() => import("./pages/Help/FAQs")));
-const BackUp = Loadable(lazy(() => import("./pages/BackUp")));
-const AuditLogs = Loadable(lazy(() => import("./pages/AuditLogs")));
 
 const RatingsFeedback = Loadable(
   lazy(() => import("./pages/RatingAndFeedback"))
@@ -353,34 +335,10 @@ export const routes: any = [
 
      
       {
-        path: "client-manager",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <ClientManagerPage />
-          </RequireAuth>
-        ),
-      },
-      {
         path:"productDetails/cart-details",
         element:<CartDetailsPage/>
       },
-      {
-        path: "client-manager/client-registration/:id",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <ClientRegistration />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "client-manager/manage-groups",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <ManageGroups />
-          </RequireAuth>
-        ),
-      },
-    
+      
 
       {
         path: "client-profile",
@@ -459,22 +417,7 @@ export const routes: any = [
         ),
       },
      
-      {
-        path: "backup",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-            <BackUp />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "audit-logs",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-            <AuditLogs />
-          </RequireAuth>
-        ),
-      },
+      
       {
         path: "ratings",
         element: (
@@ -494,27 +437,6 @@ export const routes: any = [
         ),
       },
     
-     
-  
-      {
-        path: "unpublished-shift",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-            <UnpublishedShiftPage />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "unpublished-shift/book-staff",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin,ROLES.coordinator]}>
-            <BookStaffPage />
-          </RequireAuth>
-        ),
-      },
-
-      
-     
       {
         path: "api-inventory",
         element: (

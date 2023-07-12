@@ -7,9 +7,7 @@ import { Avatar, Popover, Space } from "antd";
 import { CaretDownOutlined, DownOutlined, MenuOutlined, ShoppingCartOutlined, UpOutlined, UserOutlined } from "@ant-design/icons";
 
 
-// Components
 
-import ClientViewProfileModal from "../../components/ClientManager/ClientViewProfileModal/ClientViewProfileModal";
 
 
 // RTK Hooks
