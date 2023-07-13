@@ -176,7 +176,7 @@ const handleRole = (item: any) => {
                               {item.subItems.map(
                                 (subNav: any) =>
                                   subNav.toshowforrole.includes(
-                                    role
+                                    role ?role: "newUser"
                                   ) && (
                                     <Fragment key={uuidv4()}>
                                       <p

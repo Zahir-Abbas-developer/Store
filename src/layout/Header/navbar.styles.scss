@@ -5,10 +5,8 @@
 .header-main-wrapper {
     justify-content: space-between;
     align-items: center;
-    position: sticky;
     padding: 0 30px;
     top: 0;
-    z-index: 10;
     display: flex;
   .logo {
     align-items: center;
@@ -96,15 +94,6 @@
     @extend .menus;
     min-width: 990px;
   }
-
-  .short_hands {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    gap: 25px;
-
-  }
-
   .nav-title li:hover {
     // border-bottom: 3px solid #e76f51;
 
@@ -328,6 +317,13 @@
     border-bottom: 1px solid #E6E6E6;
 
   }
+}
+.short_hands {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 25px;
+
 }
 
 .ant-drawer .ant-drawer-content {

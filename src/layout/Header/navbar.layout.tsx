@@ -158,8 +158,103 @@ const NavBar = () => {
   }, [pathname]);
   const overlayStyle = { borderRadius: 0 };
   return (
-    <>
-  
+    <div className="header-bg header-main-wrapper" style={{ position: "sticky", top: "0", zIndex: "100" }}>
+          <div style={{display:"flex" ,justifyContent:"space-between",padding:"0 30px"}}>
+      <p style={{display:"none"}}>Solace</p>
+      <p>Solace</p>
+      <div className="short_hands">
+        <img src={SearchImg}  onClick={handleOpenGlobalSearchDrawer}  style={{cursor:"pointer"}}/>
+          <Switch
+            className="switch fs-12"
+            checkedChildren="Dark"
+            unCheckedChildren="Light"
+            onChange={() => setIsDarkMode(!isDarkMode)}
+          />
+          <Badge   count={products?.products?.length} showZero style={{color:"white"}}>
+          <ShoppingCartOutlined style={{ fontSize: '24px' }} onClick={handleOpenDrawer} />
+        </Badge>
+        <div className="adminDetail">
+        <Popover
+          rootClassName="profile-dropdown"
+          content={
+            <div>
+              {profileDropdown.map((item) => (
+                <div
+                  key={uuidv4()}
+                  onClick={() => {
+                    if (item?.title === "Logout") {
+                      localStorage.removeItem("careUserData");
+                      localStorage.clear();
+                      navigate("/login");
+                      logOutUser()
+                      
+                    }
+                    if (item?.title === "Change Password") {
+                      navigate("/change-password");
+                    }
+                    if (item?.title === "Profile Preview") {
+                      setIsProfileModal(true);
+                      setviewClientModal(true);
+                    }
+                  }}
+                  className='profile-item'
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "15px",
+                    marginBlock: "10px",
+                  }}
+                >
+                  {item.icon}
+                  <span className="fs-14 title-color cursor-pointer">{item.title}</span>
+                </div>
+              ))}
+            </div>
+          }
+          trigger="click"
+          open={open}
+          onOpenChange={() => setOpen(false)}
+        >
+          <Space onClick={() => setOpen(!open)}>
+            {!role ? <Link to="/login"><UserOutlined style={{fontSize: '24px'}} /></Link>:
+            <Avatar style={{ verticalAlign: "middle" }} size="large">
+             
+            </Avatar>}
+            <div
+              className="details"
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              <p
+                className="m-0 label-color fw-600 fs-14 cursor-pointer"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "column",
+                }}
+              >
+               {role && <> <span style={{ height: "20px" }}>
+                 
+                  <CaretDownOutlined className="fs-16" style={{fontSize: '24px'}} />
+                </span>
+                <span
+                  className="fs-12 fw-400"
+                  style={{ textTransform: "capitalize" }}
+                >
+                {role==="admin"? <p  style={{marginTop:"0px",color:"white"}}>Admin</p> :<p style={{marginTop:"0px",color:"white"}}>User</p>}  
+                </span></>}
+              </p>
+            </div>
+          </Space>
+        </Popover>
+        <DrawerComponent/>
+        <GlobalSearch/>
+      </div>
+{/* 
+      <div className="togglebar" onClick={() => setIsOpen(true)}>
+        <MenuOutlined className="fs-18  text-white" />
+      </div> */}
+        </div>
+        </div>
       <div className="header-main-wrapper header-bg">
         <div className="logo">
           <MenuOutlined
@@ -263,98 +358,7 @@ const NavBar = () => {
             </ul>
           </nav>
         </div>
-        <div className="short_hands">
-        <img src={SearchImg}  onClick={handleOpenGlobalSearchDrawer}  style={{cursor:"pointer"}}/>
-          <Switch
-            className="switch fs-12"
-            checkedChildren="Dark"
-            unCheckedChildren="Light"
-            onChange={() => setIsDarkMode(!isDarkMode)}
-          />
-          <Badge   count={products?.products?.length} showZero style={{color:"white"}}>
-          <ShoppingCartOutlined style={{ fontSize: '24px' }} onClick={handleOpenDrawer} />
-        </Badge>
-        <div className="adminDetail">
-        <Popover
-          rootClassName="profile-dropdown"
-          content={
-            <div>
-              {profileDropdown.map((item) => (
-                <div
-                  key={uuidv4()}
-                  onClick={() => {
-                    if (item?.title === "Logout") {
-                      localStorage.removeItem("careUserData");
-                      localStorage.clear();
-                      navigate("/login");
-                      logOutUser()
-                      
-                    }
-                    if (item?.title === "Change Password") {
-                      navigate("/change-password");
-                    }
-                    if (item?.title === "Profile Preview") {
-                      setIsProfileModal(true);
-                      setviewClientModal(true);
-                    }
-                  }}
-                  className='profile-item'
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "15px",
-                    marginBlock: "10px",
-                  }}
-                >
-                  {item.icon}
-                  <span className="fs-14 title-color cursor-pointer">{item.title}</span>
-                </div>
-              ))}
-            </div>
-          }
-          trigger="click"
-          open={open}
-          onOpenChange={() => setOpen(false)}
-        >
-          <Space onClick={() => setOpen(!open)}>
-            {!role ? <Link to="/login"><UserOutlined style={{fontSize: '24px'}} /></Link>:
-            <Avatar style={{ verticalAlign: "middle" }} size="large">
-             
-            </Avatar>}
-            <div
-              className="details"
-              style={{ display: "flex", flexDirection: "column" }}
-            >
-              <p
-                className="m-0 label-color fw-600 fs-14 cursor-pointer"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  flexDirection: "column",
-                }}
-              >
-               {role && <> <span style={{ height: "20px" }}>
-                 
-                  <CaretDownOutlined className="fs-16" style={{fontSize: '24px'}} />
-                </span>
-                <span
-                  className="fs-12 fw-400"
-                  style={{ textTransform: "capitalize" }}
-                >
-                {role==="admin"? <p  style={{marginTop:"0px",color:"white"}}>Admin</p> :<p style={{marginTop:"0px",color:"white"}}>User</p>}  
-                </span></>}
-              </p>
-            </div>
-          </Space>
-        </Popover>
-        <DrawerComponent/>
-        <GlobalSearch/>
-      </div>
-{/* 
-      <div className="togglebar" onClick={() => setIsOpen(true)}>
-        <MenuOutlined className="fs-18  text-white" />
-      </div> */}
-        </div>
+       
       </div>
       {toggleDrawer && (
         <DrawerComp
@@ -397,7 +401,7 @@ const NavBar = () => {
         </Drawer>
         
       )}
-    </>
+    </div>
   );
 };
 export default NavBar;
