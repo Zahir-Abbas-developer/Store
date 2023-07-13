@@ -158,7 +158,10 @@ const NavBar = () => {
   }, [pathname]);
   const overlayStyle = { borderRadius: 0 };
   return (
-    <div className="header-bg header-main-wrapper" style={{ position: "sticky", top: "0", zIndex: "100" }}>
+    <>
+      <div className="header-bg " style={{ position: "sticky", top: "0", zIndex: "100",padding:"0 30px" }}>
+      
+   
           <div style={{display:"flex" ,justifyContent:"space-between",padding:"0 30px"}}>
       <p style={{display:"none"}}>Solace</p>
       <p>Solace</p>
@@ -361,6 +364,7 @@ const NavBar = () => {
         </div>
        
       </div>
+      </div>
       {toggleDrawer && (
         <DrawerComp
           open={toggleDrawer.open}
@@ -402,7 +406,7 @@ const NavBar = () => {
         </Drawer>
         
       )}
-    </div>
+    </>
   );
 };
 export default NavBar;
