@@ -28,7 +28,24 @@ export const navItems = [
     title: "Shoes",
     path: "/dashboard",
     lightIcon: shoes,
-    alt: "dashboard"
+    alt: "dashboard",
+    subItems: [
+      {
+        toshowforrole: [
+          'user',"newUser"
+        ],
+        title: "Company Settings",
+        path: "settings/company-settings",
+      },
+      {
+        toshowforrole: [
+          'user',"newUser"
+        ],
+        title: "Work Schedule",
+        path: "settings/work-schedule",
+      },
+    
+    ],
   },
   {
     toshowforrole: [
