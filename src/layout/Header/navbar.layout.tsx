@@ -301,6 +301,7 @@ const NavBar = () => {
                             className="fs-12 nav-text title-color"
                             style={{
                               color: active === item.title ? "#e76f51" : "",
+                              fontSize:"large"
                             }}
                             onClick={() => {
                               item.subItems
