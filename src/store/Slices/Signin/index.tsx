@@ -22,7 +22,7 @@ export const extendedApi = emptySplitApi.injectEndpoints({
     }),
     verifyUser: builder.mutation({
       query: ({ payload }: any) => ({
-        url: "/verify-user",
+        url: "/auth/verify-user",
         method: "post",
         body: payload,
       }),

@@ -7,7 +7,7 @@ const Verification = () => {
     const myParam = useLocation().search;
     const resetToken = new URLSearchParams(myParam).get("token");
     let navigate = useNavigate();
-    console.log(resetToken)
+    console.log("reset token,",resetToken)
     const payload = {
         token: resetToken
     }
