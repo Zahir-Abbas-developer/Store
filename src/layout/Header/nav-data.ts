@@ -34,17 +34,30 @@ export const navItems = [
         toshowforrole: [
           'user',"newUser"
         ],
-        title: "Company Settings",
+        title: "Oxford and Derby",
         path: "settings/company-settings",
       },
       {
         toshowforrole: [
           'user',"newUser"
         ],
-        title: "Work Schedule",
+        title: "Loafers",
         path: "settings/work-schedule",
       },
-    
+      {
+        toshowforrole: [
+          'user',"newUser"
+        ],
+        title: "Monks",
+        path: "Monks",
+      },
+      {
+        toshowforrole: [
+          'user',"newUser"
+        ],
+        title: "Boots",
+        path: "Boots",
+      },
     ],
   },
   {
