@@ -115,7 +115,6 @@ const ResetEmailPhone = Loadable(
 const WeekStartDay = Loadable(
   lazy(() => import("./pages/Settings/WeekStartDay"))
 );
-const AgencyTermsCondition = Loadable(lazy(() => import("./pages/Settings/AgencyTermsConditionPage")));
 const ClientTermsCondition = Loadable(lazy(() => import("./pages/Settings/ClientTermsConditionPage")));
 const FestivalDayGreeting = Loadable(
   lazy(() => import("./pages/Settings/FestivalDayGreeting"))
@@ -401,14 +400,7 @@ export const routes: any = [
               </RequireAuth>
             ),
           },
-          {
-            path: "settings/agency-terms-condition",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin]}>
-                <AgencyTermsCondition />
-              </RequireAuth>
-            ),
-          },
+        
           {
             path: "settings/break-time-settings",
             element: (

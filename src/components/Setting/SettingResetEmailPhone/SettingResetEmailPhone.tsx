@@ -13,7 +13,6 @@ import { renderDashboard } from "../../../utils/useRenderDashboard";
 import { ROLES } from "../../../constants/Roles";
 
 
-import "../AgencyTermsCondition/AgencyTermsCondition.scss";
 
 
 function SettingResetEmailPhone() {

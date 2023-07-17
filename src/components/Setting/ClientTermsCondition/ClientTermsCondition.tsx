@@ -4,8 +4,6 @@ import BreadCrumb from '../../../layout/BreadCrumb/BreadCrumb'
 // Utils
 import { renderDashboard } from '../../../utils/useRenderDashboard';
 
-// SCSS
-import "../AgencyTermsCondition/AgencyTermsCondition.scss";
 
 const ClientTermsCondition = () => {
   const { role }: any = JSON.parse(localStorage.getItem("careUserData") || "{}");

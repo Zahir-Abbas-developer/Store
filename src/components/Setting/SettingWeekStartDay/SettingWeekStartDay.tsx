@@ -13,7 +13,6 @@ import { DataType} from "../../../mock/WeekStartDay";
 // SCSS
 import "./SettingWeekStartDay.scss";
 
-import "../AgencyTermsCondition/AgencyTermsCondition.scss";
 
 function SettingWeekStartDay() {
 
