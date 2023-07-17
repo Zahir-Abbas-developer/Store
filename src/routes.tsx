@@ -7,8 +7,6 @@ import NotFound from "./components/Authentication/NotFound";
 import SignUp from "./components/Authentication/SignUp";
 import Unathorized from "./components/Authentication/Unathorized";
 import ResetPassword from "./components/Authentication/ResetPassword";
-
-import SystemPerformancePage from "./pages/SystemPerformance";
 import RequireAuth from "./components/Authentication/RequireAuth";
 import LoadingSvg from "../src/assets/Login/loader-icon.gif";
 import { ROLES } from "./constants/Roles";
@@ -35,17 +33,12 @@ const Loadable = (Component: LazyExoticComponent<FC>) => (props: any) =>
     </Suspense>
   );
 
-
-
-const ApiInventoryPage = Loadable(lazy(() => import("./pages/ApiInventory")));
 const ReviewCareHomesPage = Loadable(lazy(() => import("./pages/Ratings")));
 
 
 const DashboardPage = Loadable(lazy(() => import("./pages/Dashboard")));
 const JacketDetailsPage = Loadable(lazy(() => import("./pages/JacketDetails")));
-const CarerDashboardPage = Loadable(
-  lazy(() => import("./pages/CarerDashboard"))
-);
+
 const OverAllRatingsPage = Loadable(
   lazy(() => import("./pages/OverAllRatings"))
 );
@@ -66,29 +59,6 @@ const UserVerficationPage=Loadable(
   lazy(() => import("./pages/UserVerification"))
 );
 
-//staff manager
-const StaffManagerPage = Loadable(lazy(() => import("./pages/StaffManager")));
-const AvailabilityCalendar = Loadable(
-  lazy(() => import("./pages/StaffManager/AvailabilityCalendar"))
-);
-const StaffManagerSummary = Loadable(
-  lazy(() => import("./pages/StaffManager/StaffManagerSummary"))
-);
-const StaffManagerOpenShift = Loadable(
-  lazy(() => import("./pages/StaffManager/ShiftStatus/OpenShiftStatus"))
-);
-const StaffManagerTotalHours = Loadable(
-  lazy(() => import("./pages/StaffManager/ShiftStatus/TotalHoursLifeTime"))
-);
-const StaffManagerConfirmedShift = Loadable(
-  lazy(() => import("./pages/StaffManager/ShiftStatus/ConfirmedShift"))
-);
-const StaffManagerTotalHoursMonth = Loadable(
-  lazy(() => import("./pages/StaffManager/ShiftStatus/TotalHoursThisMonth"))
-);
-const StaffManagerCompletedShift = Loadable(
-  lazy(() => import("./pages/StaffManager/ShiftStatus/CompletedShift"))
-);
 const StaffAllocationPage = Loadable(
   lazy(() => import("./pages/StaffAllocation"))
 );
@@ -110,43 +80,15 @@ const AddOrdersPage = Loadable(
   lazy(() => import("./pages/AddOrders"))
 );
 
-
-
-const InstructorDashboard = Loadable(
-  lazy(() => import("./pages/InstructorDashboard"))
-);
-
-
 // Reports and its Child Routes Ends Here
 
 const SettingsPage = Loadable(lazy(() => import("./pages/Settings")));
-const FAQsPage = Loadable(lazy(() => import("./pages/Help/FAQs")));
-
 const RatingsFeedback = Loadable(
   lazy(() => import("./pages/RatingAndFeedback"))
 );
 
-const ItHelpDeskPage = Loadable(lazy(() => import("./pages/Help/ItHelpDesk")));
-const ItHelpDeskAllTicketsPage = Loadable(
-  lazy(() => import("./pages/Help/ItHelpDesk/AllTickets/AllTickets"))
-);
-// const ItHelpDeskPendingTicketsPage = Loadable(
-//   lazy(() => import("./pages/Help/ItHelpDesk/PendingTickets/PendingTickets"))
-// );
-// const ItHelpDeskOnHoldTicketsPage = Loadable(
-//   lazy(() => import("./pages/Help/ItHelpDesk/OnHoldTickets/OnHoldTickets"))
-// );
-// const ItHelpDeskClosedTicketsPage = Loadable(
-//   lazy(() => import("./pages/Help/ItHelpDesk/ClosedTickets/ClosedTickets"))
-// );
-// const ItHelpDeskResolvedTicketsPage = Loadable(
-//   lazy(() => import("./pages/Help/ItHelpDesk/ResolvedTickets/ResolvedTickets"))
-// );
-const ItHelpDeskSupportDashboard = Loadable(
-  lazy(
-    () => import("./pages/Help/ItHelpDesk/SupportDashboard/SupportDashboard")
-  )
-);
+
+
 const KeyInfo = Loadable(lazy(() => import("./pages/Settings/KeyInfo")));
 const JobRole = Loadable(lazy(() => import("./pages/Settings/JobRole")));
 const ShiftTimeSettings = Loadable(
@@ -186,26 +128,7 @@ const ElectronicAttendanceMonitoring = Loadable(
   lazy(() => import("./pages/Settings/ElectronicAttendanceMonitoring"))
 );
 
-
-const ClientUserManagement = Loadable(
-  lazy(() => import("./pages/ClientUserManagement"))
-);
-const ClientPreferences = Loadable(
-  lazy(() => import("./pages/ClientPreferences"))
-);
-
-
-const CarerMyCalendarPage = Loadable(
-  lazy(() => import("./pages/CarerMyCalendar"))
-);
-
-
 const ContactDetailsPage=Loadable((lazy(()=>import("./pages/ContactDetails"))))
-
-
-const SystemPerformance = Loadable(
-  lazy(() => import("./pages/SystemPerformance"))
-);
 
 export const routes: any = [
   { path: "/", element: <Navigate to="services" /> },
@@ -308,38 +231,7 @@ export const routes: any = [
         path:"/add-styles",
         element:(<RequireAuth allowedRoles={[ROLES.admin]}><AddStyles/></RequireAuth> )
       },
-      
-      {
-        path: "carer-dashboard",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.carer]}>
-            <CarerDashboardPage />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "carer-my-calendar",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.carer]}>
-            <CarerMyCalendarPage />
-          </RequireAuth>
-        ),
-      },
      
-      {
-        path: "system-performance",
-        children: [
-          {
-            path: "",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-                <SystemPerformance />
-              </RequireAuth>
-            ),
-          },
-        ],
-      },
-
      
       {
         path:"productDetails/cart-details",
@@ -357,74 +249,6 @@ export const routes: any = [
         ),
       },
      
-
-      
-      {
-        path: "staff-manager",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <StaffManagerPage />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-manager/:id/staff-summary",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <StaffManagerSummary />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-manager/:id/staff-summary/availability-calendar",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <AvailabilityCalendar />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-manager/:id/staff-summary/open-shift",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <StaffManagerOpenShift />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-manager/:id/staff-summary/total-hours-life-time",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <StaffManagerTotalHours />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-manager/:id/staff-summary/confirmed-shift",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <StaffManagerConfirmedShift />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-manager/:id/staff-summary/total-hours-month",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <StaffManagerTotalHoursMonth />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "staff-manager/:id/staff-summary/completed-shift",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.admin]}>
-            <StaffManagerCompletedShift />
-          </RequireAuth>
-        ),
-      },
-     
-      
       {
         path: "ratings",
         element: (
@@ -434,34 +258,6 @@ export const routes: any = [
         ),
       },
       
-  
-      {
-        path: "instructor-dashboard",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.instructor]}>
-            <InstructorDashboard />
-          </RequireAuth>
-        ),
-      },
-    
-      {
-        path: "api-inventory",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-            <ApiInventoryPage />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "performance",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.superAdmin]}>
-            <SystemPerformancePage />
-          </RequireAuth>
-        ),
-      },
-     
-    
    
       {
         path: "",
@@ -645,85 +441,7 @@ export const routes: any = [
           },
         ],
       },
-      {
-        path: "",
-        children: [
-          {
-            path: "help/FAQs",
-            element: (
-              <RequireAuth allowedRoles={[ROLES.admin,ROLES.carer,ROLES.client,ROLES.coordinator,ROLES.instructor,ROLES.superAdmin]}>
-                <FAQsPage />
-              </RequireAuth>
-            ),
-          },
-          {
-            path: "",
-            // element: (
-            //   <RequireAuth>
-            //     <ItHelpDeskPage />
-            //   </RequireAuth>
-            // ),
-            children: [
-              {
-                path: "help/it-help-desk",
-                element: (
-                  <RequireAuth allowedRoles={[ROLES.admin,ROLES.carer,ROLES.client,ROLES.coordinator,ROLES.instructor,ROLES.superAdmin]}>
-                    <ItHelpDeskPage />
-                  </RequireAuth>
-                ),
-              },
-              {
-                path: "help/it-help-desk/all-tickets/:id",
-                element: (
-                  <RequireAuth allowedRoles={[ROLES.admin,ROLES.carer,ROLES.client,ROLES.coordinator,ROLES.instructor,ROLES.superAdmin]}>
-                    <ItHelpDeskAllTicketsPage />
-                  </RequireAuth>
-                ),
-              },
-              // {
-              //   path: "help/it-help-desk/pending-tickets",
-              //   element: (
-              //     <RequireAuth allowedRoles={[ROLES.admin]}>
-              //       <ItHelpDeskPendingTicketsPage />
-              //     </RequireAuth>
-              //   ),
-              // },
-              // {
-              //   path: "help/it-help-desk/hold-tickets",
-              //   element: (
-              //     <RequireAuth allowedRoles={[ROLES.admin]}>
-              //       <ItHelpDeskOnHoldTicketsPage />
-              //     </RequireAuth>
-              //   ),
-              // },
-              // {
-              //   path: "help/it-help-desk/closed-tickets",
-              //   element: (
-              //     <RequireAuth allowedRoles={[ROLES.admin]}>
-              //       <ItHelpDeskClosedTicketsPage />
-              //     </RequireAuth>
-              //   ),
-              // },
-              // {
-              //   path: "help/it-help-desk/resolved-tickets",
-              //   element: (
-              //     <RequireAuth allowedRoles={[ROLES.admin]}>
-              //       <ItHelpDeskResolvedTicketsPage />
-              //     </RequireAuth>
-              //   ),
-              // },
-              {
-                path: "help/it-help-desk/support-dashbaord",
-                element: (
-                  <RequireAuth allowedRoles={[ROLES.admin,ROLES.carer,ROLES.client,ROLES.coordinator,ROLES.instructor,ROLES.superAdmin]}>
-                    <ItHelpDeskSupportDashboard />
-                  </RequireAuth>
-                ),
-              },
-            ],
-          },
-        ],
-      },
+     
       //client
       {
         path: "",
@@ -739,23 +457,6 @@ export const routes: any = [
           
         ],
       },
-      {
-        path: "client-user-management",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.client]}>
-            <ClientUserManagement />
-          </RequireAuth>
-        ),
-      },
-      {
-        path: "client-preferences",
-        element: (
-          <RequireAuth allowedRoles={[ROLES.client]}>
-            <ClientPreferences />
-          </RequireAuth>
-        ),
-      },
-      
      
     ],
   },
