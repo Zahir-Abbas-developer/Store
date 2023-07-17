@@ -178,14 +178,14 @@ const Login = () => {
           <div className="inner-left-div">
             <div>
               <h1 className="heading-1">
-                <span className="pink-color" style={{color:"#8c430c"}}>
+                <span className="pink-color" style={{color:"#e76f51"}}>
                   {location?.pathname === "/login"
                     ? "Sign In" 
                     : location?.pathname === "/sign-up"? "Sign Up": "Change Password"}
                 </span>
-                <span style={{color:"white"}}> to</span>
+                <span > to</span>
               </h1>
-              <h3 className="heading-3" style={{color:"white"}}>Solace Leather</h3>
+              <h3 className="heading-3" >Solace Leather</h3>
             </div>
             {/* <div>
               <p className="p-tag-description-1">If you don't have an account register</p>
@@ -266,7 +266,7 @@ const Login = () => {
                   </Button>
                   <div style={{ textAlign: "end", margin: "10px 0px 20px 0px" }}>
                   <Link to="/sign-up" className="forgot-password-style">
-                  New to Solace Leather? Sign Up
+                  New to Solace Leather? <span style={{textDecoration:"revert"}}>Sign Up</span>
                   </Link>
                 </div>
                 </Form.Item>
@@ -381,7 +381,7 @@ const Login = () => {
               />
             </div>
             <div>
-              <h2 className="Sign-in-heading">Sign Up</h2>
+              <h2 className="Sign-in-heading" style={{textDecoration:"revert" }}>Sign Up</h2>
               <Form name="currentPassword" onFinish={onFinishSignUp}>
                 <Form.Item
                   name="username"
@@ -482,7 +482,7 @@ const Login = () => {
               />
             </div>
             <div>
-              <h2 className="Sign-in-heading">Forget Password</h2>
+              <h2 className="Sign-in-heading" style={{textDecoration:"revert" }}>Forget Password</h2>
               <Form name="currentPassword" onFinish={onFinishForgetPassword}>
                 <Form.Item
                   name="email"

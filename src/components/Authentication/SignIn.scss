@@ -1,5 +1,5 @@
 .care-signin {
-  background:  linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%);
+  background: #f6f6f6;
   height: 100%;
   .pink-color {
     color: #ee2e7e;
@@ -10,7 +10,7 @@
   //   LEFT *************************************************************************************
 
   .left-outer-div {
- 
+    background-image: url(./../../assets/Login/pink-shadow-sign-in.png);
     background-repeat: no-repeat;
     min-height: 100vh;
     .inner-left-div {
@@ -47,7 +47,7 @@
       right: 0;
       top: 0;
       opacity: 0.4;
-
+      // background-image: url("./../../assets/Login/signin-animation.gif");
       background-repeat: no-repeat;
       background-position: 100% 0;
       background-size: contain;
@@ -90,32 +90,28 @@
       }
     }
     .Sign-in-heading {
-      color: white;
       font-weight: 500;
       font-size: 26px;
     }
     .input-style {
       height: 62px;
       font-size: 18px;
-      color: white !important;
       padding: 20px;
       background: rgba(238, 46, 126, 0.05);
       input{
         background: transparent;
-        color: white !important;
       }
-     
     }
     .btn-signin {
       height: 61px;
-      background-color: #8c430c;
+      background-color: #e76f51;
       font-size: 17px;
       background-image: url(../../assets/Login/sign-in-btn-bg.png);
       background-repeat: no-repeat;
       background-position: 40% 50%;
     }
     .forgot-password-style {
-      color: white;
+      color: rgba(78, 75, 102, 0.75);
     }
     .fs-15-n-gray {
       font-size: 15px;

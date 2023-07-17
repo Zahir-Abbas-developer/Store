@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card,  Col, Row, Select, Spin } from 'antd';
 import { useGetAllCategoriessQuery, useGetAllColorsQuery, useGetAllMaterialsQuery, useGetAllProductsQuery } from '../../../store/Slices/Products';
 import CollectionTabFilter from '../CollectionTabFilter/CollectionTabFilter';
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Arrow  from "../../../assets/images/OnBoarding/arrow.svg"
 import './OurCollectionDetails.scss'
 import { text } from "stream/consumers";
@@ -19,7 +19,8 @@ const { Meta } = Card;
   
   const {data:isDataMaterial ,isSuccess:isSuccessMaterial}=useGetAllMaterialsQuery({})
   const {data:isColorData ,isSuccess:isSuccessColor}=useGetAllColorsQuery({})
-
+const {state}=useLocation()
+console.log(state)
 let categoryData:any
 let materialFilterData:any
 let colorFilterData:any
@@ -37,6 +38,7 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
  if (materialFilter) paramsObj["materialName"] = materialFilter;
  if (colorFilter) paramsObj["colorName"] = colorFilter;
  if (sortFilter) paramsObj["sortBy"] = sortFilter;
+ if(state?.shoeType) paramsObj["categoryName"] = state?.shoeType
 
  const query = "&" + new URLSearchParams(paramsObj).toString();
     const {data:dataProducts ,isSuccess:isSuccessProducts}=useGetAllProductsQuery({query})

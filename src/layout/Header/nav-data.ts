@@ -19,7 +19,8 @@ export const navItems = [
     title: "HOME",
     path: "/admin-dashboard",
     lightIcon: jacket,
-    alt: "dashboard"
+    alt: "dashboard",
+    
   },
   {
     toshowforrole: [
@@ -35,28 +36,32 @@ export const navItems = [
           'user',"newUser"
         ],
         title: "Oxford and Derby",
-        path: "settings/company-settings",
+        path: "/dashboard",
+        shoeType:"OxfordandDerby"
       },
       {
         toshowforrole: [
           'user',"newUser"
         ],
         title: "Loafers",
-        path: "settings/work-schedule",
+        path: "/dashboard",
+        shoeType:"Loafers"
       },
       {
         toshowforrole: [
           'user',"newUser"
         ],
         title: "Monks",
-        path: "Monks",
+        path: "/dashboard",
+        shoeType:"Monks"
       },
       {
         toshowforrole: [
           'user',"newUser"
         ],
         title: "Boots",
-        path: "Boots",
+        path: "/dashboard",
+        shoeType:"Boots"
       },
     ],
   },
@@ -66,6 +71,15 @@ export const navItems = [
     ],
     title: "Jackets",
     path: "/jacket-details",
+    lightIcon: jacket,
+    alt: "dashboard"
+  },
+  {
+    toshowforrole: [
+       'user',"newUser"
+    ],
+    title: "Contact Us",
+    path: "/contact-details",
     lightIcon: jacket,
     alt: "dashboard"
   },

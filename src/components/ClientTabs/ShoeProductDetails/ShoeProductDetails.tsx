@@ -42,9 +42,9 @@ const ShoeProductDetails=()=>{
     ]
     return(
         <>
-        {productsData?.length > 0 ? <div>
-         <p style={{textAlign:"center",fontSize:"20px"}}>BEST SELLERS</p>
-         <p style={{textAlign:"center",fontSize:"20px"}}>LEATHER GOODS</p>
+        {(productsData?.length > 0 || productsData?.length==0) ? <div>
+            <p style={{ textAlign: "center", fontSize: "14px" ,marginBottom:"0px"}}>BEST SELLERS</p>
+                <p style={{ textAlign: "center", fontSize: "20px" ,marginTop:"0px"}}>JACKETS</p>
          <Row >
 
 
@@ -75,14 +75,14 @@ const ShoeProductDetails=()=>{
                  <Col xs={24} sm={24} style={{textAlign:"center" ,marginTop:"10px"}}>
                     <Link to="/jacket-details" style={{background:"black",padding:"14px" ,color:"white"}}>VIEW ALL PRODUCTS</Link>
                     </Col>
-        </Row> : <p style={{ color: "white", fontSize: "large", textAlign: "center" }}>No Products</p>}
+        </Row> :  <p style={{  fontSize: "large", textAlign: "center" }}>No Products Added</p>}
 </Col>
 
 </Row>
        
             
         
-        </div>:<Spin/>
+        </div>: <p style={{  fontSize: "large", textAlign: "center" }}>No Products Added</p>
         }
         </>
        

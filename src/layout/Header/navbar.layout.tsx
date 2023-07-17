@@ -164,7 +164,7 @@ const NavBar = () => {
    
           <div style={{display:"flex" ,justifyContent:"space-between",padding:"0 30px"}}>
       <p style={{color:"white"}}>Solace</p>
-      <h1 style={{fontWeight:"500" ,fontSize:"32px"}}>Solace</h1>
+      <h1 style={{fontWeight:"500" ,fontSize:"32px",marginLeft:"30PX"}}>Solace</h1>
       <div className="short_hands">
         <img src={SearchImg}  onClick={handleOpenGlobalSearchDrawer}  style={{cursor:"pointer"}}/>
           <Switch
@@ -309,7 +309,7 @@ const NavBar = () => {
                             onClick={() => {
                               item.subItems
                                 ? setDropDown(true)
-                                : navigate(item.path);
+                                : navigate(item.path ,{state:{shoeType:item.shoeType}});
                               setActive(item.title);
                             }}
                           >
@@ -335,7 +335,7 @@ const NavBar = () => {
                                     <Fragment key={uuidv4()}>
                                       <p
                                         onClick={() => {
-                                          navigate(subNav.path);
+                                          navigate(subNav.path,{state:{shoeType:subNav.shoeType}});
                                           setActiveChild(subNav.title);
                                           setDropDown(false);
                                         }}
