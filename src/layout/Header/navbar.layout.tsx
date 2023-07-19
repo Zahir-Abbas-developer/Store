@@ -163,7 +163,7 @@ const NavBar = () => {
       
    
           <div style={{display:"flex" ,justifyContent:"space-between",padding:"0 30px"}}>
-      <p style={{color:"white"}}>SolacHJLHJLHJLHJLHJLHJLSDHDFHDFHDFHDFHDF</p>
+      <p style={{color:"white"}}>Solace</p>
       <h1 style={{fontWeight:"500" ,fontSize:"32px",marginLeft:"30PX"}}>Solace</h1>
       <div className="short_hands">
         <img src={SearchImg}  onClick={handleOpenGlobalSearchDrawer}  style={{cursor:"pointer"}}/>
