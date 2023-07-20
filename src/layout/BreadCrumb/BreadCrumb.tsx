@@ -13,7 +13,7 @@ interface PropType {
 const BreadCrumb = (props: PropType) => {
   const { breadCrumbItems } = props;
   return (
-    <div className="breadcrumb-wrapper">
+    <div className="breadcrumb-wrapper" style={{paddingLeft:"35px",paddingTop:"16px"}}>
       <Breadcrumb separator={<img className="seprator" src={seprator} alt="" />}>
         {breadCrumbItems.length === 1 ? (
           <Breadcrumb.Item className="fs-24 fw-500 breadcrumb-text" >{breadCrumbItems[0].title}</Breadcrumb.Item>
