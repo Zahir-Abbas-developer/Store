@@ -47,8 +47,9 @@ const FooterDetails=()=>{
         </Col>
         <Col xs={24} md={8}>
       <div style={{textAlign:"center"}}>
-      <p>  <Link  to="" style={{color:"#fff"}}>Contact</Link></p>
+      <p>  <Link  to="/contact-details" style={{color:"#fff"}}>Contact</Link></p>
           <p> <Link  to="" style={{color:"#fff"}}>Privacy Policy</Link></p>
+          <p> <Link  to="/login" style={{color:"#fff"}}>My Account</Link></p>
           <p>
           <Link  to="" style={{color:"#fff"}}>Delivery & Returns</Link>
           </p>

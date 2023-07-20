@@ -45,10 +45,10 @@ const ShoeProductDetails=()=>{
         {(productsData?.length > 0 || productsData?.length==0) ? <div>
             <p style={{ textAlign: "center", fontSize: "18px" ,marginBottom:"0px"}}>BEST SELLERS</p>
                 <p style={{ textAlign: "center", fontSize: "20px" ,marginTop:"0px"}}>JACKETS</p>
-         <Row >
+         <Row gutter={[16,16]} style={{padding:"40px"}}>
 
 
-<Col xs={24} md={24} lg={24} style={{ padding: "30px" }}>
+<Col xs={24} md={24} lg={24} >
     {productsData?.length > 0 ?
         <Row gutter={[16, 16]}>
             {isSuccessProducts ?
