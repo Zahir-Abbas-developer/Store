@@ -41,7 +41,7 @@ const SelectServicesDetails = () => {
     ]
     return (
         <>
-            {(productsData?.length > 0 || productsData?.length==0)  ? <div>
+            {(productsData?.length > 0 || productsData?.length==0)  ? <div style={{marginTop:"18px"}}>
                 <p style={{ textAlign: "center", fontSize: "14px" ,marginBottom:"0px"}}>BEST SELLERS</p>
                 <p style={{ textAlign: "center", fontSize: "20px" ,marginTop:"0px"}}>LEATHER SHOES</p>
                 {productsData?.length > 0 ? <Row gutter={[16, 16]}>

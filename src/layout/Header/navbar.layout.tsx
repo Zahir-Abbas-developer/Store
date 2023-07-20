@@ -60,6 +60,8 @@ const NavBar = () => {
       <DrawerNavsLinks
         setToggleDrawer={setToggleDrawer}
         toggleDrawer={toggleDrawer}
+        setIsDarkMode={setIsDarkMode}
+        isDarkMode={isDarkMode}
       />
     ),
   };
@@ -159,12 +161,12 @@ const NavBar = () => {
   const overlayStyle = { borderRadius: 0 };
   return (
     <>
-      <div className="header-bg " style={{ position: "sticky", top: "0", zIndex: "100",padding:"0 30px" }}>
+      <div className=" header-main-wrapper-ecommerce header-bg " style={{ position: "sticky", top: "0", zIndex: "100",padding:"0 30px" }}>
       
    
-          <div style={{display:"flex" ,justifyContent:"space-between",padding:"0 30px"}}>
-      <p style={{color:"white"}}>Solace</p>
-      <h1 style={{fontWeight:"500" ,fontSize:"32px",marginLeft:"30PX"}}>Solace</h1>
+          <div style={{display:"flex" ,justifyContent:"space-between"}}>
+      <p style={{color:"white"}}></p>
+      <h1 style={{fontWeight:"500" ,fontSize:"32px"}}>Solace</h1>
       <div className="short_hands">
         <img src={SearchImg}  onClick={handleOpenGlobalSearchDrawer}  style={{cursor:"pointer"}}/>
           <Switch
@@ -266,7 +268,7 @@ const NavBar = () => {
               setToggleDrawer({ open: true, placement: "left", type: "navbar" })
             }
           />
-          <img
+          {/* <img
             // src={Logo}
             alt="brand_logo"
             height={60}
@@ -274,7 +276,7 @@ const NavBar = () => {
             onClick={() => {
               navigate("/dashboard");
             }}
-          />
+          /> */}
         </div>
         <div
           className={role === "user" ? "employeeMenu" : "menus"}

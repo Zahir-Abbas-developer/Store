@@ -5,14 +5,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
 import { v4 as uuidv4 } from "uuid";
 import "./navbar.styles.scss";
+import { Switch } from "antd";
 
 
 interface Props {
   setToggleDrawer: any;
   toggleDrawer: any;
 }
-const DrawerNavsLinks = (props: Props) => {
-  const { setToggleDrawer, toggleDrawer } = props;
+const DrawerNavsLinks = (props: any) => {
+  const { setToggleDrawer, toggleDrawer,isDarkMode,setIsDarkMode } = props;
   const [toggleDropDown, setToggleDropDown] = useState({ open: false, id: "" });
   const [active, setActive] = useState<string>("Dashboard");
   const [activeChild, setActiveChild] = useState("");
@@ -38,7 +39,7 @@ const DrawerNavsLinks = (props: Props) => {
     });
   }, [pathname]);
   return (
-    <div className="drawer_main">
+    <div className="drawer_main header-main-wrapper-ecommerce-sidebar">
       <div className="drawer-header" style={{ textAlign: "center" }}>
         {/* <img src={Logo} alt="Logo" height={75} /> */}
       </div>
@@ -139,6 +140,13 @@ const DrawerNavsLinks = (props: Props) => {
           ))}
         </ul>
       </div>
+      <Switch
+      style={{position:"absolute",bottom:"120px"}}
+            className="switch fs-12"
+            checkedChildren="Dark"
+            unCheckedChildren="Light"
+            onChange={() => setIsDarkMode(!isDarkMode)}
+          />
     </div>
   );
 };

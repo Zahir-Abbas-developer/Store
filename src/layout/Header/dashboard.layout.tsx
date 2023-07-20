@@ -154,39 +154,39 @@ const DashboardLayout = ({ children }: any) => {
       <Layout className="layout">
         <NavBar />
         <Content className="main-content bgLight-color">
-          {path !== "Dashboard" && (
-            <Breadcrumb
-              separator=">"
-              className="title-color capitalize"
-              style={{ padding: "0.1rem 0 0" }}
-            >
-              <Breadcrumb.Item>
-                <HomeOutlined style={{ color: "#E76F51" }} />
-              </Breadcrumb.Item>
-              <Breadcrumb.Item>
-                <Link to="/dashboard">Dashboard</Link>
-              </Breadcrumb.Item>
-              {breadCrumbItems.map((breadCrumb: string, index: number) =>
-                breadCrumbItems.length - 1 !== index ? (
-                  <Breadcrumb.Item key={uuidv4()}>
-                    <Link
-                      to={
-                        breadCrumb === "Reports"
-                          ? "/reports/activity-log"
-                          : `/${breadCrumb.toLocaleLowerCase()}`
-                      }
-                    >
-                      {breadCrumb}
-                    </Link>
-                  </Breadcrumb.Item>
-                ) : (
-                  <Breadcrumb.Item className="title-color" key={uuidv4()}>
-                    {breadCrumb}
-                  </Breadcrumb.Item>
-                )
-              )}
-            </Breadcrumb>
-          )}
+          {/* {path !== "Dashboard" && (
+            // <Breadcrumb
+            //   separator=">"
+            //   className="title-color capitalize"
+            //   style={{ padding: "0.1rem 0 0" }}
+            // >
+            //   <Breadcrumb.Item>
+            //     <HomeOutlined style={{ color: "#E76F51" }} />
+            //   </Breadcrumb.Item>
+            //   <Breadcrumb.Item>
+            //     <Link to="/dashboard">Dashboard</Link>
+            //   </Breadcrumb.Item>
+            //   {breadCrumbItems.map((breadCrumb: string, index: number) =>
+            //     breadCrumbItems.length - 1 !== index ? (
+            //       <Breadcrumb.Item key={uuidv4()}>
+            //         <Link
+            //           to={
+            //             breadCrumb === "Reports"
+            //               ? "/reports/activity-log"
+            //               : `/${breadCrumb.toLocaleLowerCase()}`
+            //           }
+            //         >
+            //           {breadCrumb}
+            //         </Link>
+            //       </Breadcrumb.Item>
+            //     ) : (
+            //       <Breadcrumb.Item className="title-color" key={uuidv4()}>
+            //         {breadCrumb}
+            //       </Breadcrumb.Item>
+            //     )
+            //   )}
+            // </Breadcrumb>
+          )} */}
           {/* top title and icon section */}
           <Row
             style={{
@@ -198,7 +198,7 @@ const DashboardLayout = ({ children }: any) => {
             className="d-flex justify-between align-items-center"
           >
             <Col>
-              <h1
+              {/* <h1
                 style={{ display: "inline-block" }}
                 className="title-color fs-24 fw-600 capitalize"
               >
@@ -206,7 +206,7 @@ const DashboardLayout = ({ children }: any) => {
                   "Website and App Usage"
                   ? "Website & App Usage"
                   : breadCrumbItems[breadCrumbItems.length - 1]}
-              </h1>
+              </h1> */}
             </Col>
             <Col style={{ display: "block" }}>
               <Row
