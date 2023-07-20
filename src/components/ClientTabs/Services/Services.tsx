@@ -9,13 +9,13 @@ const Services=()=>{
     return(
     
     <Row>
-<Col sm={24}>
+<Col xs={24}>
  <SelectServices/>
 </Col>
-<Col sm={24} md={24} style={{marginTop:"15px"}}>
+<Col xs={24} md={24} style={{marginTop:"15px"}}>
  <SelectServicesDetails/>
 </Col>
-<Col sm={24} md={24} style={{marginTop:"15px"}}>
+<Col xs={24} md={24} style={{marginTop:"15px"}}>
  <ShoeProductDetails/>
 </Col>
     </Row>)

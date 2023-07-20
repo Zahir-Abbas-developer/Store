@@ -43,7 +43,7 @@ const ShoeProductDetails=()=>{
     return(
         <>
         {(productsData?.length > 0 || productsData?.length==0) ? <div>
-            <p style={{ textAlign: "center", fontSize: "14px" ,marginBottom:"0px"}}>BEST SELLERS</p>
+            <p style={{ textAlign: "center", fontSize: "18px" ,marginBottom:"0px"}}>BEST SELLERS</p>
                 <p style={{ textAlign: "center", fontSize: "20px" ,marginTop:"0px"}}>JACKETS</p>
          <Row >
 

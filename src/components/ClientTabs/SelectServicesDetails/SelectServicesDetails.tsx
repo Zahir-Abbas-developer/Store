@@ -42,11 +42,11 @@ const SelectServicesDetails = () => {
     return (
         <>
             {(productsData?.length > 0 || productsData?.length==0)  ? <div style={{marginTop:"18px"}}>
-                <p style={{ textAlign: "center", fontSize: "14px" ,marginBottom:"0px"}}>BEST SELLERS</p>
+                <p style={{ textAlign: "center", fontSize: "18px" ,marginBottom:"0px"}}>BEST SELLERS</p>
                 <p style={{ textAlign: "center", fontSize: "20px" ,marginTop:"0px"}}>LEATHER SHOES</p>
-                {productsData?.length > 0 ? <Row gutter={[16, 16]}>
+                {productsData?.length > 0 ? <Row >
                     {productsData?.slice(0, 4)?.map((productData: any) => (
-                        <><Col xs={24} md={12} lg={6} key={productData.id}>
+                        <Col xs={24} md={12} lg={6} key={productData.id}>
                             <Card
                                 hoverable
                                 style={{ background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)", border: "0px solid transparent" }}
@@ -60,7 +60,7 @@ const SelectServicesDetails = () => {
                                 </div>
                             </Card>
                         </Col>
-                        </>
+                        
                     ))}
                     <Col xs={24} sm={24} style={{ textAlign: "center", marginTop: "10px" }} >
                         <Link to="/dashboard" style={{ background: "black", padding: "14px", color: "white" }}>VIEW ALL PRODUCTS</Link>
