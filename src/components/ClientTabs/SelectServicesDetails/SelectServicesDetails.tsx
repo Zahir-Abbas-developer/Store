@@ -11,6 +11,8 @@ const SelectServicesDetails = () => {
     const query = "&" + new URLSearchParams(paramsObj).toString();
     const { data: dataProducts, isSuccess: isSuccessProducts } = useGetAllProductsQuery({ query })
     const [hoverImage ,setHoverImage]=useState(false)
+    const [viewAllProductsBackground ,setViewAllProductsBackground]=useState("black")
+    const [viewAllProductsText ,setViewAllProductsText]=useState("white")
     let productsData: any
     if (isSuccessProducts) {
         productsData = dataProducts
@@ -65,7 +67,7 @@ const SelectServicesDetails = () => {
                         
                     ))}
                     <Col xs={24} sm={24} style={{ textAlign: "center", marginTop: "10px" }} >
-                        <Link to="/dashboard" style={{ background: "black", padding: "14px", color: "white" }}>VIEW ALL PRODUCTS</Link>
+                        <Link to="/dashboard" style={{ background: viewAllProductsBackground, padding: "14px", color: viewAllProductsText ,border:"1px solid black" }} onMouseLeave={()=>{setViewAllProductsBackground("black");setViewAllProductsText("white")}} onMouseOver={()=>{setViewAllProductsBackground("white");setViewAllProductsText("black")}} >VIEW ALL PRODUCTS</Link>
                     </Col>
                 </Row> : <p style={{  fontSize: "large", textAlign: "center" }}>No Products Added</p>}
 
