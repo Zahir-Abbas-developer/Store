@@ -5,10 +5,12 @@ import jacketImage3 from "../../../assets/images/jackets/lea-ochel-nsRBbE6-YLs-u
 import jacketImage4 from "../../../assets/images/jackets/tobias-tullius-Fg15LdqpWrs-unsplash.jpg"
 import { Link } from "react-router-dom"
 import { useGetAllProductsQuery } from "../../../store/Slices/Products"
+import { useState } from "react"
 const SelectServicesDetails = () => {
     const paramsObj: any = {};
     const query = "&" + new URLSearchParams(paramsObj).toString();
     const { data: dataProducts, isSuccess: isSuccessProducts } = useGetAllProductsQuery({ query })
+    const [hoverImage ,setHoverImage]=useState(false)
     let productsData: any
     if (isSuccessProducts) {
         productsData = dataProducts
@@ -50,7 +52,7 @@ const SelectServicesDetails = () => {
                             <Card
                                 hoverable
                                 style={{ background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)", border: "0px solid transparent" }}
-                                cover={<img alt="example" src={productData?.thumbnail} />}
+                                cover={<img alt="example" src={!hoverImage?productData?.thumbnail:productData?.images[0]} onMouseLeave={()=>setHoverImage(false)} onMouseOver={()=>{setHoverImage(true)}} />}
                             >
                                 <div style={{ textAlign: "center", padding: "0" }}>
 

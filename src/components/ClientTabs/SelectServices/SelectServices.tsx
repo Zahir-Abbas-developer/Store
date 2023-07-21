@@ -19,15 +19,11 @@ const SelectServices = () => (
 
       <img src={shoesImage} style={{width:"100%",height:"90vh"}} />
     </div>
-    <div>
-    <img src={shoesImage1}  style={{width:"100%",height:"90vh"}} />
-    </div>
+    
     <div>
     <img src={shoesImage2}   style={{width:"100%",height:"90vh"}} />
     </div>
-    <div>
-    <img src={shoesImage3}   style={{width:"100%",height:"90vh"}} />
-    </div>
+    
   </Carousel>
 );
 
