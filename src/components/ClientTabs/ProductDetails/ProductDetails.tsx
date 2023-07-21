@@ -1,5 +1,5 @@
 import { Button, Col, Drawer, Row, Select, Space } from "antd"
-import { useLocation, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import './ProductDetails.scss'
 import artisan from '../../../assets/icons/ProductDetails/artisan.svg'
 import HandCraft from '../../../assets/icons/ProductDetails/hand-craft.svg'
@@ -19,6 +19,7 @@ import DrawerComponent from "./Drawer"
 import Arrow from '../../../assets/images/OnBoarding/arrow.svg'
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { ArrowLeftOutlined } from "@ant-design/icons"
 
 
 // Import the addToCart action creator
@@ -80,7 +81,7 @@ const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any
 }, 0); // 0 is the initial value of the accumulator
   return (
     <Row gutter={[10,10]} style={{padding:"30px"}}>
-      
+     <Link to="/dashboard" style={{marginLeft:"10px",color:"black"}}> <ArrowLeftOutlined /> <Link to="/dashboard" style={{marginLeft:"10px",color:"black"}}>Back</Link> </Link>    
       <Col xs={24} lg={24}>
         <p style={{fontSize:"large" ,marginTop:"0px"}}>Main Collection</p>
       </Col>

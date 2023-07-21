@@ -8,9 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 *{
-  font-family: 'Poppins','Roboto', -apple-system , 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
+  font-family:"Oswald,sans-serif" !important;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

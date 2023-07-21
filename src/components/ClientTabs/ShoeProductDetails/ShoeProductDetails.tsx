@@ -5,11 +5,13 @@ import jacketImage3 from "../../../assets/images/jackets/lea-ochel-nsRBbE6-YLs-u
 import jacketImage4 from "../../../assets/images/jackets/tobias-tullius-Fg15LdqpWrs-unsplash.jpg"
 import { Link } from "react-router-dom"
 import { useJacketsAllProductsQuery } from "../../../store/Slices/Products"
+import { useState } from "react"
 const ShoeProductDetails=()=>{
     const paramsObj: any = {};
  
     const query = "&" + new URLSearchParams(paramsObj).toString();
     const { data: dataProducts, isSuccess: isSuccessProducts } = useJacketsAllProductsQuery({ query })
+    const [hoverImage ,setHoverImage]=useState(false)
     let productsData: any
     if (isSuccessProducts) {
         productsData = dataProducts
@@ -44,7 +46,7 @@ const ShoeProductDetails=()=>{
         <>
         {(productsData?.length > 0 || productsData?.length==0) ? <div>
             <p style={{ textAlign: "center", fontSize: "18px" ,marginBottom:"0px"}}>BEST SELLERS</p>
-                <p style={{ textAlign: "center", fontSize: "20px" ,marginTop:"0px"}}>JACKETS</p>
+                <p style={{ textAlign: "center", fontSize: "20px" ,marginTop:"5px"}}>JACKETS</p>
          <Row gutter={[16,16]} style={{padding:"40px"}}>
 
 
@@ -56,10 +58,8 @@ const ShoeProductDetails=()=>{
                  <>
                     <Col xs={24} md={12} lg={6} key={productData.id}>
                         <Card
-                            hoverable
-                       
                             style={{ background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)", border: "0px solid transparent" }}
-                            cover={<img alt="example" src={productData?.thumbnail} />}
+                            cover={<img alt="example"  src={!hoverImage?productData?.thumbnail:productData?.images[0]} onMouseLeave={()=>setHoverImage(false)} onMouseOver={()=>{setHoverImage(true)}}  />}
                         >
                             <div style={{ textAlign: "center", padding: "0" }}>
 

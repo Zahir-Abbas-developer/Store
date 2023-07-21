@@ -44,19 +44,19 @@ const SelectServicesDetails = () => {
     return (
         <>
             {(productsData?.length > 0 || productsData?.length==0)  ? <div style={{marginTop:"18px"}}>
-                <p style={{ textAlign: "center", fontSize: "18px" ,marginBottom:"0px"}}>BEST SELLERS</p>
-                <p style={{ textAlign: "center", fontSize: "20px" ,marginTop:"0px"}}>LEATHER SHOES</p>
+                <p style={{ textAlign: "center", fontSize: "18px" ,marginBottom:"0px",fontFamily:" Oswald,sans-serif"}}>BEST SELLERS</p>
+                <p style={{ textAlign: "center", fontSize: "20px" ,marginTop:"5px",fontFamily:" Oswald,sans-serif"}}>LEATHER SHOES</p>
                 {productsData?.length > 0 ? <Row gutter={[16,16]} style={{padding:"40px"}} >
                     {productsData?.slice(0, 4)?.map((productData: any) => (
                         <Col xs={24} md={12} lg={6} key={productData.id}>
                             <Card
-                                hoverable
+                                
                                 style={{ background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)", border: "0px solid transparent" }}
                                 cover={<img alt="example" src={!hoverImage?productData?.thumbnail:productData?.images[0]} onMouseLeave={()=>setHoverImage(false)} onMouseOver={()=>{setHoverImage(true)}} />}
                             >
                                 <div style={{ textAlign: "center", padding: "0" }}>
 
-                                    <p style={{ fontWeight: "bold", color: "white", padding: "0px", margin: "2px" }}> {productData?.name}</p>
+                                    <p style={{ fontWeight: "bold", color: "white", padding: "0px", margin: "2px",fontFamily:" Oswald,sans-serif" }}> {productData?.name}</p>
                                     <p style={{ color: "white", padding: "0px", margin: "2px" }}>{productData?.description}</p>
                                     <p style={{ fontWeight: "bold", color: "#65cdf0", padding: "0px", margin: "2px" }}>$ {productData?.price}</p>
                                 </div>
