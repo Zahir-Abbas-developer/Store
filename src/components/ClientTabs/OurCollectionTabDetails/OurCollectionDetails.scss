@@ -1,3 +1,4 @@
+@import "../../../sass/variables";
 .header-image-our-collection {
   background-image: url(https://us.larchglobal.com/wp-content/uploads/2022/11/Our-collection-header.webp);
   background-position: center center;
@@ -44,27 +45,30 @@
     background-color: #000000;
   }
   .ant-card-meta-title{
-    color: #FFFFFF;
+    color: #000000;
     font-weight: 700;
   }
   .ant-card-meta-description{
-    color: #FFFFFF;
+    color: #000000;
   }
   p{
-    color: #FFFFFF;
+    color: #000000;
   }
 }
 
 .select-onboarding{
+  background: $white-color;
+  border: 1px solid #D9DBE9;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 0px;
+
   .ant-select-selector{
-    background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;
-    border-radius: 27px;
-    border: 0px solid transparent !important;
+   
     .ant-select-selection-item{
       font-size: medium !important;
     }
   }
   .ant-select-selection-item{
-    color: #FFFFFF;
+    color: #000000;
   }
 }

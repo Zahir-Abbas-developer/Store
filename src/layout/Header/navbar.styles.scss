@@ -229,7 +229,11 @@
   align-items: center;
   padding: 0 30px;
   top: 0;
-
+  @media screen and (min-width: 200px) and (max-width: 1300px) {
+.solace-leather-online{
+  display: none;
+}
+  }
 .logo {
   align-items: center;
   display: flex;
@@ -266,6 +270,8 @@
       align-items: center;
       list-style: none;
       display: flex;
+      margin-top: 0px;
+      margin-bottom: 0px;
       gap: 26px;
       margin-right: 26px;
 

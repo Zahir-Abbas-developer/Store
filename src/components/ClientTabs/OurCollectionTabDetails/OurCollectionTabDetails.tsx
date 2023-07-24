@@ -21,7 +21,7 @@ const { Meta } = Card;
   const {data:isDataMaterial ,isSuccess:isSuccessMaterial}=useGetAllMaterialsQuery({})
   const {data:isColorData ,isSuccess:isSuccessColor}=useGetAllColorsQuery({})
 const {state}=useLocation()
-console.log(state)
+
 let categoryData:any
 let materialFilterData:any
 let colorFilterData:any
