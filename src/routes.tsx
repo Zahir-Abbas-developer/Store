@@ -454,6 +454,6 @@ export const routes: any = [
   },
   {
     path: "*",
-    element: <NotFound />,
-  },
+    element: <NotFound />
+  }
 ];
