@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import Arrow from "../../../assets/images/OnBoarding/arrow.svg"
 import './JacketsDetails.scss'
 import { text } from "stream/consumers";
-import jacketImage4 from "../../../assets/images/jackets/tobias-tullius-Fg15LdqpWrs-unsplash.jpg"
+import shoesImage3 from "../../../assets/images/MicrosoftTeams-image (10).png"
+
 
 const { Meta } = Card;
 
@@ -51,7 +52,7 @@ const JacketDetails = () => {
     const navigate = useNavigate();
     return (
         <>
-            <img src={jacketImage4} style={{ width: "100%", height: "90vh" }} />
+            <img src={shoesImage3} style={{ width: "100%", height: "90vh" }} />
 
 
             <Row style={{ margin: "20px 0px", padding: "16px" }} gutter={[16, 16]}>

@@ -6,6 +6,7 @@ import jacketImage4 from "../../../assets/images/jackets/tobias-tullius-Fg15Ldqp
 import { Link } from "react-router-dom"
 import { useGetAllProductsQuery } from "../../../store/Slices/Products"
 import { useState } from "react"
+import '../../../sass/common.scss'
 const SelectServicesDetails = () => {
     const paramsObj: any = {};
     const query = "&" + new URLSearchParams(paramsObj).toString();
@@ -67,7 +68,7 @@ const SelectServicesDetails = () => {
                         
                     ))}
                     <Col xs={24} sm={24} style={{ textAlign: "center", marginTop: "10px" }} >
-                        <Link to="/dashboard" style={{ background: viewAllProductsBackground, padding: "14px", color: viewAllProductsText ,border:"1px solid black" }} onMouseLeave={()=>{setViewAllProductsBackground("black");setViewAllProductsText("white")}} onMouseOver={()=>{setViewAllProductsBackground("white");setViewAllProductsText("black")}} >VIEW ALL PRODUCTS</Link>
+                        <Link className="btn btn-2 hover-slide-right" to="/shoes-products" style={{ background: viewAllProductsBackground, padding: "14px", color: viewAllProductsText ,border:"1px solid black" }} onMouseLeave={()=>{setViewAllProductsBackground("black");setViewAllProductsText("white")}} onMouseOver={()=>{setViewAllProductsBackground("white");setViewAllProductsText("black")}} >VIEW   ALL  PRODUCTS</Link>
                     </Col>
                 </Row> : <p style={{  fontSize: "large", textAlign: "center" }}>No Products Added</p>}
 

@@ -189,12 +189,12 @@ const DashboardLayout = ({ children }: any) => {
           )} */}
           {/* top title and icon section */}
           <Row
-            style={{
-              padding: `${path === "Dashboard" ? "0.4rem 0 1.25rem" : "0rem 0 1.5rem"
-                }`,
-              gap: "0.5rem",
-              flexWrap: "wrap",
-            }}
+            // style={{
+            //   padding: `${path === "Dashboard" ? "0.4rem 0 1.25rem" : "0rem 0 1.5rem"
+            //     }`,
+            //   gap: "0.5rem",
+            //   flexWrap: "wrap",
+            // }}
             className="d-flex justify-between align-items-center"
           >
             <Col>

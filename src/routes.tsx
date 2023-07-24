@@ -239,7 +239,7 @@ export const routes: any = [
       
 
       {
-        path: "client-profile",
+        path: "shoes-products",
         element: (
           <RequireAuth allowedRoles={[ROLES.user]}>
           

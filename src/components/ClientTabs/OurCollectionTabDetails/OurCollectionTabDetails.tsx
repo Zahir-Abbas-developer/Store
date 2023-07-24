@@ -6,7 +6,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Arrow  from "../../../assets/images/OnBoarding/arrow.svg"
 import './OurCollectionDetails.scss'
 import { text } from "stream/consumers";
-import jacketImage4 from "../../../assets/images/jackets/tobias-tullius-Fg15LdqpWrs-unsplash.jpg"
+
+import shoesImage1 from "../../../assets/images/MicrosoftTeams-image (8).png"
 const { Meta } = Card;
 
  const OurCollectionTabDetails=()=>{
@@ -52,7 +53,7 @@ const colorFilterValue=colorFilterData?.map((categoryFilter:any)=> {return {valu
     const navigate = useNavigate();
     return (
         <>
-       <img src={jacketImage4} style={{ width: "100%", height: "90vh" }} />
+       <img src={shoesImage1} style={{ width: "100%", height: "90vh" }} />
 
         <Row style={{margin:"20px 0px",padding:"16px"}} gutter={[16,16]}>
             <Col xs={24} md={6} >
