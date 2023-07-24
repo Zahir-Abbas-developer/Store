@@ -42,7 +42,9 @@ const ProductDetails = () => {
   }
 
   const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
-
+  const [hoverImage ,setHoverImage]=useState(false)
+  const [viewAllProductsBackground ,setViewAllProductsBackground]=useState("black")
+  const [viewAllProductsText ,setViewAllProductsText]=useState("white")
  
 
   const onChange = (e: RadioChangeEvent) => {
@@ -144,7 +146,7 @@ return( <img src={imagePath} ></img>)
               defaultValue="SELECT SIZE"
               className="select-size"
               onChange={(value: any) => handleSelectSizes(value)}
-              style={{ width: "100%" }}
+              style={{ width: "100%" ,}}
               suffixIcon={<img src={Arrow} />}
               options={selectSizeOptions}
             />
@@ -156,7 +158,7 @@ return( <img src={imagePath} ></img>)
               handleAddToCart(item)
              
 
-            }} type="primary" className="add-to-cart  fs-14 fw-600" htmlType="submit" style={{ width: "100%" }} >ADD TO CART</Button>
+            }} type="primary" className="add-to-cart  fs-14 fw-600" htmlType="submit" style={{ width: "100%" , background: viewAllProductsBackground,  color: viewAllProductsText ,border:"1px solid black" }} onMouseLeave={()=>{setViewAllProductsBackground("black");setViewAllProductsText("white")}} onMouseOver={()=>{setViewAllProductsBackground("white");setViewAllProductsText("black")}} >ADD TO CART</Button>
             <DrawerComponent/>
             
           </Col>

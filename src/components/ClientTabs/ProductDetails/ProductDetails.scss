@@ -11,27 +11,29 @@
   height: 80vh !important;
 }
 .collapse-shoe{
-  .ant-collapse-header-text{
   
+  .ant-collapse-header-text{
+  color: white;
     font-size: medium;
   }
 }
 
   .select-size{
     .ant-select-selector{
-      background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;
-      border-radius: 27px;
+      background: black !important;
+      // border-radius: 27px;
       border: 0px solid transparent !important;
       .ant-select-selection-item{
         font-size: medium !important;
+        color: white;
       }
     }
   
   }
 .add-to-cart {
-  background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;
-  border-radius: 27px;
-  border: 0px solid transparent !important;
+  // background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;
+  // border-radius: 27px;
+
 }
 .product-description{
     font-family: "Lexend Giga", Sans-serif;
@@ -51,7 +53,7 @@
    background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;;
    .view-cart{
     background: linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)!important;
-    border-radius: 27px;
+    // border-radius: 27px;
     // color: white;
     border: 0px solid transparent !important;
    }
