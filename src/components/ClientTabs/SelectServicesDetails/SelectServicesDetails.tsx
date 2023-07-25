@@ -54,7 +54,7 @@ const SelectServicesDetails = () => {
                         <Col xs={24} md={12} lg={6} key={productData.id}>
                             <Card
                                 
-                                style={{ background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)", border: "0px solid transparent" }}
+                                style={{ background: "#FE5C36", border: "1px solid #FE5C36" }}
                                 cover={<img alt="example" src={!hoverImage?productData?.thumbnail:productData?.images[0]} onMouseLeave={()=>setHoverImage(false)} onMouseOver={()=>{setHoverImage(true)}} />}
                             >
                                 <div style={{ textAlign: "center", padding: "0" }}>
