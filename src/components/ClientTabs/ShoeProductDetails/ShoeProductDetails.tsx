@@ -75,7 +75,7 @@ const ShoeProductDetails = () => {
 
                                     )) : <Spin />}
                                 <Col xs={24} sm={24} style={{ textAlign: "center", marginTop: "10px" }}>
-                                    <Link to="/jacket-details" style={{ background: viewAllProductsBackground, padding: "14px", color: viewAllProductsText, border: "1px solid black" }} onMouseLeave={() => { setViewAllProductsBackground("#FE5C36"); setViewAllProductsText("white") }} onMouseOver={() => { setViewAllProductsBackground("white"); setViewAllProductsText("#FE5C36") }} >VIEW ALL PRODUCTS</Link>
+                                    <Link to="/jacket-details" style={{ background: viewAllProductsBackground, padding: "14px", color: viewAllProductsText, border: "1px solid #FE5C36" }} onMouseLeave={() => { setViewAllProductsBackground("#FE5C36"); setViewAllProductsText("white") }} onMouseOver={() => { setViewAllProductsBackground("white"); setViewAllProductsText("#FE5C36") }} >VIEW ALL PRODUCTS</Link>
 
                                 </Col>
                             </Row> : <p style={{ fontSize: "large", textAlign: "center" }}>No Products Added</p>}
