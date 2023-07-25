@@ -6,89 +6,89 @@ import jacketImage4 from "../../../assets/images/jackets/tobias-tullius-Fg15Ldqp
 import { Link } from "react-router-dom"
 import { useJacketsAllProductsQuery } from "../../../store/Slices/Products"
 import { useState } from "react"
-const ShoeProductDetails=()=>{
+const ShoeProductDetails = () => {
     const paramsObj: any = {};
- 
+
     const query = "&" + new URLSearchParams(paramsObj).toString();
     const { data: dataProducts, isSuccess: isSuccessProducts } = useJacketsAllProductsQuery({ query })
-    const [hoverImage ,setHoverImage]=useState(false)
-    const [viewAllProductsBackground ,setViewAllProductsBackground]=useState("black")
-    const [viewAllProductsText ,setViewAllProductsText]=useState("white")
+    const [hoverImage, setHoverImage] = useState(false)
+    const [viewAllProductsBackground, setViewAllProductsBackground] = useState("#FE5C36")
+    const [viewAllProductsText, setViewAllProductsText] = useState("white")
     let productsData: any
     if (isSuccessProducts) {
         productsData = dataProducts
     }
-    const productDetails=[
+    const productDetails = [
         {
-            jacketImages:jacketImage4,
-            name:"benjamin-voros",
-            price:"100$"
-        
+            jacketImages: jacketImage4,
+            name: "benjamin-voros",
+            price: "100$"
+
         },
         {
-            jacketImages:jacketImage3,
-            name:"caio-coelho",
-            price:"100$"
-        
+            jacketImages: jacketImage3,
+            name: "caio-coelho",
+            price: "100$"
+
         },
         {
-            jacketImages:jacketImage3,
-            name:"benjamin-voros",
-            price:"100$"
-        
+            jacketImages: jacketImage3,
+            name: "benjamin-voros",
+            price: "100$"
+
         },
         {
-            jacketImages:jacketImage4,
-            name:"benjamin-voros",
-            price:"100$"
-        
+            jacketImages: jacketImage4,
+            name: "benjamin-voros",
+            price: "100$"
+
         }
     ]
-    return(
+    return (
         <>
-        {(productsData?.length > 0 || productsData?.length==0) ? <div>
-            <p style={{ textAlign: "center", fontSize: "18px" ,marginBottom:"0px"}}>BEST SELLERS</p>
-                <p style={{ textAlign: "center", fontSize: "20px" ,marginTop:"5px"}}>JACKETS</p>
-         <Row gutter={[16,16]} style={{padding:"40px"}}>
+            {(productsData?.length > 0 || productsData?.length == 0) ? <div>
+                <p style={{ textAlign: "center", fontSize: "18px", marginBottom: "0px" }}>BEST SELLERS</p>
+                <p style={{ textAlign: "center", fontSize: "20px", marginTop: "5px" }}>JACKETS</p>
+                <Row gutter={[16, 16]} style={{ padding: "40px" }}>
 
 
-<Col xs={24} md={24} lg={24} >
-    {productsData?.length > 0 ?
-        <Row gutter={[16, 16]}>
-            {isSuccessProducts ?
-                productsData?.slice(0,4)?.map((productData: any) => (
-                 <>
-                    <Col xs={24} md={12} lg={6} key={productData.id}>
-                        <Card
-                            style={{ background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)", border: "0px solid transparent" }}
-                            cover={<img alt="example"  src={!hoverImage?productData?.thumbnail:productData?.images[0]} onMouseLeave={()=>setHoverImage(false)} onMouseOver={()=>{setHoverImage(true)}}  />}
-                        >
-                            <div style={{ textAlign: "center", padding: "0" }}>
+                    <Col xs={24} md={24} lg={24} >
+                        {productsData?.length > 0 ?
+                            <Row gutter={[16, 16]}>
+                                {isSuccessProducts ?
+                                    productsData?.slice(0, 4)?.map((productData: any) => (
+                                        <>
+                                            <Col xs={24} md={12} lg={6} key={productData.id}>
+                                                <Card
+                                                    style={{ background: "linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)", border: "0px solid transparent" }}
+                                                    cover={<img alt="example" src={!hoverImage ? productData?.thumbnail : productData?.images[0]} onMouseLeave={() => setHoverImage(false)} onMouseOver={() => { setHoverImage(true) }} />}
+                                                >
+                                                    <div style={{ textAlign: "center", padding: "0" }}>
 
-                                <p style={{ fontWeight: "bold", color: "white", padding: "0px", margin: "2px" }}> {productData?.name}</p>
-                                <p style={{ color: "white", padding: "0px", margin: "2px" }}>{productData?.description}</p>
-                                <p style={{ fontWeight: "bold", color: "#65cdf0", padding: "0px", margin: "2px" }}>$ {productData?.price}</p>
-                            </div>
-                        </Card>
+                                                        <p style={{ fontWeight: "bold", color: "white", padding: "0px", margin: "2px" }}> {productData?.name}</p>
+                                                        <p style={{ color: "white", padding: "0px", margin: "2px" }}>{productData?.description}</p>
+                                                        <p style={{ fontWeight: "bold", color: "#65cdf0", padding: "0px", margin: "2px" }}>$ {productData?.price}</p>
+                                                    </div>
+                                                </Card>
+                                            </Col>
+                                        </>
+
+                                    )) : <Spin />}
+                                <Col xs={24} sm={24} style={{ textAlign: "center", marginTop: "10px" }}>
+                                    <Link to="/jacket-details" style={{ background: viewAllProductsBackground, padding: "14px", color: viewAllProductsText, border: "1px solid black" }} onMouseLeave={() => { setViewAllProductsBackground("#FE5C36"); setViewAllProductsText("white") }} onMouseOver={() => { setViewAllProductsBackground("white"); setViewAllProductsText("#FE5C36") }} >VIEW ALL PRODUCTS</Link>
+
+                                </Col>
+                            </Row> : <p style={{ fontSize: "large", textAlign: "center" }}>No Products Added</p>}
                     </Col>
-                   </>
 
-                )) : <Spin />}
-                 <Col xs={24} sm={24} style={{textAlign:"center" ,marginTop:"10px"}}>
-                 <Link to="/jacket-details" style={{ background: viewAllProductsBackground, padding: "14px", color: viewAllProductsText ,border:"1px solid black" }} onMouseLeave={()=>{setViewAllProductsBackground("black");setViewAllProductsText("white")}} onMouseOver={()=>{setViewAllProductsBackground("white");setViewAllProductsText("black")}} >VIEW ALL PRODUCTS</Link>
+                </Row>
 
-                    </Col>
-        </Row> :  <p style={{  fontSize: "large", textAlign: "center" }}>No Products Added</p>}
-</Col>
 
-</Row>
-       
-            
-        
-        </div>: <p style={{  fontSize: "large", textAlign: "center" }}>No Products Added</p>
-        }
+
+            </div> : <p style={{ fontSize: "large", textAlign: "center" }}>No Products Added</p>
+            }
         </>
-       
+
     )
 }
 export default ShoeProductDetails
