@@ -43,7 +43,7 @@ const ProductDetails = () => {
 
   const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
   const [hoverImage ,setHoverImage]=useState(false)
-  const [viewAllProductsBackground ,setViewAllProductsBackground]=useState("black")
+  const [viewAllProductsBackground ,setViewAllProductsBackground]=useState("#FE5C36")
   const [viewAllProductsText ,setViewAllProductsText]=useState("white")
  
 
@@ -158,7 +158,7 @@ return( <img src={imagePath} ></img>)
               handleAddToCart(item)
              
 
-            }} type="primary" className="add-to-cart  fs-14 fw-600" htmlType="submit" style={{ width: "100%" , background: viewAllProductsBackground,  color: viewAllProductsText ,border:"1px solid black" }} onMouseLeave={()=>{setViewAllProductsBackground("black");setViewAllProductsText("white")}} onMouseOver={()=>{setViewAllProductsBackground("white");setViewAllProductsText("black")}} >ADD TO CART</Button>
+            }} type="primary" className=" btn-primary " htmlType="submit" style={{ width: "100%" ,borderRadius: 20, background: viewAllProductsBackground,  color: viewAllProductsText ,border:"1px solid black" }} onMouseLeave={()=>{setViewAllProductsBackground("black");setViewAllProductsText("white")}} onMouseOver={()=>{setViewAllProductsBackground("white");setViewAllProductsText("black")}} >ADD TO CART</Button>
             <DrawerComponent/>
             
           </Col>
