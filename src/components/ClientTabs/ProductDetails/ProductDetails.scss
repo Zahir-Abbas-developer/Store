@@ -21,8 +21,10 @@
   .select-size{
     .ant-select-selector{
       background: #FE5C36 !important;
-      // border-radius: 27px;
+      border-radius: 20px;
       border: 0px solid transparent !important;
+      padding: 6px 11px !important;
+      height: 40px !important;
       .ant-select-selection-item{
         font-size: medium !important;
         color: white;

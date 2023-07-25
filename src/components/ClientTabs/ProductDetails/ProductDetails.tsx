@@ -35,28 +35,28 @@ const ProductDetails = () => {
   const isOpen = useAppSelector((state) => state.drawer.isOpen);
 
   const state = useLocation()
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const categoryDetails = state?.state?.productDetails
   const handleSelectSizes = (applicationStageValue: any) => {
     setSizes(applicationStageValue)
   }
 
   const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
-  const [hoverImage ,setHoverImage]=useState(false)
-  const [viewAllProductsBackground ,setViewAllProductsBackground]=useState("#FE5C36")
-  const [viewAllProductsText ,setViewAllProductsText]=useState("white")
- 
+  const [hoverImage, setHoverImage] = useState(false)
+  const [viewAllProductsBackground, setViewAllProductsBackground] = useState("#FE5C36")
+  const [viewAllProductsText, setViewAllProductsText] = useState("white")
+
 
   const onChange = (e: RadioChangeEvent) => {
     setPlacement(e.target.value);
   };
-  const handleAddToCart=(item:any)=>{
-    if(sizes){
-      dispatch(addProduct({ ...item, size: sizes })); 
-    AppSnackbar({ type: "success", messageHeading: "Success!", message: "Successful!" });
-    dispatch(openDrawer());
+  const handleAddToCart = (item: any) => {
+    if (sizes) {
+      dispatch(addProduct({ ...item, size: sizes }));
+      AppSnackbar({ type: "success", messageHeading: "Success!", message: "Successful!" });
+      dispatch(openDrawer());
     }
-    else{
+    else {
       AppSnackbar({ type: "error", messageHeading: "Error!", message: "Please Select Size Before You Want To Proceed Further!" });
     }
   }
@@ -74,38 +74,38 @@ const ProductDetails = () => {
 
   The more information that you provide us, the quicker we can respond to your enquiry. If you would prefer to speak to a member of our Customer Care Team, you can do so through our WhatsApp: +92 (324) 833-2704
 `;
-const selectSizeOptions=categoryDetails?.shoeSizes?.map((shoeSizes:any)=>{return {value:`US ${shoeSizes?.us},EU ${shoeSizes?.eu}`,label:`US ${shoeSizes?.us},EU ${shoeSizes?.eu}`}})
-console.log(categoryDetails)
-// Using reduce to calculate the total price
-const totalPrice = products?.products?.reduce((accumulator:any, currentValue:any) => {
-  // Adding the price of the current object to the accumulator
-  return accumulator + currentValue.price;
-}, 0); // 0 is the initial value of the accumulator
+  const selectSizeOptions = categoryDetails?.shoeSizes?.map((shoeSizes: any) => { return { value: `US ${shoeSizes?.us},EU ${shoeSizes?.eu}`, label: `US ${shoeSizes?.us},EU ${shoeSizes?.eu}` } })
+
+  // Using reduce to calculate the total price
+  const totalPrice = products?.products?.reduce((accumulator: any, currentValue: any) => {
+    // Adding the price of the current object to the accumulator
+    return accumulator + currentValue.price;
+  }, 0); // 0 is the initial value of the accumulator
   return (
-    <Row gutter={[10,10]} style={{padding:"30px"}}>
-     <Link to="/dashboard" style={{marginLeft:"10px",color:"black"}}> <ArrowLeftOutlined /> <Link to="/dashboard" style={{marginLeft:"10px",color:"black"}}>Back</Link> </Link>    
+    <Row gutter={[10, 10]} style={{ padding: "30px" }}>
+      <Link to="/dashboard" style={{ marginLeft: "10px", color: "black" }}> <ArrowLeftOutlined /> <Link to="/dashboard" style={{ marginLeft: "10px", color: "black" }}>Back</Link> </Link>
       <Col xs={24} lg={24}>
-        <p style={{fontSize:"large" ,marginTop:"0px"}}>Main Collection</p>
+        <p style={{ fontSize: "large", marginTop: "0px" }}>Main Collection</p>
       </Col>
-      <Col xs={24} lg={12} >
-      <Carousel emulateTouch={true}>
-        {categoryDetails?.images?.map((imagePath:any)=>{
-return( <img src={imagePath} ></img>)
-        })}
-              
-            </Carousel>
-     
-        <Collapse className="collapse-shoe" accordion style={{width:"80%",margin:"auto",marginTop:"10px",border:"0px solid transparent"}}>
-          <Panel header="CUSTOMIZE"  key="1" style={{  border:"0px solid transparent",background:"linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)",borderRadius:"27px"}} >
+      <Col xs={24} lg={8} >
+        <Carousel emulateTouch={true}>
+          {categoryDetails?.images?.map((imagePath: any) => {
+            return (<img src={imagePath} ></img>)
+          })}
+
+        </Carousel>
+
+        <Collapse className="collapse-shoe" accordion style={{ width: "80%", margin: "auto", marginTop: "10px", border: "0px solid transparent" }}>
+          <Panel header="CUSTOMIZE" key="1" style={{ border: "1px solid #FE5C36", background: "#FE5C36", borderRadius: "27px" }} >
             <p>{customize}</p>
           </Panel>
-          <Panel header="CONTACT US" key="2" style={{border:"0px solid transparent",background:"linear-gradient(135deg, rgba(68,68,68,1) 6%, rgba(0,0,0,1) 95%)",borderRadius:"27px",marginTop:"10px"}}>
+          <Panel header="CONTACT US" key="2" style={{ border: "1px solid #FE5C36", background: "#FE5C36", borderRadius: "27px", marginTop: "10px" }}>
             <p >{contact}</p>
           </Panel>
 
         </Collapse>
       </Col>
-      <Col xs={24} lg={11} offset={1}>
+      <Col xs={24} lg={13} offset={1}>
 
         <h1 className="product-title"> {categoryDetails?.name}</h1>
         <p className="product-description" > {categoryDetails?.description}</p>
@@ -140,32 +140,32 @@ return( <img src={imagePath} ></img>)
             <p >FITTING GUIDE</p>
           </Col>
         </Row>
-        <Row>
-          <Col xs={24} lg={24}>
+        <Row gutter={[16, 16]} style={{ marginTop: "20px" }}>
+          <Col xs={24} lg={12}>
             <Select
               defaultValue="SELECT SIZE"
               className="select-size"
               onChange={(value: any) => handleSelectSizes(value)}
-              style={{ width: "100%" ,}}
+              style={{ width: "100%", }}
               suffixIcon={<img src={Arrow} />}
               options={selectSizeOptions}
             />
           </Col>
-          <Col xs={24} lg={24} style={{ marginTop: "10px" }}>
+          <Col xs={24} lg={12} >
 
             <Button onClick={() => {
               const item: any = { id: categoryDetails?._id, categoryName: categoryDetails?.name, thumbnail: categoryDetails?.thumbnail, price: categoryDetails?.price, size: sizes };
               handleAddToCart(item)
-             
 
-            }} type="primary" className=" btn-primary " htmlType="submit" style={{ width: "100%" ,borderRadius: 20, background: viewAllProductsBackground,  color: viewAllProductsText ,border:"1px solid black" }} onMouseLeave={()=>{setViewAllProductsBackground("black");setViewAllProductsText("white")}} onMouseOver={()=>{setViewAllProductsBackground("white");setViewAllProductsText("black")}} >ADD TO CART</Button>
-            <DrawerComponent/>
-            
+
+            }} type="primary" className=" btn-primary " htmlType="submit" style={{ width: "100%", borderRadius: 20, background: viewAllProductsBackground, color: viewAllProductsText, border: "1px solid #FE5C36" }} onMouseLeave={() => { setViewAllProductsBackground("#FE5C36"); setViewAllProductsText("white") }} onMouseOver={() => { setViewAllProductsBackground("#FE5C36"); setViewAllProductsText("black") }} >ADD TO CART</Button>
+            <DrawerComponent />
+
           </Col>
         </Row>
 
       </Col>
-      
+
     </Row>
   )
 }
