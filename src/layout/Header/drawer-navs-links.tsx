@@ -106,7 +106,7 @@ const DrawerNavsLinks = (props: any) => {
                   {items?.subItems &&
                     items?.subItems?.map((item: any) => (
                       <Fragment key={uuidv4()}>
-                        {item.toshowforrole.includes(role) && (
+                        {item.toshowforrole.includes(role ?role: "newUser") && (
                           <p
                             className="fs-12"
                             onClick={() => {
