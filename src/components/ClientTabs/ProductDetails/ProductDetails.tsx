@@ -112,7 +112,7 @@ const ProductDetails = () => {
         <p className="product-price" > ${categoryDetails?.price}</p>
         <div>
           <img src={artisan}></img>
-          <img src={HandCraft} style={{ marginLeft: "10px" }}></img>
+          <img src={HandCraft}  className="handcraft"></img>
           <p >LARCH relies upon modern craftsmanship, blended with traditional methods to craft the finest quality shoes. Our highest quality leather ensures proper air circulation and prevents moisture through the surface.</p>
         </div>
 
