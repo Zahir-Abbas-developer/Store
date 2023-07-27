@@ -65,7 +65,8 @@ const DrawerComponent=()=>{
           }  >
               VIEW CART
             </Button>
-            <Button  className="view-cart" style={{ width: "100%", marginTop: "20px" }} >CHECKOUT</Button>
+            <Button   onClick={()=>{  dispatch(closeDrawer());navigate("/productDetails/cart-details", { state: { productDetails: products?.products } }) }
+          }   className="view-cart" style={{ width: "100%", marginTop: "20px" }} >CHECKOUT</Button>
           </Col>
         </Row>:
         <div style={{textAlign:"center",position:"absolute",left:"50%",top:"50%",transform:"translate(-50%,-50%)"}}>
